@@ -1,13 +1,27 @@
-import { globalCss } from '@stitches/react';
-import type { AppProps } from 'next/app'
+import { ThemeProvider } from '@/contexts/ThemeProvider/ThemeProvider';
+import type { AppProps } from 'next/app';
+import { darkTheme } from "../../stitches.config";
+import { Roboto_Condensed } from '@next/font/google'
 
-const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0 },
-});
-
-globalStyles();
+const robotoCondensed = Roboto_Condensed({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+})
 
 export default function App({ Component, pageProps }: AppProps) {
-
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      value={{
+        dark: darkTheme.className,
+        light: "light",
+      }}
+    >
+      <main className={robotoCondensed.className}>
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
+  )
 }
