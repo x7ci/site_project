@@ -4,6 +4,11 @@ export const { styled, getCssText } = createStitches({
     theme: {
         colors: {
             rootBackground: '#fff',
+            backgroundBlendColor: '',
+
+            textYellow: '#fcf6ba',
+            textCyan: '#99faff',
+            textCyanLight: '#defdff',
 
             primary: "$gray900",
             secondary: "$gray700",
@@ -15,6 +20,7 @@ export const { styled, getCssText } = createStitches({
             gray700: "hsl(205,5%,25%)",
             gray500: "hsl(205,5%,35%)",
             gray300: "hsl(205,5%,45%)",
+            gray100: "hsl(205,5%,55%)",
             gray50: "hsl(205,5%,95%)",
             blue500: "hsl(205,90%,45%)",
 
@@ -42,8 +48,9 @@ export const { styled, getCssText } = createStitches({
 
 export const darkTheme = createTheme({
     colors: {
-        rootBackground: '$gray800',
-        primary: "$gray100",
+        rootBackground: '#181923',
+        backgroundBlendColor: '$gray50',
+        primary: "$gray50",
         secondary: "$gray200",
         tertiary: "$gray300",
         link: "$blue500",
@@ -61,8 +68,9 @@ export const globalStyles = globalCss({
         padding: 0,
         backgroundImage: '$tileUrl',
         backgroundRepeat: 'repeat',
-
-        // background: 'blue', /** This controls blend color with the tiles */
+        // backgroundSize: '2%',
+        backgroundSize: '25px',
+        // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
         backgroundBlendMode: 'multiply'
     },
     "@dark": {
