@@ -41,9 +41,9 @@ export default function Home() {
               <NavbarLinksContainer2>
                 <SlicedButton>index</SlicedButton>
                 <SlicedButton>about</SlicedButton>
+                <ThemeToggle />
               </NavbarLinksContainer2>
             </NavbarLinksContainer>
-
           </NavigationBar>
           {/* <BorderContainer>
             <ThemeToggle />

@@ -73,6 +73,7 @@ export const SlicedButton = styled('button', {
     background: 'transparent',
     cursor: 'pointer',
     fontFamily: 'inherit',
+    transition: '250ms',
     "&:before": {
         content: '',
         position: 'absolute',
@@ -86,21 +87,16 @@ export const SlicedButton = styled('button', {
         zIndex: -1,
     },
     "&:hover": {
-        transition: '300ms',
         color: '$textYellow',
         "&:before": {
-            transition: '200ms',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
-
+            transition: '250ms',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
         }
     },
     "&:active": {
-        transition: '300ms',
         color: '$textYellow',
         "&:before": {
-            transition: '200ms',
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-
+            backgroundColor: 'rgba(0, 0, 0, 0.0)',
         }
     }
 });

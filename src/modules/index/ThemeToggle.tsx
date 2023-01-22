@@ -1,3 +1,4 @@
+import { SlicedButton } from "@/components/ThemedElements";
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
 import { useState, useEffect } from "react";
 
@@ -16,9 +17,9 @@ const ThemeToggle = () => {
     };
 
     return (
-        <button onClick={toggleTheme}>
-            Switch theme
-        </button>
+        <SlicedButton onClick={toggleTheme}>
+            switch theme ({resolvedTheme})
+        </SlicedButton>
     );
 };
 
