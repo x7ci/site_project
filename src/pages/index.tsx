@@ -5,6 +5,7 @@ import TextLabel from '@/components/TextLabel';
 import { styled } from 'stitches.config';
 import Image from 'next/image'
 import BorderContainer from '@/components/BorderContainer';
+import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 
 export default function Home() {
   return (
@@ -17,18 +18,18 @@ export default function Home() {
       </Head>
       <main>
         <Wrapper>
+
           <NavigationBar>
-            <div style={{ width: 0 }} />
             <Image
               src="/react_hexagon.png"
               alt="Picture of the author"
-              width={38}
-              height={40}
+              width={44}
+              height={46}
             />
             <NavbarTitleContainer>
-              <Text color="yellow" size={6} weight={2}>
+              <Text color="yellow" size={7} weight={2}>
                 {'FULL STACK '}
-                <Text size={6} weight={1} >DEVELOPER</Text>
+                <Text size={7} weight={1} >DEVELOPER</Text>
               </Text>
               <Text color="cyan" size={1} weight={2}>
                 {'SEQUENCE: '}
@@ -37,6 +38,7 @@ export default function Home() {
                 </Text>
               </Text>
             </NavbarTitleContainer>
+            <div style={{ width: 16 }} />
             <NavbarLinksContainer>
               <NavbarLinksContainer2>
                 <SlicedButton>index</SlicedButton>
@@ -45,24 +47,35 @@ export default function Home() {
               </NavbarLinksContainer2>
             </NavbarLinksContainer>
           </NavigationBar>
+
+          <div style={{ height: 30 }} />
+
+          <DottedTopBorderBox withHorizontalLine>
+            <div style={{ height: 14 }} />
+            This is a test container.
+            <div>
+              This is a test container.
+            </div>
+            This is a test container.
+          </DottedTopBorderBox>
           {/* <BorderContainer>
             <ThemeToggle />
             <Text>Test</Text>
             <Text>
-              Get started by editing&nbsp;
-              <code>pages/index.tsx</code>
+            Get started by editing&nbsp;
+            <code>pages/index.tsx</code>
             </Text>
-
+            
             <TextLabel>
               <Text size={8} weight={2}>
-                {'FULL STACK '}
-                <Text size={8} weight={1} >DEVELOPER</Text>
+              {'FULL STACK '}
+              <Text size={8} weight={1} >DEVELOPER</Text>
               </Text>
-            </TextLabel>
+              </TextLabel>
 
-            <Text>github</Text>
-
-          </BorderContainer> */}
+              <Text>github</Text>
+              
+            </BorderContainer> */}
         </Wrapper>
       </main>
     </>
@@ -72,7 +85,7 @@ export default function Home() {
 const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  margin: '25px',
+  margin: '$sizes$tileSize',
 });
 
 const NavbarTitleContainer = styled('div', {
@@ -81,25 +94,28 @@ const NavbarTitleContainer = styled('div', {
 });
 
 const NavbarLinksContainer = styled('div', {
-  // position:  'relative',
-  // bottom: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  height: '$sizes$navigationBarHeight',
 });
 
 const NavbarLinksContainer2 = styled('div', {
-  paddingTop: '23px',
+  // paddingTop: '23px',
   display: 'flex',
   flexDirection: 'row',
   // justifyContent: 'flex-end',
   // alignItems: 'flex-end',
-  // gap: '10px'
+  // gap: '4px'
 });
 
 const NavigationBar = styled('div', {
-  height: '50px',
+  height: '$sizes$navigationBarHeight',
+  paddingLeft: '12px',
   background: 'rgba(50, 82, 97, .25)',
   display: 'flex',
   // borderRadius: '3px',
   flexDirection: 'row',
   alignItems: 'center',
-  gap: '12px',
+  gap: '14px',
 });
