@@ -23,7 +23,6 @@ export const { styled, getCssText } = createStitches({
             gray12: gray.gray12,
 
             rootBackground: '#fff',
-            backgroundBlendColor: '',
 
             textYellow: '#fcf6ba',
             textCyan: '#99faff',
@@ -76,7 +75,11 @@ export const darkTheme = createTheme({
         gray12: grayDark.gray12,
 
         rootBackground: '#181923',
-        backgroundBlendColor: '$gray50',
+
+        textYellow: '#fcf6ba',
+        textCyan: '#99faff',
+        textCyanLight: '#defdff',
+
         primary: "$gray50",
         secondary: "$gray200",
         tertiary: "$gray300",

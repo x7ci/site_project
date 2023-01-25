@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import ThemeToggle from '../modules/index/ThemeToggle'
-import { SlicedButton, Text } from '../components/ThemedElements';
+import { Box, ColoredBox, SlicedButton, Text } from '../components/ThemedElements';
 import TextLabel from '@/components/TextLabel';
 import { styled } from 'stitches.config';
 import Image from 'next/image'
 import BorderContainer from '@/components/BorderContainer';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
+import SampleAnalysis from '@/modules/index/SampleAnalysis';
 
 export default function Home() {
   return (
@@ -23,8 +24,11 @@ export default function Home() {
             <Image
               src="/react_hexagon.png"
               alt="Picture of the author"
-              width={44}
+              width={43}
+              draggable={false}
+              style={{ userSelect: 'none' }}
               height={46}
+
             />
             <NavbarTitleContainer>
               <Text color="yellow" size={7} weight={2}>
@@ -48,34 +52,50 @@ export default function Home() {
             </NavbarLinksContainer>
           </NavigationBar>
 
-          <div style={{ height: 30 }} />
+          <Box css={{ height: 20 }} />
 
           <DottedTopBorderBox withHorizontalLine>
-            <div style={{ height: 14 }} />
+            <Box css={{ height: 20 }} />
             This is a test container.
             <div>
               This is a test container.
             </div>
             This is a test container.
           </DottedTopBorderBox>
+          <Box css={{ height: 20 }} />
+          <ColoredBox color="cyan">
+            <Text color="gray1" weight="2" >
+              FRAME RENDER
+            </Text>
+          </ColoredBox>
+          <Box css={{ height: 20 }} />
+
+          <ColoredBox color="cyan" size={3} >
+            <Text color="gray1" weight={2}>
+              {'SAMPLE '}
+              <Text weight={1} >ANALYSIS</Text>
+            </Text>
+          </ColoredBox>
+          <Box css={{ height: 20 }} />
+          <SampleAnalysis />
           {/* <BorderContainer>
             <ThemeToggle />
             <Text>Test</Text>
             <Text>
-            Get started by editing&nbsp;
-            <code>pages/index.tsx</code>
+              Get started by editing&nbsp;
+              <code>pages/index.tsx</code>
             </Text>
-            
+
             <TextLabel>
               <Text size={8} weight={2}>
-              {'FULL STACK '}
-              <Text size={8} weight={1} >DEVELOPER</Text>
+                {'FULL STACK '}
+                <Text size={8} weight={1} >DEVELOPER</Text>
               </Text>
-              </TextLabel>
+            </TextLabel>
 
-              <Text>github</Text>
-              
-            </BorderContainer> */}
+            <Text>github</Text>
+
+          </BorderContainer> */}
         </Wrapper>
       </main>
     </>
@@ -112,10 +132,43 @@ const NavbarLinksContainer2 = styled('div', {
 const NavigationBar = styled('div', {
   height: '$sizes$navigationBarHeight',
   paddingLeft: '12px',
-  background: 'rgba(50, 82, 97, .25)',
+  // background: 'rgba(50, 82, 97, .25)',
   display: 'flex',
   // borderRadius: '3px',
   flexDirection: 'row',
   alignItems: 'center',
   gap: '14px',
+  position: 'relative',
+  // zIndex: -1,
+
+  // clipPath: `
+  //   polygon(
+  //     0% 0%,
+  //     100% 0%,
+  //     100% 28px,
+  //     34% 28px,
+  //     34% 100%,
+  //     0% 100%
+  //   )`,
+  "&:before": {
+    content: '',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
+
+    background: 'rgba(50, 82, 97, .25)',
+    clipPath: `
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% 25px,
+        367px 25px,
+        342px 100%,
+        0% 100%
+      )`,
+    // zIndex: -1,
+  },
 });

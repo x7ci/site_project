@@ -1,9 +1,39 @@
 import { styled } from "stitches.config";
 
+export const Box = styled('div');
+
+export const ColoredBox = styled('div', {
+    width: 150,
+    paddingLeft: 10,
+    variants: {
+        color: {
+            cyan: {
+                background: '$textCyan',
+            }
+        },
+        size: {
+            1: {
+                width: 150,
+            },
+            2: {
+                width: 210,
+            },
+            3: {
+                width: 290,
+            },
+        }
+    }
+})
+
 export const Text = styled('span', {
     color: '$primary',
     background: 'unset',
     variants: {
+        background: {
+            cyan: {
+                background: '$textCyan'
+            }
+        },
         size: {
             1: {
                 fontSize: '$1',
@@ -42,6 +72,9 @@ export const Text = styled('span', {
             },
         },
         color: {
+            gray1: {
+                color: '$gray1',
+            },
             yellow: {
                 color: '$textYellow'
             },
