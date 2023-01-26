@@ -31,18 +31,18 @@ export default function Home() {
 
             />
             <NavbarTitleContainer>
-              <Text color="yellow" size={7} weight={2}>
+              <Text color="yellow" size={11} weight={2}>
                 {'FULL STACK '}
                 <Text size={7} weight={1} >DEVELOPER</Text>
               </Text>
-              <Text color="cyan" size={1} weight={2}>
+              <Text color="cyan" size={5} weight={2}>
                 {'SEQUENCE: '}
-                <Text color="cyanLight" size={1} weight={2}>
+                <Text color="cyanLight" size={5} weight={2}>
                   {'771-C/3309-M2'}
                 </Text>
               </Text>
             </NavbarTitleContainer>
-            <div style={{ width: 16 }} />
+            <Box css={{ width: 100 }} />
             <NavbarLinksContainer>
               <NavbarLinksContainer2>
                 <SlicedButton>index</SlicedButton>
@@ -52,10 +52,10 @@ export default function Home() {
             </NavbarLinksContainer>
           </NavigationBar>
 
-          <Box css={{ height: 20 }} />
+          <Box css={{ height: 30 }} />
 
           <DottedTopBorderBox withHorizontalLine>
-            <Box css={{ height: 20 }} />
+            <Box css={{ height: 30 }} />
             This is a test container.
             <div>
               This is a test container.
@@ -70,13 +70,19 @@ export default function Home() {
           </ColoredBox>
           <Box css={{ height: 20 }} />
 
-          <ColoredBox color="cyan" size={3} >
-            <Text color="gray1" weight={2}>
-              {'SAMPLE '}
-              <Text weight={1} >ANALYSIS</Text>
-            </Text>
+          <ColoredBox color="cyan2" size={3} >
+            <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Box>
+                <Text color="cyan" weight={2}>SAMPLE </Text>
+                <Text color="cyan" weight={1} >ANALYSIS</Text>
+
+              </Box>
+              <Box>
+                <Text color="cyan" weight={2}>ID: 34-842 </Text>
+              </Box>
+            </Box>
           </ColoredBox>
-          <Box css={{ height: 20 }} />
+          <Box css={{ height: 15 }} />
           <SampleAnalysis />
           {/* <BorderContainer>
             <ThemeToggle />
@@ -132,24 +138,12 @@ const NavbarLinksContainer2 = styled('div', {
 const NavigationBar = styled('div', {
   height: '$sizes$navigationBarHeight',
   paddingLeft: '12px',
-  // background: 'rgba(50, 82, 97, .25)',
   display: 'flex',
-  // borderRadius: '3px',
   flexDirection: 'row',
   alignItems: 'center',
   gap: '14px',
   position: 'relative',
-  // zIndex: -1,
 
-  // clipPath: `
-  //   polygon(
-  //     0% 0%,
-  //     100% 0%,
-  //     100% 28px,
-  //     34% 28px,
-  //     34% 100%,
-  //     0% 100%
-  //   )`,
   "&:before": {
     content: '',
     position: 'absolute',
@@ -159,7 +153,7 @@ const NavigationBar = styled('div', {
     bottom: 0,
     zIndex: -1,
 
-    background: 'rgba(50, 82, 97, .25)',
+    background: '$navigationBarBackground',
     clipPath: `
       polygon(
         0% 0%,

@@ -61,7 +61,7 @@ const DottedSeparatedBar = styled('div', {
 const Dot = styled('div', {
     height: '3px',
     width: '3px',
-    backgroundColor: '$textCyan',
+    backgroundColor: '$cyan',
     borderRadius: '50%',
     display: 'inline-block'
 });
@@ -78,7 +78,7 @@ const HorizontalLine = styled('div', {
     left: 50,
     bottom: 0,
     borderRadius: '4px',
-    backgroundColor: '$textCyan',
+    backgroundColor: '$cyan',
 });
 
 export default DottedTopBorderBox;

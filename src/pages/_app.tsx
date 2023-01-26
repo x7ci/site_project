@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/contexts/ThemeProvider/ThemeProvider';
 import type { AppProps } from 'next/app';
-import { darkTheme } from "../../stitches.config";
+import { lightTheme } from "../../stitches.config";
 import { Roboto_Condensed } from '@next/font/google'
 
 const robotoCondensed = Roboto_Condensed({
@@ -15,8 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
       attribute="class"
       defaultTheme="dark"
       value={{
-        dark: darkTheme.className,
-        light: "light",
+        dark: 'dark',
+        light: lightTheme.className,
       }}
     >
       <main className={robotoCondensed.className}>

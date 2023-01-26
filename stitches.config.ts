@@ -8,49 +8,54 @@ export const { styled, getCssText } = createStitches({
             navigationBarHeight: '60px'
         },
         colors: {
-            /** Gray colors */
-            gray1: gray.gray1,
-            gray2: gray.gray2,
-            gray3: gray.gray3,
-            gray4: gray.gray4,
-            gray5: gray.gray5,
-            gray6: gray.gray6,
-            gray7: gray.gray7,
-            gray8: gray.gray8,
-            gray9: gray.gray9,
-            gray10: gray.gray10,
-            gray11: gray.gray11,
-            gray12: gray.gray12,
+            /** Gray colors (inverted) */
+            gray1: grayDark.gray1,
+            gray2: grayDark.gray2,
+            gray3: grayDark.gray3,
+            gray4: grayDark.gray4,
+            gray5: grayDark.gray5,
+            gray6: grayDark.gray6,
+            gray7: grayDark.gray7,
+            gray8: grayDark.gray8,
+            gray9: grayDark.gray9,
+            gray10: grayDark.gray10,
+            gray11: grayDark.gray11,
+            gray12: grayDark.gray12,
 
-            rootBackground: '#fff',
+            rootBackground: '#181923',
 
-            textYellow: '#fcf6ba',
-            textCyan: '#99faff',
-            textCyanLight: '#defdff',
+            navigationBarBackground: 'rgba(50, 82, 97, .25)',
 
-            primary: "$gray900",
-            secondary: "$gray700",
-            tertiary: "$gray500",
-            link: "$blue500",
-            border: "$gray900",
+            yellow: '#fcf6ba',
+            cyan: '#99faff',
+            cyanLight: '#defdff',
+            cyan2: 'rgba(153, 250, 255, .018)',
+            cyan3: 'rgba(153, 250, 255, .2)',
+            cyan4: 'rgba(153, 250, 255, .02)',
+
+
+            primary: "$gray50",
 
             blue500: "hsl(205,90%,45%)",
 
-            hiContrast: 'hsl(206,10%,5%)',
-            loContrast: 'white',
-
-            tileUrl: 'url("tile_light.png")'
+            loContrast: 'hsl(206,10%,5%)',
+            hiContrast: 'white',
+            tileUrl: 'url("tile_dark.png")'
 
         },
         fontSizes: {
-            1: '13px',
-            2: '15px',
-            3: '17px',
-            4: '19px',
-            5: '21px',
-            6: '23px',
-            7: '25px',
-            8: '27px',
+            1: '5px',
+            2: '7px',
+            3: '9px',
+            4: '11px',
+            5: '13px',
+            6: '15px',
+            7: '17px',
+            8: '19px',
+            9: '21px',
+            10: '23px',
+            11: '25px',
+            12: '27px',
         },
     },
     media: {
@@ -58,37 +63,30 @@ export const { styled, getCssText } = createStitches({
     },
 });
 
-export const darkTheme = createTheme({
+export const lightTheme = createTheme({
     colors: {
-        /** Gray colors (inverted) */
-        gray1: grayDark.gray1,
-        gray2: grayDark.gray2,
-        gray3: grayDark.gray3,
-        gray4: grayDark.gray4,
-        gray5: grayDark.gray5,
-        gray6: grayDark.gray6,
-        gray7: grayDark.gray7,
-        gray8: grayDark.gray8,
-        gray9: grayDark.gray9,
-        gray10: grayDark.gray10,
-        gray11: grayDark.gray11,
-        gray12: grayDark.gray12,
+        /** Gray colors */
+        gray1: gray.gray1,
+        gray2: gray.gray2,
+        gray3: gray.gray3,
+        gray4: gray.gray4,
+        gray5: gray.gray5,
+        gray6: gray.gray6,
+        gray7: gray.gray7,
+        gray8: gray.gray8,
+        gray9: gray.gray9,
+        gray10: gray.gray10,
+        gray11: gray.gray11,
+        gray12: gray.gray12,
 
-        rootBackground: '#181923',
+        rootBackground: '#fff',
 
-        textYellow: '#fcf6ba',
-        textCyan: '#99faff',
-        textCyanLight: '#defdff',
+        primary: "$gray900",
 
-        primary: "$gray50",
-        secondary: "$gray200",
-        tertiary: "$gray300",
-        link: "$blue500",
-        border: "$gray100",
+        hiContrast: 'hsl(206,10%,5%)',
+        loContrast: 'white',
 
-        loContrast: 'hsl(206,10%,5%)',
-        hiContrast: 'white',
-        tileUrl: 'url("tile_dark.png")'
+        tileUrl: 'url("tile_light.png")',
     },
 });
 
@@ -105,23 +103,23 @@ export const globalStyles = globalCss({
         // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
         backgroundBlendMode: 'multiply'
     },
-    "@dark": {
-        // notice the `media` definition on the stitches.config.ts file
-        ":root:not(.light)": {
-            ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
-                const currentColor = darkTheme.colors[currentColorKey];
-                const currentColorValue =
-                    currentColor.value.substring(0, 1) === "$"
-                        ? `$colors${currentColor.value}`
-                        : currentColor.value;
+    // "@dark": {
+    //     // notice the `media` definition on the stitches.config.ts file
+    //     ":root:not(.light)": {
+    //         ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
+    //             const currentColor = darkTheme.colors[currentColorKey];
+    //             const currentColorValue =
+    //                 currentColor.value.substring(0, 1) === "$"
+    //                     ? `$colors${currentColor.value}`
+    //                     : currentColor.value;
 
-                return {
-                    [currentColor.variable]: currentColorValue,
-                    ...varSet,
-                };
-            }, {}),
-        },
-    },
+    //             return {
+    //                 [currentColor.variable]: currentColorValue,
+    //                 ...varSet,
+    //             };
+    //         }, {}),
+    //     },
+    // },
 });
 
 globalStyles();

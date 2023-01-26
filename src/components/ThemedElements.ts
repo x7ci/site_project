@@ -5,21 +5,28 @@ export const Box = styled('div');
 export const ColoredBox = styled('div', {
     width: 150,
     paddingLeft: 10,
+    paddingRight: 10,
     variants: {
         color: {
             cyan: {
-                background: '$textCyan',
+                background: '$cyan',
+            },
+            cyan2: {
+                background: '$cyan2',
+            },
+            cyan3: {
+                background: '$cyan3',
             }
         },
         size: {
             1: {
-                width: 150,
+                width: 140,
             },
             2: {
-                width: 210,
+                width: 200,
             },
             3: {
-                width: 290,
+                width: 370,
             },
         }
     }
@@ -31,7 +38,7 @@ export const Text = styled('span', {
     variants: {
         background: {
             cyan: {
-                background: '$textCyan'
+                background: '$cyan'
             }
         },
         size: {
@@ -59,6 +66,18 @@ export const Text = styled('span', {
             8: {
                 fontSize: '$8',
             },
+            9: {
+                fontSize: '$9',
+            },
+            10: {
+                fontSize: '$10',
+            },
+            11: {
+                fontSize: '$11',
+            },
+            12: {
+                fontSize: '$12',
+            },
         },
         weight: {
             1: {
@@ -75,14 +94,53 @@ export const Text = styled('span', {
             gray1: {
                 color: '$gray1',
             },
+            gray2: {
+                color: '$gray2',
+            },
+            gray3: {
+                color: '$gray3',
+            },
+            gray4: {
+                color: '$gray4',
+            },
+            gray5: {
+                color: '$gray5',
+            },
+            gray6: {
+                color: '$gray6',
+            },
+            gray7: {
+                color: '$gray7',
+            },
+            gray8: {
+                color: '$gray8',
+            },
+            gray9: {
+                color: '$gray9',
+            },
+            gray10: {
+                color: '$gray10',
+            },
+            gray11: {
+                color: '$gray11',
+            },
+            gray12: {
+                color: '$gray12',
+            },
             yellow: {
-                color: '$textYellow'
+                color: '$yellow'
             },
             cyan: {
-                color: '$textCyan',
+                color: '$cyan',
+            },
+            cyan2: {
+                color: '$cyan2',
+            },
+            cyan3: {
+                color: '$cyan3',
             },
             cyanLight: {
-                color: '$textCyanLight',
+                color: '$cyanLight',
             }
         }
     },
@@ -106,7 +164,7 @@ export const SlicedButton = styled('button', {
     background: 'transparent',
     cursor: 'pointer',
     fontFamily: 'inherit',
-    fontSize: '$fontSizes$2',
+    fontSize: '$fontSizes$6',
     transition: '200ms',
     zIndex: 1,
     whiteSpace: 'nowrap',
@@ -121,18 +179,18 @@ export const SlicedButton = styled('button', {
         borderRadius: '0px',
         transform: 'skewX(-35deg)',
         // backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        backgroundColor: '$rootBackground',
+        backgroundColor: '$navigationBarBackground',
         zIndex: -1,
     },
     "&:hover": {
-        color: '$textYellow',
+        color: '$yellow',
         "&:before": {
             transition: '250ms',
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
         }
     },
     "&:active": {
-        color: '$textYellow',
+        color: '$yellow',
         "&:before": {
             backgroundColor: 'rgba(0, 0, 0, 0.0)',
         }
