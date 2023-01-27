@@ -11,6 +11,8 @@ import dayjs, { Dayjs } from 'dayjs';
 const SampleAnalysis = () => {
     const [date, setDate] = useState<Dayjs>();
 
+    const [hover, setHover] = useState<boolean>(false);
+
     useEffect(() => {
         setDate(dayjs())
     }, []);
@@ -32,20 +34,22 @@ const SampleAnalysis = () => {
                     </TextRowWrapper>
                     <TextRowWrapper>
                         <TextGroupWrapper>
-                            <Text size={3} color="gray8">RFC 123</Text>
+                            <Text size={3} color="gray8">UNIT TEST: OK</Text>
+                            <Text size={3} color="gray8">SAMPLE HEALTH: OK</Text>
                         </TextGroupWrapper>
                         <TextGroupWrapper align="right">
-                            <Text size={3} color="gray8">RFC 123</Text>
+                            <Text size={3} color="gray8">S-RENDER REACT </Text>
+                            <Text size={3} color="gray8">V. 2.9.83 ALPHA </Text>
                         </TextGroupWrapper>
                     </TextRowWrapper>
                 </TextWrapper>
-                <ImageWrapper>
+                <ImageWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
                     <DottedCircle
                         animate={{
-                            scale: [1.05, 1, 1, 1.05],
-                            borderRadius: ["50%", "50%", "50%", "50%", "50%"],
+                            scale: [1.05, 1, 1.05],
                         }}
                         transition={{ repeat: Infinity, duration: 4 }}
+                        color={hover ? "cyanCustom" : undefined}
                     />
                     <Box
                         as={motion.div}
@@ -58,12 +62,10 @@ const SampleAnalysis = () => {
                         <Box
                             as={motion.div}
                             animate={{
-                                scale: [.9, 1, 1, .9],
-                                borderRadius: ["50%", "50%", "50%", "50%", "50%"],
+                                scale: [.8, 1, .8],
                             }}
                             transition={{ repeat: Infinity, duration: 4 }}
                         >
-
                             <Image
                                 src="/quark.gif"
                                 alt="Sample analysis"
@@ -102,6 +104,17 @@ const DottedCircle = styled(motion.div, {
     height: '260px',
     borderRadius: '50%',
     border: '3px dotted $cyan3',
+    transition: '200ms',
+    variants: {
+        color: {
+            cyan3: {
+                border: '3px dotted $cyan3',
+            },
+            cyanCustom: {
+                border: '3px dotted rgba(153, 250, 255, .9)',
+            }
+        }
+    }
 });
 
 const TextWrapper = styled('div', {
@@ -133,7 +146,5 @@ const TextGroupWrapper = styled('div', {
         }
     }
 });
-
-
 
 export default SampleAnalysis;

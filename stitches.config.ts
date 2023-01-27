@@ -24,14 +24,15 @@ export const { styled, getCssText } = createStitches({
 
             rootBackground: '#181923',
 
-            navigationBarBackground: 'rgba(50, 82, 97, .25)',
+            // navigationBarBackground: 'rgba(50, 82, 97, .25)',
+            navigationBarBackground: 'rgba(153, 250, 255, .06)',
 
             yellow: '#fcf6ba',
             cyan: '#99faff',
             cyanLight: '#defdff',
             cyan2: 'rgba(153, 250, 255, .018)',
-            cyan3: 'rgba(153, 250, 255, .2)',
             cyan4: 'rgba(153, 250, 255, .02)',
+            cyan3: 'rgba(153, 250, 255, .2)',
 
 
             primary: "$gray50",

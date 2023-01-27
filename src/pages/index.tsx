@@ -7,6 +7,7 @@ import Image from 'next/image'
 import BorderContainer from '@/components/BorderContainer';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import SampleAnalysis from '@/modules/index/SampleAnalysis';
+import ChartAnalysis from '@/modules/index/ChartAnalysis';
 
 export default function Home() {
   return (
@@ -28,12 +29,11 @@ export default function Home() {
               draggable={false}
               style={{ userSelect: 'none' }}
               height={46}
-
             />
             <NavbarTitleContainer>
               <Text color="yellow" size={11} weight={2}>
                 {'FULL STACK '}
-                <Text size={7} weight={1} >DEVELOPER</Text>
+                <Text size={11} weight={1} >DEVELOPER</Text>
               </Text>
               <Text color="cyan" size={5} weight={2}>
                 {'SEQUENCE: '}
@@ -42,7 +42,7 @@ export default function Home() {
                 </Text>
               </Text>
             </NavbarTitleContainer>
-            <Box css={{ width: 100 }} />
+            <Box css={{ width: 17 }} />
             <NavbarLinksContainer>
               <NavbarLinksContainer2>
                 <SlicedButton>index</SlicedButton>
@@ -69,21 +69,41 @@ export default function Home() {
             </Text>
           </ColoredBox>
           <Box css={{ height: 20 }} />
-
-          <ColoredBox color="cyan2" size={3} >
-            <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Box>
-                <Text color="cyan" weight={2}>SAMPLE </Text>
-                <Text color="cyan" weight={1} >ANALYSIS</Text>
-
-              </Box>
-              <Box>
-                <Text color="cyan" weight={2}>ID: 34-842 </Text>
-              </Box>
+          <ComponentsRow>
+            <Box>
+              <ColoredBox color="cyan2" size={3} >
+                <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <Box>
+                    <Text color="cyan" weight={2}>SAMPLE </Text>
+                    <Text color="cyan" weight={1} >ANALYSIS</Text>
+                  </Box>
+                  <Box>
+                    <Text color="cyan" weight={2}>ID: 34-842 </Text>
+                  </Box>
+                </Box>
+              </ColoredBox>
+              <Box css={{ height: 15 }} />
+              <SampleAnalysis />
             </Box>
-          </ColoredBox>
+            <Box>
+              <ColoredBox color="cyan2" size={3} >
+                <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <Box>
+                    <Text color="cyan" weight={2}>HEALTH </Text>
+                    <Text color="cyan" weight={1}>MONITOR</Text>
+                  </Box>
+                  <Box>
+                    <Text color="cyan" weight={2}>ID: 34-842 </Text>
+                  </Box>
+                </Box>
+              </ColoredBox>
+              <Box css={{ height: 15 }} />
+              <ChartAnalysis />
+            </Box>
+          </ComponentsRow>
           <Box css={{ height: 15 }} />
-          <SampleAnalysis />
+
+
           {/* <BorderContainer>
             <ThemeToggle />
             <Text>Test</Text>
@@ -165,4 +185,10 @@ const NavigationBar = styled('div', {
       )`,
     // zIndex: -1,
   },
+});
+
+const ComponentsRow = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '25px',
 });
