@@ -1,11 +1,7 @@
-import { Box, SlicedButton, Text } from "@/components/ThemedElements";
-import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
+import { Text } from "@/components/ThemedElements";
 import { useState, useEffect, useRef } from "react";
-import Image from 'next/image'
 import { styled } from "stitches.config";
 import DottedTopBorderBox from "@/components/DottedTopBorderBox";
-import { keyframes } from "@stitches/react";
-import { motion } from 'framer-motion';
 import dayjs, { Dayjs } from 'dayjs';
 import ReactECharts from 'echarts-for-react';
 import { EChartsOption } from 'echarts';
