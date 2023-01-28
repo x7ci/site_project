@@ -28,6 +28,9 @@ export const ColoredBox = styled('div', {
             3: {
                 width: 370,
             },
+            4: {
+                width: 520,
+            },
         }
     }
 })

@@ -86,7 +86,7 @@ export default function Home() {
               <SampleAnalysis />
             </Box>
             <Box>
-              <ColoredBox color="cyan2" size={3} >
+              <ColoredBox color="cyan2" size={4} >
                 <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Box>
                     <Text color="cyan" weight={2}>HEALTH </Text>
@@ -190,5 +190,5 @@ const NavigationBar = styled('div', {
 const ComponentsRow = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  gap: '25px',
+  gap: '30px',
 });
