@@ -20,6 +20,7 @@ const option: EChartsOption = {
         splitLine: {
             show: false
         },
+        splitNumber: 3,
     },
     yAxis: {
         type: 'value',
@@ -30,12 +31,15 @@ const option: EChartsOption = {
         // splitNumber: 111,
     },
     tooltip: {
-        show: false,
+        show: true,
         trigger: 'axis',
+        backgroundColor: '#181923',
+        borderRadius: 0,
+        borderColor: 'rgba(0, 0, 0, 0)'
     },
     series: [
         {
-            name: 'fake data',
+            name: 'ID 34-842',
             type: 'line',
             showSymbol: false,
         }
@@ -48,7 +52,7 @@ interface LineDataItemOption {
 }
 
 let now = dayjs();
-let value = Math.random() * 1000;
+let value = Math.random() * 100;
 
 const ChartAnalysis = () => {
     const [date, setDate] = useState<Dayjs>();
@@ -137,7 +141,7 @@ const ChartAnalysis = () => {
                         </TextGroupWrapper>
                         <TextGroupWrapper align="right">
                             <Text size={3} color="gray8">{date?.toISOString()}</Text>
-                            <Text size={3} color="gray8">[UP TO DATE]</Text>
+                            <Text size={3} color="gray8">[LIVE DATA]</Text>
                         </TextGroupWrapper>
                     </TextRowWrapper>
                     <TextRowWrapper>
@@ -147,7 +151,7 @@ const ChartAnalysis = () => {
                         </TextGroupWrapper>
                         <TextGroupWrapper align="right">
                             <Text size={3} color="gray8">APACHE ECHARTS</Text>
-                            <Text size={3} color="gray8">V. 2.9.83 ALPHA </Text>
+                            <Text size={3} color="gray8">V. 5.4.1 </Text>
                         </TextGroupWrapper>
                     </TextRowWrapper>
                 </TextWrapper>
@@ -156,7 +160,7 @@ const ChartAnalysis = () => {
                         ref={chartRef}
                         option={chartOptions}
                         notMerge={true}
-                        style={{ height: '200px' }}
+                        style={{ height: '210px' }}
                         lazyUpdate={true}
                         onChartReady={() => null}
                     />
@@ -169,7 +173,7 @@ const ChartAnalysis = () => {
 
 const Wrapper = styled('div', {
     width: '540px',
-    height: '200px',
+    height: '210px',
     background: '$cyan2',
 });
 
