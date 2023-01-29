@@ -24,15 +24,18 @@ export const { styled, getCssText } = createStitches({
 
             rootBackground: '#181923',
 
-            // navigationBarBackground: 'rgba(50, 82, 97, .25)',
             navigationBarBackground: 'rgba(153, 250, 255, .06)',
 
             yellow: '#fcf6ba',
             cyan: '#99faff',
             cyanLight: '#defdff',
             cyan2: 'rgba(153, 250, 255, .018)',
-            cyan4: 'rgba(153, 250, 255, .02)',
             cyan3: 'rgba(153, 250, 255, .2)',
+            cyan4: 'rgba(153, 250, 255, .02)',
+
+            orange1: '#e66b30',
+
+            red1: 'rgba(216, 60, 60, 0.8)',
 
 
             primary: "$gray50",
@@ -61,6 +64,9 @@ export const { styled, getCssText } = createStitches({
     },
     media: {
         dark: "(prefers-color-scheme: dark)",
+        bp1: '(min-width: 1024px)',
+        bp2: '(min-width: 768px)',
+        bp3: '(max-width: 822px)',
     },
 });
 
@@ -80,7 +86,17 @@ export const lightTheme = createTheme({
         gray11: gray.gray11,
         gray12: gray.gray12,
 
+        cyan: gray.gray11,
+        cyan2: gray.gray2,
+        cyan3: gray.gray8,
+        cyan4: gray.gray11,
+
+        cyanLight: gray.gray9,
+
         rootBackground: '#fff',
+        navigationBarBackground: gray.gray4,
+
+        yellow: gray.gray11,
 
         primary: "$gray900",
 
