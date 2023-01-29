@@ -4,8 +4,8 @@ export const Box = styled('div');
 
 export const ColoredBox = styled('div', {
     width: 150,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: '10px',
+    paddingRight: '10px',
     variants: {
         color: {
             cyan: {
@@ -30,6 +30,9 @@ export const ColoredBox = styled('div', {
             },
             4: {
                 width: 520,
+            },
+            'max': {
+                width: 'calc(100% - 20px)',
             },
         }
     }
@@ -144,6 +147,9 @@ export const Text = styled('span', {
             },
             cyanLight: {
                 color: '$cyanLight',
+            },
+            orange1: {
+                color: '$orange1',
             }
         }
     },
@@ -184,6 +190,9 @@ export const SlicedButton = styled('button', {
         // backgroundColor: 'rgba(0, 0, 0, 0.3)',
         backgroundColor: '$navigationBarBackground',
         zIndex: -1,
+        '@bp3': {
+            transform: 'unset'
+        },
     },
     "&:hover": {
         color: '$yellow',

@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import ThemeToggle from '../modules/index/ThemeToggle'
 import { Box, ColoredBox, SlicedButton, Text } from '../components/ThemedElements';
-import TextLabel from '@/components/TextLabel';
 import { styled } from 'stitches.config';
 import Image from 'next/image'
-import BorderContainer from '@/components/BorderContainer';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
-import SampleAnalysis from '@/modules/index/SampleAnalysis';
-import ChartAnalysis from '@/modules/index/ChartAnalysis';
+import SampleAnalysisContainer from '@/modules/index/SampleAnalysis/SampleAnalysisContainer';
+import ChartAnalysisContainer from '@/modules/index/ChartAnalysis/ChartAnalysisContainer';
+import DetailedMetricsContainer from '@/modules/index/DetailedMetrics/DetailedMetricsContainer';
+import ReactIcon from '@/modules/index/ReactIcon';
 
 export default function Home() {
   return (
@@ -20,87 +20,58 @@ export default function Home() {
       </Head>
       <main>
         <Wrapper>
+          <DottedTopBorderBox>
 
-          <NavigationBar>
-            <Image
-              src="/react_hexagon.png"
-              alt="Picture of the author"
-              width={43}
-              draggable={false}
-              style={{ userSelect: 'none' }}
-              height={46}
-            />
-            <NavbarTitleContainer>
-              <Text color="yellow" size={11} weight={2}>
-                {'FULL STACK '}
-                <Text size={11} weight={1} >DEVELOPER</Text>
-              </Text>
-              <Text color="cyan" size={5} weight={2}>
-                {'SEQUENCE: '}
-                <Text color="cyanLight" size={5} weight={2}>
-                  {'771-C/3309-M2'}
+            <NavigationBar>
+              <ReactIcon />
+              <NavbarTitleContainer>
+                <Text color="yellow" size={{ '@initial': 11, '@bp3': 8 }} weight={2} >
+                  {'FULL STACK '}
+                  <Text size={{ '@initial': 11, '@bp3': 8 }} weight={1} >DEVELOPER</Text>
                 </Text>
-              </Text>
-            </NavbarTitleContainer>
-            <Box css={{ width: 17 }} />
-            <NavbarLinksContainer>
-              <NavbarLinksContainer2>
-                <SlicedButton>index</SlicedButton>
-                <SlicedButton>about</SlicedButton>
-                <ThemeToggle />
-              </NavbarLinksContainer2>
-            </NavbarLinksContainer>
-          </NavigationBar>
+                <Text color="cyan" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+                  {'SEQUENCE: '}
+                  <Text color="cyanLight" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+                    {'771-C/3309-M2'}
+                  </Text>
+                </Text>
+              </NavbarTitleContainer>
+              <NavbarLinksContainer>
+                <NavbarLinksContainer2>
+                  <SlicedButton>index</SlicedButton>
+                  <SlicedButton>about</SlicedButton>
+                  <ThemeToggle />
+                </NavbarLinksContainer2>
+              </NavbarLinksContainer>
+            </NavigationBar>
+          </DottedTopBorderBox>
 
           <Box css={{ height: 30 }} />
 
           <DottedTopBorderBox withHorizontalLine>
-            <Box css={{ height: 30 }} />
+            {/* <Box css={{ height: 30 }} />
             This is a test container.
             <div>
               This is a test container.
             </div>
-            This is a test container.
+            This is a test container. */}
           </DottedTopBorderBox>
           <Box css={{ height: 20 }} />
           <ColoredBox color="cyan">
-            <Text color="gray1" weight="2" >
-              FRAME RENDER
-            </Text>
+            <Text color="gray1" weight="2" >SAMPLE ANALYSIS</Text>
           </ColoredBox>
           <Box css={{ height: 20 }} />
-          <ComponentsRow>
-            <Box>
-              <ColoredBox color="cyan2" size={3} >
-                <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Box>
-                    <Text color="cyan" weight={2}>SAMPLE </Text>
-                    <Text color="cyan" weight={1} >ANALYSIS</Text>
-                  </Box>
-                  <Box>
-                    <Text color="cyan" weight={2}>ID: 34-842 </Text>
-                  </Box>
-                </Box>
-              </ColoredBox>
-              <Box css={{ height: 15 }} />
-              <SampleAnalysis />
+          <ComponentsContainer>
+            <Box css={{ flex: 1 }}>
+              <SampleAnalysisContainer />
             </Box>
-            <Box>
-              <ColoredBox color="cyan2" size={4} >
-                <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Box>
-                    <Text color="cyan" weight={2}>HEALTH </Text>
-                    <Text color="cyan" weight={1}>MONITOR</Text>
-                  </Box>
-                  <Box>
-                    <Text color="cyan" weight={2}>ID: 34-842 </Text>
-                  </Box>
-                </Box>
-              </ColoredBox>
-              <Box css={{ height: 15 }} />
-              <ChartAnalysis />
+            <Box css={{ flex: 2 }}>
+              <ChartAnalysisContainer />
             </Box>
-          </ComponentsRow>
+            <Box css={{ flex: 2 }}>
+              <DetailedMetricsContainer />
+            </Box>
+          </ComponentsContainer>
           <Box css={{ height: 15 }} />
 
 
@@ -140,19 +111,21 @@ const NavbarTitleContainer = styled('div', {
 });
 
 const NavbarLinksContainer = styled('div', {
+  position: 'absolute',
+  left: '360px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
   height: '$sizes$navigationBarHeight',
+  '@bp3': {
+    top: '42px',
+    left: '0px',
+  },
 });
 
 const NavbarLinksContainer2 = styled('div', {
-  // paddingTop: '23px',
   display: 'flex',
   flexDirection: 'row',
-  // justifyContent: 'flex-end',
-  // alignItems: 'flex-end',
-  // gap: '4px'
 });
 
 const NavigationBar = styled('div', {
@@ -184,11 +157,24 @@ const NavigationBar = styled('div', {
         0% 100%
       )`,
     // zIndex: -1,
+    '@bp3': {
+      clipPath: 'unset'
+    },
+  },
+  '@bp3': {
+    marginBottom: 40
   },
 });
 
-const ComponentsRow = styled('div', {
+const ComponentsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
+  gap: '30px',
+  flexWrap: 'wrap',
+});
+
+const ComponentsColumn = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
   gap: '30px',
 });
