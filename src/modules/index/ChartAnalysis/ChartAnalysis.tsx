@@ -15,7 +15,6 @@ const option: EChartsOption = {
     grid: {
         show: false,
     },
-    // color: ['rgba(153, 250, 255, .8)'],
     xAxis: {
         type: 'time',
         splitLine: {
@@ -28,8 +27,6 @@ const option: EChartsOption = {
         splitLine: {
             show: false
         },
-        // boundaryGap: [0, '100%'],
-        // splitNumber: 111,
     },
     tooltip: {
         show: true,

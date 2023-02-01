@@ -1,19 +1,44 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import { styled } from "stitches.config";
-import { Box } from "./ThemedElements";
 
 interface Props {
 
 }
 
 const LiveDataCircle = ({ }: Props) => {
+    const animationControls = useAnimation();
+
+    useEffect(() => {
+        sequence();
+    }, []);
+
+    async function sequence() {
+        animationControls.start({
+            scale: [1, 3, 1],
+            opacity: [1, 0, 0],
+            transition: {
+                duration: 1, // default transition duration (applies to x and opacity)
+                opacity: {
+                    duration: 3,
+                    repeat: Infinity,
+                    type: "tween",
+                    ease: "linear",
+                },
+                scale: {
+                    duration: 3,
+                    repeat: Infinity,
+                    type: "tween",
+                    ease: "linear",
+                }
+            }
+        });
+    }
+
     return (
         <Wrapper>
             <CircleBorderAnimated
-                animate={{
-                    scale: [2, 2, 1],
-                    opacity: [.8, 0, 0],
-                }}
+                animate={animationControls}
                 transition={{
                     repeat: Infinity,
                     duration: 2,
