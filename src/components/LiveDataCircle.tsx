@@ -2,45 +2,39 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { styled } from "stitches.config";
 
-interface Props {
-
-}
-
-const LiveDataCircle = ({ }: Props) => {
+const LiveDataCircle = () => {
     const animationControls = useAnimation();
 
     useEffect(() => {
-        sequence();
+        const interval = setInterval(animationSequence, 3300);
+
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
 
-    async function sequence() {
-        animationControls.start({
-            scale: [1, 3, 1],
-            opacity: [1, 0, 0],
-            transition: {
-                duration: 1, // default transition duration (applies to x and opacity)
-                opacity: {
-                    duration: 3,
-                    repeat: Infinity,
-                    type: "tween",
-                    ease: "linear",
-                },
-                scale: {
-                    duration: 3,
-                    repeat: Infinity,
-                    type: "tween",
-                    ease: "linear",
-                }
-            }
+    const animationSequence = async () => {
+        animationControls.set({
+            scale: 1,
+            opacity: 1
         });
-    }
+
+        await animationControls.start({
+            scale: 3,
+            opacity: 0,
+        });
+
+        await animationControls.start({
+            scale: 1,
+            opacity: 0
+        });
+    };
 
     return (
         <Wrapper>
             <CircleBorderAnimated
                 animate={animationControls}
                 transition={{
-                    repeat: Infinity,
                     duration: 2,
                     ease: 'easeOut',
                 }}
@@ -52,20 +46,12 @@ const LiveDataCircle = ({ }: Props) => {
     )
 }
 
-LiveDataCircle.defaultProps = {
-
-}
-
 const Wrapper = styled('div', {
     position: 'relative',
 });
 
 const CircleBorderAnimated = styled(motion.div, {
     position: 'absolute',
-    // top: 0,
-    // bottom: 0,
-    // left: 0,
-    // right: 0,
     width: '12px',
     height: '12px',
     borderRadius: '50%',
