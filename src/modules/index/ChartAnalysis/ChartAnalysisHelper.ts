@@ -29,9 +29,9 @@ export const initialChartOption: EChartsOption = {
     },
     series: [
         {
-            name: 'ID 34-842',
+            name: 'ID 34-842 AVG',
             type: 'line',
             showSymbol: false,
-        }
+        },
     ]
-}
+};

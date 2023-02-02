@@ -43,7 +43,27 @@ const ChartAnalysis = () => {
                     color: isLight ?
                         ['rgba(0, 0, 0, .6)'] :
                         ['rgba(153, 250, 255, .8)'],
-                }
+                    areaStyle: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: isLight ? [{
+                                offset: 0, color: 'rgba(0, 0, 0, .2)' // color at 0%
+                            }, {
+                                offset: 1, color: 'rgba(0, 0, 0, .01)' // color at 100%
+                            }] : [{
+                                offset: 0, color: 'rgba(153, 250, 255, .2)' // color at 0%
+                            }, {
+                                offset: 1, color: 'rgba(153, 250, 255, .01)' // color at 100%
+                            }],
+                        },
+                        origin: "start",
+                        opacity: 0.62
+                    },
+                },
             ],
             tooltip: {
                 show: true,
@@ -53,7 +73,7 @@ const ChartAnalysis = () => {
             },
         };
 
-        chartInstance.setOption(newOption, false, true);
+        chartInstance.setOption(newOption);
     }, [resolvedTheme]);
 
     /** Update chart data upon chartData state change. */
@@ -66,11 +86,11 @@ const ChartAnalysis = () => {
                 series: [
                     {
                         data: chartData,
-                    }
+                    },
                 ]
             };
 
-            chartInstance.setOption(newOption, false, true);
+            chartInstance.setOption(newOption);
         }
     }, [chartData]);
 
@@ -104,7 +124,6 @@ const ChartAnalysis = () => {
                         <ReactECharts
                             ref={chartRef}
                             option={initialChartOption}
-                            notMerge={true}
                             style={{ height: '300px' }}
                             lazyUpdate={true}
                             onChartReady={() => null}

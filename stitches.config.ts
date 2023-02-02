@@ -1,7 +1,7 @@
 import { createStitches, createTheme, globalCss } from "@stitches/react";
 import { gray, grayDark } from '@radix-ui/colors';
 
-export const { styled, getCssText } = createStitches({
+export const { styled, getCssText, theme } = createStitches({
     theme: {
         sizes: {
             tileSize: '30px',
@@ -33,7 +33,7 @@ export const { styled, getCssText } = createStitches({
             cyan3: 'rgba(153, 250, 255, .2)',
             cyan4: 'rgba(153, 250, 255, .02)',
 
-            orange1: '#e66b30',
+            orange1: 'rgba(230, 107, 48, 1)',
 
             red1: 'rgba(216, 60, 60, 0.8)',
 

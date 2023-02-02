@@ -66,9 +66,12 @@ const DetailedMetrics = ({ }: Props) => {
                         <Text weight='3' size={4} color="cyanLight" >IDX_21321_LOAD</Text>
                         <ProgressBar percent={progress1} />
                     </MetricGroup>
+
+                    <Box />
+
                     <MetricGroup>
                         <Dot color='orange1' />
-                        <Text weight='3' size={4} color="cyanLight" >IDX_75322_LOAD</Text>
+                        <Text weight='3' size={4} color="cyanLight" >IDX_75322_THRE</Text>
                         <ProgressBar percent={progress2} filledColor="$orange1" />
                     </MetricGroup>
 
