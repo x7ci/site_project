@@ -1,71 +1,35 @@
 import { Text } from "@/components/ThemedElements";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { styled } from "stitches.config";
 import DottedTopBorderBox from "@/components/DottedTopBorderBox";
-import dayjs, { Dayjs } from 'dayjs';
 import ReactECharts from 'echarts-for-react';
 import { EChartsOption } from 'echarts';
 import EChartsReact from "echarts-for-react";
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
-
-const option: EChartsOption = {
-    textStyle: {
-        fontFamily: '__Roboto_Condensed_615f39'
-    },
-    grid: {
-        show: false,
-    },
-    xAxis: {
-        type: 'time',
-        splitLine: {
-            show: false
-        },
-        splitNumber: 3,
-    },
-    yAxis: {
-        type: 'value',
-        splitLine: {
-            show: false
-        },
-    },
-    tooltip: {
-        show: true,
-        trigger: 'axis',
-        backgroundColor: '#181923',
-        borderRadius: 0,
-        borderColor: 'rgba(0, 0, 0, 0)'
-    },
-    series: [
-        {
-            name: 'ID 34-842',
-            type: 'line',
-            showSymbol: false,
-        }
-    ]
-}
-
-interface LineDataItemOption {
-    name: string
-    value: (string | number)[]
-}
+import useWidth from "@/helpers/hooks/useWidth";
+import { initialChartOption } from "./ChartAnalysisHelper";
+import useChartData from "./useChartData";
 
 const ChartAnalysis = () => {
-    const [date, setDate] = useState<Dayjs>();
-
-    const [hover, setHover] = useState<boolean>(false);
-
-    const [chartOptions, setChartOptions] = useState<EChartsOption>(option);
-
-    const [chartData, setChartData] = useState<LineDataItemOption[]>();
+    const { chartData } = useChartData({ dataLength: 100 });
 
     const chartRef = useRef<EChartsReact>(null);
 
-    const nextDate = useRef<Dayjs>(dayjs());
-
-    const nextDataValue = useRef<number>(Math.random() * 200)
-
     const { resolvedTheme } = useTheme();
 
+    const width = useWidth();
+
+    /** Resize chart on window resize. */
+    useEffect(() => {
+        if (!chartRef.current) return;
+
+        const chartInstance = chartRef.current.getEchartsInstance();
+
+        chartInstance.resize();
+
+    }, [width]);
+
+    /** Update chart colors on theme change. */
     useEffect(() => {
         if (!chartRef.current) return;
 
@@ -76,7 +40,6 @@ const ChartAnalysis = () => {
         const newOption: EChartsOption = {
             series: [
                 {
-                    data: chartData,
                     color: isLight ?
                         ['rgba(0, 0, 0, .6)'] :
                         ['rgba(153, 250, 255, .8)'],
@@ -88,34 +51,12 @@ const ChartAnalysis = () => {
                 backgroundColor: isLight ? '#f7f7f7' : '#181923',
                 borderRadius: 0,
             },
-        }
+        };
 
-        chartInstance.setOption(newOption, false, true)
+        chartInstance.setOption(newOption, false, true);
     }, [resolvedTheme]);
 
-    const randomDataItem = (): LineDataItemOption => {
-        nextDate.current = nextDate.current.add(1, 'second');
-        nextDataValue.current = nextDataValue.current + Math.random() * 21 - 10;
-
-        return {
-            name: nextDate.current.toString(),
-            value: [
-                nextDate.current.toISOString(),
-                Math.round(nextDataValue.current)
-            ]
-        };
-    }
-
-    const initializeData = (): LineDataItemOption[] => {
-        let data: LineDataItemOption[] = [];
-
-        for (var i = 0; i < 100; i++) {
-            data.push(randomDataItem());
-        }
-
-        return data;
-    }
-
+    /** Update chart data upon chartData state change. */
     useEffect(() => {
         if (!chartRef.current) return;
 
@@ -127,53 +68,14 @@ const ChartAnalysis = () => {
                         data: chartData,
                     }
                 ]
-            }
+            };
 
-            chartInstance.setOption(newOption, false, true)
+            chartInstance.setOption(newOption, false, true);
         }
     }, [chartData]);
 
-    useEffect(() => {
-        const initialData = initializeData();
-
-        setChartData(initialData);
-
-        const interval = setInterval(() => {
-            setChartData((currentChartData) => {
-                const newChartData = currentChartData?.length ? [...currentChartData] : [];
-                newChartData.shift();
-                newChartData.push(randomDataItem());
-
-                return newChartData;
-            })
-
-        }, 1000);
-
-        return () => {
-            clearInterval(interval);
-        };
-
-    }, []);
-
-    useEffect(() => {
-        setDate(dayjs())
-    }, []);
-
-
-    const width = useWidth();
-
-    useEffect(() => {
-        if (!chartRef.current) return;
-
-        const chartInstance = chartRef.current.getEchartsInstance();
-
-        chartInstance.resize();
-
-    }, [width]);
-
     return (
         <Wrapper>
-
             <DottedTopBorderBox>
                 <Background>
                     <TextWrapper>
@@ -198,10 +100,10 @@ const ChartAnalysis = () => {
                             </TextGroupWrapper>
                         </TextRowWrapper>
                     </TextWrapper>
-                    <ChartWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
+                    <ChartWrapper>
                         <ReactECharts
                             ref={chartRef}
-                            option={chartOptions}
+                            option={initialChartOption}
                             notMerge={true}
                             style={{ height: '300px' }}
                             lazyUpdate={true}
@@ -213,16 +115,6 @@ const ChartAnalysis = () => {
             </DottedTopBorderBox>
         </Wrapper>
     );
-};
-
-const useWidth = () => {
-    const [width, setWidth] = useState(0); // default width, detect on server.
-    const handleResize = () => setWidth(window.innerWidth);
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [handleResize]);
-    return width;
 };
 
 const Wrapper = styled('div', {
@@ -246,7 +138,7 @@ const TextWrapper = styled('div', {
     padding: '8px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 });
 
 const TextRowWrapper = styled('div', {
@@ -258,6 +150,7 @@ const TextGroupWrapper = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '3px',
+    zIndex: 1,
     variants: {
         align: {
             right: {

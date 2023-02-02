@@ -3,16 +3,21 @@ import { useState, useEffect, useRef } from "react";
 import Image from 'next/image'
 import { styled } from "stitches.config";
 import DottedTopBorderBox from "@/components/DottedTopBorderBox";
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import dayjs, { Dayjs } from 'dayjs';
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
+import useIsMounted from "@/helpers/hooks/useIsMounted";
 
 const SampleAnalysis = () => {
+    const { resolvedTheme } = useTheme();
+
     const [date, setDate] = useState<Dayjs>();
 
     const [hover, setHover] = useState<boolean>(false);
 
     const [fps, setFps] = useState<number>(34.413244);
+
+    const isMounted = useIsMounted();
 
     useEffect(() => {
         setDate(dayjs())
@@ -40,8 +45,6 @@ const SampleAnalysis = () => {
             clearInterval(interval);
         };
     }, []);
-
-    const { resolvedTheme } = useTheme();
 
     const isLight: boolean = resolvedTheme === 'light';
 
@@ -96,14 +99,27 @@ const SampleAnalysis = () => {
                             }}
                             transition={{ repeat: Infinity, duration: 4 }}
                         >
-                            <Image
-                                src={srcPath}
-                                alt="Sample analysis"
-                                width={250}
-                                height={250}
-                                draggable={false}
-                                style={{ userSelect: 'none' }}
-                            />
+                            <AnimatePresence>
+                                {isMounted && (
+                                    <motion.div
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 3, ease: 'easeOut' }}
+                                        exit={{ scale: 0 }}
+                                        key="quark_gif_light"
+                                    >
+                                        <Image
+                                            src={srcPath}
+                                            alt="Sample analysis"
+                                            width={250}
+                                            height={250}
+                                            draggable={false}
+                                            style={{ userSelect: 'none' }}
+                                        />
+                                    </motion.div>
+
+                                )}
+                            </AnimatePresence>
                         </Box>
                     </Box>
                 </ImageWrapper>

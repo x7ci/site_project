@@ -113,8 +113,7 @@ export const globalStyles = globalCss({
         padding: 0,
         backgroundImage: '$tileUrl',
         backgroundRepeat: 'repeat',
-        transition: '250ms',
-        transitionTimingFunction: 'ease-out',
+        transition: '250ms ease-out',
         // backgroundSize: '2%',
         backgroundSize: '$sizes$tileSize',
         // background: '$backgroundBlendColor', /** This controls blend color with the tiles */

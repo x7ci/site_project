@@ -1,14 +1,14 @@
 import { SlicedButton } from "@/components/ThemedElements";
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
+import useIsMounted from "@/helpers/hooks/useIsMounted";
 import { useState, useEffect } from "react";
 
 const ThemeToggle = () => {
-    const [mounted, setMounted] = useState(false);
     const { setTheme, resolvedTheme } = useTheme();
+    
+    const isMounted = useIsMounted();
 
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return null;
+    if (!isMounted) return null;
 
     const toggleTheme = () => {
         const targetTheme = resolvedTheme === "light" ? "dark" : "light";
