@@ -1,50 +1,12 @@
 import { styled } from "stitches.config";
 
-export const Box = styled('div');
-
-export const ColoredBox = styled('div', {
-    width: 150,
-    paddingLeft: '10px',
-    paddingRight: '10px',
-    variants: {
-        color: {
-            cyan: {
-                background: '$cyan',
-            },
-            cyan2: {
-                background: '$cyan2',
-            },
-            cyan3: {
-                background: '$cyan3',
-            }
-        },
-        size: {
-            1: {
-                width: 140,
-            },
-            2: {
-                width: 200,
-            },
-            3: {
-                width: 370,
-            },
-            4: {
-                width: 520,
-            },
-            'max': {
-                width: 'calc(100% - 20px)',
-            },
-        }
-    }
-})
-
 export const Text = styled('span', {
     color: '$primary',
     background: 'unset',
     variants: {
         background: {
             cyan: {
-                background: '$cyan'
+                background: '$cyan1'
             }
         },
         size: {
@@ -137,7 +99,7 @@ export const Text = styled('span', {
                 color: '$yellow'
             },
             cyan: {
-                color: '$cyan',
+                color: '$cyan1',
             },
             cyan2: {
                 color: '$cyan2',
@@ -153,58 +115,4 @@ export const Text = styled('span', {
             }
         }
     },
-});
-
-export const SlicedButton = styled('button', {
-    weight: {
-        1: {
-            fontWeight: '300'
-        },
-        2: {
-            fontWeight: '400'
-        },
-        3: {
-            fontWeight: '700'
-        },
-    },
-    border: 0,
-    padding: '6px 32px 6px 32px',
-    position: 'relative',
-    background: 'transparent',
-    cursor: 'pointer',
-    fontFamily: 'inherit',
-    fontSize: '$fontSizes$6',
-    transition: '200ms',
-    zIndex: 1,
-    whiteSpace: 'nowrap',
-    color: '$gray12',
-    "&:before": {
-        content: '',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        right: 0,
-        bottom: 0,
-        borderRadius: '0px',
-        transform: 'skewX(-35deg)',
-        // backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        backgroundColor: '$navigationBarBackground',
-        zIndex: -1,
-        '@bp3': {
-            transform: 'unset'
-        },
-    },
-    "&:hover": {
-        color: '$yellow',
-        "&:before": {
-            transition: '250ms',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        }
-    },
-    "&:active": {
-        color: '$yellow',
-        "&:before": {
-            backgroundColor: 'rgba(0, 0, 0, 0.0)',
-        }
-    }
 });

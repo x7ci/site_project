@@ -1,4 +1,4 @@
-import { Text } from "@/components/ThemedElements";
+import { Text } from "@/components/stitches/Text";
 import { useEffect, useRef } from "react";
 import { styled } from "stitches.config";
 import DottedTopBorderBox from "@/components/DottedTopBorderBox";
@@ -55,7 +55,7 @@ const ChartAnalysis = () => {
                             }, {
                                 offset: 1, color: 'rgba(0, 0, 0, .01)' // color at 100%
                             }] : [{
-                                offset: 0, color: 'rgba(153, 250, 255, .2)' // color at 0%
+                                offset: 0, color: 'rgba(153, 250, 255, .08)' // color at 0%
                             }, {
                                 offset: 1, color: 'rgba(153, 250, 255, .01)' // color at 100%
                             }],

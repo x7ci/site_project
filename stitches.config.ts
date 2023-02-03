@@ -27,12 +27,13 @@ export const { styled, getCssText, theme } = createStitches({
             navigationBarBackground: 'rgba(153, 250, 255, .06)',
 
             yellow: '#fcf6ba',
-            cyan: '#99faff',
-            cyanLight: '#defdff',
-            cyan2: 'rgba(153, 250, 255, .018)',
+            cyan1: 'rgba(153, 250, 255, 1)',
+            cyan2: 'rgba(153, 250, 255, .02)',
             cyan3: 'rgba(153, 250, 255, .2)',
-            cyan4: 'rgba(153, 250, 255, .02)',
+            cyan4: 'rgba(153, 250, 255, .06)',
 
+            cyanLight: 'rgba(222, 253, 255, 1)',
+            
             orange1: 'rgba(230, 107, 48, 1)',
 
             red1: 'rgba(216, 60, 60, 0.8)',
@@ -86,10 +87,10 @@ export const lightTheme = createTheme({
         gray11: gray.gray11,
         gray12: gray.gray12,
 
-        cyan: gray.gray11,
+        cyan1: gray.gray11,
         cyan2: gray.gray2,
         cyan3: gray.gray8,
-        cyan4: gray.gray11,
+        cyan4: gray.gray5,
 
         cyanLight: gray.gray9,
 

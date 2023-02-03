@@ -1,4 +1,4 @@
-import { Box, Text } from "@/components/ThemedElements";
+import { Box, Text } from "@/components/stitches";
 import { useState, useEffect, useRef } from "react";
 import Image from 'next/image'
 import { styled } from "stitches.config";
@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import dayjs, { Dayjs } from 'dayjs';
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
 import useIsMounted from "@/helpers/hooks/useIsMounted";
+import { random } from 'lodash';
+import useRandomRange from "@/helpers/hooks/useRandomRange";
 
 const SampleAnalysis = () => {
     const { resolvedTheme } = useTheme();
@@ -15,35 +17,12 @@ const SampleAnalysis = () => {
 
     const [hover, setHover] = useState<boolean>(false);
 
-    const [fps, setFps] = useState<number>(34.413244);
+    const fps = useRandomRange({ minValue: 28, maxValue: 37, updateInterval: 1000, digits: 8 });
 
     const isMounted = useIsMounted();
 
     useEffect(() => {
-        setDate(dayjs())
-
-        const interval = setInterval(() => {
-            setFps((c) => {
-                const randomDouble = Math.random();
-                const shouldIncrease: boolean = Math.random() < 0.5;
-
-                if (c > 36)
-                    return (c - randomDouble);
-
-                if (c < 28)
-                    return (c + randomDouble);
-
-                if (shouldIncrease) {
-                    return (c + randomDouble);
-                }
-
-                return (c - randomDouble);
-            })
-        }, 1000);
-
-        return () => {
-            clearInterval(interval);
-        };
+        setDate(dayjs());
     }, []);
 
     const isLight: boolean = resolvedTheme === 'light';
@@ -106,7 +85,7 @@ const SampleAnalysis = () => {
                                         animate={{ scale: 1 }}
                                         transition={{ duration: 3, ease: 'easeOut' }}
                                         exit={{ scale: 0 }}
-                                        key="quark_gif_light"
+                                        key="quark_gif"
                                     >
                                         <Image
                                             src={srcPath}
@@ -158,7 +137,7 @@ const DottedCircle = styled(motion.div, {
                 border: '3px dotted $cyan3',
             },
             cyanCustom: {
-                border: '3px dotted $cyan',
+                border: '3px dotted $cyan1',
             }
         }
     }

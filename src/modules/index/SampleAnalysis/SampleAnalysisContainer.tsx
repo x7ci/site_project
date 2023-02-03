@@ -1,4 +1,4 @@
-import { Box, ColoredBox, Text } from "@/components/ThemedElements";
+import { Box, ColoredBox, Text } from "@/components/stitches";
 import { styled } from "stitches.config";
 import SampleAnalysis from "./SampleAnalysis";
 

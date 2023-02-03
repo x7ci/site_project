@@ -1,5 +1,8 @@
 import LiveDataCircle from "@/components/LiveDataCircle";
-import { Box, ColoredBox, Text } from "@/components/ThemedElements";
+// import { Box, ColoredBox, Text } from "@/components/ThemedElements";
+import { Box, Text } from "@/components/stitches";
+import { ColoredBox } from "@/components/stitches/ColoredBox";
+
 import { styled } from "stitches.config";
 import ChartAnalysis from "./ChartAnalysis";
 

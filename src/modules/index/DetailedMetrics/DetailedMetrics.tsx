@@ -1,6 +1,6 @@
 import DottedTopBorderBox from "@/components/DottedTopBorderBox";
 import ProgressBar from "@/components/ProgressBar";
-import { Box, Text } from "@/components/ThemedElements";
+import { Box, Text } from "@/components/stitches";
 import { useEffect, useState } from "react";
 import { styled } from "stitches.config";
 
@@ -112,7 +112,7 @@ const MetricGroup = styled('div', {
 const Dot = styled('div', {
     height: '8px',
     width: '8px',
-    backgroundColor: '$cyan',
+    backgroundColor: '$cyan1',
     borderRadius: '50%',
     variants: {
         color: {

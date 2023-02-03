@@ -1,4 +1,4 @@
-import { SlicedButton } from "@/components/ThemedElements";
+import { SlicedButton } from "@/components/stitches/SlicedButton";
 import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
 import useIsMounted from "@/helpers/hooks/useIsMounted";
 import { useState, useEffect } from "react";

@@ -1,7 +1,8 @@
-import { Box, ColoredBox, Text } from "@/components/ThemedElements";
+import { Box, ColoredBox, Text } from "@/components/stitches";
 import { styled } from "stitches.config";
 import DetailedMetrics from "./DetailedMetrics";
 import TableData from "./TableData";
+import TableData2 from "./TableData2";
 
 const DetailedMetricsContainer = () => {
     return (
@@ -18,10 +19,8 @@ const DetailedMetricsContainer = () => {
             <DetailedMetrics />
             <Box css={{ height: 30 }} />
             <TableDataRow>
-
                 <TableData />
-                <TableData />
-
+                <TableData2 />
             </TableDataRow>
         </Box>
     )

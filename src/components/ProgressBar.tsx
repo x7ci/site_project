@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { styled } from "stitches.config";
-import { Box } from "./ThemedElements";
+import { Box } from "@/components/stitches";
 
 interface Props {
     percent: number,
@@ -22,7 +22,7 @@ const ProgressBar = ({ percent, backgroundColor, filledColor, height }: Props) =
 ProgressBar.defaultProps = {
     height: '6px',
     backgroundColor: '$cyan3',
-    filledColor: '$cyan',
+    filledColor: '$cyan1',
 } as Partial<Props>;
 
 const Wrapper = styled('div', {

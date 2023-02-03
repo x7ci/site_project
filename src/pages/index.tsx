@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import ThemeToggle from '../modules/index/ThemeToggle'
-import { Box, ColoredBox, SlicedButton, Text } from '../components/ThemedElements';
+import { Text, SlicedButton, Box, ColoredBox } from '../components/stitches';
 import { styled } from 'stitches.config';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import SampleAnalysisContainer from '@/modules/index/SampleAnalysis/SampleAnalysisContainer';
@@ -64,7 +64,7 @@ export default function Home() {
             <Box css={{ flex: 1, maxWidth: 600 }}>
               <SampleAnalysisContainer />
             </Box>
-            <Box css={{ flex: 2, maxWidth: 1200}}>
+            <Box css={{ flex: 2, maxWidth: 1200 }}>
               <ChartAnalysisContainer />
             </Box>
             <Box css={{ flex: 2, maxWidth: 800 }}>
@@ -73,7 +73,6 @@ export default function Home() {
           </ComponentsContainer>
           <Box css={{ height: 60 }} />
           <DottedTopBorderBox withHorizontalLine />
-
 
           {/* <BorderContainer>
             <ThemeToggle />

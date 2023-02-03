@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { styled } from "stitches.config";
-import { Box } from "./ThemedElements";
+import { Box } from "@/components/stitches";
 
 const sizes = {
     1: 160,
@@ -31,7 +31,7 @@ ColoredBox.defaultProps = {
 const Wrapper = styled('div', {
     width: 130,
     display: 'flex',
-    background: '$cyan'
+    background: '$cyan1'
     // justifyContent: 'center',
     // alignItems: 'center',
 });
