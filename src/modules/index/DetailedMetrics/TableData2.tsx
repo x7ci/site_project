@@ -10,11 +10,7 @@ const TableData2 = () => {
     const steamTemp = useRandomRange({ minValue: 250, maxValue: 300, updateInterval: 5000 });
     const turbineSpeed = useRandomRange({ minValue: 5122, maxValue: 10000, updateInterval: 5000 });
     const turbineHotspot = useRandomRange({ minValue: 80, maxValue: 90, updateInterval: 5000, digits: 1 });
-    // const turbine = useRandomRange({ minValue: 40, maxValue: 70, updateInterval: 5000, digits: 1 });
     const mainBearingTemp = useRandomRange({ minValue: 40, maxValue: 60, updateInterval: 5000 });
-    const yawAxisDeg = useRandomRange({ minValue: 14, maxValue: 25, updateInterval: 5000 });
-    const yawAxisVel = useRandomRange({ minValue: 50, maxValue: 60, updateInterval: 5000 });
-    const currOutput = useRandomRange({ minValue: 100, maxValue: 126, updateInterval: 5000 });
 
     return (
         <Wrapper>
@@ -129,7 +125,7 @@ const TableData2 = () => {
                                 <Text size="4" color="cyan">{mainBearingTemp}</Text>
                             </TableCell>
                             <TableCell>
-                                <Text size="4" color="gray10">deg/s</Text>
+                                <Text size="4" color="gray10">°c</Text>
                             </TableCell>
                         </TableRow>
                         <TableRow>
