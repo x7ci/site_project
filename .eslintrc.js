@@ -43,5 +43,7 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/no-confusing-void-expression': 0,
     '@typescript-eslint/consistent-type-assertions': 0,
+    'no-use-before-define': 0,
+    '@typescript-eslint/no-use-before-define': 0
   }
 };
