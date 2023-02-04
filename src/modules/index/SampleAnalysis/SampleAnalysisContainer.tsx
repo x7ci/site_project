@@ -1,9 +1,9 @@
-import { Box, ColoredBox, Text } from "@/components/stitches";
-import { styled } from "stitches.config";
-import SampleAnalysis from "./SampleAnalysis";
+import { Box, ColoredBox, Text } from '@/components/stitches';
+import { styled } from 'stitches.config';
+import SampleAnalysis from './SampleAnalysis';
 
 const SampleAnalysisContainer = () => {
-    return (
+  return (
         <Wrapper>
             <ColoredBox color="cyan2" size="max" >
                 <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -19,11 +19,11 @@ const SampleAnalysisContainer = () => {
             <Box css={{ height: 15 }} />
             <SampleAnalysis />
         </Wrapper>
-    )
+  );
 };
 
 const Wrapper = styled('div', {
-    // flex: 1,
+  // flex: 1,
 });
 
 export default SampleAnalysisContainer;
