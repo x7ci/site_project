@@ -1,26 +1,25 @@
-import { SlicedButton } from "@/components/stitches/SlicedButton";
-import { useTheme } from "@/contexts/ThemeProvider/ThemeProvider";
-import useIsMounted from "@/helpers/hooks/useIsMounted";
-import { useState, useEffect } from "react";
+import { SlicedButton } from '@/components/stitches/SlicedButton';
+import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
+import useIsMounted from '@/helpers/hooks/useIsMounted';
 
 const ThemeToggle = () => {
-    const { setTheme, resolvedTheme } = useTheme();
-    
-    const isMounted = useIsMounted();
+  const { setTheme, resolvedTheme } = useTheme();
 
-    if (!isMounted) return null;
+  const isMounted = useIsMounted();
 
-    const toggleTheme = () => {
-        const targetTheme = resolvedTheme === "light" ? "dark" : "light";
+  if (!isMounted) return null;
 
-        setTheme(targetTheme);
-    };
+  const toggleTheme = () => {
+    const targetTheme = resolvedTheme === 'light' ? 'dark' : 'light';
 
-    return (
-        <SlicedButton onClick={toggleTheme}>
-            switch theme ({resolvedTheme})
-        </SlicedButton>
-    );
+    setTheme(targetTheme);
+  };
+
+  return (
+    <SlicedButton onClick={toggleTheme}>
+      switch theme ({resolvedTheme})
+    </SlicedButton>
+  );
 };
 
 export default ThemeToggle;

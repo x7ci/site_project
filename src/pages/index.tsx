@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import ThemeToggle from '../modules/index/ThemeToggle'
+import Head from 'next/head';
+import ThemeToggle from '../modules/index/ThemeToggle';
 import { Text, SlicedButton, Box, ColoredBox } from '../components/stitches';
 import { styled } from 'stitches.config';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
@@ -95,7 +95,7 @@ export default function Home() {
         </Wrapper>
       </main>
     </>
-  )
+  );
 }
 
 const Wrapper = styled('div', {
@@ -136,7 +136,7 @@ const NavigationBar = styled('div', {
   gap: '14px',
   position: 'relative',
 
-  "&:before": {
+  '&:before': {
     content: '',
     position: 'absolute',
     left: 0,

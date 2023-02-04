@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from 'react';
 
 const useWidth = () => {
-    const [width, setWidth] = useState(0); // default width, detect on server.
+  const [width, setWidth] = useState(0);
 
-    const handleResize = () => setWidth(window.innerWidth);
+  const handleResize = useCallback(() => setWidth(window.innerWidth), []);
 
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [handleResize]);
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => { window.removeEventListener('resize', handleResize); };
+  }, [handleResize]);
 
-    return width;
+  return width;
 };
 
 export default useWidth;

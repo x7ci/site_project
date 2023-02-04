@@ -1,17 +1,18 @@
-import { useRef, useEffect, useCallback, useState } from "react"
+import { useEffect, useState } from 'react';
 
+/** Custom hook to check whether component is mounted. Useful for SSR stuff, where client data is needed. */
 const useIsMounted = () => {
-    const [isMounted, setIsMounted] = useState<boolean>(false)
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-    useEffect(() => {
-        setIsMounted(true);
+  useEffect(() => {
+    setIsMounted(true);
 
-        return () => {
-            setIsMounted(false);
-        }
-    }, [])
+    return () => {
+      setIsMounted(false);
+    };
+  }, []);
 
-    return isMounted;
-}
+  return isMounted;
+};
 
-export default useIsMounted
+export default useIsMounted;

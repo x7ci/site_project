@@ -1,41 +1,43 @@
-import { ReactNode, useEffect, useRef } from "react";
-import { styled } from "stitches.config";
+import { type ReactNode, useEffect, useRef } from 'react';
+import { styled } from 'stitches.config';
 
 interface Props {
-    children: ReactNode
+  children: ReactNode
 }
 
 const BorderContainer = ({ children }: Props) => {
-    const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.onmousemove = (e) => {
         if (containerRef.current) {
-            containerRef.current.onmousemove = (e) => {
-                const x = e.pageX - containerRef.current!.offsetLeft
-                const y = e.pageY - containerRef.current!.offsetTop
+          const x = e.pageX - containerRef.current.offsetLeft;
+          const y = e.pageY - containerRef.current.offsetTop;
 
-                containerRef.current!.style.setProperty('--x', `${x}px`)
-                containerRef.current!.style.setProperty('--y', `${y}px`)
-            };
+          containerRef.current.style.setProperty('--x', `${x}px`);
+          containerRef.current.style.setProperty('--y', `${y}px`);
         }
-    }, []);
+      };
+    }
+  }, []);
 
-    return (
-        <Container ref={containerRef}>
-            {children}
-        </Container>
-    )
-}
+  return (
+    <Container ref={containerRef}>
+      {children}
+    </Container>
+  );
+};
 
 const Container = styled('div', {
-    '--x': '50%',
-    '--y': '50%',
-    position: 'relative',
-    appearance: 'none',
-    padding: '10px',
-    color: 'white',
-    border: '2px solid transparent', // chjange rootbackground below:::
-    background: 'linear-gradient($rootBackground, $rootBackground) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), $cyan1, rgba(0,0,0,0)) border-box'
+  '--x': '50%',
+  '--y': '50%',
+  position: 'relative',
+  appearance: 'none',
+  padding: '10px',
+  color: 'white',
+  border: '2px solid transparent', // chjange rootbackground below:::
+  background: 'linear-gradient($rootBackground, $rootBackground) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), $cyan1, rgba(0,0,0,0)) border-box'
 });
 
 export default BorderContainer;
