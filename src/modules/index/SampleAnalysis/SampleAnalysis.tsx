@@ -49,8 +49,8 @@ const SampleAnalysis = () => {
               <Text size={3} color="gray8">FPS: {fps}</Text>
             </TextGroupWrapper>
             <TextGroupWrapper align="right">
-              <Text size={3} color="gray8">S-RENDER REACT </Text>
-              <Text size={3} color="gray8">V. 2.9.83 ALPHA </Text>
+              <Text size={3} color="gray8">FRAMER-MOTION</Text>
+              <Text size={3} color="gray8">8.5.3-ALPHA.1 </Text>
             </TextGroupWrapper>
           </TextRowWrapper>
         </TextWrapper>
