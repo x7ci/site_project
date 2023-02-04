@@ -3,7 +3,7 @@ import useRandomRange from '@/helpers/hooks/useRandomRange';
 import { styled } from 'stitches.config';
 import DetailedTable, { type TableData } from '../../../components/DetailedTable';
 
-const TableData2 = () => {
+const TableMetrics2 = () => {
   const outputRange = useRandomRange({ minValue: 1100, maxValue: 1400, updateInterval: 7000 });
   const steamPressure = useRandomRange({ minValue: 60, maxValue: 75, updateInterval: 10000 });
   const steamTemp = useRandomRange({ minValue: 250, maxValue: 300, updateInterval: 5000 });
@@ -72,13 +72,13 @@ const TableData2 = () => {
   ];
 
   return (
-        <Wrapper>
-            <DottedTopBorderBox />
-            <TableBodyWrapper>
-                <DetailedTable data={tableData} />
-            </TableBodyWrapper>
-            <DottedTopBorderBox />
-        </Wrapper>
+    <Wrapper>
+      <DottedTopBorderBox />
+      <TableBodyWrapper>
+        <DetailedTable data={tableData} />
+      </TableBodyWrapper>
+      <DottedTopBorderBox />
+    </Wrapper>
   );
 };
 
@@ -95,4 +95,4 @@ const TableBodyWrapper = styled('div', {
   // maxHeight: 210, // Enables scroll
 });
 
-export default TableData2;
+export default TableMetrics2;

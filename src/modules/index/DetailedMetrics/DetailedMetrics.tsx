@@ -1,55 +1,13 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import ProgressBar from '@/components/ProgressBar';
 import { Box, Text } from '@/components/stitches';
-import { useEffect, useState } from 'react';
+import useRandomRange from '@/helpers/hooks/useRandomRange';
 import { styled } from 'stitches.config';
 
-interface Props {
+const DetailedMetrics = () => {
+  const progress1 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 7 });
 
-}
-
-const DetailedMetrics = ({ }: Props) => {
-  const [progress1, setProgress1] = useState<number>(30);
-
-  const [progress2, setProgress2] = useState<number>(72);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress1((c) => {
-        const randomDouble = Math.random() * 10;
-        const shouldIncrease: boolean = Math.random() < 0.5;
-
-        if (c > 45) { return (c - randomDouble); }
-
-        if (c < 13) { return (c + randomDouble); }
-
-        if (shouldIncrease) {
-          return (c + randomDouble);
-        }
-
-        return (c - randomDouble);
-      });
-
-      setProgress2((c) => {
-        const randomDouble = Math.random() * 10;
-        const shouldIncrease: boolean = Math.random() < 0.5;
-
-        if (c > 85) { return (c - randomDouble); }
-
-        if (c < 56) { return (c + randomDouble); }
-
-        if (shouldIncrease) {
-          return (c + randomDouble);
-        }
-
-        return (c - randomDouble);
-      });
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const progress2 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 7 });
 
   return (
     <Wrapper>
@@ -78,10 +36,6 @@ const DetailedMetrics = ({ }: Props) => {
     </Wrapper>
   );
 };
-
-DetailedMetrics.defaultProps = {
-
-} as Partial<Props>;
 
 const Wrapper = styled('div', {
   minWidth: '250px',

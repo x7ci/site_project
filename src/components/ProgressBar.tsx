@@ -1,9 +1,11 @@
+import { type ComponentProps } from 'react';
+import { type Box } from './stitches';
 import { styled } from 'stitches.config';
 
 interface Props {
   percent: number
-  backgroundColor: string
-  filledColor: string
+  backgroundColor: ComponentProps<typeof Box>['color']
+  filledColor: ComponentProps<typeof Box>['color']
   height: string
 }
 

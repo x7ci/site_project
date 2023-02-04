@@ -138,15 +138,17 @@ const ChartAnalysis = () => {
 };
 
 const Wrapper = styled('div', {
-  minWidth: '390px'
+  minWidth: '480px'
+  // minWidth: '330px'
 });
 
 const Background = styled('div', {
   background: '$cyan2',
+  // display: 'flex',
+  // flexDirection: 'row'
 });
 
 const ChartWrapper = styled('div', {
-
 });
 
 const TextWrapper = styled('div', {

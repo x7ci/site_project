@@ -10,9 +10,10 @@ interface Props {
   maxValue: number
   updateInterval?: number
   digits?: number
+  multiplyAdd?: number
 }
 
-/** Provides random number in specified range updated with set interval. */
+/** Provides random number in specified range. Number is updated relative to previous number on set interval. */
 const useRandomRange = (props: Props) => {
   const [number, setNumber] = useState<number>();
 
@@ -22,6 +23,14 @@ const useRandomRange = (props: Props) => {
   useEffect(() => {
     const randomNumber: number = randomNumberRange(config.minValue, config.maxValue);
     setNumber(randomNumber);
+
+    const interval = setInterval(() => {
+      setNumber((currentNumber) => randomNumberRange(config.minValue, config.maxValue, currentNumber));
+    }, config.updateInterval);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const randomNumberRange = (minValue: number, maxValue: number, currentNumber?: number): number => {
@@ -31,7 +40,7 @@ const useRandomRange = (props: Props) => {
       return parseNumber(random(minValue, maxValue, true), config.digits);
     }
 
-    const randomDouble: number = Math.random();
+    const randomDouble: number = config.multiplyAdd ? (Math.random() * config.multiplyAdd) : Math.random();
 
     if (currentNumber >= maxValue) { return parseNumber((currentNumber - randomDouble), config.digits); }
 
@@ -43,16 +52,6 @@ const useRandomRange = (props: Props) => {
 
     return parseNumber((currentNumber - randomDouble), config.digits);
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNumber((currentNumber) => randomNumberRange(config.minValue, config.maxValue, currentNumber));
-    }, config.updateInterval);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   return number;
 };
