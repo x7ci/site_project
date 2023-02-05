@@ -7,6 +7,7 @@ import SampleAnalysisContainer from '@/modules/index/SampleAnalysis/SampleAnalys
 import ChartAnalysisContainer from '@/modules/index/ChartAnalysis/ChartAnalysisContainer';
 import DetailedMetricsContainer from '@/modules/index/DetailedMetrics/DetailedMetricsContainer';
 import ReactIcon from '@/modules/index/ReactIcon';
+import DataGridContainer from '@/modules/index/DataGrid/DataGridContainer';
 
 export default function Home() {
   return (
@@ -70,28 +71,14 @@ export default function Home() {
             <Box css={{ flex: 2, maxWidth: 800 }}>
               <DetailedMetricsContainer />
             </Box>
+            <Box css={{ flex: 2, maxWidth: 900 }}>
+              <DataGridContainer />
+            </Box>
           </ComponentsContainer>
           <Box css={{ height: 60 }} />
-          <DottedTopBorderBox withHorizontalLine />
 
-          {/* <BorderContainer>
-            <ThemeToggle />
-            <Text>Test</Text>
-            <Text>
-              Get started by editing&nbsp;
-              <code>pages/index.tsx</code>
-            </Text>
+          <Box css={{ height: 60 }} />
 
-            <TextLabel>
-              <Text size={8} weight={2}>
-                {'FULL STACK '}
-                <Text size={8} weight={1} >DEVELOPER</Text>
-              </Text>
-            </TextLabel>
-
-            <Text>github</Text>
-
-          </BorderContainer> */}
         </Wrapper>
       </main>
     </>

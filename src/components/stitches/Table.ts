@@ -2,15 +2,31 @@ import { keyframes } from '@stitches/react';
 import { styled } from 'stitches.config';
 
 export const Table = styled('table', {
-  borderCollapse: 'collapse',
   display: 'table',
-  width: '100%',
+  borderCollapse: 'collapse',
   overflow: 'auto',
+  // border: '0px red',
 
   variants: {
+    borderColor: {
+      cyan1: {
+        borderCollapse: 'separate',
+        borderSpacing: '1px',
+      }
+    },
+    width: {
+      'max': {
+        width: '100%'
+      }
+    },
     size: {
       1: {
         height: '210px'
+      },
+    },
+    backgroundColor: {
+      cyan3: {
+        backgroundColor: '$cyan5',
       }
     }
   }
@@ -51,12 +67,39 @@ export const TableRow = styled('tr', {
 
 export const TableCell = styled('td', {
   padding: '0px 12px 0px 12px',
-
   variants: {
+    border: {
+      1: {
+        border: '1px solid'
+      }
+    },
+    align: {
+      center: {
+        textAlign: 'center',
+        verticalAlign: 'middle'
+      }
+    },
+    backgroundColor: {
+      rootBackground: {
+        backgroundColor: '$rootBackground',
+      }
+    },
     size: {
       unset: {
         padding: 'unset',
+      },
+      1: {
+        padding: 'unset',
+        width: '19px',
+        height: '19px',
       }
+      // 'fixed-30px': {
+      //   width: '20px',
+      //   height: '20px',
+      //   tableLayout: 'fixed',
+      //   overflow: 'hidden',
+      //   wordWrap: 'break-word',
+      // }
     }
   }
 });

@@ -63,7 +63,8 @@ const Dot = styled('div', {
   width: '3px',
   backgroundColor: '$cyan1',
   borderRadius: '50%',
-  display: 'inline-block'
+  display: 'inline-block',
+  zIndex: 2,
 });
 
 const HorizontalLineWrapper = styled('div', {

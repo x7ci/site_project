@@ -1,5 +1,6 @@
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
+import DataGrid from '../DataGrid/DataGrid';
 import DetailedMetrics from './DetailedMetrics';
 import TableMetrics from './TableMetrics';
 import TableMetrics2 from './TableMetrics2';
