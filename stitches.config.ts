@@ -37,7 +37,7 @@ export const { styled, getCssText, theme } = createStitches({
 
       orange1: 'rgba(230, 107, 48, 1)',
 
-      red1: 'rgba(216, 60, 60, 0.8)',
+      red1: 'rgba(216, 60, 60, 1)',
 
       primary: '$gray50',
 

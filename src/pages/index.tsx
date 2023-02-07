@@ -71,7 +71,7 @@ export default function Home() {
             <Box css={{ flex: 2, maxWidth: 800 }}>
               <DetailedMetricsContainer />
             </Box>
-            <Box css={{ flex: 2, maxWidth: 900 }}>
+            <Box css={{ flex: 2, minWidth: 510, maxWidth: 540 }}>
               <DataGridContainer />
             </Box>
           </ComponentsContainer>
@@ -112,6 +112,7 @@ const NavbarLinksContainer = styled('div', {
 const NavbarLinksContainer2 = styled('div', {
   display: 'flex',
   flexDirection: 'row',
+  // gap: 8,
 });
 
 const NavigationBar = styled('div', {

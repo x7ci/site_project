@@ -1,26 +1,34 @@
-/* eslint-disable react/jsx-key */
-import BorderContainer from '@/components/BorderContainer';
 import { Table, TableBody, TableCell, TableRow } from '@/components/stitches';
-import { keyframes } from '@stitches/react';
+import { type ComponentProps, keyframes } from '@stitches/react';
 import { styled } from 'stitches.config';
 
-interface Props {
+export type DotColor = ComponentProps<typeof Dot>['background'];
 
+export interface DataGridItem {
+  enabled: boolean
+  color?: DotColor | undefined
+  active: boolean
 }
 
-const DataGrid = ({ }: Props) => {
+export type DataGridRow = DataGridItem[];
+
+interface Props {
+  data: DataGridRow[]
+}
+
+const DataGrid = ({ data }: Props) => {
   return (
     <Wrapper>
       <Table borderColor="cyan1" backgroundColor="cyan3" >
         <TableBody>
-          {[...Array(6)].map((_, i) => (
+          {data.map((dataGridRow: DataGridRow, i) => (
             <TableRow key={`${i}datagridrow`}>
-              {[...Array(27)].map((_, i) => (
+              {dataGridRow.map((dataGridItem: DataGridItem, i) => (
                 <TableCell key={`${i}datagridrowcell`} size="1" backgroundColor="rootBackground" align="center">
                   <DataBoxWrapper>
-                    <AnimatingBox animation={i === 3 ? 'scale' : undefined} />
-                    {i % 4 === 0 && (
-                      <Dot />
+                    <AnimatingBox animation={(dataGridItem.enabled && dataGridItem.active) ? 'scale' : undefined} />
+                    {(dataGridItem.enabled && dataGridItem.color) && (
+                      <Dot background={dataGridItem.color} />
                     )}
                   </DataBoxWrapper>
                 </TableCell>
@@ -97,15 +105,12 @@ const AnimatingBox = styled('div', {
   position: 'absolute',
   opacity: 0,
   border: '1px solid $cyan3',
-  // background: 'red',
   width: '10px',
   height: '10px',
   variants: {
     animation: {
       scale: {
-        animation: `${scaleAnimation} 1000ms ease-out`,
-        animationIterationCount: '2',
-
+        animation: `${scaleAnimation} 1500ms ease-out infinite 0s;`,
       }
     },
     visibility: {
@@ -121,10 +126,19 @@ const Dot = styled('div', {
   width: '4px',
   height: '4px',
   borderRadius: '50%',
-  // position: 'absolute',
-  // top: '50%',
-  // left: '50%',
-  // transform: 'translate(-50%, -50%)',
+  variants: {
+    background: {
+      cyan1: {
+        background: '$cyan1'
+      },
+      yellow: {
+        background: '$yellow'
+      },
+      red1: {
+        background: '$red1'
+      }
+    }
+  }
 });
 
 export default DataGrid;
