@@ -31,7 +31,8 @@ export const { styled, getCssText, theme } = createStitches({
       cyan2: 'rgba(153, 250, 255, .02)',
       cyan3: 'rgba(153, 250, 255, .2)',
       cyan4: 'rgba(153, 250, 255, .06)',
-      cyan5: 'rgba(153, 250, 255, .12)',
+      cyan5: 'rgba(153, 250, 255, .08)',
+      cyan6: 'rgba(153, 250, 255, .3)',
 
       cyanLight: 'rgba(222, 253, 255, 1)',
 
@@ -92,6 +93,7 @@ export const lightTheme = createTheme({
     cyan3: gray.gray8,
     cyan4: gray.gray5,
     cyan5: gray.gray7,
+    cyan6: gray.gray8,
 
     cyanLight: gray.gray9,
 

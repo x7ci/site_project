@@ -25,7 +25,7 @@ export const Table = styled('table', {
       },
     },
     backgroundColor: {
-      cyan3: {
+      cyan5: {
         backgroundColor: '$cyan5',
       }
     }

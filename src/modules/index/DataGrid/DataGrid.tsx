@@ -1,52 +1,72 @@
+import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import { Table, TableBody, TableCell, TableRow } from '@/components/stitches';
 import { type ComponentProps, keyframes } from '@stitches/react';
 import { styled } from 'stitches.config';
 
 export type DotColor = ComponentProps<typeof Dot>['background'];
 
+export enum ItemSeverity {
+  high = 3,
+  medium = 2,
+  low = 1
+}
+
+type SeverityColorTypes = {
+  [key in ItemSeverity]: DotColor;
+};
+
+const severityColor: SeverityColorTypes = {
+  [ItemSeverity.low]: 'cyan1',
+  [ItemSeverity.medium]: 'yellow',
+  [ItemSeverity.high]: 'red1',
+};
+
 export interface DataGridItem {
-  enabled: boolean
-  color?: DotColor | undefined
-  active: boolean
+  isActive: boolean
+  severity?: ItemSeverity
 }
 
 export type DataGridRow = DataGridItem[];
 
 interface Props {
   data: DataGridRow[]
+  highlightSeverity?: ItemSeverity
 }
 
-const DataGrid = ({ data }: Props) => {
+const DataGrid = ({ data, highlightSeverity }: Props) => {
   return (
-    <Wrapper>
-      <Table borderColor="cyan1" backgroundColor="cyan3" >
-        <TableBody>
-          {data.map((dataGridRow: DataGridRow, i) => (
-            <TableRow key={`${i}datagridrow`}>
-              {dataGridRow.map((dataGridItem: DataGridItem, i) => (
-                <TableCell key={`${i}datagridrowcell`} size="1" backgroundColor="rootBackground" align="center">
-                  <DataBoxWrapper>
-                    <AnimatingBox animation={(dataGridItem.enabled && dataGridItem.active) ? 'scale' : undefined} />
-                    {(dataGridItem.enabled && dataGridItem.color) && (
-                      <Dot background={dataGridItem.color} />
-                    )}
-                  </DataBoxWrapper>
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Wrapper>
+    <DottedTopBorderBox>
+
+      <Wrapper>
+        <Table borderColor="cyan1" backgroundColor="cyan5" >
+          <TableBody>
+            {data.map((dataGridRow: DataGridRow, i) => (
+              <TableRow key={`${i}datagridrow`}>
+                {dataGridRow.map((dataGridItem: DataGridItem, i) => (
+                  <TableCell key={`${i}datagridrowcell`} size="1" backgroundColor="rootBackground" align="center">
+                    <DataBoxWrapper>
+                      {highlightSeverity && (
+                        <AnimatingBox animation={(dataGridItem.severity === highlightSeverity) ? 'scale' : undefined} />
+                      )}
+                      {(dataGridItem.isActive) && (
+                        <Dot background={dataGridItem.severity ? severityColor[dataGridItem.severity] : undefined} />
+                      )}
+                    </DataBoxWrapper>
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Wrapper>
+    </DottedTopBorderBox>
+
   );
 };
 
-DataGrid.defaultProps = {
-
-};
-
 const Wrapper = styled('div', {
-
+  background: '$cyan2',
+  padding: 10
 });
 
 const DataBoxWrapper = styled('div', {
@@ -110,7 +130,7 @@ const AnimatingBox = styled('div', {
   variants: {
     animation: {
       scale: {
-        animation: `${scaleAnimation} 1500ms ease-out infinite 0s;`,
+        animation: `${scaleAnimation} 2000ms ease-out infinite 0s;`,
       }
     },
     visibility: {
