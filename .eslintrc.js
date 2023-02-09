@@ -46,5 +46,6 @@ module.exports = {
     'no-use-before-define': 0,
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/restrict-template-expressions': 0,
+    'no-floating-decimal': 0,
   }
 };
