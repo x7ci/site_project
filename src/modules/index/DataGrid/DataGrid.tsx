@@ -36,7 +36,6 @@ interface Props {
 const DataGrid = ({ data, highlightSeverity }: Props) => {
   return (
     <DottedTopBorderBox>
-
       <Wrapper>
         <Table borderColor="cyan1" backgroundColor="cyan5" >
           <TableBody>
@@ -75,23 +74,6 @@ const DataBoxWrapper = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-});
-
-const DataBox = styled('div', {
-  width: '14px',
-  height: '14px',
-  border: '1px solid $cyan1',
-  '&:before': {
-    content: '',
-    position: 'absolute',
-    background: '$cyan1',
-    width: '5px',
-    height: '5px',
-    borderRadius: '50%',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-  }
 });
 
 const flashAnimation = keyframes({

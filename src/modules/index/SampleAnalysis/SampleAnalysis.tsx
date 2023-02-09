@@ -55,6 +55,7 @@ const SampleAnalysis = () => {
           </TextRowWrapper>
         </TextWrapper>
         <ImageWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
+
           <DottedCircle
             animate={{
               scale: hover ? [1, 1, 1] : [1.05, 1, 1.05],

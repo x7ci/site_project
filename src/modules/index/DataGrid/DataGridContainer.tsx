@@ -1,13 +1,15 @@
-import BorderContainer from '@/components/BorderContainer';
 import { Box, ColoredBox, Text, Button } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import DataGrid, { ItemSeverity, type DataGridRow } from './DataGrid';
 import { sample } from 'lodash';
-import { type ComponentProps, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { keyframes } from '@stitches/react';
 import WarningIcon from '@/components/icons/WarningIcon';
+import SquareBoxesIcon from '@/components/icons/SquareBoxesIcon';
+import SingleDataMetric from './SingleDataMetric';
+import ActivityIcon from '@/components/icons/ActivityIcon';
 
-const generateDataGrid = () => {
+const generateDataGrid = (): DataGridRow[] => {
   const data: DataGridRow[] = [];
 
   for (let i = 0; i < 6; i++) {
@@ -16,11 +18,11 @@ const generateDataGrid = () => {
     for (let j = 0; j < 27; j++) {
       const isActive: boolean = Math.random() > 0.8;
 
-      const isHighSeverity: boolean = isActive ? false : Math.random() > 0.9;
+      const isHighSeverity: boolean = Math.random() > 0.8;
 
       dataGridRow.push({
         isActive,
-        severity: isActive ? (isHighSeverity ? ItemSeverity.high : sample([ItemSeverity.low, ItemSeverity.medium, ItemSeverity.high]) ?? ItemSeverity.low) : undefined,
+        severity: isActive ? (isHighSeverity ? ItemSeverity.high : sample([ItemSeverity.low, ItemSeverity.medium]) ?? ItemSeverity.low) : undefined,
       });
     }
 
@@ -44,7 +46,7 @@ const DataGridContainer = () => {
   return (
     <Wrapper>
       <ColoredBox color="cyan2" size="max" >
-        <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box css={{ display: 'flex', alignItems: 'center' }}>
           <Box>
             <Text color="cyan" weight={2}>ACTIVE </Text>
             <Text color="cyan" weight={1} >NODES</Text>
@@ -59,6 +61,7 @@ const DataGridContainer = () => {
       <Box css={{ height: 10 }} />
 
       <ButtonContainer>
+        <SquareBoxesIcon color='cyan1' size={32} scale={1} />
         <Button
           type={!highlightSeverity ? 'primary' : 'secondary'}
           onClick={() => setHighlightSeverity(undefined)}
@@ -94,17 +97,39 @@ const DataGridContainer = () => {
 
       </ButtonContainer>
       <Box css={{ height: 15 }} />
+
       <DataGrid data={data} highlightSeverity={highlightSeverity} />
+
       <Box css={{ height: 15 }} />
 
-      <ColoredBox color="cyan2" size="1">
-        <BlinkingOpacity>
-          <WarningFoundWrapper>
-            <WarningIcon color="$red1" />
-            <Text size="4" weight="3" color="red1" >WARNINGS_FOUND: {warningCount} </Text>
-          </WarningFoundWrapper>
-        </BlinkingOpacity>
-      </ColoredBox>
+      {/* <ColoredBox color="cyan2" size="1">
+
+        <WarningFoundWrapper>
+          <WarningIcon color="red1" />
+          <Text size="4" weight="3" color="red1" >WARNINGS: {warningCount} </Text>
+        </WarningFoundWrapper>
+      </ColoredBox> */}
+
+      <SingleDataMetric
+        icon={<SquareBoxesIcon color='cyan1' scale={0.5} size={16} />}
+        title="NODES"
+      />
+
+      <Box css={{ height: 20 }} />
+
+
+      <SingleDataMetric
+        icon={<ActivityIcon color='cyan1' scale={.3} size={29} />}
+        title="ACTIVE"
+      />
+
+      <Box css={{ height: 20 }} />
+
+
+      <SingleDataMetric
+        icon={<WarningIcon color='cyan1' scale={.9} size={21} />}
+        title="ALARMS"
+      />
 
     </Wrapper>
   );

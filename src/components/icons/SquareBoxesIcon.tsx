@@ -9,7 +9,7 @@ export interface Props {
   size?: number
 }
 
-const WarningIcon = ({ color, css, size = 24, scale = 0.38 }: Props) => {
+const SquareBoxesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
   return (
     <Box
       as="svg"
@@ -18,16 +18,12 @@ const WarningIcon = ({ color, css, size = 24, scale = 0.38 }: Props) => {
     >
       <Box
         as="path"
-        d="M12 1.96L1.29 21h21.42zm0 4.08L19.29 19H4.71z"
-        css={{ fill: `$${color}`, scale }}
-      />
-      <Box
-        as="path"
-        d="M11 10h2v5h-2zm0 6h2v2h-2z"
+        d="M13 0H1a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V1a1 1 0 00-1-1zm-1 12H2V2h10zM31 0H19a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V1a1 1 0 00-1-1zm-1 12H20V2h10zm-17 6H1a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V19a1 1 0 00-1-1zm-1 12H2V20h10zm19-12H19a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V19a1 1 0 00-1-1zm-1 12H20V20h10z"
         css={{ fill: `$${color}`, scale }}
       />
     </Box>
+
   );
 };
 
-export default WarningIcon;
+export default SquareBoxesIcon;

@@ -1,14 +1,18 @@
-import { type ReactNode } from 'react';
+import { ComponentProps, type ReactNode } from 'react';
 import { styled } from 'stitches.config';
 
 interface Props {
   children: ReactNode
   withHorizontalLine: boolean
+  onlyLeft: boolean
+  onlyRight: boolean
+  css: ComponentProps<typeof Wrapper>['css']
+
 }
 
-const DottedTopBorderBox = ({ children, withHorizontalLine }: Props) => {
+const DottedTopBorderBox = ({ children, withHorizontalLine, onlyLeft, onlyRight, css }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper css={{ ...css }}>
       <DottedBorderBox>
         <DottedSeparatedBarWrapper>
           {withHorizontalLine && (
@@ -17,8 +21,8 @@ const DottedTopBorderBox = ({ children, withHorizontalLine }: Props) => {
             </HorizontalLineWrapper>
           )}
           <DottedSeparatedBar>
-            <Dot />
-            <Dot />
+            <Dot show={!onlyRight} />
+            <Dot show={!onlyLeft} />
           </DottedSeparatedBar>
         </DottedSeparatedBarWrapper>
         {children}
@@ -65,6 +69,13 @@ const Dot = styled('div', {
   borderRadius: '50%',
   display: 'inline-block',
   zIndex: 2,
+  variants: {
+    show: {
+      false: {
+        opacity: '0'
+      }
+    }
+  }
 });
 
 const HorizontalLineWrapper = styled('div', {
