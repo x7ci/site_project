@@ -70,11 +70,6 @@ const TitleContainer = styled('div', {
   alignItems: 'center',
   textAlign: 'center',
   height: '$sizes$tileSize',
-  // background: 'red',
-  // height: '200px',
-  // width: '100%',
-  // height: 30
-
 });
 
 export default SingleDataMetric;
