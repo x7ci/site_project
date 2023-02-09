@@ -95,7 +95,7 @@ export const lightTheme = createTheme({
     cyan5: gray.gray7,
     cyan6: gray.gray8,
 
-    cyanLight: gray.gray9,
+    cyanLight: gray.gray11,
 
     rootBackground: '#fff',
     navigationBarBackground: gray.gray4,
