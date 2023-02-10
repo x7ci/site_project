@@ -75,9 +75,9 @@ export default function Home() {
               <DataGridContainer />
             </Box>
           </ComponentsContainer>
-          <Box css={{ height: 60 }} />
+          {/* <Box css={{ height: 60 }} />
 
-          <Box css={{ height: 60 }} />
+          <Box css={{ height: 60 }} /> */}
 
         </Wrapper>
       </main>

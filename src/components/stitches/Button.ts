@@ -3,8 +3,8 @@ import { styled } from "stitches.config";
 export const Button = styled('button', {
   border: 0,
   padding: '6px 32px 6px 32px',
-  position: 'relative',
-  background: '$cyan14',
+  // position: 'relative',
+  background: '$cyan13',
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: '$fontSizes$6',
@@ -20,7 +20,7 @@ export const Button = styled('button', {
     type: {
       primary: {
         color: '$cyan1',
-        background: '$cyan14',
+        background: '$cyan13',
         '&:active': {
           backgroundColor: 'rgba(0, 0, 0, 0.2)',
         },

@@ -1,10 +1,10 @@
-import { Box } from '../stitches';
+import { Box, type CssProps } from '../stitches';
 import { type theme } from 'stitches.config';
 import { type ComponentProps } from 'react';
 
 export interface Props {
   color?: keyof typeof theme.colors
-  css?: ComponentProps<typeof Box>['css']
+  css?: CssProps
   scale?: number
   size?: number
 }

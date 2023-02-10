@@ -8,7 +8,7 @@ export interface Props {
   size?: number
 }
 
-const ActivityIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
+const SettingsIcon = ({ color, css, size = 50, scale = 1 }: Props) => {
   return (
     <Box
       as="svg"
@@ -17,12 +17,11 @@ const ActivityIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
     >
       <Box
         as="path"
-        d="M20 60h10l6.667-16.667L50 76.666 65 50l5 10h10v-6.666h-5.879l-8.776-17.549L51.016 61.26 36.667 23.333 25.488 53.334H20z"
+        d="M8 9H7V0H5v9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1v17h2V15h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1zM18 19h-1V0h-2v19h-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1v7h2v-7h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1zM28 7h-1V0h-2v7h-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1v19h2V13h1a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z"
         css={{ fill: `$${color}`, scale }}
       />
     </Box>
-
   );
 };
 
-export default ActivityIcon;
+export default SettingsIcon;

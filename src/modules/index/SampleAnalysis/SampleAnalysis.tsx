@@ -129,7 +129,7 @@ const DottedCircle = styled(motion.div, {
   width: '260px',
   height: '260px',
   borderRadius: '50%',
-  border: '3px dotted $cyan9',
+  border: '3px dotted $cyan2',
   transition: '200ms',
   variants: {
     color: {

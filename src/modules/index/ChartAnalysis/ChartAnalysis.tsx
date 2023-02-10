@@ -138,14 +138,11 @@ const ChartAnalysis = () => {
 };
 
 const Wrapper = styled('div', {
-  minWidth: '480px'
-  // minWidth: '330px'
+  minWidth: 'calc($sizes$tileSize * 16)'
 });
 
 const Background = styled('div', {
   background: '$cyan14',
-  // display: 'flex',
-  // flexDirection: 'row'
 });
 
 const ChartWrapper = styled('div', {

@@ -45,7 +45,10 @@ const DataGrid = ({ data, highlightSeverity }: Props) => {
                   <TableCell key={`${i}datagridrowcell`} size="1" backgroundColor="rootBackground" align="center">
                     <DataBoxWrapper>
                       {highlightSeverity && (
-                        <AnimatingBox animation={(dataGridItem.severity === highlightSeverity) ? 'scale' : undefined} />
+                        <AnimatingBox
+                          animation={(dataGridItem.severity === highlightSeverity) ? 'scale' : undefined}
+                          css={{ animationDelay: `${(i * 5)}0ms` }} /** Delay animation relative to DataGridItem postion */
+                        />
                       )}
                       {(dataGridItem.isActive) && (
                         <Dot background={dataGridItem.severity ? severityColor[dataGridItem.severity] : undefined} />
@@ -64,8 +67,9 @@ const DataGrid = ({ data, highlightSeverity }: Props) => {
 };
 
 const Wrapper = styled('div', {
-  background: '$cyan14',
-  padding: 10
+  // background: '$cyan14',
+  // padding: 10,
+  height: '120px',
 });
 
 const DataBoxWrapper = styled('div', {
@@ -106,7 +110,7 @@ const scaleAnimation = keyframes({
 const AnimatingBox = styled('div', {
   position: 'absolute',
   opacity: 0,
-  border: '1px solid $cyan9',
+  border: '1px solid $cyan8',
   width: '10px',
   height: '10px',
   variants: {

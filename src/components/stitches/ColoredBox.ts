@@ -25,8 +25,14 @@ export const ColoredBox = styled('div', {
       cyan1: {
         background: '$cyan1',
       },
-      cyan11: {
-        background: '$cyan11',
+      cyan5: {
+        background: '$cyan5',
+      },
+      cyan6: {
+        background: '$cyan6',
+      },
+      cyan7: {
+        background: '$cyan7',
       },
       cyan8: {
         background: '$cyan8',
@@ -34,8 +40,17 @@ export const ColoredBox = styled('div', {
       cyan9: {
         background: '$cyan9',
       },
+      cyan10: {
+        background: '$cyan10',
+      },
+      cyan11: {
+        background: '$cyan11',
+      },
       cyan12: {
         background: '$cyan12',
+      },
+      cyan13: {
+        background: '$cyan13',
       },
       cyan14: {
         background: '$cyan14',
@@ -43,16 +58,22 @@ export const ColoredBox = styled('div', {
     },
     size: {
       1: {
-        width: 140,
+        width: 40,
       },
       2: {
-        width: 200,
+        width: 70,
       },
       3: {
-        width: 370,
+        width: 100,
       },
       4: {
-        width: 520,
+        width: 130,
+      },
+      5: {
+        width: 160,
+      },
+      6: {
+        width: 190,
       },
       'max': {
         width: 'calc(100% - 20px)',
