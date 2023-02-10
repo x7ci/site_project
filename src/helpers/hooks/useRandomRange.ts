@@ -34,7 +34,7 @@ const useRandomRange = (props: Props) => {
   }, []);
 
   const randomNumberRange = (minValue: number, maxValue: number, currentNumber?: number): number => {
-    const shouldIncrease: boolean = Math.random() < 0.5;
+    let shouldIncrease: boolean = Math.random() < 0.5;
 
     if (currentNumber === undefined) {
       return parseNumber(random(minValue, maxValue, true), config.digits);
@@ -42,9 +42,21 @@ const useRandomRange = (props: Props) => {
 
     const randomDouble: number = config.multiplyAdd ? (Math.random() * config.multiplyAdd) : Math.random();
 
-    if (currentNumber >= maxValue) { return parseNumber((currentNumber - randomDouble), config.digits); }
+    if (currentNumber >= maxValue) {
+      return parseNumber((currentNumber - randomDouble), config.digits);
+    }
 
-    if (currentNumber <= minValue) { return parseNumber((currentNumber + randomDouble), config.digits); }
+    if (currentNumber <= minValue) {
+      return parseNumber((currentNumber + randomDouble), config.digits);
+    }
+
+    if ((currentNumber + randomDouble) > maxValue) {
+      shouldIncrease = false;
+    }
+
+    if ((currentNumber - randomDouble) < minValue) {
+      shouldIncrease = true;
+    }
 
     if (shouldIncrease) {
       return parseNumber((currentNumber + randomDouble), config.digits);
