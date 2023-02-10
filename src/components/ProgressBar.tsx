@@ -23,6 +23,7 @@ ProgressBar.defaultProps = {
   height: '6px',
   backgroundColor: '$cyan9',
   filledColor: '$cyan1',
+  percent: 0
 } as Partial<Props>;
 
 const Wrapper = styled('div', {
@@ -34,7 +35,7 @@ const Wrapper = styled('div', {
 const FilledProgress = styled('div', {
   height: '100%',
   borderRadius: '10px',
-  transition: '200ms',
+  transition: 'width 350ms ease-out',
 });
 
 export default ProgressBar;
