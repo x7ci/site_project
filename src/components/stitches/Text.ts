@@ -110,6 +110,15 @@ export const Text = styled('span', {
       cyan1: {
         color: '$cyan1',
       },
+      cyan2: {
+        color: '$cyan2',
+      },
+      cyan3: {
+        color: '$cyan3',
+      },
+      cyan4: {
+        color: '$cyan4',
+      },
       cyan9: {
         color: '$cyan9',
       },
