@@ -107,7 +107,7 @@ export const lightTheme = createTheme({
     cyan5: gray.gray9,
     cyan6: gray.gray8,
     cyan7: gray.gray8,
-    cyan8: gray.gray8,
+    cyan8: gray.gray7,
     cyan9: gray.gray8,
     cyan10: gray.gray5,
     cyan11: gray.gray4,
@@ -129,7 +129,7 @@ export const globalStyles = globalCss({
     padding: 0,
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
-    transition: '250ms ease-out',
+    transition: 'all 300ms ease-out',
     // backgroundSize: '2%',
     backgroundSize: '$sizes$tileSize',
     // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
