@@ -8,7 +8,12 @@ export const { styled, getCssText, theme } = createStitches({
       navigationBarHeight: '60px'
     },
     colors: {
-      /** Gray colors (inverted) */
+      /** App */
+      rootBackground: '#181923',
+      tileUrl: 'url("tile_dark.png")',
+      navigationBarBackground: 'rgba(153, 250, 255, .06)',
+
+      /** Gray */
       gray1: grayDark.gray1,
       gray2: grayDark.gray2,
       gray3: grayDark.gray3,
@@ -22,32 +27,33 @@ export const { styled, getCssText, theme } = createStitches({
       gray11: grayDark.gray11,
       gray12: grayDark.gray12,
 
-      rootBackground: '#181923',
-
-      navigationBarBackground: 'rgba(153, 250, 255, .06)',
-
-      yellow: '#fcf6ba',
+      /** Cyan */
       cyan1: 'rgba(153, 250, 255, 1)',
-      cyan2: 'rgba(153, 250, 255, .02)',
-      cyan3: 'rgba(153, 250, 255, .2)',
-      cyan4: 'rgba(153, 250, 255, .06)',
-      cyan5: 'rgba(153, 250, 255, .08)',
-      cyan6: 'rgba(153, 250, 255, .3)',
+      cyan2: 'rgba(153, 250, 255, .9)',
+      cyan3: 'rgba(153, 250, 255, .8)',
+      cyan4: 'rgba(153, 250, 255, .7)',
+      cyan5: 'rgba(153, 250, 255, .6)',
+      cyan6: 'rgba(153, 250, 255, .5)',
+      cyan7: 'rgba(153, 250, 255, .4)',
+      cyan8: 'rgba(153, 250, 255, .3)',
+      cyan9: 'rgba(153, 250, 255, .2)',
+      cyan10: 'rgba(153, 250, 255, .1)',
+      cyan11: 'rgba(153, 250, 255, .08)',
+      cyan12: 'rgba(153, 250, 255, .06)',
+      cyan13: 'rgba(153, 250, 255, .04)',
+      cyan14: 'rgba(153, 250, 255, .02)',
 
-      cyanLight: 'rgba(222, 253, 255, 1)',
+      /** Cyan light */
+      cyanLight1: 'rgba(222, 253, 255, 1)',
 
+      /** Yellow */
+      yellow1: 'rgba(252, 246, 186, 1)',
+
+      /** Orange */
       orange1: 'rgba(230, 107, 48, 1)',
 
+      /** Red */
       red1: 'rgba(216, 60, 60, 1)',
-
-      primary: '$gray50',
-
-      blue500: 'hsl(205,90%,45%)',
-
-      loContrast: 'hsl(206,10%,5%)',
-      hiContrast: 'white',
-      tileUrl: 'url("tile_dark.png")'
-
     },
     fontSizes: {
       1: '5px',
@@ -74,7 +80,12 @@ export const { styled, getCssText, theme } = createStitches({
 
 export const lightTheme = createTheme({
   colors: {
-    /** Gray colors */
+    /** App */
+    rootBackground: '#fff',
+    tileUrl: 'url("tile_light.png")',
+    navigationBarBackground: gray.gray4,
+
+    /** Gray */
     gray1: gray.gray1,
     gray2: gray.gray2,
     gray3: gray.gray3,
@@ -88,26 +99,27 @@ export const lightTheme = createTheme({
     gray11: gray.gray11,
     gray12: gray.gray12,
 
-    cyan1: gray.gray11,
-    cyan2: gray.gray2,
-    cyan3: gray.gray8,
-    cyan4: gray.gray5,
-    cyan5: gray.gray7,
+    /** Cyan */
+    cyan1: gray.gray12,
+    cyan2: gray.gray11,
+    cyan3: gray.gray10,
+    cyan4: gray.gray9,
+    cyan5: gray.gray9,
     cyan6: gray.gray8,
+    cyan7: gray.gray8,
+    cyan8: gray.gray8,
+    cyan9: gray.gray8,
+    cyan10: gray.gray5,
+    cyan11: gray.gray4,
+    cyan12: gray.gray3,
+    cyan13: gray.gray2,
+    cyan14: gray.gray1,
 
-    cyanLight: gray.gray11,
+    /** Cyan Light */
+    cyanLight1: gray.gray11,
 
-    rootBackground: '#fff',
-    navigationBarBackground: gray.gray4,
-
-    yellow: gray.gray11,
-
-    primary: '$gray900',
-
-    hiContrast: 'hsl(206,10%,5%)',
-    loContrast: 'white',
-
-    tileUrl: 'url("tile_light.png")',
+    /** Yellow */
+    yellow1: gray.gray11,
   },
 });
 

@@ -95,27 +95,27 @@ export const Text = styled('span', {
       gray12: {
         color: '$gray12',
       },
-      yellow: {
-        color: '$yellow'
-      },
-      cyan: {
-        color: '$cyan1',
-      },
-      cyan2: {
-        color: '$cyan2',
-      },
-      cyan3: {
-        color: '$cyan3',
-      },
-      cyanLight: {
-        color: '$cyanLight',
+      yellow1: {
+        color: '$yellow1'
       },
       orange1: {
         color: '$orange1',
       },
       red1: {
         color: '$red1',
-      }
+      },
+      cyanLight1: {
+        color: '$cyanLight1',
+      },
+      cyan1: {
+        color: '$cyan1',
+      },
+      cyan9: {
+        color: '$cyan9',
+      },
+      cyan14: {
+        color: '$cyan14',
+      },
     }
   },
 });

@@ -45,11 +45,11 @@ const DataGridContainer = () => {
 
   return (
     <Wrapper>
-      <ColoredBox color="cyan2" size="max" >
+      <ColoredBox color="cyan14" size="max" >
         <Box css={{ display: 'flex', alignItems: 'center' }}>
           <Box>
-            <Text color="cyan" weight={2}>ACTIVE </Text>
-            <Text color="cyan" weight={1} >NODES</Text>
+            <Text color="cyan1" weight={2}>ACTIVE </Text>
+            <Text color="cyan1" weight={1} >NODES</Text>
           </Box>
         </Box>
       </ColoredBox>
@@ -102,7 +102,7 @@ const DataGridContainer = () => {
 
       <Box css={{ height: 15 }} />
 
-      {/* <ColoredBox color="cyan2" size="1">
+      {/* <ColoredBox color="cyan14" size="1">
 
         <WarningFoundWrapper>
           <WarningIcon color="red1" />

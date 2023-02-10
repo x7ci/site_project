@@ -4,7 +4,7 @@ export const Button = styled('button', {
   border: 0,
   padding: '6px 32px 6px 32px',
   position: 'relative',
-  background: '$cyan2',
+  background: '$cyan14',
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: '$fontSizes$6',
@@ -20,13 +20,13 @@ export const Button = styled('button', {
     type: {
       primary: {
         color: '$cyan1',
-        background: '$cyan2',
+        background: '$cyan14',
         '&:active': {
           backgroundColor: 'rgba(0, 0, 0, 0.2)',
         },
       },
       secondary: {
-        color: '$cyan6',
+        color: '$cyan8',
         '&:active': {
           backgroundColor: 'rgba(0, 0, 0, 0.15)',
         },

@@ -143,7 +143,7 @@ const Wrapper = styled('div', {
 });
 
 const Background = styled('div', {
-  background: '$cyan2',
+  background: '$cyan14',
   // display: 'flex',
   // flexDirection: 'row'
 });

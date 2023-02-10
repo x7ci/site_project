@@ -1,6 +1,5 @@
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
-import DataGrid from '../DataGrid/DataGrid';
 import DetailedMetrics from './DetailedMetrics';
 import TableMetrics from './TableMetrics';
 import TableMetrics2 from './TableMetrics2';
@@ -8,11 +7,11 @@ import TableMetrics2 from './TableMetrics2';
 const DetailedMetricsContainer = () => {
   return (
     <Box>
-      <ColoredBox color="cyan2" size="max" >
+      <ColoredBox color="cyan14" size="max" >
         <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box>
-            <Text color="cyan" weight={2}>RUNTIME  </Text>
-            <Text color="cyan" weight={1}>METRICS</Text>
+            <Text color="cyan1" weight={2}>RUNTIME  </Text>
+            <Text color="cyan1" weight={1}>METRICS</Text>
           </Box>
         </Box>
       </ColoredBox>
@@ -34,10 +33,7 @@ const TableDataRow = styled('div', {
   '& > *': {
     flex: 1,
     minWidth: '200px'
-    // maxWidth: '320px'
   }
-  // justifyContent: ''
-
 });
 
 export default DetailedMetricsContainer;

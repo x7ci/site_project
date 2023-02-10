@@ -59,8 +59,8 @@ const CircleBorderAnimated = styled(motion.div, {
   transition: '200ms',
   variants: {
     color: {
-      cyan3: {
-        border: '3px dotted $cyan3',
+      cyan9: {
+        border: '3px dotted $cyan9',
       },
       cyanCustom: {
         border: '3px dotted rgba(153, 250, 255, .9)',
@@ -78,8 +78,8 @@ export const CircleBorder = styled('div', {
   transition: '200ms',
   variants: {
     color: {
-      cyan3: {
-        border: '3px dotted $cyan3',
+      cyan9: {
+        border: '3px dotted $cyan9',
       },
       cyanCustom: {
         border: '3px dotted rgba(153, 250, 255, .9)',

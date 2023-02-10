@@ -25,13 +25,13 @@ export default function Home() {
             <NavigationBar>
               <ReactIcon />
               <NavbarTitleContainer>
-                <Text color="yellow" size={{ '@initial': 11, '@bp3': 8 }} weight={2} >
+                <Text color="yellow1" size={{ '@initial': 11, '@bp3': 8 }} weight={2} >
                   {'FULL STACK '}
                   <Text size={{ '@initial': 11, '@bp3': 8 }} weight={1} >DEVELOPER</Text>
                 </Text>
-                <Text color="cyan" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+                <Text color="cyan1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
                   {'SEQUENCE: '}
-                  <Text color="cyanLight" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+                  <Text color="cyanLight1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
                     {'771-C/3309-M2'}
                   </Text>
                 </Text>
@@ -57,7 +57,7 @@ export default function Home() {
             This is a test container. */}
           </DottedTopBorderBox>
           <Box css={{ height: 20 }} />
-          <ColoredBox color="cyan">
+          <ColoredBox color="cyan1">
             <Text color="gray1" weight="2" >SAMPLE ANALYSIS</Text>
           </ColoredBox>
           <Box css={{ height: 20 }} />

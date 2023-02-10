@@ -40,14 +40,14 @@ export const SlicedButton = styled('button', {
     },
   },
   '&:hover': {
-    color: '$yellow',
+    color: '$yellow1',
     '&:before': {
       transition: '250ms',
       backgroundColor: 'rgba(0, 0, 0, 0.4)',
     }
   },
   '&:active': {
-    color: '$yellow',
+    color: '$yellow1',
     '&:before': {
       backgroundColor: 'rgba(0, 0, 0, 0.0)',
     }

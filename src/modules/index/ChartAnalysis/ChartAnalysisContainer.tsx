@@ -7,14 +7,14 @@ import ChartAnalysis from './ChartAnalysis';
 const ChartAnalysisContainer = () => {
   return (
     <Wrapper>
-      <ColoredBox color="cyan2" size="max" >
+      <ColoredBox color="cyan14" size="max" >
         <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box>
-            <Text color="cyan" weight={2}>HEALTH </Text>
-            <Text color="cyan" weight={1}>MONITOR</Text>
+            <Text color="cyan1" weight={2}>HEALTH </Text>
+            <Text color="cyan1" weight={1}>MONITOR</Text>
           </Box>
           <TitleTextRow>
-            <Text color="cyan" weight={2}>LIVE DATA</Text>
+            <Text color="cyan1" weight={2}>LIVE DATA</Text>
             <LiveDataCircle />
           </TitleTextRow>
         </Box>

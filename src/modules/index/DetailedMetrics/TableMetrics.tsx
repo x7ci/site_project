@@ -80,7 +80,7 @@ const TableMetrics = () => {
 };
 
 const Wrapper = styled('div', {
-  background: '$cyan2',
+  background: '$cyan14',
   display: 'flex',
   flexDirection: 'column',
 });

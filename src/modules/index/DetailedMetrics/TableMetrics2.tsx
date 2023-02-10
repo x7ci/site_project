@@ -40,7 +40,7 @@ const TableMetrics2 = () => {
     {
       label: 'TURBINE_SPEED',
       value: turbineSpeed,
-      valueColor: 'yellow',
+      valueColor: 'yellow1',
       unit: 'rpm'
     },
     {
@@ -83,7 +83,7 @@ const TableMetrics2 = () => {
 };
 
 const Wrapper = styled('div', {
-  background: '$cyan2',
+  background: '$cyan14',
   display: 'flex',
   flexDirection: 'column',
 });

@@ -17,7 +17,7 @@ const DetailedMetrics = () => {
 
           <MetricGroup>
             <Dot />
-            <Text weight='3' size={4} color="cyanLight" >IDX_21321_LOAD</Text>
+            <Text weight='3' size={4} color="cyanLight1" >IDX_21321_LOAD</Text>
             <ProgressBar percent={progress1} />
           </MetricGroup>
 
@@ -25,7 +25,7 @@ const DetailedMetrics = () => {
 
           <MetricGroup>
             <Dot color='orange1' />
-            <Text weight='3' size={4} color="cyanLight" >IDX_75322_THRE</Text>
+            <Text weight='3' size={4} color="cyanLight1" >IDX_75322_THRE</Text>
             <ProgressBar percent={progress2} filledColor="$orange1" />
           </MetricGroup>
 
@@ -45,7 +45,7 @@ const MetricGroupWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  background: '$cyan2',
+  background: '$cyan14',
   height: '60px',
   paddingLeft: '10px',
   paddingRight: '10px',

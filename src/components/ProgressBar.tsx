@@ -21,13 +21,13 @@ const ProgressBar = ({ percent, backgroundColor, filledColor, height }: Props) =
 
 ProgressBar.defaultProps = {
   height: '6px',
-  backgroundColor: '$cyan3',
+  backgroundColor: '$cyan9',
   filledColor: '$cyan1',
 } as Partial<Props>;
 
 const Wrapper = styled('div', {
   width: '100%',
-  backgroundColor: '$cyan3',
+  backgroundColor: '$cyan9',
   borderRadius: '10px',
 });
 

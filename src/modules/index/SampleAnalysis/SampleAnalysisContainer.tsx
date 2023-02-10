@@ -5,14 +5,14 @@ import SampleAnalysis from './SampleAnalysis';
 const SampleAnalysisContainer = () => {
   return (
         <Wrapper>
-            <ColoredBox color="cyan2" size="max" >
+            <ColoredBox color="cyan14" size="max" >
                 <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box>
-                        <Text color="cyan" weight={2}>MODEL </Text>
-                        <Text color="cyan" weight={1} >RENDER</Text>
+                        <Text color="cyan1" weight={2}>MODEL </Text>
+                        <Text color="cyan1" weight={1} >RENDER</Text>
                     </Box>
                     <Box>
-                        <Text color="cyan" weight={2}>ID: 34-842 </Text>
+                        <Text color="cyan1" weight={2}>ID: 34-842 </Text>
                     </Box>
                 </Box>
             </ColoredBox>

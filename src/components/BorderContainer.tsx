@@ -43,7 +43,7 @@ const Container = styled('div', {
   padding: '10px',
   color: 'white',
   border: '1px solid transparent', // chjange rootbackground below:::
-  background: 'linear-gradient($rootBackground, $rootBackground) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), $cyan3, rgba(0,0,0,0)) border-box'
+  background: 'linear-gradient($rootBackground, $rootBackground) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), $cyan9, rgba(0,0,0,0)) border-box'
 });
 
 export default BorderContainer;

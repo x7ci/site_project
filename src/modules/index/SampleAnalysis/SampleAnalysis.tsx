@@ -61,7 +61,7 @@ const SampleAnalysis = () => {
               scale: hover ? [1, 1, 1] : [1.05, 1, 1.05],
             }}
             transition={{ repeat: Infinity, duration: 4 }}
-            color={hover ? 'cyanCustom' : undefined}
+            color={hover ? 'cyan1' : undefined}
           />
           <Box
             as={motion.div}
@@ -109,7 +109,7 @@ const SampleAnalysis = () => {
 };
 
 const Wrapper = styled('div', {
-  background: '$cyan2',
+  background: '$cyan14',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -129,16 +129,16 @@ const DottedCircle = styled(motion.div, {
   width: '260px',
   height: '260px',
   borderRadius: '50%',
-  border: '3px dotted $cyan3',
+  border: '3px dotted $cyan9',
   transition: '200ms',
   variants: {
     color: {
-      cyan3: {
-        border: '3px dotted $cyan3',
-      },
-      cyanCustom: {
+      cyan1: {
         border: '3px dotted $cyan1',
-      }
+      },
+      cyan9: {
+        border: '3px dotted $cyan9',
+      },
     }
   }
 });

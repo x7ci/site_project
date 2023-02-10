@@ -17,7 +17,7 @@ type SeverityColorTypes = {
 
 const severityColor: SeverityColorTypes = {
   [ItemSeverity.low]: 'cyan1',
-  [ItemSeverity.medium]: 'yellow',
+  [ItemSeverity.medium]: 'yellow1',
   [ItemSeverity.high]: 'red1',
 };
 
@@ -37,7 +37,7 @@ const DataGrid = ({ data, highlightSeverity }: Props) => {
   return (
     <DottedTopBorderBox>
       <Wrapper>
-        <Table borderColor="cyan1" backgroundColor="cyan5" >
+        <Table borderColor="cyan1" backgroundColor="cyan11" >
           <TableBody>
             {data.map((dataGridRow: DataGridRow, i) => (
               <TableRow key={`${i}datagridrow`}>
@@ -64,7 +64,7 @@ const DataGrid = ({ data, highlightSeverity }: Props) => {
 };
 
 const Wrapper = styled('div', {
-  background: '$cyan2',
+  background: '$cyan14',
   padding: 10
 });
 
@@ -78,7 +78,7 @@ const DataBoxWrapper = styled('div', {
 
 const flashAnimation = keyframes({
   '0%': {
-    background: '$cyan3',
+    background: '$cyan9',
     // transform: 'translateX(-5px)'
   },
   '100%': {
@@ -106,7 +106,7 @@ const scaleAnimation = keyframes({
 const AnimatingBox = styled('div', {
   position: 'absolute',
   opacity: 0,
-  border: '1px solid $cyan3',
+  border: '1px solid $cyan9',
   width: '10px',
   height: '10px',
   variants: {
@@ -133,8 +133,8 @@ const Dot = styled('div', {
       cyan1: {
         background: '$cyan1'
       },
-      yellow: {
-        background: '$yellow'
+      yellow1: {
+        background: '$yellow1'
       },
       red1: {
         background: '$red1'

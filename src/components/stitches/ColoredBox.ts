@@ -5,16 +5,41 @@ export const ColoredBox = styled('div', {
   paddingLeft: '10px',
   paddingRight: '10px',
   variants: {
+    textAlign: {
+      center: {
+        textAlign: 'center',
+      }
+    },
+    flex: {
+      1: {
+        flex: 1,
+      },
+      2: {
+        flex: 2,
+      },
+      3: {
+        flex: 3,
+      },
+    },
     color: {
-      cyan: {
+      cyan1: {
         background: '$cyan1',
       },
-      cyan2: {
-        background: '$cyan2',
+      cyan11: {
+        background: '$cyan11',
       },
-      cyan3: {
-        background: '$cyan3',
-      }
+      cyan8: {
+        background: '$cyan8',
+      },
+      cyan9: {
+        background: '$cyan9',
+      },
+      cyan12: {
+        background: '$cyan12',
+      },
+      cyan14: {
+        background: '$cyan14',
+      },
     },
     size: {
       1: {
@@ -32,6 +57,9 @@ export const ColoredBox = styled('div', {
       'max': {
         width: 'calc(100% - 20px)',
       },
+      'unset': {
+        width: 'unset',
+      }
     }
   }
 });

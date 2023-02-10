@@ -17,7 +17,7 @@ FilledBox.defaultProps = {
 };
 
 const ColorBox = styled('div', {
-  backgroundColor: '$hiContrast',
+  backgroundColor: '$cyan1',
 });
 
 export default FilledBox;

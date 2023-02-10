@@ -25,8 +25,8 @@ export const Table = styled('table', {
       },
     },
     backgroundColor: {
-      cyan5: {
-        backgroundColor: '$cyan5',
+      cyan11: {
+        backgroundColor: '$cyan11',
       }
     }
   }
@@ -38,7 +38,7 @@ export const TableBody = styled('tbody', {
 
 const flashAnimation = keyframes({
   '0%': {
-    background: '$cyan3',
+    background: '$cyan9',
     // transform: 'translateX(-5px)'
   },
   '100%': {
@@ -50,7 +50,7 @@ const flashAnimation = keyframes({
 export const TableRow = styled('tr', {
   transition: '250ms',
   '&:hover': {
-    background: '$cyan4'
+    background: '$cyan12'
   },
   variants: {
     animation: {
@@ -61,7 +61,7 @@ export const TableRow = styled('tr', {
     }
   }
   // '&:nth-child(odd)': {
-  //     background: '$cyan2'
+  //     background: '$cyan14'
   // }
 });
 
