@@ -2,7 +2,7 @@ import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
 import Image from 'next/image';
 import useIsMounted from '@/helpers/hooks/useIsMounted';
 
-const ThemeToggle = () => {
+const ReactIcon = () => {
   const { resolvedTheme } = useTheme();
 
   const isMounted = useIsMounted();
@@ -22,4 +22,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;
+export default ReactIcon;

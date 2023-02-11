@@ -28,6 +28,8 @@ const SampleAnalysis = () => {
 
   const srcPath = `/quark_${isLight ? 'light' : 'dark'}.gif`;
 
+  const [animationEnded, setAnimationEnded] = useState<boolean>(false);
+
   return (
     <DottedTopBorderBox>
       <Wrapper>
@@ -56,13 +58,24 @@ const SampleAnalysis = () => {
         </TextWrapper>
         <ImageWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
 
-          <DottedCircle
-            animate={{
-              scale: hover ? [1, 1, 1] : [1.05, 1, 1.05],
-            }}
-            transition={{ repeat: Infinity, duration: 4 }}
-            color={hover ? 'cyan1' : undefined}
-          />
+          <AnimatePresence>
+
+            <DottedCircle
+              as={motion.div}
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={animationEnded ? { scale: hover ? [1, 1, 1] : [1, 1.05, 1], opacity: 1 } : { scale: 1, opacity: 1 }}
+              onAnimationComplete={() => setAnimationEnded(true)}
+              transition={animationEnded
+                ? { repeat: Infinity, duration: 4 }
+                : {
+                    type: 'spring',
+                    stiffness: 100,
+                    damping: 10,
+                    delay: 1.8,
+                  }}
+              color={hover ? 'cyan1' : undefined}
+            />
+          </AnimatePresence>
           <Box
             as={motion.div}
             animate={{
@@ -74,7 +87,7 @@ const SampleAnalysis = () => {
             <Box
               as={motion.div}
               animate={{
-                scale: [0.8, 1, 0.8],
+                // scale: [0.8, 1, 0.8],
               }}
               transition={{ repeat: Infinity, duration: 4 }}
             >
