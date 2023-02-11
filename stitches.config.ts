@@ -11,7 +11,7 @@ export const { styled, getCssText, theme } = createStitches({
       /** App */
       rootBackground: '#181923',
       tileUrl: 'url("tile_dark.png")',
-      navigationBarBackground: 'rgba(153, 250, 255, .06)',
+      navigationBarBackground: 'rgba(153, 250, 255, .04)',
 
       /** Gray */
       gray1: grayDark.gray1,
@@ -74,7 +74,7 @@ export const { styled, getCssText, theme } = createStitches({
     dark: '(prefers-color-scheme: dark)',
     bp1: '(min-width: 1024px)',
     bp2: '(min-width: 768px)',
-    bp3: '(max-width: 822px)',
+    bp3: '(max-width: 880px)',
   },
 });
 
@@ -107,7 +107,7 @@ export const lightTheme = createTheme({
     cyan5: gray.gray9,
     cyan6: gray.gray8,
     cyan7: gray.gray8,
-    cyan8: gray.gray7,
+    cyan8: gray.gray8,
     cyan9: gray.gray8,
     cyan10: gray.gray5,
     cyan11: gray.gray4,
@@ -129,11 +129,11 @@ export const globalStyles = globalCss({
     padding: 0,
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
-    transition: 'all 300ms ease-out',
-    // backgroundSize: '2%',
+    transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
-    // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
     backgroundBlendMode: 'multiply'
+    // backgroundSize: '2%',
+    // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
   },
   // "@dark": {
   //     // notice the `media` definition on the stitches.config.ts file
