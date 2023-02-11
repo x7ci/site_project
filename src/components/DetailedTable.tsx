@@ -37,7 +37,7 @@ const DetailedTable = ({ data }: Props) => {
                 <TableCell>
                   {typeof dataItem.label === 'string'
                     ? (
-                      <Text size="4" color={dataItem.valueColor ?? 'cyan'}>{dataItem.value}</Text>
+                      <Text size="4" color={dataItem.valueColor ?? 'cyan1'}>{dataItem.value}</Text>
                       )
                     : (
                         dataItem.value

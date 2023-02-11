@@ -34,7 +34,7 @@ const SingleDataMetric = ({ icon, title, data }: Props) => {
       {data.map((dataSet, i) => (
         <DataMetricContainer key={`${dataSet.label}:${dataSet.value}:${i}`}>
           <ColoredBox color="cyan12" size="2" textAlign="center">
-            <Text color="cyan3" size="5" weight={3}>{dataSet.label}</Text>
+            <Text color="cyan2" size="5" weight={3}>{dataSet.label}</Text>
           </ColoredBox>
 
           <ColoredBox textAlign="center">

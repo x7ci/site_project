@@ -16,8 +16,14 @@ const ThemeToggle = () => {
   };
 
   return (
-    <SlicedButton onClick={toggleTheme}>
-      switch theme ({resolvedTheme})
+    <SlicedButton
+      onClick={toggleTheme}
+      variant={{ '@bp3': 'standard' }}
+      fontSize={5}
+      weight={3}
+      color="cyan8"
+    >
+      SWITCH THEME ({resolvedTheme?.toUpperCase()})
     </SlicedButton>
   );
 };
