@@ -1,5 +1,5 @@
 import { random } from 'lodash';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, startTransition } from 'react';
 
 const parseNumber = (num: number, digits?: number): number => {
   return Number((num).toFixed(digits ?? 2));
@@ -22,10 +22,15 @@ const useRandomRange = (props: Props) => {
 
   useEffect(() => {
     const randomNumber: number = randomNumberRange(config.minValue, config.maxValue);
-    setNumber(randomNumber);
+
+    startTransition(() => {
+      setNumber(randomNumber);
+    });
 
     const interval = setInterval(() => {
-      setNumber((currentNumber) => randomNumberRange(config.minValue, config.maxValue, currentNumber));
+      startTransition(() => {
+        setNumber((currentNumber) => randomNumberRange(config.minValue, config.maxValue, currentNumber));
+      });
     }, config.updateInterval);
 
     return () => {
