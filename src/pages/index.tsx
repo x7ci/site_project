@@ -38,8 +38,23 @@ export default function Home() {
               </NavbarTitleContainer>
               <NavbarLinksContainer>
                 <NavbarLinksContainer2>
-                  <SlicedButton>index</SlicedButton>
-                  <SlicedButton>about</SlicedButton>
+                  <SlicedButton
+                    variant={{ '@bp3': 'standard' }}
+                    fontSize={5}
+                    weight={3}
+                    color="cyan1"
+                  >
+                    ANALAYSIS
+                  </SlicedButton>
+
+                  <SlicedButton
+                    variant={{ '@bp3': 'standard' }}
+                    fontSize={5}
+                    weight={3}
+                    color="cyan8"
+                  >
+                    ABOUT
+                  </SlicedButton>
                   <ThemeToggle />
                 </NavbarLinksContainer2>
               </NavbarLinksContainer>
@@ -112,7 +127,7 @@ const NavbarLinksContainer = styled('div', {
 const NavbarLinksContainer2 = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  // gap: 8,
+  gap: 10,
 });
 
 const NavigationBar = styled('div', {
@@ -123,6 +138,12 @@ const NavigationBar = styled('div', {
   alignItems: 'center',
   gap: '14px',
   position: 'relative',
+
+  /** Height for the space reserved for navigation buttons. */
+  '$$buttonSpaceHeight': '30px',
+
+  /** How many width px the space for the navigation buttons should start. */
+  '$$buttonSpaceStart': '342px',
 
   '&:before': {
     content: '',
@@ -138,9 +159,9 @@ const NavigationBar = styled('div', {
       polygon(
         0% 0%,
         100% 0%,
-        100% 25px,
-        367px 25px,
-        342px 100%,
+        100% $$buttonSpaceHeight,
+        calc(21px + $$buttonSpaceStart) $$buttonSpaceHeight,
+        $$buttonSpaceStart 100%,
         0% 100%
       )`,
     // zIndex: -1,
