@@ -8,7 +8,7 @@ export const SlicedButton = styled('button', {
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: '$fontSizes$6',
-  transition: 'all 200ms ease-out',
+  transition: 'all 150ms ease-out',
   zIndex: 1,
   whiteSpace: 'nowrap',
   color: '$cyan1',
@@ -41,6 +41,14 @@ export const SlicedButton = styled('button', {
   },
   transform: 'unset',
   variants: {
+    type: {
+      primary: {
+        color: '$cyan1',
+      },
+      secondary: {
+        color: '$cyan8',
+      },
+    },
     variant: {
       standard: {
         '&:before': {
