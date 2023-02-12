@@ -93,16 +93,17 @@ const flashAnimation = keyframes({
 
 const scaleAnimation = keyframes({
   '0%': {
-    scale: 0,
+    // scale: 0,
     opacity: 1,
-    // transform: 'translateX(-5px)'
+    // transform: 'translateY(0px)'
   },
   '50%': {
     opacity: 1,
-    // transform: 'translateX(-5px)'
+    // transform: 'translateY(0px)'
   },
   '100%': {
-    scale: 2.5,
+    // scale: 1.5,
+    // transform: 'translateY(-5px)',
     opacity: 0,
   },
 });
@@ -110,9 +111,10 @@ const scaleAnimation = keyframes({
 const AnimatingBox = styled('div', {
   position: 'absolute',
   opacity: 0,
-  border: '1px solid $cyan8',
-  width: '10px',
-  height: '10px',
+  border: '2px solid $cyan8Opaque',
+  // background: '$cyan8',
+  width: '17.5px',
+  height: '17.5px',
   variants: {
     animation: {
       scale: {

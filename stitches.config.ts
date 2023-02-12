@@ -43,6 +43,8 @@ export const { styled, getCssText, theme } = createStitches({
       cyan13: 'rgba(153, 250, 255, .04)',
       cyan14: 'rgba(153, 250, 255, .02)',
 
+      cyan8Opaque: '#476a72',
+
       /** Cyan light */
       cyanLight1: 'rgba(222, 253, 255, 1)',
 
@@ -115,6 +117,8 @@ export const lightTheme = createTheme({
     cyan13: gray.gray2,
     cyan14: gray.gray1,
 
+    cyan8Opaque: gray.gray8,
+
     /** Cyan Light */
     cyanLight1: gray.gray11,
 
@@ -134,6 +138,10 @@ export const globalStyles = globalCss({
     backgroundBlendMode: 'multiply'
     // backgroundSize: '2%',
     // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
+  },
+  '::selection': {
+    color: '$gray1',
+    background: '$gray11',
   },
   // "@dark": {
   //     // notice the `media` definition on the stitches.config.ts file

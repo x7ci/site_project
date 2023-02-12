@@ -82,6 +82,9 @@ export const TableCell = styled('td', {
     backgroundColor: {
       rootBackground: {
         backgroundColor: '$rootBackground',
+      },
+      cyan10: {
+        backgroundColor: '$cyan10',
       }
     },
     size: {

@@ -1,5 +1,6 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
-import { Box, SlicedButton, Text } from '@/components/stitches';
+import GitHubIcon from '@/components/icons/GitHubIcon';
+import { Box, ColoredBox, SlicedButton, Text } from '@/components/stitches';
 import Link from 'next/link';
 import { type NextRouter, useRouter } from 'next/router';
 import { type ReactNode } from 'react';
@@ -25,13 +26,24 @@ const NavigationBar = ({ children }: Props) => {
               <Text size={{ '@initial': 11, '@bp3': 8 }} weight={1} >DEVELOPER</Text>
             </Text>
             <Text color="cyan1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
-              {'SEQUENCE: '}
+              {'SITE PROJECT: '}
               <Text color="cyanLight1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
-                {'771-C/3309-M2'}
+                771-C/3309-M2
               </Text>
             </Text>
           </NavbarTitleContainer>
           <NavbarLinksContainer>
+            <Box css={{ height: 30, background: '', display: 'flex', justifyContent: 'flex-end', textAlign: 'center', alignItems: 'center' }}>
+              <ColoredBox css={{ display: 'flex', height: 30, alignItems: 'center', background: 'rgba(0,0,0,0.1)' }}>
+                <GitHubIcon color='gray11' scale={.03} size={15} />
+                <Box css={{ width: 7 }} />
+                <Text color="gray11" weight="2" size={'5'} >x7ci @ github</Text>
+                {/* <Box css={{ width: 100, height: 30, background: 'blue' }}>
+                asdads
+              </Box> */}
+              </ColoredBox>
+            </Box>
+
             <NavbarLinksRow>
               <Link href="/">
                 <SlicedButton
@@ -117,24 +129,28 @@ const NavigationBarBox = styled('div', {
     },
   },
   '@bp3': {
-    marginBottom: 30
+    marginBottom: 60
   },
 });
 
 const NavbarTitleContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  width: '276px'
 });
 
 const NavbarLinksContainer = styled('div', {
-  position: 'absolute',
-  left: '360px',
   display: 'flex',
+  flex: 1,
   flexDirection: 'column',
-  justifyContent: 'flex-end',
+  justifyContent: 'space-between',
   height: '$sizes$navigationBarHeight',
+  paddingRight: 20,
   '@bp3': {
-    top: '42px',
+    position: 'absolute',
+    // height: '50px',
+    width: '100%',
+    top: '75px',
     left: '0px',
   },
 });
