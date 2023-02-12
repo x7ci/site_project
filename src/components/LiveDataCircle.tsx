@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion, type Transition, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { styled } from 'stitches.config';
 
@@ -13,7 +13,7 @@ const LiveDataCircle = () => {
     };
   }, []);
 
-  const animationSequence = async () => {
+  const animationSequence = async() => {
     animationControls.set({
       scale: 1,
       opacity: 1
@@ -30,14 +30,16 @@ const LiveDataCircle = () => {
     });
   };
 
+  const transition: Transition = {
+    duration: 2,
+    ease: 'easeOut',
+  };
+
   return (
     <Wrapper>
       <CircleBorderAnimated
         animate={animationControls}
-        transition={{
-          duration: 2,
-          ease: 'easeOut',
-        }}
+        transition={transition}
       />
       <CircleBorder>
         <Circle />

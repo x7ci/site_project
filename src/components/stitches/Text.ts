@@ -3,6 +3,9 @@ import { styled } from 'stitches.config';
 export const Text = styled('span', {
   color: '$primary',
   background: 'unset',
+  defaultVariants: {
+    color: 'gray12'
+  },
   variants: {
     background: {
       cyan: {

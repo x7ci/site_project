@@ -18,9 +18,11 @@ const Home = () => {
       </Head>
 
       <Wrapper>
-        <ColoredBox color="cyan1">
-          <Text color="gray1" weight="2" >SAMPLE ANALYSIS</Text>
-        </ColoredBox>
+        <AnimateComponentMount>
+          <ColoredBox color="cyan1">
+            <Text color="gray1" weight="2" >SAMPLE ANALYSIS</Text>
+          </ColoredBox>
+        </AnimateComponentMount>
         <Box css={{ height: 20 }} />
         <ComponentsContainer>
           <Box css={{ flex: 1, maxWidth: 600 }}>
