@@ -24,7 +24,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     >
       <main className={robotoCondensed.className}>
         <NavigationBar>
-          <AnimatePresence mode='wait' initial={false}>
+          <AnimatePresence mode="wait" initial={true}>
             <Component {...pageProps} key={router.asPath} />
           </AnimatePresence>
         </NavigationBar>
