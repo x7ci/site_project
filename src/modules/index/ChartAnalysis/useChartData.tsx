@@ -1,5 +1,5 @@
 import dayjs, { type Dayjs } from 'dayjs';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, startTransition } from 'react';
 
 interface LineDataItemOption {
   name: string
@@ -40,12 +40,14 @@ const useChartData = ({ dataLength }: Props) => {
     setChartData(initialData);
 
     const interval = setInterval(() => {
-      setChartData((currentChartData) => {
-        const newChartData = currentChartData?.length ? [...currentChartData] : [];
-        newChartData.shift();
-        newChartData.push(randomDataItem());
+      startTransition(() => {
+        setChartData((currentChartData) => {
+          const newChartData = currentChartData?.length ? [...currentChartData] : [];
+          newChartData.shift();
+          newChartData.push(randomDataItem());
 
-        return newChartData;
+          return newChartData;
+        });
       });
     }, 1000);
 
