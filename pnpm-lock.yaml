@@ -10,7 +10,6 @@ specifiers:
   '@types/react-dom': 18.0.10
   '@typescript-eslint/eslint-plugin': ^5.50.0
   '@typescript-eslint/parser': ^5.48.2
-  classnames: ^2.3.2
   dayjs: ^1.11.7
   echarts: ^5.4.1
   echarts-for-react: ^3.0.2
@@ -33,7 +32,6 @@ dependencies:
   '@next/font': 13.1.4
   '@radix-ui/colors': 0.1.8
   '@stitches/react': 1.2.8_react@18.2.0
-  classnames: 2.3.2
   dayjs: 1.11.7
   echarts: 5.4.1
   echarts-for-react: 3.0.2_echarts@5.4.1+react@18.2.0
@@ -707,10 +705,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
 
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
