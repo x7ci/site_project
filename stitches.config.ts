@@ -115,7 +115,7 @@ export const lightTheme = createTheme({
     cyan11: gray.gray4,
     cyan12: gray.gray3,
     cyan13: gray.gray2,
-    cyan14: gray.gray1,
+    cyan14: gray.gray2,
 
     cyan8Opaque: gray.gray8,
 
