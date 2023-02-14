@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/contexts/ThemeProvider/ThemeProvider';
 import type { AppProps } from 'next/app';
-import { lightTheme } from '../../stitches.config';
+import { theme, lightTheme } from '../../stitches.config';
 import { Roboto_Condensed } from '@next/font/google';
 import { type NextFont } from '@next/font';
 import NavigationBar from '@/modules/NavigationBar';
@@ -17,8 +17,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"
+      storageKey="theme"
       value={{
-        dark: 'dark',
+        dark: theme.className,
         light: lightTheme.className,
       }}
     >

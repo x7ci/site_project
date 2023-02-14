@@ -1,4 +1,5 @@
 import AnimateComponentMount from '@/components/AnimateComponentMount';
+import UsernameIcon from '@/components/icons/UsernameIcon';
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import ProjectStack from '@/modules/about/ProjectStack';
 import Head from 'next/head';
@@ -19,6 +20,11 @@ const Home = () => {
           <ColoredBox color="cyan1">
             <Text color="gray1" weight="2" >ABOUT</Text>
           </ColoredBox>
+        </AnimateComponentMount>
+
+        {/* <Box css={{ height: 20 }} /> */}
+        <AnimateComponentMount>
+          <UsernameIcon width={515} height={240} scale={3.5} />
         </AnimateComponentMount>
 
         <Box css={{ height: 20 }} />

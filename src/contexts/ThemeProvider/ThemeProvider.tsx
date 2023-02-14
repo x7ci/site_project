@@ -303,10 +303,7 @@ const ThemeScript = memo(function({
   })();
 
   return <script nonce={nonce} dangerouslySetInnerHTML={{ __html: scriptSrc }} />;
-},
-// Never re-render this component
-() => true
-);
+}, () => true); // Never re-render this component
 
 // Helpers
 const getTheme = (key: string, fallback?: string) => {
@@ -331,7 +328,7 @@ const disableAnimation = () => {
 
   return () => {
     // Force restyle
-    ; (() => window.getComputedStyle(document.body))();
+    (() => window.getComputedStyle(document.body))();
 
     // Wait for next tick before removing
     setTimeout(() => {

@@ -102,22 +102,28 @@ const ChartAnalysis = () => {
           <TextWrapper>
             <TextRowWrapper>
               <TextGroupWrapper>
-                <Text size={3} color="gray8">ID 255212</Text>
-                <Text size={3} color="gray8">DATA SET: POLARIS </Text>
+                <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
+                <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
               </TextGroupWrapper>
               <TextGroupWrapper align="right">
-                <Text size={3} color="gray8">CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}</Text>
-                <Text size={3} color="gray8">SOCKET_CONN_OK</Text>
+                <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_OK</Text>
               </TextGroupWrapper>
             </TextRowWrapper>
             <TextRowWrapper>
               <TextGroupWrapper>
-                <Text size={3} color="gray8">UNIT TEST: OK</Text>
-                <Text size={3} color="gray8">SAMPLE HEALTH: OK</Text>
+                <Text size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</Text>
+                <Text
+                  background="cyan1"
+                  size={3}
+                  color="gray1"
+                  padding="tiny"
+                >
+                  CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
+                </Text>
               </TextGroupWrapper>
               <TextGroupWrapper align="right">
-                <Text size={3} color="gray8">APACHE ECHARTS</Text>
-                <Text size={3} color="gray8">V. 5.4.1 </Text>
+                <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
+                <Text size={3} color="gray8" padding="tiny">V. 5.4.1 </Text>
               </TextGroupWrapper>
             </TextRowWrapper>
           </TextWrapper>

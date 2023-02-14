@@ -8,13 +8,13 @@ export const generateDataGrid = (): DataGridRow[] => {
     const dataGridRow: DataGridRow = [];
 
     for (let j = 0; j < 27; j++) {
-      const isActive: boolean = Math.random() > 0.8;
+      const isActive: boolean = Math.random() > 0.75;
 
-      const isHighSeverity: boolean = Math.random() > 0.7;
+      // const isHighSeverity: boolean = Math.random() > 0.7;
 
       dataGridRow.push({
         isActive,
-        severity: isActive ? (isHighSeverity ? ItemSeverity.high : sample([ItemSeverity.low, ItemSeverity.medium]) ?? ItemSeverity.low) : undefined,
+        severity: isActive ? (sample([ItemSeverity.low, ItemSeverity.medium, ItemSeverity.high])) : undefined,
       });
     }
 

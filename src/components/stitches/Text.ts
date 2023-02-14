@@ -3,14 +3,27 @@ import { styled } from 'stitches.config';
 export const Text = styled('span', {
   color: '$primary',
   background: 'unset',
+  transition: 'all 150ms ease-out',
   defaultVariants: {
     color: 'gray12'
   },
   variants: {
     background: {
-      cyan: {
-        background: '$cyan1'
+      cyan1: {
+        background: '$cyan3'
       }
+    },
+    padding: {
+      tiny: {
+        padding: '1px 3px 1px 3px',
+      },
+    },
+    onHover: {
+      cyan1: {
+        '&:hover': {
+          color: '$cyan1'
+        }
+      },
     },
     size: {
       1: {
@@ -121,6 +134,18 @@ export const Text = styled('span', {
       },
       cyan4: {
         color: '$cyan4',
+      },
+      cyan5: {
+        color: '$cyan5',
+      },
+      cyan6: {
+        color: '$cyan6',
+      },
+      cyan7: {
+        color: '$cyan7',
+      },
+      cyan8: {
+        color: '$cyan8',
       },
       cyan9: {
         color: '$cyan9',

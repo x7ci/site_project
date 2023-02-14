@@ -36,23 +36,23 @@ const SampleAnalysis = () => {
         <TextWrapper>
           <TextRowWrapper>
             <TextGroupWrapper>
-              <Text size={3} color="gray8">ID 255212</Text>
-              <Text size={3} color="gray8">DATA SET: POLARIS </Text>
-              <Text size={3} color="gray8">UNIT GROUP: M22 </Text>
+              <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
+              <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
+              <Text size={3} color="gray8" padding="tiny">UNIT GROUP: M22 </Text>
             </TextGroupWrapper>
             <TextGroupWrapper align="right">
-              <Text size={3} color="gray8">{date?.toISOString()}</Text>
-              <Text size={3} color="gray8">[UP TO DATE]</Text>
+              <Text size={3} color="gray8" padding="tiny">{date?.toISOString()}</Text>
+              <Text size={3} color="gray8" padding="tiny">[UP TO DATE]</Text>
             </TextGroupWrapper>
           </TextRowWrapper>
           <TextRowWrapper>
             <TextGroupWrapper>
-              <Text size={3} color="gray8">UNIT TEST: OK</Text>
-              <Text size={3} color="gray8">FPS: {fps}</Text>
+              <Text size={3} color="gray8" padding="tiny">UNIT TEST: OK</Text>
+              <Text background="cyan1" size={3} color="gray1" padding="tiny">FPS: {fps}</Text>
             </TextGroupWrapper>
             <TextGroupWrapper align="right">
-              <Text size={3} color="gray8">FRAMER-MOTION</Text>
-              <Text size={3} color="gray8">8.5.3-ALPHA.1 </Text>
+              <Text size={3} color="gray8" padding="tiny">FRAMER-MOTION</Text>
+              <Text size={3} color="gray8" padding="tiny">8.5.3-ALPHA.1 </Text>
             </TextGroupWrapper>
           </TextRowWrapper>
         </TextWrapper>
@@ -170,7 +170,7 @@ const TextWrapper = styled('div', {
 
 const TextRowWrapper = styled('div', {
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
 });
 
 const TextGroupWrapper = styled('div', {
