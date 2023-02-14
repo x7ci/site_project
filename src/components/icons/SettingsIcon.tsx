@@ -12,7 +12,6 @@ const SettingsIcon = ({ color, css, size = 50, scale = 1 }: Props) => {
   return (
     <Box
       as="svg"
-      xmlns="http://www.w3.org/2000/svg"
       css={{ fill: `$${color}`, width: size, height: size, ...css }}
     >
       <Box

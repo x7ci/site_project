@@ -12,13 +12,12 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
   return (
     <Box
       as="svg"
-      xmlns="http://www.w3.org/2000/svg"
       width="35"
       height="35"
       viewBox="0 0 35 35"
-      fill="none"
       css={{ fill: `$${color}`, width: size, height: size, ...css }}
     >
+      <title>Stitches logo</title>
       <Box
         as="circle"
         cx="17.5"

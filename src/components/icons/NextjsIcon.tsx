@@ -16,7 +16,6 @@ const NextjsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
       fill="none"
       height="18.2741116751"
       viewBox="0 0 394 80"
-      xmlns="http://www.w3.org/2000/svg"
       css={{ fill: `$${color}`, width, height, ...css }}
     >
       <title>Next.js logo</title>
