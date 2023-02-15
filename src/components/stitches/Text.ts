@@ -5,7 +5,8 @@ export const Text = styled('span', {
   background: 'unset',
   transition: 'all 150ms ease-out',
   defaultVariants: {
-    color: 'gray12'
+    color: 'gray12',
+    size: 6,
   },
   variants: {
     background: {
