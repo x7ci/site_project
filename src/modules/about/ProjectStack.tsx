@@ -21,9 +21,9 @@ const ProjectStack = () => {
         </Box>
       </ColoredBox>
       <Box css={{ height: 20 }} />
-      <Background>
+      <DottedTopBorderBox>
+        <Background>
 
-        <DottedTopBorderBox>
           <StackContainer>
             <Chip text="NEXT.JS" link='https://nextjs.org/'>
               <NextjsIcon scale={1} color="gray12" width={55} />
@@ -45,8 +45,8 @@ const ProjectStack = () => {
             </Chip>
           </StackContainer>
           <Box css={{ height: 20 }} />
-        </DottedTopBorderBox>
-      </Background>
+        </Background>
+      </DottedTopBorderBox>
     </Wrapper>
   );
 };

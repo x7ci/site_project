@@ -1,6 +1,7 @@
 import AnimateComponentMount from '@/components/AnimateComponentMount';
 import UsernameIcon from '@/components/icons/UsernameIcon';
 import { Box, ColoredBox, Text } from '@/components/stitches';
+import About from '@/modules/about/About';
 import ProjectStack from '@/modules/about/ProjectStack';
 import Head from 'next/head';
 import { styled } from 'stitches.config';
@@ -22,9 +23,9 @@ const Home = () => {
           </ColoredBox>
         </AnimateComponentMount>
 
-        {/* <Box css={{ height: 20 }} /> */}
+        <Box css={{ height: 20 }} />
         <AnimateComponentMount>
-          <UsernameIcon width={515} height={240} scale={3.5} />
+          <About />
         </AnimateComponentMount>
 
         <Box css={{ height: 20 }} />
