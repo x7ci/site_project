@@ -3,6 +3,7 @@ import { styled } from 'stitches.config';
 export const Text = styled('span', {
   color: '$primary',
   background: 'unset',
+  // letterSpacing: .25,
   transition: 'all 150ms ease-out',
   defaultVariants: {
     color: 'gray12',
@@ -150,6 +151,18 @@ export const Text = styled('span', {
       },
       cyan9: {
         color: '$cyan9',
+      },
+      cyan10: {
+        color: '$cyan10',
+      },
+      cyan11: {
+        color: '$cyan11',
+      },
+      cyan12: {
+        color: '$cyan12',
+      },
+      cyan13: {
+        color: '$cyan13',
       },
       cyan14: {
         color: '$cyan14',

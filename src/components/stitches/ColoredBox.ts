@@ -64,14 +64,41 @@ export const ColoredBox = styled('div', {
       cyan14: {
         background: '$cyan14',
       },
-      gray12: {
-        background: '$gray12',
-      },
       gray1: {
         background: '$gray1',
       },
       gray2: {
         background: '$gray2',
+      },
+      gray3: {
+        background: '$gray3',
+      },
+      gray4: {
+        background: '$gray4',
+      },
+      gray5: {
+        background: '$gray5',
+      },
+      gray6: {
+        background: '$gray6',
+      },
+      gray7: {
+        background: '$gray7',
+      },
+      gray8: {
+        background: '$gray8',
+      },
+      gray9: {
+        background: '$gray9',
+      },
+      gray10: {
+        background: '$gray10',
+      },
+      gray11: {
+        background: '$gray11',
+      },
+      gray12: {
+        background: '$gray12',
       },
     },
     size: {
