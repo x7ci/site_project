@@ -25,23 +25,16 @@ const NavigationBar = ({ children }: Props) => {
               {'FULL STACK '}
               <Text size={{ '@initial': 11, '@bp3': 8 }} weight={1} >DEVELOPER</Text>
             </Text>
-            <Text color="cyan1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+            <Text color="gray12" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
               {'SITE PROJECT: '}
-              <Text color="cyanLight1" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+              <Text color="gray11" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
                 771-C/3309-M2
               </Text>
             </Text>
           </NavbarTitleContainer>
           <NavbarLinksContainer>
             <Box css={{ height: 30, background: '', display: 'flex', justifyContent: 'flex-end', textAlign: 'center', alignItems: 'center' }}>
-              <ColoredBox css={{ display: 'flex', height: 30, alignItems: 'center', background: 'rgba(0,0,0,0.1)' }}>
-                <GitHubIcon color='gray11' scale={.03} size={15} />
-                <Box css={{ width: 7 }} />
-                <Text color="gray11" weight="2" size={'5'} >x7ci @ github</Text>
-                {/* <Box css={{ width: 100, height: 30, background: 'blue' }}>
-                asdads
-              </Box> */}
-              </ColoredBox>
+              {/** Top navigation bar items goes here. */}
             </Box>
 
             <NavbarLinksRow>
