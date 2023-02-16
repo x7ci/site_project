@@ -34,6 +34,8 @@ const useChartData = ({ dataLength }: Props) => {
 
   /** Push new data on interval. */
   useEffect(() => {
+    nextDate.current = nextDate.current.subtract(dataLength, 'seconds');
+
     /** Seed data. */
     const initialData = [...Array(dataLength)].map(() => randomDataItem());
 
@@ -41,12 +43,16 @@ const useChartData = ({ dataLength }: Props) => {
 
     const interval = setInterval(() => {
       startTransition(() => {
-        setChartData((currentChartData) => {
-          const newChartData = currentChartData?.length ? [...currentChartData] : [];
-          newChartData.shift();
-          newChartData.push(randomDataItem());
+        const newDataItem = randomDataItem();
 
-          return newChartData;
+        setChartData((currentChartData) => {
+          if (currentChartData) {
+            const [, ...rest] = currentChartData;
+
+            return [...rest, newDataItem];
+          }
+
+          return [newDataItem];
         });
       });
     }, 1000);
