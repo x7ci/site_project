@@ -106,7 +106,7 @@ const ChartAnalysis = () => {
                 <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
               </TextGroupWrapper>
               <TextGroupWrapper align="right">
-                <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_OK</Text>
+                <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
               </TextGroupWrapper>
             </TextRowWrapper>
             <TextRowWrapper>

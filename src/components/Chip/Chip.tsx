@@ -22,7 +22,10 @@ const Chip = ({ children, text, link, gap = 8 }: Props) => {
           {children}
         </IconWrapper>
         <Box css={{ width: gap }} />
-        <ColoredBox color="gray2" size="unset">
+        <ColoredBox
+          // color="gray4"
+          size="unset"
+        >
           <Text size="4" color="cyanLight1" weight="3">{text}</Text>
         </ColoredBox>
       </Wrapper>
@@ -35,7 +38,7 @@ const Wrapper = styled('button', {
   fontFamily: 'inherit',
   fontSize: 'inherit',
   all: 'unset',
-  background: '$cyan10',
+  // background: '$cyanLight1',
   display: 'flex',
   cursor: 'pointer',
   justifyContent: 'center',

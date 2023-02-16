@@ -1,5 +1,4 @@
 import AnimateComponentMount from '@/components/AnimateComponentMount';
-import UsernameIcon from '@/components/icons/UsernameIcon';
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import About from '@/modules/about/About';
 import ProjectStack from '@/modules/about/ProjectStack';
@@ -24,15 +23,17 @@ const Home = () => {
         </AnimateComponentMount>
 
         <Box css={{ height: 20 }} />
-        <AnimateComponentMount>
-          <About />
-        </AnimateComponentMount>
 
-        <Box css={{ height: 20 }} />
+        <ComponentsContainer>
 
-        <AnimateComponentMount>
-          <ProjectStack />
-        </AnimateComponentMount>
+          <AnimateComponentMount>
+            <About />
+          </AnimateComponentMount>
+
+          <AnimateComponentMount>
+            <ProjectStack />
+          </AnimateComponentMount>
+        </ComponentsContainer>
       </Wrapper>
     </>
   );
@@ -41,6 +42,13 @@ const Home = () => {
 const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+});
+
+const ComponentsContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '30px',
+  flexWrap: 'wrap',
 });
 
 export default Home;

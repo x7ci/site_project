@@ -47,7 +47,7 @@ const SampleAnalysis = () => {
           </TextRowWrapper>
           <TextRowWrapper>
             <TextGroupWrapper>
-              <Text size={3} color="gray8" padding="tiny">UNIT TEST: OK</Text>
+              <Text size={3} color="gray8" padding="tiny">UNIT TESTS: OK</Text>
               <Text background="cyan1" size={3} color="gray1" padding="tiny">FPS: {fps}</Text>
             </TextGroupWrapper>
             <TextGroupWrapper align="right">

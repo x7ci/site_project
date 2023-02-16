@@ -20,7 +20,7 @@ const ProjectStack = () => {
           </Box>
         </Box>
       </ColoredBox>
-      <Box css={{ height: 20 }} />
+      <Box css={{ height: 15 }} />
       <DottedTopBorderBox>
         <Background>
 
@@ -44,8 +44,8 @@ const ProjectStack = () => {
               <FramerIcon scale={1} color="gray12" width={25} height={18} />
             </Chip>
           </StackContainer>
-          <Box css={{ height: 20 }} />
         </Background>
+        <Box css={{ height: 20 }} />
       </DottedTopBorderBox>
     </Wrapper>
   );

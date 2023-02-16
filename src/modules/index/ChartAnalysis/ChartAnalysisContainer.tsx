@@ -14,7 +14,7 @@ const ChartAnalysisContainer = () => {
             <Text color="cyan1" weight={1}>MONITOR</Text>
           </Box>
           <TitleTextRow>
-            <Text color="cyan1" weight={2}>LIVE DATA</Text>
+            <Text size="5" color="gray8" weight={3}>LIVE FEED</Text>
             <LiveDataCircle />
           </TitleTextRow>
         </Box>
