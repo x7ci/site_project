@@ -1,4 +1,12 @@
+import { type NextFont } from '@next/font';
+import { Chakra_Petch } from '@next/font/google';
 import { styled } from 'stitches.config';
+
+const chakraPetch: NextFont = Chakra_Petch({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+});
 
 export const Text = styled('span', {
   color: '$primary',
@@ -10,9 +18,19 @@ export const Text = styled('span', {
     size: 6,
   },
   variants: {
+    font: {
+      chakraPetch: {
+        ...chakraPetch.style,
+        lineHeight: 1
+      },
+    },
+
     background: {
       cyan1: {
-        background: '$cyan3'
+        background: '$cyan1'
+      },
+      gray6: {
+        background: '$gray6'
       }
     },
     padding: {
@@ -63,6 +81,24 @@ export const Text = styled('span', {
       },
       12: {
         fontSize: '$12',
+      },
+      13: {
+        fontSize: '$13',
+      },
+      14: {
+        fontSize: '$14',
+      },
+      15: {
+        fontSize: '$15',
+      },
+      16: {
+        fontSize: '$16',
+      },
+      17: {
+        fontSize: '$17',
+      },
+      18: {
+        fontSize: '$18',
       },
     },
     weight: {
@@ -118,6 +154,15 @@ export const Text = styled('span', {
       },
       orange1: {
         color: '$orange1',
+      },
+      orange2: {
+        color: '$orange2',
+      },
+      orange3: {
+        color: '$orange3',
+      },
+      orange4: {
+        color: '$orange4',
       },
       red1: {
         color: '$red1',
