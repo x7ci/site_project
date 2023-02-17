@@ -1,11 +1,10 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
-import GitHubIcon from '@/components/icons/GitHubIcon';
-import { Box, ColoredBox, SlicedButton, Text } from '@/components/stitches';
+import HexagonFigureIcon from '@/components/icons/HexagonFigureIcon';
+import { Box, SlicedButton, Text } from '@/components/stitches';
 import Link from 'next/link';
 import { type NextRouter, useRouter } from 'next/router';
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import ReactIcon from './index/ReactIcon';
 import ThemeToggle from './index/ThemeToggle';
 
 interface Props {
@@ -19,7 +18,7 @@ const NavigationBar = ({ children }: Props) => {
     <Wrapper>
       <DottedTopBorderBox>
         <NavigationBarBox>
-          <ReactIcon />
+          <HexagonFigureIcon />
           <NavbarTitleContainer>
             <Text color="yellow1" size={{ '@initial': 11, '@bp3': 8 }} weight={2} >
               {'FULL STACK '}
@@ -95,7 +94,7 @@ const NavigationBarBox = styled('div', {
   '$$buttonSpaceHeight': '30px',
 
   /** How many width px the space for the navigation buttons should start. */
-  '$$buttonSpaceStart': '342px',
+  '$$buttonSpaceStart': '357px',
 
   '&:before': {
     content: '',
