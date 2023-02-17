@@ -28,14 +28,14 @@ const ProjectStack = () => {
             <Chip text="NEXT.JS" link='https://nextjs.org/'>
               <NextjsIcon scale={1} color="gray12" width={55} />
             </Chip>
-            <Chip text="STITCHES" link='https://stitches.dev/'>
-              <StitchesIcon scale={1} color="gray1" size={20} />
-            </Chip>
             <Chip text="REACT" link='https://reactjs.org/'>
               <ReactIcon scale={1} color="gray12" width={24} height={18.5} />
             </Chip>
             <Chip text="TYPESCRIPT" link='https://www.typescriptlang.org/'>
               <TypeScriptIcon scale={1} color="gray12" width={22} height={17} />
+            </Chip>
+            <Chip text="STITCHES" link='https://stitches.dev/'>
+              <StitchesIcon scale={1} color="gray1" size={20} />
             </Chip>
             <Chip text="ECHARTS" link='https://echarts.apache.org/'>
               <EChartsIcon scale={1} color="gray12" width={84} height={20} />

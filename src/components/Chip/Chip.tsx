@@ -9,7 +9,7 @@ interface Props {
   link?: string
 }
 
-const Chip = ({ children, text, link, gap = 8 }: Props) => {
+const Chip = ({ children, text, link, gap = 6 }: Props) => {
   return (
     <Box
       as="a"
@@ -22,30 +22,26 @@ const Chip = ({ children, text, link, gap = 8 }: Props) => {
           {children}
         </IconWrapper>
         <Box css={{ width: gap }} />
-        <ColoredBox
-          // color="gray4"
-          size="unset"
-        >
-          <Text size="4" color="cyanLight1" weight="3">{text}</Text>
-        </ColoredBox>
+
+        <Text size="4" color="gray12" weight="3">{text}</Text>
       </Wrapper>
     </Box>
   );
 };
 
 const Wrapper = styled('button', {
-  border: 0,
+  // all: 'unset',
+  border: 'unset',
+  background: 'unset',
   fontFamily: 'inherit',
   fontSize: 'inherit',
-  all: 'unset',
-  // background: '$cyanLight1',
   display: 'flex',
   cursor: 'pointer',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
   whiteSpace: 'nowrap',
-  padding: '3px 3px 3px 10px',
+  padding: '0px 5px 0px 5px',
   height: '20px',
 
 });
@@ -57,7 +53,7 @@ const IconWrapper = styled('div', {
   // background: 'red',
   alignItems: 'center',
   textAlign: 'center',
-  // margin: '0px 3px 0px 10px',
+  margin: '0px 3px 0px 3spx',
 });
 
 export default Chip;

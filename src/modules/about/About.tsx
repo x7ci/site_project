@@ -19,28 +19,51 @@ const About = () => {
       <Box css={{ height: 15 }} />
       <DottedTopBorderBox>
         <Background>
-          <Box css={{ height: 6 }} />
+          {/* <Box css={{ height: 6 }} />
           <UsernameWrapper>
             <UsernameIcon width={160} height={70} scale={2.4} initialColor="cyan12" color="gray12" />
           </UsernameWrapper>
 
-          <Box css={{ height: 6 }} />
+          <Box css={{ height: 6 }} /> */}
 
-          <Chip text="X7CI @ GITHUB" link='https://stitches.dev/'>
-            <GitHubIcon color='gray12' scale={.03} size={15} />
-          </Chip>
-
-          <Box css={{ height: 20 }} />
-          <Text color="gray11" size="6">
+          <Box css={{ height: 10 }} />
+          <Text color="gray12" size="6">
             This is my personal site.
+            It&apos;s still under development.
           </Text>
           <Box css={{ height: 20 }} />
-          <Text color="gray11" size="6">
-            Currently building...
+
+          <Text color="gray12" size="6">
+            Source code is available at
+            {' '}
+            <Text size="5" color="gray12" weight="3" background="gray6" >
+              <Box
+                as="a"
+                href="https://github.com/"
+                target="_blank"
+                css={{ all: 'unset', cursor: 'pointer', padding: '0 3px 0 3px' }}
+              >
+                x7ci@github
+              </Box>
+            </Text>
+            .
           </Text>
           <Box css={{ height: 20 }} />
-          <Text color="gray11" size="6">
-            Contact: email
+          <Text>
+            You can contact me at
+            {' '}
+            <Text size="5" color="gray12" weight="3" background="gray6" >
+              <Box
+                as="a"
+                href="mailto:mail@pm.me"
+                target="_blank"
+                css={{ all: 'unset', cursor: 'pointer', padding: '0 3px 0 3px' }}
+              >
+                mail@pm.me
+              </Box>
+            </Text>
+            {' '}
+            for inquiries.
           </Text>
         </Background>
       </DottedTopBorderBox>
@@ -55,6 +78,8 @@ const Wrapper = styled('div', {
 const Background = styled('div', {
   background: '$cyan14',
   padding: '12px',
+  display: 'flex',
+  flexDirection: 'column'
 });
 
 const UsernameWrapper = styled('div', {

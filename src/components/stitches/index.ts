@@ -1,4 +1,5 @@
 import { type ComponentProps } from 'react';
+import { type theme } from 'stitches.config';
 import { type Box as StitchesBox } from './Box';
 
 export { Box } from './Box';
@@ -9,3 +10,5 @@ export { Table, TableBody, TableCell, TableRow } from './Table';
 export { Button } from './Button';
 
 export type CssProps = ComponentProps<typeof StitchesBox>['css'];
+
+export type StitchesColor = keyof typeof theme.colors;

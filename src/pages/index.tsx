@@ -6,6 +6,7 @@ import ChartAnalysisContainer from '@/modules/index/ChartAnalysis/ChartAnalysisC
 import DetailedMetricsContainer from '@/modules/index/DetailedMetrics/DetailedMetricsContainer';
 import DataGridContainer from '@/modules/index/DataGrid/DataGridContainer';
 import AnimateComponentMount from '@/components/AnimateComponentMount';
+import DataGridDetailsContainer from '@/modules/index/DataGrid/DataGridDetailsContainer';
 
 const Home = () => {
   return (
@@ -43,6 +44,11 @@ const Home = () => {
           <Box css={{ flex: 2, minWidth: 510, maxWidth: 540 }}>
             <AnimateComponentMount>
               <DataGridContainer />
+            </AnimateComponentMount>
+          </Box>
+          <Box css={{ flex: 2, minWidth: 510, maxWidth: 540 }}>
+            <AnimateComponentMount>
+              <DataGridDetailsContainer />
             </AnimateComponentMount>
           </Box>
         </ComponentsContainer>
