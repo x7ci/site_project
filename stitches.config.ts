@@ -1,5 +1,5 @@
 import { createStitches, createTheme, globalCss } from '@stitches/react';
-import { gray, grayDark } from '@radix-ui/colors';
+import { sand, sandDark } from '@radix-ui/colors';
 
 export const { styled, getCssText, theme } = createStitches({
   theme: {
@@ -14,18 +14,18 @@ export const { styled, getCssText, theme } = createStitches({
       navigationBarBackground: 'rgba(153, 250, 255, .04)',
 
       /** Gray */
-      gray1: grayDark.gray1,
-      gray2: grayDark.gray2,
-      gray3: grayDark.gray3,
-      gray4: grayDark.gray4,
-      gray5: grayDark.gray5,
-      gray6: grayDark.gray6,
-      gray7: grayDark.gray7,
-      gray8: grayDark.gray8,
-      gray9: grayDark.gray9,
-      gray10: grayDark.gray10,
-      gray11: grayDark.gray11,
-      gray12: grayDark.gray12,
+      gray1: sandDark.sand1,
+      gray2: sandDark.sand2,
+      gray3: sandDark.sand3,
+      gray4: sandDark.sand4,
+      gray5: sandDark.sand5,
+      gray6: sandDark.sand6,
+      gray7: sandDark.sand7,
+      gray8: sandDark.sand8,
+      gray9: sandDark.sand9,
+      gray10: sandDark.sand10,
+      gray11: sandDark.sand11,
+      gray12: sandDark.sand12,
 
       /** Cyan */
       cyan1: 'rgba(153, 250, 255, 1)',
@@ -52,10 +52,18 @@ export const { styled, getCssText, theme } = createStitches({
       yellow1: 'rgba(252, 246, 186, 1)',
 
       /** Orange */
-      orange1: 'rgba(230, 107, 48, 1)',
+      // orange1: 'rgba(230, 107, 48, 1)',
+      orange1: 'hsla(19, 77%, 58%, 1)',
+      orange2: 'hsla(19, 77%, 58%, .8)',
+      orange3: 'hsla(19, 77%, 58%, .6)',
+      orange4: 'hsla(19, 77%, 58%, .4)',
+      orange5: 'hsla(19, 77%, 58%, .2)',
+
 
       /** Red */
       red1: 'rgba(216, 60, 60, 1)',
+
+      navigationBarIcon: '$yellow1',
     },
     fontSizes: {
       1: '5px',
@@ -70,6 +78,12 @@ export const { styled, getCssText, theme } = createStitches({
       10: '23px',
       11: '25px',
       12: '27px',
+      13: '36px',
+      14: '42px',
+      15: '48px',
+      16: '54px',
+      17: '60px',
+      18: '66px',
     },
   },
   media: {
@@ -85,45 +99,47 @@ export const lightTheme = createTheme({
     /** App */
     rootBackground: '#fff',
     tileUrl: 'url("tile_light.png")',
-    navigationBarBackground: gray.gray4,
+    navigationBarBackground: sand.sand4,
 
     /** Gray */
-    gray1: gray.gray1,
-    gray2: gray.gray2,
-    gray3: gray.gray3,
-    gray4: gray.gray4,
-    gray5: gray.gray5,
-    gray6: gray.gray6,
-    gray7: gray.gray7,
-    gray8: gray.gray8,
-    gray9: gray.gray9,
-    gray10: gray.gray10,
-    gray11: gray.gray11,
-    gray12: gray.gray12,
+    gray1: sand.sand1,
+    gray2: sand.sand2,
+    gray3: sand.sand3,
+    gray4: sand.sand4,
+    gray5: sand.sand5,
+    gray6: sand.sand6,
+    gray7: sand.sand7,
+    gray8: sand.sand8,
+    gray9: sand.sand9,
+    gray10: sand.sand10,
+    gray11: sand.sand11,
+    gray12: sand.sand12,
 
     /** Cyan */
-    cyan1: gray.gray12,
-    cyan2: gray.gray11,
-    cyan3: gray.gray10,
-    cyan4: gray.gray9,
-    cyan5: gray.gray9,
-    cyan6: gray.gray8,
-    cyan7: gray.gray8,
-    cyan8: gray.gray8,
-    cyan9: gray.gray8,
-    cyan10: gray.gray5,
-    cyan11: gray.gray4,
-    cyan12: gray.gray3,
-    cyan13: gray.gray2,
-    cyan14: gray.gray2,
+    cyan1: sand.sand12,
+    cyan2: sand.sand11,
+    cyan3: sand.sand10,
+    cyan4: sand.sand9,
+    cyan5: sand.sand9,
+    cyan6: sand.sand8,
+    cyan7: sand.sand8,
+    cyan8: sand.sand8,
+    cyan9: sand.sand8,
+    cyan10: sand.sand5,
+    cyan11: sand.sand4,
+    cyan12: sand.sand3,
+    cyan13: sand.sand2,
+    cyan14: sand.sand2,
 
-    cyan8Opaque: gray.gray8,
+    cyan8Opaque: sand.sand8,
 
     /** Cyan Light */
-    cyanLight1: gray.gray11,
+    cyanLight1: sand.sand11,
 
     /** Yellow */
-    yellow1: gray.gray11,
+    yellow1: sand.sand11,
+
+    navigationBarIcon: 'rgba(0, 0, 0, .6)',
   },
 });
 
