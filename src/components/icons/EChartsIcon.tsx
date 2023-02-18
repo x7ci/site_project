@@ -13,20 +13,15 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
   return (
     <Box
       as="svg"
-      width="643.000000pt"
-      height="146.000000pt"
       viewBox="0 0 643.000000 146.000000"
-      preserveAspectRatio="xMidYMid meet"
       css={{ fill: `$${color}`, width, height, ...css }}
     >
       <title>Apache ECharts logo</title>
 
-      <Box
-        as="g"
-        transform="translate(0.000000,146.000000) scale(0.100000,-0.100000)"
-        fill="#000000"
-        stroke="none"
-        css={{ fill: `$${color}`, scale }}
+      <g
+        transform="translate(0, 146) scale(0.1,-0.1)"
+        fill={`$${color}`}
+        scale={scale}
       >
         <Box
           as="path"
@@ -95,7 +90,7 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
               c124 0 227 4 230 8 2 4 14 31 25 60 l21 52 -315 0 -315 0 0 -92z"
           css={{ fill: `$${color}`, scale }}
         />
-      </Box>
+      </g>
     </Box>
   );
 };
