@@ -1,8 +1,9 @@
+import { robotoCondensed } from '@/helpers/Fonts';
 import { type EChartsOption } from 'echarts';
 
 export const initialChartOption: EChartsOption = {
   textStyle: {
-    fontFamily: '__Roboto_Condensed_615f39'
+    fontFamily: robotoCondensed.style.fontFamily,
   },
   grid: {
     show: false,
