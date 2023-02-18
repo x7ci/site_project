@@ -1,21 +1,25 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
 import DottedTopBorderBox from '../DottedTopBorderBox';
-import { type CssProps } from '../stitches';
+import { type StitchesColor, type CssProps } from '../stitches';
 
 interface Props {
   children: ReactNode
   css: CssProps
+  backgroundColor?: StitchesColor
+  disableBackground: boolean
 }
 
-const IconFrame = ({ children, css }: Props) => {
+const IconFrame = ({ children, css, backgroundColor = 'cyan12', disableBackground = false }: Props) => {
   return (
-    <DottedTopBorderBox>
-      <IconContainer css={css}>
-        {children}
-      </IconContainer>
-      <DottedTopBorderBox />
-    </DottedTopBorderBox>
+    <Wrapper>
+      <DottedTopBorderBox>
+        <IconContainer css={{ ...css, backgroundColor: disableBackground ? undefined : `$${backgroundColor}` }}>
+          {children}
+        </IconContainer>
+        <DottedTopBorderBox />
+      </DottedTopBorderBox>
+    </Wrapper>
   );
 };
 
@@ -24,13 +28,14 @@ IconFrame.defaultProps = {
 } as Partial<Props>;
 
 const Wrapper = styled('div', {
+  // width: '34px',
+  // height: '30px',
 
 });
 
 const IconContainer = styled('div', {
   width: '34px',
   height: '30px',
-  background: '$cyan12',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
