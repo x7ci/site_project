@@ -4,7 +4,7 @@ import { type Box as StitchesBox } from './Box';
 
 export { Box } from './Box';
 export { SlicedButton } from './SlicedButton';
-export { Text } from './Text';
+export { Text, TextPetch } from './Text';
 export { ColoredBox } from './ColoredBox';
 export { Table, TableBody, TableCell, TableRow } from './Table';
 export { Button } from './Button';

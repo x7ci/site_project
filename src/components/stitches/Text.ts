@@ -1,12 +1,5 @@
-import { type NextFont } from '@next/font';
-import { Chakra_Petch } from '@next/font/google';
+import { chakraPetch } from '@/helpers/Fonts';
 import { styled } from 'stitches.config';
-
-const chakraPetch: NextFont = Chakra_Petch({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-});
 
 export const Text = styled('span', {
   color: '$primary',
@@ -18,13 +11,6 @@ export const Text = styled('span', {
     size: 6,
   },
   variants: {
-    font: {
-      chakraPetch: {
-        ...chakraPetch.style,
-        lineHeight: 1
-      },
-    },
-
     background: {
       cyan1: {
         background: '$cyan1'
@@ -42,6 +28,11 @@ export const Text = styled('span', {
       cyan1: {
         '&:hover': {
           color: '$cyan1'
+        }
+      },
+      gray11: {
+        '&:hover': {
+          color: '$gray11'
         }
       },
     },
@@ -214,4 +205,28 @@ export const Text = styled('span', {
       },
     }
   },
+});
+
+export const TextPetch = styled(Text, {
+  ...chakraPetch.style,
+  lineHeight: 1,
+  variants: {
+    weight: {
+      1: {
+        fontWeight: '300'
+      },
+      2: {
+        fontWeight: '400'
+      },
+      3: {
+        fontWeight: '500'
+      },
+      4: {
+        fontWeight: '600'
+      },
+      5: {
+        fontWeight: '700'
+      },
+    },
+  }
 });
