@@ -6,7 +6,7 @@ import ChartAnalysisContainer from '@/modules/index/ChartAnalysis/ChartAnalysisC
 import DetailedMetricsContainer from '@/modules/index/DetailedMetrics/DetailedMetricsContainer';
 import DataGridContainer from '@/modules/index/DataGrid/DataGridContainer';
 import AnimateComponentMount from '@/components/AnimateComponentMount';
-import DataGridDetailsContainer from '@/modules/index/DataGrid/DataGridDetailsContainer';
+import DataGridDetailsContainer from '@/modules/index/AlarmData/DataGridDetailsContainer';
 
 const Home = () => {
   return (

@@ -1,5 +1,5 @@
 import { styled } from 'stitches.config';
-import { Text } from '@/components/stitches';
+import { Text, TextPetch } from '@/components/stitches';
 import { useState, type ComponentProps } from 'react';
 
 export enum MetricColor {
@@ -46,8 +46,8 @@ const MetricComparison = ({ firstMetric, secondMetric, color }: Props) => {
     <Wrapper>
       <InlineElement>
         <NumberColumn>
-          <Text size="13" color={secondMetricHover ? metricColor[color].dark : metricColor[color].normal} font="chakraPetch">{firstMetric.value}</Text>
-          <Text size="8" color={metricColor[color].label} font="chakraPetch">{firstMetric.label}</Text>
+          <TextPetch size="13" color={secondMetricHover ? metricColor[color].dark : metricColor[color].normal}>{firstMetric.value}</TextPetch>
+          <TextPetch size="8" color={metricColor[color].label}>{firstMetric.label}</TextPetch>
         </NumberColumn>
       </InlineElement>
 
@@ -57,8 +57,8 @@ const MetricComparison = ({ firstMetric, secondMetric, color }: Props) => {
       <InlineElement>
 
         <NumberColumn onMouseEnter={() => setSecondMetricHover(true)} onMouseLeave={() => setSecondMetricHover(false)} >
-          <Text size="13" color={secondMetricHover ? metricColor[color].normal : metricColor[color].dark} font="chakraPetch">{secondMetric.value}</Text>
-          <Text size="8" color={metricColor[color].label} font="chakraPetch">{secondMetric.label}</Text>
+          <TextPetch size="13" color={secondMetricHover ? metricColor[color].normal : metricColor[color].dark}>{secondMetric.value}</TextPetch>
+          <TextPetch size="8" color={metricColor[color].label}>{secondMetric.label}</TextPetch>
         </NumberColumn>
       </InlineElement>
     </Wrapper>

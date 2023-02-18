@@ -138,6 +138,7 @@ const DataGridContainer = () => {
 
 const Wrapper = styled('div', {
   height: 'calc($sizes$tileSize * 11)',
+  overflow: 'hidden',
   // background: '$gray5', // For highlighting
 });
 

@@ -25,7 +25,7 @@ const SingleDataMetric = ({ icon, title, data }: Props) => {
 
         <DottedTopBorderBox css={{ flex: 1 }} onlyRight>
           <TitleContainer>
-            <Text color="cyanLight1" size="5" weight={3}>{title}</Text>
+            <Text color="gray12" size="5" weight={3}>{title}</Text>
           </TitleContainer>
           <DottedTopBorderBox onlyRight />
         </DottedTopBorderBox>
@@ -38,7 +38,7 @@ const SingleDataMetric = ({ icon, title, data }: Props) => {
           </ColoredBox>
 
           <ColoredBox textAlign="center">
-            <Text color="cyanLight1" size="5" weight={3}>{dataSet.value}</Text>
+            <Text color="gray12" size="5" weight={3}>{dataSet.value}</Text>
           </ColoredBox>
         </DataMetricContainer>
       ))}

@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode
 }
 
-const AnimateMount = ({ children }: Props) => {
+const AnimateComponentMount = ({ children }: Props) => {
   return (
     <Box
       as={motion.div}
@@ -25,8 +25,4 @@ const AnimateMount = ({ children }: Props) => {
   );
 };
 
-AnimateMount.defaultProps = {
-
-} as Partial<Props>;
-
-export default AnimateMount;
+export default AnimateComponentMount;
