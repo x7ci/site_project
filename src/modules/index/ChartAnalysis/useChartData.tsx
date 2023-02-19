@@ -42,9 +42,9 @@ const useChartData = ({ dataLength }: Props) => {
     setChartData(initialData);
 
     const interval = setInterval(() => {
-      startTransition(() => {
-        const newDataItem = randomDataItem();
+      const newDataItem = randomDataItem();
 
+      startTransition(() => {
         setChartData((currentChartData) => {
           if (currentChartData) {
             const [, ...rest] = currentChartData;

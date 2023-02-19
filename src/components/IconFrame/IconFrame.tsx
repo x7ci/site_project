@@ -1,11 +1,11 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
 import DottedTopBorderBox from '../DottedTopBorderBox';
-import { type StitchesColor, type CssProps } from '../stitches';
+import { type StitchesColor, type StitchesCss } from '../stitches';
 
 interface Props {
   children: ReactNode
-  css: CssProps
+  css: StitchesCss
   backgroundColor?: StitchesColor
   disableBackground: boolean
 }

@@ -59,7 +59,6 @@ export const { styled, getCssText, theme } = createStitches({
       orange4: 'hsla(19, 77%, 58%, .4)',
       orange5: 'hsla(19, 77%, 58%, .2)',
 
-
       /** Red */
       red1: 'rgba(216, 60, 60, 1)',
 

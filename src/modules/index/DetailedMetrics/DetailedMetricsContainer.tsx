@@ -1,4 +1,5 @@
-import { Box, ColoredBox, Text } from '@/components/stitches';
+import DottedTopBorderBox from '@/components/DottedTopBorderBox';
+import { Box, ColoredBox, DashboardComponentWrapper, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import DetailedMetrics from './DetailedMetrics';
 import TableMetrics from './TableMetrics';
@@ -6,23 +7,26 @@ import TableMetrics2 from './TableMetrics2';
 
 const DetailedMetricsContainer = () => {
   return (
-    <Box>
-      <ColoredBox color="cyan14" size="max" >
-        <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box>
-            <Text color="cyan1" weight={2}>RUNTIME  </Text>
-            <Text color="cyan1" weight={1}>METRICS</Text>
+    <>
+      <DashboardComponentWrapper>
+        <ColoredBox color="cyan14" size="max" >
+          <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box>
+              <Text color="cyan1" weight={2}>RUNTIME  </Text>
+              <Text color="cyan1" weight={1}>METRICS</Text>
+            </Box>
           </Box>
-        </Box>
-      </ColoredBox>
-      <Box css={{ height: 15 }} />
-      <DetailedMetrics />
-      <Box css={{ height: 30 }} />
-      <TableDataRow>
-        <TableMetrics />
-        <TableMetrics2 />
-      </TableDataRow>
-    </Box>
+        </ColoredBox>
+        <Box css={{ height: 10 }} />
+        <DetailedMetrics />
+        <Box css={{ height: 30 }} />
+        <TableDataRow>
+          <TableMetrics />
+          <TableMetrics2 />
+        </TableDataRow>
+      </DashboardComponentWrapper>
+      <DottedTopBorderBox />
+    </>
   );
 };
 
@@ -32,7 +36,7 @@ const TableDataRow = styled('div', {
   gap: '30px',
   '& > *': {
     flex: 1,
-    minWidth: '200px'
+    // minWidth: '200px'
   }
 });
 

@@ -74,7 +74,7 @@ const Wrapper = styled('div', {
 
 const DataBoxWrapper = styled('div', {
   position: 'relative',
-  background: '',
+  // background: '',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

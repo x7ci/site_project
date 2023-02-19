@@ -7,6 +7,7 @@ import DetailedMetricsContainer from '@/modules/index/DetailedMetrics/DetailedMe
 import DataGridContainer from '@/modules/index/DataGrid/DataGridContainer';
 import AnimateComponentMount from '@/components/AnimateComponentMount';
 import DataGridDetailsContainer from '@/modules/index/AlarmData/DataGridDetailsContainer';
+import AlarmViewContainer from '@/modules/index/AlarmData/AlarmViewContainer';
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
 
       <Wrapper>
         <AnimateComponentMount>
-          <ColoredBox color="cyan1">
+          <ColoredBox color="cyan1" height={20}>
             <Text color="gray1" weight="2" >SAMPLE ANALYSIS</Text>
           </ColoredBox>
         </AnimateComponentMount>
@@ -46,9 +47,14 @@ const Home = () => {
               <DataGridContainer />
             </AnimateComponentMount>
           </Box>
-          <Box css={{ flex: 2, minWidth: 510, maxWidth: 540 }}>
+          <Box css={{ flex: 3, minWidth: 510, maxWidth: 540 }}>
             <AnimateComponentMount>
               <DataGridDetailsContainer />
+            </AnimateComponentMount>
+          </Box>
+          <Box css={{ flex: 1, minWidth: 510, maxWidth: 800 }}>
+            <AnimateComponentMount>
+              <AlarmViewContainer />
             </AnimateComponentMount>
           </Box>
         </ComponentsContainer>
@@ -68,5 +74,40 @@ const ComponentsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   gap: '30px',
+  // rowGap: '28px',
   flexWrap: 'wrap',
+});
+
+const FlexItem = styled('div', {
+  // height: 'calc($sizes$tileSize * 10)',
+  // overflowX: 'hidden',
+  defaultVariants: {
+    flex: 1,
+  },
+  variants: {
+    flex: {
+      1: {
+        flex: 1
+      },
+      2: {
+        flex: 2
+      },
+    },
+    maxWidth: {
+      540: {
+        maxWidth: 540,
+      },
+      600: {
+        maxWidth: 600,
+      },
+      800: {
+        maxWidth: 800,
+      },
+    },
+    minWidth: {
+      510: {
+        minWidth: 540,
+      },
+    }
+  }
 });

@@ -10,6 +10,11 @@ export const ColoredBox = styled('div', {
         textAlign: 'center',
       }
     },
+    height: {
+      20: {
+        height: '20px'
+      }
+    },
     flex: {
       1: {
         flex: 1,

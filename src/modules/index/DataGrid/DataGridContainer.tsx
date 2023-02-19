@@ -1,4 +1,4 @@
-import { Box, ColoredBox, Text, Button } from '@/components/stitches';
+import { Box, ColoredBox, Text, Button, DashboardComponentWrapper } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import DataGrid, { ItemSeverity, type DataGridRow } from './DataGrid';
 import { useEffect, useState } from 'react';
@@ -10,6 +10,7 @@ import ActivityIcon from '@/components/icons/ActivityIcon';
 import SettingsIcon from '@/components/icons/SettingsIcon';
 import IconFrame from '@/components/IconFrame/IconFrame';
 import { generateDataGrid } from './DataGridHelper';
+import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 
 const DataGridContainer = () => {
   const [data, setData] = useState<DataGridRow[]>([]);
@@ -38,120 +39,112 @@ const DataGridContainer = () => {
   ];
 
   return (
-    <Wrapper>
-      <ColoredBox color="cyan14" size="max" >
-        <Box css={{ display: 'flex', alignItems: 'center' }}>
-          <Box>
-            <Text color="cyan1" weight={2}>ACTIVE </Text>
-            <Text color="cyan1" weight={1} >NODES</Text>
+    <>
+      <DashboardComponentWrapper>
+        <ColoredBox color="cyan14" size="max" height={20}>
+          <Box css={{ display: 'flex', alignItems: 'center' }}>
+            <Box>
+              <Text color="cyan1" weight={2}>ACTIVE </Text>
+              <Text color="cyan1" weight={1} >NODES</Text>
+            </Box>
           </Box>
-        </Box>
-      </ColoredBox>
-
-      <Box css={{ height: 8 }} />
-      <StatusesContainer>
-        <ColoredBox color="cyan14" size="max">
-          <Text size="4" color="cyanLight1" weight={2}>SOCKET CONNECTION: </Text>
-          <Text size="4" color="yellow1" weight={2}>OK</Text>
         </ColoredBox>
-        <ColoredBox color="cyan14" size="max">
-          <Text size="4" color="cyanLight1" weight={2}>LOCATION: </Text>
-          <Text size="4" color="yellow1" weight={2}>US-WEST_2</Text>
-        </ColoredBox>
-        <ColoredBox color="cyan14" size="max">
-          <Text size="4" color="cyanLight1" weight={2}>AUTH_STATUS: </Text>
-          <Text size="4" color="yellow1" weight={2}>OK</Text>
-        </ColoredBox>
-      </StatusesContainer>
 
+        <Box css={{ height: 8 }} />
+        <StatusesContainer>
+          <ColoredBox color="cyan14" size="max">
+            <Text size="4" color="cyanLight1" weight={2}>SOCKET CONNECTION: </Text>
+            <Text size="4" color="yellow1" weight={2}>OK</Text>
+          </ColoredBox>
+          <ColoredBox color="cyan14" size="max">
+            <Text size="4" color="cyanLight1" weight={2}>LOCATION: </Text>
+            <Text size="4" color="yellow1" weight={2}>US-WEST_2</Text>
+          </ColoredBox>
+          <ColoredBox color="cyan14" size="max">
+            <Text size="4" color="cyanLight1" weight={2}>AUTH_STATUS: </Text>
+            <Text size="4" color="yellow1" weight={2}>OK</Text>
+          </ColoredBox>
+        </StatusesContainer>
 
-      {/* <BorderContainer>
-      </BorderContainer> */}
+        <Box css={{ height: 18 }} />
 
+        <SingleDataMetricsWrapper>
+          <SingleDataMetric
+            data={dataMetric1}
+            icon={<SquareBoxesIcon color='cyan1' scale={0.5} size={16} />}
+            title="NODES"
+          />
+          <SingleDataMetric
+            data={dataMetric2}
+            icon={<ActivityIcon color='cyan1' scale={.3} size={29} />}
+            title="ACTIVE"
+          />
+          <SingleDataMetric
+            data={dataMetric3}
+            icon={<WarningIcon color='cyan1' scale={.9} size={21} />}
+            title="ALARMS"
+          />
+        </SingleDataMetricsWrapper>
+        <Box css={{ height: 20 }} />
 
-      <Box css={{ height: 20 }} />
-      <SingleDataMetricsWrapper>
-        <SingleDataMetric
-          data={dataMetric1}
-          icon={<SquareBoxesIcon color='cyan1' scale={0.5} size={16} />}
-          title="NODES"
-        />
-        <SingleDataMetric
-          data={dataMetric2}
-          icon={<ActivityIcon color='cyan1' scale={.3} size={29} />}
-          title="ACTIVE"
-        />
-        <SingleDataMetric
-          data={dataMetric3}
-          icon={<WarningIcon color='cyan1' scale={.9} size={21} />}
-          title="ALARMS"
-        />
-      </SingleDataMetricsWrapper>
-      <Box css={{ height: 20 }} />
+        <DataGrid data={data} highlightSeverity={highlightSeverity} />
+        <Box css={{ height: 17 }} />
 
-      <DataGrid data={data} highlightSeverity={highlightSeverity} />
-      <Box css={{ height: 14 }} />
+        <ButtonContainer>
+          <IconContainer>
+            <SettingsIcon color="cyanLight1" scale={.55} size={16} />
+          </IconContainer>
 
-      <ButtonContainer>
-        <IconFrame css={{ width: 60, height: 22 }}>
-          <SettingsIcon color="cyanLight1" scale={.55} size={16} />
-        </IconFrame>
+          <Button
+            type={!highlightSeverity ? 'primary' : 'secondary'}
+            onClick={() => setHighlightSeverity(undefined)}
+            weight={3}
+            fontSize="6"
+          >
+            RESET
+          </Button>
+          <Button
+            type={highlightSeverity === ItemSeverity.low ? 'primary' : 'secondary'}
+            onClick={() => setHighlightSeverity(ItemSeverity.low)}
+            weight={3}
+            fontSize="6"
+          >
+            LOW_SEV
+          </Button>
+          <Button
+            type={highlightSeverity === ItemSeverity.medium ? 'primary' : 'secondary'}
+            onClick={() => setHighlightSeverity(ItemSeverity.medium)}
+            weight={3}
+            fontSize="6"
+          >
+            MED_SEV
+          </Button>
+          <Button
+            type={highlightSeverity === ItemSeverity.high ? 'primary' : 'secondary'}
+            onClick={() => setHighlightSeverity(ItemSeverity.high)}
+            weight={3}
+            fontSize="6"
+          >
+            HIGH_SEV
+          </Button>
 
-        <Button
-          type={!highlightSeverity ? 'primary' : 'secondary'}
-          onClick={() => setHighlightSeverity(undefined)}
-          weight={3}
-          fontSize="6"
-        >
-          RESET
-        </Button>
-        <Button
-          type={highlightSeverity === ItemSeverity.low ? 'primary' : 'secondary'}
-          onClick={() => setHighlightSeverity(ItemSeverity.low)}
-          weight={3}
-          fontSize="6"
-        >
-          LOW_SEV
-        </Button>
-        <Button
-          type={highlightSeverity === ItemSeverity.medium ? 'primary' : 'secondary'}
-          onClick={() => setHighlightSeverity(ItemSeverity.medium)}
-          weight={3}
-          fontSize="6"
-        >
-          MED_SEV
-        </Button>
-        <Button
-          type={highlightSeverity === ItemSeverity.high ? 'primary' : 'secondary'}
-          onClick={() => setHighlightSeverity(ItemSeverity.high)}
-          weight={3}
-          fontSize="6"
-        >
-          HIGH_SEV
-        </Button>
+        </ButtonContainer>
 
-      </ButtonContainer>
-
-    </Wrapper>
+      </DashboardComponentWrapper>
+      <DottedTopBorderBox />
+    </>
   );
 };
-
-const Wrapper = styled('div', {
-  height: 'calc($sizes$tileSize * 11)',
-  overflow: 'hidden',
-  // background: '$gray5', // For highlighting
-});
 
 const StatusesContainer = styled('div', {
   display: 'flex',
   gap: '15px',
 });
 
-
 const ButtonContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  // gap: '17px',
+  // gap: '14px',
   alignItems: 'center',
 });
 
@@ -167,6 +160,15 @@ const blinkAnimation = keyframes({
   '100%': {
     opacity: '100%'
   },
+});
+
+const IconContainer = styled('div', {
+  width: '58px',
+  height: '24px',
+  display: 'flex',
+  justifyContent: 'center',
+  background: '$cyan12',
+  alignItems: 'center'
 });
 
 const BlinkingOpacity = styled('div', {

@@ -51,15 +51,15 @@ const ChartAnalysis = () => {
               y2: 1,
               colorStops: isLight
                 ? [{
-                    offset: 0, color: 'rgba(0, 0, 0, .2)' // color at 0%
-                  }, {
-                    offset: 1, color: 'rgba(0, 0, 0, .01)' // color at 100%
-                  }]
+                  offset: 0, color: 'rgba(0, 0, 0, .2)' // color at 0%
+                }, {
+                  offset: 1, color: 'rgba(0, 0, 0, .01)' // color at 100%
+                }]
                 : [{
-                    offset: 0, color: 'rgba(153, 250, 255, .08)' // color at 0%
-                  }, {
-                    offset: 1, color: 'rgba(153, 250, 255, .01)' // color at 100%
-                  }],
+                  offset: 0, color: 'rgba(153, 250, 255, .08)' // color at 0%
+                }, {
+                  offset: 1, color: 'rgba(153, 250, 255, .01)' // color at 100%
+                }],
             },
             origin: 'start',
             opacity: 0.62
@@ -97,53 +97,51 @@ const ChartAnalysis = () => {
 
   return (
     <Wrapper>
-      <DottedTopBorderBox>
-        <Background>
-          <TextWrapper>
-            <TextRowWrapper>
-              <TextGroupWrapper>
-                <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
-                <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
-              </TextGroupWrapper>
-              <TextGroupWrapper align="right">
-                <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
-              </TextGroupWrapper>
-            </TextRowWrapper>
-            <TextRowWrapper>
-              <TextGroupWrapper>
-                <Text size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</Text>
-                <Text
-                  background="cyan1"
-                  size={3}
-                  color="gray1"
-                  padding="tiny"
-                >
-                  CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
-                </Text>
-              </TextGroupWrapper>
-              <TextGroupWrapper align="right">
-                <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
-                <Text size={3} color="gray8" padding="tiny">V. 5.4.1 </Text>
-              </TextGroupWrapper>
-            </TextRowWrapper>
-          </TextWrapper>
-          <ChartWrapper>
-            <ReactECharts
-              ref={chartRef}
-              option={initialChartOption}
-              style={{ height: '300px' }}
-              lazyUpdate={true}
-              onChartReady={() => null}
-            />
-          </ChartWrapper>
-          <DottedTopBorderBox />
-        </Background>
-      </DottedTopBorderBox>
+      <Background>
+        <TextWrapper>
+          <TextRowWrapper>
+            <TextGroupWrapper>
+              <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
+              <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
+            </TextGroupWrapper>
+            <TextGroupWrapper align="right">
+              <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
+            </TextGroupWrapper>
+          </TextRowWrapper>
+          <TextRowWrapper>
+            <TextGroupWrapper>
+              <Text size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</Text>
+              <Text
+                background="cyan1"
+                size={3}
+                color="gray1"
+                padding="tiny"
+              >
+                CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
+              </Text>
+            </TextGroupWrapper>
+            <TextGroupWrapper align="right">
+              <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
+              <Text size={3} color="gray8" padding="tiny">V. 5.4.1 </Text>
+            </TextGroupWrapper>
+          </TextRowWrapper>
+        </TextWrapper>
+        <ChartWrapper>
+          <ReactECharts
+            ref={chartRef}
+            option={initialChartOption}
+            style={{ height: '300px' }}
+            lazyUpdate={true}
+            onChartReady={() => null}
+          />
+        </ChartWrapper>
+      </Background>
     </Wrapper>
   );
 };
 
 const Wrapper = styled('div', {
+  position: 'relative',
   minWidth: 'calc($sizes$tileSize * 16)'
 });
 

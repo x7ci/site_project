@@ -8,7 +8,8 @@ export { Text, TextPetch } from './Text';
 export { ColoredBox } from './ColoredBox';
 export { Table, TableBody, TableCell, TableRow } from './Table';
 export { Button } from './Button';
+export { DashboardComponentWrapper } from './DashboardComponentWrapper';
 
-export type CssProps = ComponentProps<typeof StitchesBox>['css'];
+export type StitchesCss = ComponentProps<typeof StitchesBox>['css'];
 
 export type StitchesColor = keyof typeof theme.colors;

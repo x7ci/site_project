@@ -77,7 +77,6 @@ const TableMetrics2 = () => {
       <TableBodyWrapper>
         <DetailedTable data={tableData} />
       </TableBodyWrapper>
-      <DottedTopBorderBox />
     </Wrapper>
   );
 };

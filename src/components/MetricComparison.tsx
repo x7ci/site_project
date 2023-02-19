@@ -52,7 +52,7 @@ const MetricComparison = ({ firstMetric, secondMetric, color }: Props) => {
       </InlineElement>
 
       <InlineElement css={{ width: 5 }} />
-      <Text size="13" color={metricColor[color].normal} font="chakraPetch">/</Text>
+      <TextPetch size="13" color={metricColor[color].normal}>/</TextPetch>
       <InlineElement css={{ width: 5 }} />
       <InlineElement>
 

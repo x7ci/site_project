@@ -1,13 +1,13 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import { type CssProps } from './stitches';
+import { type StitchesCss } from './stitches';
 
 interface Props {
   children: ReactNode
   withHorizontalLine: boolean
   onlyLeft: boolean
   onlyRight: boolean
-  css: CssProps
+  css: StitchesCss
 
 }
 

@@ -3,7 +3,6 @@ import { styled } from "stitches.config";
 export const Button = styled('button', {
   border: 0,
   padding: '6px 32px 6px 32px',
-  // position: 'relative',
   background: '$cyan13',
   cursor: 'pointer',
   fontFamily: 'inherit',
@@ -11,6 +10,9 @@ export const Button = styled('button', {
   transition: '150ms',
   whiteSpace: 'nowrap',
   color: '$cyan1',
+
+  height: '24px',
+
   '&:hover': {
     transition: '150ms',
     backgroundColor: 'rgba(0, 0, 0, 0.05)',
