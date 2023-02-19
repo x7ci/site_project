@@ -1,110 +1,47 @@
-import { Box, Text } from '@/components/stitches';
+import { Text } from '@/components/stitches';
 import { chakraPetch } from '@/helpers/Fonts';
 import { styled } from 'stitches.config';
+import { sample } from 'lodash';
+import { type UnitCodeData, type UnitCodeRow, UnitCode, unitCodeColors } from './AlarmDataTypes';
+
+export const generateUnitCodes = (): UnitCodeData => {
+  const data: UnitCodeData = [];
+
+  for (let j = 0; j < 4; j++) {
+    const unitCodeRow: UnitCodeRow = [];
+
+    for (let k = 0; k < 4; k++) {
+      const randomUnitCode = sample(Object.values(UnitCode)) as UnitCode;
+      const isEVC: boolean = Math.random() > 0.8;
+      unitCodeRow.push(isEVC ? UnitCode.EVC : randomUnitCode);
+    }
+
+    data.push(unitCodeRow);
+  }
+
+  return data;
+};
 
 interface Props {
-
+  data?: UnitCodeData
 }
 
-const AlarmData = ({ }: Props) => {
+const AlarmDataGrid = ({ data }: Props) => {
   return (
     <Wrapper>
       <UnitRowContainer>
-        <UnitRow>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - MC1
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="cyanSecondary">
-            <Text size="4" weight={3}>
-              AXH - MC2
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              AVC - MC3
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="orangePrimary">
-            <Text size="4" weight={3}>
-              ERR - MC4
-            </Text>
-          </SingleUnit>
-        </UnitRow>
-
-        <UnitRow>
-
-          <SingleUnit variant="yellowSecondary">
-            <Text size="4" weight={3}>
-              OBX - MD1
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - MD2
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="secondary">
-            <Text size="4" weight={3}>
-              DCX - MD3
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - MD4
-            </Text>
-          </SingleUnit>
-        </UnitRow>
-
-        <UnitRow>
-
-          <SingleUnit variant="secondary">
-            <Text size="4" weight={3}>
-              DCX - ME1
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="orangePrimary">
-            <Text size="4" weight={3}>
-              ERR - ME2
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - ME3
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - ME4
-            </Text>
-          </SingleUnit>
-        </UnitRow>
-
-        <UnitRow>
-          <SingleUnit variant="cyanSecondary">
-            <Text size="4" weight={3}>
-              AXH - MF1
-            </Text>
-          </SingleUnit>
-          <SingleUnit>
-            <Text size="4" weight={3}>
-              EVC - MF2
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="cyanPrimary" >
-            <Text size="4" weight={3}>
-              CTA - MF3
-            </Text>
-          </SingleUnit>
-          <SingleUnit variant="secondary">
-            <Text size="4" weight={3}>
-              DCX - MF4
-            </Text>
-          </SingleUnit>
-        </UnitRow>
+        {data?.map((unitCodeRow: UnitCodeRow, i: number) => (
+          <UnitRow key={`${unitCodeRow.toString()}-${i}`}>
+            {unitCodeRow.map((unitCode, j) => (
+              <SingleUnit key={`${unitCode}-MC${j}`} variant={unitCodeColors[unitCode].variant}>
+                <Text size="4" weight={3}>
+                  {unitCode} - MC1
+                </Text>
+              </SingleUnit>
+            ))}
+          </UnitRow>
+        ))}
       </UnitRowContainer>
-
     </Wrapper>
   );
 };
@@ -114,7 +51,7 @@ const Wrapper = styled('div', {
   opacity: .85,
 });
 
-const SingleUnit = styled('div', {
+export const SingleUnit = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
@@ -172,7 +109,6 @@ const UnitRow = styled('div', {
 const UnitRowContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  // gap: 3,
 });
 
-export default AlarmData;
+export default AlarmDataGrid;

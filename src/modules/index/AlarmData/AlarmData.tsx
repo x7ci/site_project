@@ -3,17 +3,15 @@ import WarningIcon from '@/components/icons/WarningIcon';
 import { Box, Text, TextPetch } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmDataGrid from './AlarmDataGrid';
-
-const alarmDescription: string = `The main bearing temperature of the unit has exceeded the upper limit of the recommended range of operational standards.
-Check vibration analysis in monitoring system. Possible root causes: (1) geometrical imperfections during the manufacturing process, (2) defects on the rolling surfaces.`;
+import { type Alarm } from './AlarmDataTypes';
 
 interface Props {
-
+  alarm: Alarm
 }
 
-const AlarmData = ({ }: Props) => {
+const AlarmData = ({ alarm }: Props) => {
   return (
-    <DottedTopBorderBox>
+    <Box>
       <Wrapper>
         <MainDetailsWrapper>
           <AlarmInfoWrapper>
@@ -24,43 +22,35 @@ const AlarmData = ({ }: Props) => {
                 </IconContainer>
               </DottedTopBorderBox>
               <AlarmTitleWrapper>
-                <TextPetch color="yellow1" size="4" weight="4" >ID: 41241</TextPetch>
+                <TextPetch color="yellow1" size="4" weight="4" >ID: {alarm.id}</TextPetch>
                 <Box css={{ height: 4 }} />
-                <TextPetch color="gray12" size="6" weight="4" >MAIN_BEARING_TEMP</TextPetch>
+                <TextPetch color="gray12" size="6" weight="4" >{alarm.label}</TextPetch>
               </AlarmTitleWrapper>
             </AlarmHeaderWrapper>
             <Box css={{ height: 6 }} />
             <Box>
               <Text size="5" color="gray9">
                 DUE DATE:{' '}
-                <Text size="5" color="gray11" >2023-09-25</Text>
+                <Text size="5" color="gray11" >{alarm.dueDate}</Text>
               </Text>
             </Box>
             <Box css={{ height: 8 }} />
 
             <DottedTopBorderBox withHorizontalLine />
-            {/* <ButtonContainer>
-            <Button
-              weight={3}
-              fontSize="6"
-            >
-              DETAILS
-            </Button>
-          </ButtonContainer> */}
 
           </AlarmInfoWrapper>
           <AlarmDataGridWrapper>
-            <AlarmDataGrid />
+            <AlarmDataGrid data={alarm.unitCodeData} />
           </AlarmDataGridWrapper>
         </MainDetailsWrapper>
-        <DescriptionWrapper title={alarmDescription}>
+        <DescriptionWrapper title={alarm.description}>
           <Text size="5" color="gray9">
             DESC: {' '}
           </Text>
-          <Text size="5" color="gray10" >{alarmDescription}</Text>
+          <Text size="5" color="gray10" >{alarm.description}</Text>
         </DescriptionWrapper>
       </Wrapper>
-    </DottedTopBorderBox>
+    </Box>
   );
 };
 
