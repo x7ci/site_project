@@ -1,8 +1,10 @@
 import Chip from '@/components/Chip/Chip';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import EChartsIcon from '@/components/icons/EChartsIcon';
+import EslintIcon from '@/components/icons/EslintIcon';
 import FramerIcon from '@/components/icons/FramerIcon';
 import NextjsIcon from '@/components/icons/NextjsIcon';
+import PnpmIcon from '@/components/icons/PnpmIcon';
 import ReactIcon from '@/components/icons/ReactIcon';
 import StitchesIcon from '@/components/icons/StitchesIcon';
 import TypeScriptIcon from '@/components/icons/TypeScriptIcon';
@@ -42,6 +44,12 @@ const ProjectStack = () => {
             </Chip>
             <Chip text="FRAMER MOTION" link='https://www.framer.com/motion/'>
               <FramerIcon scale={1} color="gray12" width={25} height={18} />
+            </Chip>
+            <Chip text="ESLINT" link='https://eslint.org/'>
+              <EslintIcon scale={3} color="gray12" width={65} height={18} />
+            </Chip>
+            <Chip text="PNPM" link='https://pnpm.io/'>
+              <PnpmIcon scale={1} color="gray12" secondColor="gray10" width={20} height={20} />
             </Chip>
           </StackContainer>
         </Background>
