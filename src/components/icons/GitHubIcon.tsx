@@ -1,9 +1,9 @@
-import { Box, type CssProps } from '../stitches';
+import { Box, type StitchesCss } from '../stitches';
 import { type theme } from 'stitches.config';
 
 export interface Props {
   color?: keyof typeof theme.colors
-  css?: CssProps
+  css?: StitchesCss
   scale?: number
   size?: number
 }

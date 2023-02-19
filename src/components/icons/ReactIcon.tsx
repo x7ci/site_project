@@ -1,9 +1,9 @@
-import { Box, type CssProps } from '../stitches';
+import { Box, type StitchesCss } from '../stitches';
 import { type theme } from 'stitches.config';
 
 export interface Props {
   color?: keyof typeof theme.colors
-  css?: CssProps
+  css?: StitchesCss
   scale?: number
   width?: number
   height?: number
@@ -34,21 +34,21 @@ const ReactIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
           as="ellipse"
           rx="11"
           ry="4.2"
-          css={{ scale }}
+          scale={scale}
         />
         <Box
           as="ellipse"
           rx="11"
           ry="4.2"
           transform="rotate(60)"
-          css={{ scale }}
+          scale={scale}
         />
         <Box
           as="ellipse"
           rx="11"
           ry="4.2"
           transform="rotate(120)"
-          css={{ scale }}
+          scale={scale}
         />
       </Box>
     </Box>

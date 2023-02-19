@@ -1,4 +1,4 @@
-import { Box, type CssProps } from '../stitches';
+import { Box, type StitchesCss } from '../stitches';
 import { type theme } from 'stitches.config';
 import { motion, type Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -24,7 +24,7 @@ const draw: Variants = {
 export interface Props {
   color?: keyof typeof theme.colors
   initialColor?: keyof typeof theme.colors
-  css?: CssProps
+  css?: StitchesCss
   scale?: number
   width?: number
   height?: number
