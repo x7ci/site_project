@@ -37,3 +37,27 @@ export const initialChartOption: EChartsOption = {
     },
   ]
 };
+
+export interface ChartColors {
+  [key: string]: {
+    seriesColors: string[]
+    gradiantPrimary: string
+    gradiantSecondary: string
+    tooltip: string
+  }
+}
+
+export const chartColors: ChartColors = {
+  dark: {
+    seriesColors: ['rgba(153, 250, 255, .8)'],
+    gradiantPrimary: 'rgba(153, 250, 255, .08)',
+    gradiantSecondary: 'rgba(153, 250, 255, .01)',
+    tooltip: '#181923',
+  },
+  light: {
+    seriesColors: ['rgba(0, 0, 0, .6)'],
+    gradiantPrimary: 'rgba(0, 0, 0, .2)',
+    gradiantSecondary: 'rgba(0, 0, 0, .01)',
+    tooltip: '#f7f7f7',
+  },
+};

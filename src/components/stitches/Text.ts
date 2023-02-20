@@ -17,6 +17,9 @@ export const Text = styled('span', {
       },
       gray6: {
         background: '$gray6'
+      },
+      cyan10: {
+        background: '$cyan10'
       }
     },
     padding: {

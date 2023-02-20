@@ -36,12 +36,12 @@ const About = () => {
           <Text color="gray12" size="6">
             Source code is available at
             {' '}
-            <Text size="5" color="gray12" weight="3" background="gray6" >
+            <Text size="5" color="gray12" weight="3" background="cyan10" >
               <Box
                 as="a"
                 href="https://github.com/"
                 target="_blank"
-                css={{ all: 'unset', cursor: 'pointer', padding: '0 3px 0 3px' }}
+                css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
               >
                 x7ci@github
               </Box>
@@ -52,12 +52,12 @@ const About = () => {
           <Text>
             You can contact me at
             {' '}
-            <Text size="5" color="gray12" weight="3" background="gray6" >
+            <Text size="5" color="gray12" weight="3" background="cyan10" >
               <Box
                 as="a"
                 href="mailto:mail@pm.me"
                 target="_blank"
-                css={{ all: 'unset', cursor: 'pointer', padding: '0 3px 0 3px' }}
+                css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
               >
                 mail@pm.me
               </Box>

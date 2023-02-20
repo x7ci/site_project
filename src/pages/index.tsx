@@ -52,7 +52,7 @@ const Home = () => {
               <DataGridDetailsContainer />
             </AnimateComponentMount>
           </Box>
-          <Box css={{ flex: 1, minWidth: 510, maxWidth: 800 }}>
+          <Box css={{ flex: 1, minWidth: 510, maxWidth: 750 }}>
             <AnimateComponentMount>
               <AlarmViewContainer />
             </AnimateComponentMount>

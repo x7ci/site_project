@@ -1,38 +1,37 @@
 import { Text } from '@/components/stitches/Text';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { styled } from 'stitches.config';
-import ReactECharts from 'echarts-for-react';
+// import ReactECharts from 'echarts-for-react';
 import { type EChartsOption } from 'echarts';
-import type EChartsReact from 'echarts-for-react';
+// import EChartsReact from 'echarts-for-react';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
 import useWidth from '@/helpers/hooks/useWidth';
 import { chartColors, initialChartOption } from './ChartAnalysisHelper';
 import useChartData from './useChartData';
+import { ReactECharts } from '@/components/ECharts';
 
 const ChartAnalysis = () => {
   const { chartData } = useChartData({ dataLength: 100 });
 
-  const chartRef = useRef<EChartsReact>(null);
+  // const chartRef = useRef<EChartsReact>(null);
+
+  const [option, setOption] = useState<EChartsOption>(initialChartOption);
 
   const { resolvedTheme = 'dark' } = useTheme();
 
-  const width = useWidth();
+  // const width = useWidth();
 
   /** Resize chart on window resize. */
-  useEffect(() => {
-    if (!chartRef.current) return;
+  // useEffect(() => {
+  //   if (!chartRef.current) return;
 
-    const chartInstance = chartRef.current.getEchartsInstance();
+  //   const chartInstance = chartRef.current.getEchartsInstance();
 
-    chartInstance.resize();
-  }, [width]);
+  //   chartInstance.resize();
+  // }, [width]);
 
   /** Update chart colors on theme change. */
   useEffect(() => {
-    if (!chartRef.current) return;
-
-    const chartInstance = chartRef.current.getEchartsInstance();
-
     const newOption: EChartsOption = {
       series: [
         {
@@ -62,15 +61,12 @@ const ChartAnalysis = () => {
       },
     };
 
-    chartInstance.setOption(newOption);
+    setOption(newOption);
   }, [resolvedTheme]);
 
   /** Update chart data upon chartData state change. */
   useEffect(() => {
-    if (!chartRef.current) return;
-
     if (chartData?.length) {
-      const chartInstance = chartRef.current.getEchartsInstance();
       const newOption: EChartsOption = {
         series: [
           {
@@ -79,7 +75,7 @@ const ChartAnalysis = () => {
         ]
       };
 
-      chartInstance.setOption(newOption);
+      setOption(newOption);
     }
   }, [chartData]);
 
@@ -116,10 +112,8 @@ const ChartAnalysis = () => {
         </TextWrapper>
         <ChartWrapper>
           <ReactECharts
-            ref={chartRef}
-            option={initialChartOption}
-            style={{ height: '300px' }}
-            lazyUpdate={true}
+            option={option}
+            style={{ width: '100%', height: '100%' }}
           />
         </ChartWrapper>
       </Background>
@@ -132,6 +126,8 @@ const Wrapper = styled('div', {
 });
 
 const ChartWrapper = styled('div', {
+  background: 'blue',
+  height: '100%',
 });
 
 const Background = styled('div', {
