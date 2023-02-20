@@ -1,7 +1,7 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import { Box, ColoredBox, DashboardComponentWrapper, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
-import { mainBearingTemp, mainBearingVibr } from './Alarm';
+import { hydrPumpAeration, mainBearingTemp, mainBearingVibr } from './Alarm';
 import AlarmData from './AlarmData';
 
 const AlarmViewContainer = () => {
@@ -20,8 +20,8 @@ const AlarmViewContainer = () => {
         <Box css={{ height: 10 }} />
 
         <AlarmList>
+          <AlarmData alarm={hydrPumpAeration} />
           <AlarmData alarm={mainBearingVibr} />
-          <AlarmData alarm={mainBearingTemp} />
         </AlarmList>
 
       </DashboardComponentWrapper>

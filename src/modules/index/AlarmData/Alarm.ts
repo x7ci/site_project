@@ -27,3 +27,17 @@ export const mainBearingVibr: Alarm = {
     [UnitCode.EVC, UnitCode.AXH, UnitCode.CTA, UnitCode.OBX],
   ]
 };
+
+export const hydrPumpAeration: Alarm = {
+  id: 42969,
+  dueDate: '2024-01-28',
+  label: 'HYDR_PUMP_AERATION',
+  description: `Possible signs of aeration has been detected in the hydraulic system. Operating the system when air is present may 
+result in the pump being unable to reach the pressures required to operate the system. Check for (1) defective seals allowing air into the pump inlet line, (2) damaged inlet hoses and connections.`,
+  unitCodeData: [
+    [UnitCode.OBX, UnitCode.EVC, UnitCode.ERR, UnitCode.OBX],
+    [UnitCode.AXH, UnitCode.ERR, UnitCode.EVC, UnitCode.CTA],
+    [UnitCode.DCX, UnitCode.DCX, UnitCode.EVC, UnitCode.EVC],
+    [UnitCode.EVC, UnitCode.AXH, UnitCode.CTA, UnitCode.OBX],
+  ]
+};
