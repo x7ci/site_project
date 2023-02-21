@@ -5,9 +5,9 @@ import useRandomRange from '@/helpers/hooks/useRandomRange';
 import { styled } from 'stitches.config';
 
 const DetailedMetrics = () => {
-  const progress1 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 7 });
+  const progress1 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 6 });
 
-  const progress2 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 7 });
+  const progress2 = useRandomRange({ minValue: 0, maxValue: 100, updateInterval: 2000, multiplyAdd: 6 });
 
   return (
     <Wrapper>

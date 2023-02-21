@@ -4,13 +4,13 @@ import { styled } from 'stitches.config';
 import DetailedTable, { type TableData } from '../../../components/DetailedTable';
 
 const TableMetrics2 = () => {
-  const outputRange = useRandomRange({ minValue: 1100, maxValue: 1400, updateInterval: 7000 });
-  const steamPressure = useRandomRange({ minValue: 60, maxValue: 75, updateInterval: 10000 });
-  const steamTemp = useRandomRange({ minValue: 250, maxValue: 300, updateInterval: 5000 });
-  const turbineSpeed = useRandomRange({ minValue: 5122, maxValue: 10000, updateInterval: 6000 });
-  const turbineHotspot = useRandomRange({ minValue: 80, maxValue: 90, updateInterval: 6500, digits: 1 });
-  const turbineVibration = useRandomRange({ minValue: 41, maxValue: 48, updateInterval: 15000, digits: 1 });
-  const mainBearingTemp = useRandomRange({ minValue: 40, maxValue: 60, updateInterval: 5500 });
+  const outputRange = useRandomRange({ minValue: 1100, maxValue: 1400, updateInterval: 7000, multiplyAdd: 6 });
+  const steamPressure = useRandomRange({ minValue: 60, maxValue: 75, updateInterval: 10000, multiplyAdd: 3 });
+  const steamTemp = useRandomRange({ minValue: 250, maxValue: 300, updateInterval: 5000, multiplyAdd: 4 });
+  const turbineSpeed = useRandomRange({ minValue: 5122, maxValue: 10000, updateInterval: 6000, multiplyAdd: 8 });
+  const turbineHotspot = useRandomRange({ minValue: 80, maxValue: 90, updateInterval: 6500, digits: 1, multiplyAdd: 4 });
+  const turbineVibration = useRandomRange({ minValue: 41, maxValue: 48, updateInterval: 15000, digits: 1, multiplyAdd: 4 });
+  const mainBearingTemp = useRandomRange({ minValue: 78, maxValue: 85, updateInterval: 5500, multiplyAdd: 4 });
 
   const tableData: TableData[] = [
     {
@@ -51,12 +51,12 @@ const TableMetrics2 = () => {
     {
       label: 'TURBINE_HOTSPOT',
       value: turbineHotspot,
-      valueColor: 'orange1',
       unit: '°c',
     },
     {
       label: 'MAIN_BEARING_TEMP',
       value: mainBearingTemp,
+      valueColor: 'orange1',
       unit: '°c'
     },
     {
