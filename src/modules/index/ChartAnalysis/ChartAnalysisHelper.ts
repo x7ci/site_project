@@ -33,7 +33,6 @@ export const initialChartOption: EChartsOption = {
       name: 'ID 34-842 AVG',
       type: 'line',
       showSymbol: false,
-      // symbolSize: 1,
     },
   ]
 };
@@ -45,6 +44,11 @@ export interface ChartColors {
     gradiantSecondary: string
     tooltip: string
   }
+}
+
+export enum ChartType {
+  line = 'line',
+  scatter = 'scatter',
 }
 
 export const chartColors: ChartColors = {
@@ -60,4 +64,56 @@ export const chartColors: ChartColors = {
     gradiantSecondary: 'rgba(0, 0, 0, .01)',
     tooltip: '#f7f7f7',
   },
+};
+
+export type ChartSeries = EChartsOption['series'];
+
+export const getChartOptions = (resolvedTheme: string): EChartsOption => {
+  const newOption: EChartsOption = {
+    tooltip: {
+      show: true,
+      trigger: 'axis',
+      backgroundColor: chartColors[resolvedTheme].tooltip,
+      borderRadius: 0,
+    },
+  };
+
+  const chartType: string = localStorage.getItem('chart-type') ?? ChartType.line;
+
+  const scatterType: ChartSeries = {
+    color: chartColors[resolvedTheme].seriesColors,
+    type: 'scatter',
+    symbolSize: 5,
+  };
+
+  const lineType: ChartSeries = {
+    color: chartColors[resolvedTheme].seriesColors,
+    type: 'line',
+    showSymbol: false,
+    areaStyle: {
+      color: {
+        type: 'linear',
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        colorStops: [
+          { offset: 0, color: chartColors[resolvedTheme].gradiantPrimary },
+          { offset: 1, color: chartColors[resolvedTheme].gradiantSecondary },
+        ]
+      },
+      origin: 'start',
+      opacity: 0.62,
+    },
+  };
+
+  if (chartType === ChartType.line) {
+    newOption.series = lineType;
+  }
+
+  if (chartType === ChartType.scatter) {
+    newOption.series = scatterType;
+  }
+
+  return newOption;
 };

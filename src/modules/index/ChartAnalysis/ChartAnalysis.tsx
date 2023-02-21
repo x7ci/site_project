@@ -1,76 +1,29 @@
 import { Text } from '@/components/stitches/Text';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { styled } from 'stitches.config';
-import ReactECharts from 'echarts-for-react';
 import { type EChartsOption } from 'echarts';
-import type EChartsReact from 'echarts-for-react';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
-import useWidth from '@/helpers/hooks/useWidth';
-import { chartColors, initialChartOption } from './ChartAnalysisHelper';
+import { ChartType, getChartOptions, initialChartOption } from './ChartAnalysisHelper';
 import useChartData from './useChartData';
+import ReactECharts from '@/components/ECharts';
+import { Button } from '@/components/stitches';
 
 const ChartAnalysis = () => {
   const { chartData } = useChartData({ dataLength: 100 });
 
-  const chartRef = useRef<EChartsReact>(null);
+  const [option, setOption] = useState<EChartsOption>(initialChartOption);
 
   const { resolvedTheme = 'dark' } = useTheme();
 
-  const width = useWidth();
-
-  /** Resize chart on window resize. */
+  /** Set chart style according to current theme. */
   useEffect(() => {
-    if (!chartRef.current) return;
-
-    const chartInstance = chartRef.current.getEchartsInstance();
-
-    chartInstance.resize();
-  }, [width]);
-
-  /** Update chart colors on theme change. */
-  useEffect(() => {
-    if (!chartRef.current) return;
-
-    const chartInstance = chartRef.current.getEchartsInstance();
-
-    const newOption: EChartsOption = {
-      series: [
-        {
-          color: chartColors[resolvedTheme].seriesColors,
-          areaStyle: {
-            color: {
-              type: 'linear',
-              x: 0,
-              y: 0,
-              x2: 0,
-              y2: 1,
-              colorStops: [
-                { offset: 0, color: chartColors[resolvedTheme].gradiantPrimary }, // color at 0%
-                { offset: 1, color: chartColors[resolvedTheme].gradiantSecondary }, // color at 100%
-              ]
-            },
-            origin: 'start',
-            opacity: 0.62,
-          },
-        },
-      ],
-      tooltip: {
-        show: true,
-        trigger: 'axis',
-        backgroundColor: chartColors[resolvedTheme].tooltip,
-        borderRadius: 0,
-      },
-    };
-
-    chartInstance.setOption(newOption);
+    updateOption();
   }, [resolvedTheme]);
 
   /** Update chart data upon chartData state change. */
   useEffect(() => {
-    if (!chartRef.current) return;
-
     if (chartData?.length) {
-      const chartInstance = chartRef.current.getEchartsInstance();
+      /** ECharts merges changes so only set chart data in object. */
       const newOption: EChartsOption = {
         series: [
           {
@@ -79,63 +32,76 @@ const ChartAnalysis = () => {
         ]
       };
 
-      chartInstance.setOption(newOption);
+      setOption(newOption);
     }
   }, [chartData]);
 
+  /** Change chart type to line or scatter.  */
+  const setChartType = (type: ChartType) => {
+    localStorage.setItem('chart-type', type);
+
+    updateOption();
+  };
+
+  const updateOption = () => {
+    const newOption: EChartsOption = getChartOptions(resolvedTheme);
+
+    setOption(newOption);
+  };
+
   return (
     <Wrapper>
-      <Background>
-        <TextWrapper>
-          <TextRowWrapper>
-            <TextGroupWrapper>
-              <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
-              <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
-            </TextGroupWrapper>
-            <TextGroupWrapper align="right">
-              <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
-            </TextGroupWrapper>
-          </TextRowWrapper>
-          <TextRowWrapper>
-            <TextGroupWrapper>
-              <Text size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</Text>
-              <Text
-                background="cyan1"
-                size={3}
-                color="gray1"
-                padding="tiny"
-              >
-                CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
-              </Text>
-            </TextGroupWrapper>
-            <TextGroupWrapper align="right">
-              <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
-              <Text size={3} color="gray8" padding="tiny">V. 5.4.1 </Text>
-            </TextGroupWrapper>
-          </TextRowWrapper>
-        </TextWrapper>
-        <ChartWrapper>
-          <ReactECharts
-            ref={chartRef}
-            option={initialChartOption}
-            style={{ height: '300px' }}
-            lazyUpdate={true}
-          />
-        </ChartWrapper>
-      </Background>
+      <TextWrapper>
+        <TextRowWrapper>
+          <TextGroupWrapper>
+            <Text size={3} color="gray8" padding="tiny">ID 255212</Text>
+            <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
+          </TextGroupWrapper>
+          <TextGroupWrapper align="right">
+            <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
+          </TextGroupWrapper>
+        </TextRowWrapper>
+        <TextRowWrapper>
+          <TextGroupWrapper>
+            <Text size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</Text>
+            <Text
+              background="cyan1"
+              size={3}
+              color="gray1"
+              padding="tiny"
+            >
+              CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
+            </Text>
+          </TextGroupWrapper>
+          <TextGroupWrapper align="right">
+            <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
+            <Text size={3} color="gray8" padding="tiny">5.4.1 </Text>
+            <ButtonWrapper>
+              <Button onClick={() => setChartType(ChartType.scatter)}>SCATTER</Button>
+              <Button onClick={() => setChartType(ChartType.line)}>LINE</Button>
+            </ButtonWrapper>
+          </TextGroupWrapper>
+        </TextRowWrapper>
+      </TextWrapper>
+      <ReactECharts
+        option={option}
+        style={{ height: '100%', minWidth: '500px' }}
+      />
     </Wrapper>
   );
 };
 
+const ButtonWrapper = styled('div', {
+  position: 'absolute',
+  top: 0,
+  display: 'flex',
+  flexDirection: 'column',
+});
+
 const Wrapper = styled('div', {
   position: 'relative',
-});
-
-const ChartWrapper = styled('div', {
-});
-
-const Background = styled('div', {
   background: '$cyan14',
+  height: 300,
 });
 
 const TextWrapper = styled('div', {

@@ -3,39 +3,33 @@ import { init, getInstanceByDom } from 'echarts';
 import type { EChartsOption, ECharts, SetOptionOpts } from 'echarts';
 import { Box, type StitchesCss } from './stitches';
 
-export interface ReactEChartsProps {
+export interface Props {
   option: EChartsOption
   style?: StitchesCss
   settings?: SetOptionOpts
   loading?: boolean
   theme?: 'light' | 'dark'
-
 }
 
-export function ReactECharts({
-  option,
-  style,
-  settings,
-  loading,
-  theme,
-}: ReactEChartsProps): JSX.Element {
+const ReactECharts = ({ option, style, settings, loading, theme }: Props): JSX.Element => {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize chart
     let chart: ECharts | undefined;
+
     if (chartRef.current !== null) {
       chart = init(chartRef.current, theme);
     }
 
     // Add chart resize listener
     // ResizeObserver is leading to a bit janky UX
-    function resizeChart() {
+    const resizeChart = () => {
       chart?.resize();
-    }
+    };
+
     window.addEventListener('resize', resizeChart);
 
-    // Return cleanup function
     return () => {
       chart?.dispose();
       window.removeEventListener('resize', resizeChart);
@@ -55,11 +49,17 @@ export function ReactECharts({
     if (chartRef.current !== null) {
       const chart = getInstanceByDom(chartRef.current);
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      loading === true ? chart?.showLoading() : chart?.hideLoading();
+      if (loading === true) {
+        chart?.showLoading();
+      } else {
+        chart?.hideLoading();
+      }
     }
   }, [loading, theme]);
 
   return (
     <Box ref={chartRef} css={{ ...style }} />
   );
-}
+};
+
+export default ReactECharts;

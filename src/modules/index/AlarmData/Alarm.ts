@@ -5,7 +5,7 @@ export const mainBearingTemp: Alarm = {
   dueDate: '2023-12-28',
   label: 'MAIN_BEARING_TEMP',
   description: `The main bearing temperature of the unit has exceeded the upper limit of the recommended range of operational standards. 
-These elevated temperatures may be due to a heated application, a recently greased bearing, oil level issues, early stages of bearing failure.`,
+These elevated temperatures may be due to a heated application, a recently greased bearing, oil level issues or early stages of bearing failure.`,
   unitCodeData: [
     [UnitCode.EVC, UnitCode.CTA, UnitCode.ERR, UnitCode.EVC],
     [UnitCode.AXH, UnitCode.OBX, UnitCode.EVC, UnitCode.DCX],

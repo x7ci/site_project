@@ -9,12 +9,13 @@ const AlarmViewContainer = () => {
     <>
       <DashboardComponentWrapper>
         <ColoredBox color="cyan14" size="max" >
-          <Box css={{ display: 'flex', alignItems: 'center' }}>
+          <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box>
               <Text color="cyan1" weight={2}>ALARM </Text>
               <Text color="cyan1" weight={1} >LIST</Text>
             </Box>
           </Box>
+
         </ColoredBox>
 
         <Box css={{ height: 10 }} />
