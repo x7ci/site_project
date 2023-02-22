@@ -14,7 +14,6 @@
     "@stitches/react": "^1.2.8",
     "dayjs": "^1.11.7",
     "echarts": "^5.4.1",
-    "echarts-for-react": "^3.0.2",
     "eslint": "8.32.0",
     "framer-motion": "^8.5.3",
     "lodash": "^4.17.21",
