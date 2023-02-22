@@ -1,10 +1,6 @@
 import dayjs, { type Dayjs } from 'dayjs';
 import { useEffect, useRef, useState, startTransition } from 'react';
-
-interface LineDataItemOption {
-  name: string
-  value: Array<string | number>
-}
+import { type LineDataItemOption } from './ChartAnalysisHelper';
 
 interface Props {
   dataLength: number

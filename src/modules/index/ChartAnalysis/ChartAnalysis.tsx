@@ -1,15 +1,18 @@
 import { Text } from '@/components/stitches/Text';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { styled } from 'stitches.config';
 import { type EChartsOption } from 'echarts';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
 import { ChartType, getChartOptions, initialChartOption } from './ChartAnalysisHelper';
 import useChartData from './useChartData';
 import ReactECharts from '@/components/ECharts';
-import { Button } from '@/components/stitches';
+import ActivityIcon from '@/components/icons/ActivityIcon';
+import ScatterIcon from '@/components/icons/ScatterIcon';
 
 const ChartAnalysis = () => {
   const { chartData } = useChartData({ dataLength: 100 });
+
+  const currentChartType = useRef<ChartType>();
 
   const [option, setOption] = useState<EChartsOption>(initialChartOption);
 
@@ -46,6 +49,8 @@ const ChartAnalysis = () => {
   const updateOption = () => {
     const newOption: EChartsOption = getChartOptions(resolvedTheme);
 
+    currentChartType.current = newOption.series?.[0].type;
+
     setOption(newOption);
   };
 
@@ -58,7 +63,14 @@ const ChartAnalysis = () => {
             <Text size={3} color="gray8" padding="tiny">DATA SET: POLARIS </Text>
           </TextGroupWrapper>
           <TextGroupWrapper align="right">
-            <Text size={3} color="gray8" padding="tiny">SOCKET_CONN_ACTIVE</Text>
+            <ButtonWrapper>
+              <ChartTypeButton variant={currentChartType.current === ChartType.scatter ? 'active' : undefined} onClick={() => setChartType(ChartType.scatter)}>
+                <ScatterIcon color='cyan1' scale={.7} width={20} height={28} />
+              </ChartTypeButton>
+              <ChartTypeButton variant={currentChartType.current === ChartType.line ? 'active' : undefined} onClick={() => setChartType(ChartType.line)}>
+                <ActivityIcon color='cyan1' scale={.22} size={22} />
+              </ChartTypeButton>
+            </ButtonWrapper>
           </TextGroupWrapper>
         </TextRowWrapper>
         <TextRowWrapper>
@@ -76,10 +88,6 @@ const ChartAnalysis = () => {
           <TextGroupWrapper align="right">
             <Text size={3} color="gray8" padding="tiny">APACHE ECHARTS</Text>
             <Text size={3} color="gray8" padding="tiny">5.4.1 </Text>
-            <ButtonWrapper>
-              <Button onClick={() => setChartType(ChartType.scatter)}>SCATTER</Button>
-              <Button onClick={() => setChartType(ChartType.line)}>LINE</Button>
-            </ButtonWrapper>
           </TextGroupWrapper>
         </TextRowWrapper>
       </TextWrapper>
@@ -91,11 +99,30 @@ const ChartAnalysis = () => {
   );
 };
 
+const ChartTypeButton = styled('button', {
+  border: 0,
+  background: '$cyan13',
+  cursor: 'pointer',
+  fontFamily: 'inherit',
+  fontSize: '$fontSizes$6',
+  transition: '150ms',
+  whiteSpace: 'nowrap',
+  color: '$cyan1',
+  height: '24px',
+
+  variants: {
+    variant: {
+      active: {
+        background: '$cyan9',
+        color: '$cyan1',
+      }
+    }
+  }
+});
+
 const ButtonWrapper = styled('div', {
-  position: 'absolute',
-  top: 0,
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
 });
 
 const Wrapper = styled('div', {

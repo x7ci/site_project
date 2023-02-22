@@ -46,6 +46,11 @@ export interface ChartColors {
   }
 }
 
+export interface LineDataItemOption {
+  name: string
+  value: Array<string | number>
+}
+
 export enum ChartType {
   line = 'line',
   scatter = 'scatter',
@@ -68,7 +73,7 @@ export const chartColors: ChartColors = {
 
 export type ChartSeries = EChartsOption['series'];
 
-export const getChartOptions = (resolvedTheme: string): EChartsOption => {
+export const getChartOptions = (resolvedTheme: string, newData?: LineDataItemOption[]): EChartsOption => {
   const newOption: EChartsOption = {
     tooltip: {
       show: true,
@@ -108,11 +113,15 @@ export const getChartOptions = (resolvedTheme: string): EChartsOption => {
   };
 
   if (chartType === ChartType.line) {
-    newOption.series = lineType;
+    newOption.series = [{ ...lineType }];
   }
 
   if (chartType === ChartType.scatter) {
-    newOption.series = scatterType;
+    newOption.series = [{ ...scatterType }];
+  }
+
+  if (newOption.series?.[0] && newData) {
+    newOption.series[0].data = newData;
   }
 
   return newOption;
