@@ -110,6 +110,10 @@ const ChartTypeButton = styled('button', {
   color: '$cyan1',
   height: '24px',
 
+  '&:active': {
+    opacity: .8,
+  },
+
   variants: {
     variant: {
       active: {

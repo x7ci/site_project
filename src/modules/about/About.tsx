@@ -1,6 +1,4 @@
-import Chip from '@/components/Chip/Chip';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
-import GitHubIcon from '@/components/icons/GitHubIcon';
 import UsernameIcon from '@/components/icons/UsernameIcon';
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
