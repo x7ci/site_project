@@ -1,5 +1,3 @@
-/** @type {import('next').NextConfig} */
-
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
 let assetPrefix = '';
@@ -12,6 +10,7 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   assetPrefix,
   basePath,
@@ -19,7 +18,8 @@ const nextConfig = {
   transpilePackages: ['echarts', 'zrender'],
   images: {
     loader: 'imgix',
-    path: 'sws.imgix.net',
+    path: 'https://sws.imgix.net/',
+    unoptimized: true,
   }
 };
 
