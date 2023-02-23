@@ -16,7 +16,10 @@ const nextConfig = {
   assetPrefix,
   basePath,
   reactStrictMode: true,
-  transpilePackages: ['echarts', 'zrender']
+  transpilePackages: ['echarts', 'zrender'],
+  images: {
+    unoptimized: true
+  }
 };
 
 module.exports = nextConfig;
