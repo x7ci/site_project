@@ -9,7 +9,13 @@ import useIsMounted from '@/helpers/hooks/useIsMounted';
 import useRandomRange from '@/helpers/hooks/useRandomRange';
 
 const myLoader: ImageLoader = ({ src, width, quality }) => {
-  return `https://sws.imgix.net/${src}?w=${width}&q=${quality || 75}`;
+  /** Transforming a gif file is a premium feature in imgix. */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const withProps: string = `https://sws.imgix.net/${src}?w=${width}&q=${quality ?? 75}`;
+
+  const withoutProps: string = `https://sws.imgix.net/${src}`;
+
+  return withoutProps;
 };
 
 const SampleAnalysis = () => {
