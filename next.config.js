@@ -19,7 +19,6 @@ const nextConfig = {
   images: {
     loader: 'imgix',
     path: 'https://sws.imgix.net/',
-    unoptimized: true,
   }
 };
 
