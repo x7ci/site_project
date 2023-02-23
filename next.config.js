@@ -18,7 +18,8 @@ const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['echarts', 'zrender'],
   images: {
-    unoptimized: true
+    loader: 'imgix',
+    path: 'sws.imgix.net',
   }
 };
 
