@@ -21,11 +21,11 @@ jobs:
         
       # a standard step for GitHub actions on Node
       # https://github.com/actions/setup-node
-      - uses: actions/setup-node@v3
-        with:
-          # update the Node version to meet your needs
-          node-version: 16
-          cache: npm
+      #- uses: actions/setup-node@v3
+      #  with:
+      #    # update the Node version to meet your needs
+      #    node-version: 16
+      #    cache: npm
 
       - name: Build
         run: |
