@@ -1,12 +1,16 @@
 import { Box, Text } from '@/components/stitches';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image, { type ImageLoader } from 'next/image';
 import { styled } from 'stitches.config';
 import { AnimatePresence, motion } from 'framer-motion';
 import dayjs, { type Dayjs } from 'dayjs';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
 import useIsMounted from '@/helpers/hooks/useIsMounted';
 import useRandomRange from '@/helpers/hooks/useRandomRange';
+
+const myLoader: ImageLoader = ({ src, width, quality }) => {
+  return `https://sws.imgix.net/${src}?w=${width}&q=${quality || 75}`;
+};
 
 const SampleAnalysis = () => {
   const { resolvedTheme } = useTheme();
@@ -99,6 +103,7 @@ const SampleAnalysis = () => {
                   key="quark_gif"
                 >
                   <Image
+                    loader={myLoader}
                     src={srcPath}
                     alt="Sample analysis"
                     width={250}
