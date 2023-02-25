@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import { theme, lightTheme } from '../../stitches.config';
 import NavigationBar from '@/modules/NavigationBar';
 import { AnimatePresence } from 'framer-motion';
-import { robotoCondensed } from '@/helpers/Fonts';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
@@ -16,13 +15,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
         light: lightTheme.className,
       }}
     >
-      <main className={robotoCondensed.className}>
-        <NavigationBar>
-          <AnimatePresence mode="wait" initial={true}>
-            <Component {...pageProps} key={router.asPath} />
-          </AnimatePresence>
-        </NavigationBar>
-      </main>
+      <NavigationBar>
+        <AnimatePresence mode="wait" initial={true}>
+          <Component {...pageProps} key={router.asPath} />
+        </AnimatePresence>
+      </NavigationBar>
     </ThemeProvider>
   );
 }

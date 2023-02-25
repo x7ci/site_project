@@ -1,4 +1,3 @@
-import { chakraPetch } from '@/helpers/Fonts';
 import { styled } from 'stitches.config';
 
 export const Text = styled('span', {
@@ -211,8 +210,8 @@ export const Text = styled('span', {
 });
 
 export const TextPetch = styled(Text, {
-  ...chakraPetch.style,
   lineHeight: 1,
+  fontFamily: '$fonts$petch',
   variants: {
     weight: {
       1: {

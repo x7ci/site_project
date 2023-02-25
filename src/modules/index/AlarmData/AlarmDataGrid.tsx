@@ -1,5 +1,4 @@
 import { Text } from '@/components/stitches';
-import { chakraPetch } from '@/helpers/Fonts';
 import { styled } from 'stitches.config';
 import { sample } from 'lodash';
 import { type UnitCodeData, type UnitCodeRow, UnitCode, unitCodeColors } from './AlarmDataTypes';
@@ -61,9 +60,9 @@ export const SingleUnit = styled('div', {
   height: 17,
 
   [`& ${Text}`]: {
-    // letterSpacing: .2,
-    ...chakraPetch.style,
+    fontFamily: '$fonts$petch',
     fontSize: 9,
+    // letterSpacing: .2,
   },
 
   variants: {

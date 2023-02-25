@@ -1,9 +1,9 @@
-import { robotoCondensed } from '@/helpers/Fonts';
 import { type EChartsOption } from 'echarts';
+import { theme } from 'stitches.config';
 
 export const initialChartOption: EChartsOption = {
   textStyle: {
-    fontFamily: robotoCondensed.style.fontFamily,
+    fontFamily: theme.fonts.robotoCondensed.value
   },
   grid: {
     show: false,

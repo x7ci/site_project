@@ -1,5 +1,6 @@
 import { createStitches, createTheme, globalCss } from '@stitches/react';
 import { sand, sandDark } from '@radix-ui/colors';
+import { chakraPetch, robotoCondensed } from '@/helpers/Fonts';
 
 export const { styled, getCssText, theme } = createStitches({
   theme: {
@@ -12,6 +13,7 @@ export const { styled, getCssText, theme } = createStitches({
       rootBackground: '#181923',
       tileUrl: 'url("tile_dark.png")',
       navigationBarBackground: 'rgba(153, 250, 255, .04)',
+      navigationBarIcon: '$yellow1',
 
       /** Gray */
       gray1: sandDark.sand1,
@@ -61,8 +63,10 @@ export const { styled, getCssText, theme } = createStitches({
 
       /** Red */
       red1: 'rgba(216, 60, 60, 1)',
-
-      navigationBarIcon: '$yellow1',
+    },
+    fonts: {
+      robotoCondensed: robotoCondensed.style.fontFamily,
+      petch: chakraPetch.style.fontFamily,
     },
     fontSizes: {
       1: '5px',
@@ -99,6 +103,7 @@ export const lightTheme = createTheme({
     rootBackground: '#fff',
     tileUrl: 'url("tile_light.png")',
     navigationBarBackground: sand.sand4,
+    navigationBarIcon: 'rgba(0, 0, 0, .6)',
 
     /** Gray */
     gray1: sand.sand1,
@@ -137,12 +142,13 @@ export const lightTheme = createTheme({
 
     /** Yellow */
     yellow1: sand.sand11,
-
-    navigationBarIcon: 'rgba(0, 0, 0, .6)',
   },
 });
 
 export const globalStyles = globalCss({
+  html: {
+    fontFamily: '$fonts$robotoCondensed'
+  },
   body: {
     margin: 0,
     padding: 0,
