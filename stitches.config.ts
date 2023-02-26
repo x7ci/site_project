@@ -65,8 +65,8 @@ export const { styled, getCssText, theme } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: robotoCondensed.style.fontFamily,
-      petch: chakraPetch.style.fontFamily,
+      robotoCondensed: `${robotoCondensed.style.fontFamily}, "Trebuchet MS", Helvetica`,
+      petch: `${chakraPetch.style.fontFamily}, "Trebuchet MS", Helvetica`,
     },
     fontSizes: {
       1: '5px',
@@ -147,7 +147,7 @@ export const lightTheme = createTheme({
 
 export const globalStyles = globalCss({
   html: {
-    fontFamily: '$fonts$robotoCondensed'
+    fontFamily: '$fonts$robotoCondensed',
   },
   body: {
     margin: 0,
@@ -157,30 +157,11 @@ export const globalStyles = globalCss({
     transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
     backgroundBlendMode: 'multiply'
-    // backgroundSize: '2%',
-    // background: '$backgroundBlendColor', /** This controls blend color with the tiles */
   },
   '::selection': {
     color: '$gray1',
     background: '$gray11',
   },
-  // "@dark": {
-  //     // notice the `media` definition on the stitches.config.ts file
-  //     ":root:not(.light)": {
-  //         ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
-  //             const currentColor = darkTheme.colors[currentColorKey];
-  //             const currentColorValue =
-  //                 currentColor.value.substring(0, 1) === "$"
-  //                     ? `$colors${currentColor.value}`
-  //                     : currentColor.value;
-
-  //             return {
-  //                 [currentColor.variable]: currentColorValue,
-  //                 ...varSet,
-  //             };
-  //         }, {}),
-  //     },
-  // },
 });
 
 globalStyles();
