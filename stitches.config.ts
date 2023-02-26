@@ -1,6 +1,19 @@
 import { createStitches, createTheme, globalCss } from '@stitches/react';
 import { sand, sandDark } from '@radix-ui/colors';
-import { chakraPetch, robotoCondensed } from '@/helpers/Fonts';
+import { Chakra_Petch, Roboto_Condensed } from '@next/font/google';
+import { type NextFont } from '@next/font';
+
+const robotoCondensed: NextFont = Roboto_Condensed({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+});
+
+const chakraPetch: NextFont = Chakra_Petch({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+});
 
 export const { styled, getCssText, theme } = createStitches({
   theme: {
