@@ -18,18 +18,10 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7.x.x
-        
-      # a standard step for GitHub actions on Node
-      # https://github.com/actions/setup-node
-      #- uses: actions/setup-node@v3
-      #  with:
-      #    # update the Node version to meet your needs
-      #    node-version: 16
-      #    cache: npm
       
+      # Caching
       - uses: actions/cache@v3
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
             ~/.pnpm
             ${{ github.workspace }}/.next/cache
