@@ -128,7 +128,8 @@ const NavigationBarBox = styled('div', {
 const NavbarTitleContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  width: '276px'
+  width: '276px',
+  whiteSpace: 'nowrap',
 });
 
 const NavbarLinksContainer = styled('div', {

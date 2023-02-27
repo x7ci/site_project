@@ -6,13 +6,13 @@ import { type NextFont } from '@next/font';
 const robotoCondensed: NextFont = Roboto_Condensed({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
 });
 
 const chakraPetch: NextFont = Chakra_Petch({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
 });
 
 export const { styled, getCssText, theme } = createStitches({
@@ -176,5 +176,3 @@ export const globalStyles = globalCss({
     background: '$gray11',
   },
 });
-
-globalStyles();
