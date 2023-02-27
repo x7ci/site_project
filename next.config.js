@@ -21,7 +21,6 @@ const nextConfig = {
     loader: 'imgix',
     path: 'https://sws.imgix.net/',
   },
-  optimizeFonts: false,
 };
 
 module.exports = nextConfig;

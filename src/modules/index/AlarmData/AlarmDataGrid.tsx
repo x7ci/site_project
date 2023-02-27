@@ -47,7 +47,7 @@ const AlarmDataGrid = ({ data }: Props) => {
 
 const Wrapper = styled('div', {
   maxWidth: 'calc($sizes$tileSize * 9)',
-  opacity: .85,
+  opacity: .90,
 });
 
 export const SingleUnit = styled('div', {

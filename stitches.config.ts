@@ -1,19 +1,5 @@
 import { createStitches, createTheme, globalCss } from '@stitches/react';
 import { sand, sandDark } from '@radix-ui/colors';
-import { Chakra_Petch, Roboto_Condensed } from '@next/font/google';
-import { type NextFont } from '@next/font';
-
-const robotoCondensed: NextFont = Roboto_Condensed({
-  weight: ['300', '400', '700'],
-  subsets: ['latin'],
-  style: ['normal'],
-});
-
-const chakraPetch: NextFont = Chakra_Petch({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  style: ['normal'],
-});
 
 export const { styled, getCssText, theme } = createStitches({
   theme: {
@@ -78,8 +64,8 @@ export const { styled, getCssText, theme } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: `${robotoCondensed.style.fontFamily}`,
-      petch: `${chakraPetch.style.fontFamily}`,
+      robotoCondensed: 'RobotoCondensed',
+      petch: 'Petch',
     },
     fontSizes: {
       1: '5px',
@@ -159,6 +145,44 @@ export const lightTheme = createTheme({
 });
 
 export const globalStyles = globalCss({
+  '@font-face': [
+    {
+      fontFamily: 'RobotoCondensed',
+      src: 'url("/fonts/RobotoCondensed-Light.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 300,
+    },
+    {
+      fontFamily: 'RobotoCondensed',
+      src: 'url("/fonts/RobotoCondensed-Regular.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 400,
+    },
+    {
+      fontFamily: 'RobotoCondensed',
+      src: 'url("/fonts/RobotoCondensed-Bold.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 700,
+    },
+    {
+      fontFamily: 'Petch',
+      src: 'url("/fonts/ChakraPetch-Light.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 300,
+    },
+    {
+      fontFamily: 'Petch',
+      src: 'url("/fonts/ChakraPetch-Regular.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 400,
+    },
+    {
+      fontFamily: 'Petch',
+      src: 'url("/fonts/ChakraPetch-Medium.ttf") format("truetype")',
+      fontStyle: 'normal',
+      fontWeight: 500,
+    }
+  ],
   html: {
     fontFamily: '$fonts$robotoCondensed',
   },
