@@ -78,8 +78,8 @@ export const { styled, getCssText, theme } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: `${robotoCondensed.style.fontFamily}, "Trebuchet MS", Helvetica`,
-      petch: `${chakraPetch.style.fontFamily}, "Trebuchet MS", Helvetica`,
+      robotoCondensed: `${robotoCondensed.style.fontFamily}`,
+      petch: `${chakraPetch.style.fontFamily}`,
     },
     fontSizes: {
       1: '5px',
