@@ -1,9 +1,10 @@
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isGithubPages = false;
 
 let assetPrefix;
 let basePath;
 
-if (isGithubActions) {
+if (isGithubActions && isGithubPages) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '');
 
   assetPrefix = `/${repo}/`;
