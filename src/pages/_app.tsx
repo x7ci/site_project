@@ -1,10 +1,8 @@
 import { ThemeProvider } from '@/contexts/ThemeProvider/ThemeProvider';
 import type { AppProps } from 'next/app';
-import { theme, lightTheme, globalStyles } from '../../stitches.config';
+import { theme, lightTheme } from '../../stitches.config';
 import NavigationBar from '@/modules/NavigationBar';
 import { AnimatePresence } from 'framer-motion';
-
-globalStyles();
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (

@@ -176,3 +176,5 @@ export const globalStyles = globalCss({
     background: '$gray11',
   },
 });
+
+globalStyles();
