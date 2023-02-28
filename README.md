@@ -4,4 +4,4 @@ This is a concept dashboard built with React, TypeScript and styled with Stitche
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
-![Site demo](/img.jpg?raw=true "x7ci.engineer")
+![Site demo](/demo.png?raw=true "x7ci.engineer")
