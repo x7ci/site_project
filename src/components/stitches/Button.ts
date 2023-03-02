@@ -34,6 +34,11 @@ export const Button = styled('button', {
         },
       }
     },
+    size: {
+      s: {
+        padding: '6px 24px 6px 24px',
+      }
+    },
     weight: {
       1: {
         fontWeight: '300'
