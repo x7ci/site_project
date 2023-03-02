@@ -20,13 +20,13 @@ const NavigationBar = ({ children }: Props) => {
         <NavigationBarBox>
           <HexagonFigureIcon />
           <NavbarTitleContainer>
-            <Text color="yellow1" size={{ '@initial': 11, '@bp3': 8 }} weight={2} >
+            <Text color="yellow1" size={11} weight={2} >
               {'FULL STACK '}
-              <Text size={{ '@initial': 11, '@bp3': 8 }} weight={1} >DEVELOPER</Text>
+              <Text size={11} weight={1} >DEVELOPER</Text>
             </Text>
-            <Text color="gray12" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+            <Text color="gray12" size={5} weight={2}>
               {'SITE PROJECT: '}
-              <Text color="gray11" size={{ '@initial': 5, '@bp3': 4 }} weight={2}>
+              <Text color="gray11" size={5} weight={2}>
                 771-C/3309-M2
               </Text>
             </Text>
