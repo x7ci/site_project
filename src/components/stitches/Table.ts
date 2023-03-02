@@ -67,6 +67,9 @@ export const TableRow = styled('tr', {
 
 export const TableCell = styled('td', {
   padding: '0px 12px 0px 12px',
+  '@bp570': {
+    padding: '0px 6px 0px 6px',
+  },
   variants: {
     border: {
       1: {
