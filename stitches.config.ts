@@ -92,7 +92,9 @@ export const { styled, getCssText, theme } = createStitches({
     dark: '(prefers-color-scheme: dark)',
     bp1: '(min-width: 1024px)',
     bp2: '(min-width: 768px)',
-    bp3: '(max-width: 880px)',
+    bp3: '(max-width: 895px)',
+    bp620: '(max-width: 620px)',
+    bp570: '(max-width: 570px)',
   },
 });
 
