@@ -2,7 +2,7 @@ import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import { Box, ColoredBox, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
 
-const githubRepoLink: string = `https://github.com/${process.env.GITHUB_REPOSITORY}`;
+const githubRepoLink: string = 'https://github.com/x7ci/site_project';
 
 const About = () => {
   return (
