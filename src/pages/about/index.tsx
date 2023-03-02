@@ -25,14 +25,17 @@ const Home = () => {
         <Box css={{ height: 20 }} />
 
         <ComponentsContainer>
+          <Box css={{ flex: 1, minWidth: 300, maxWidth: 600 }}>
+            <AnimateComponentMount>
+              <About />
+            </AnimateComponentMount>
+          </Box>
 
-          <AnimateComponentMount>
-            <About />
-          </AnimateComponentMount>
-
-          <AnimateComponentMount>
-            <ProjectStack />
-          </AnimateComponentMount>
+          <Box css={{ flex: 1, minWidth: 300, maxWidth: 600 }}>
+            <AnimateComponentMount>
+              <ProjectStack />
+            </AnimateComponentMount>
+          </Box>
         </ComponentsContainer>
       </Wrapper>
     </>

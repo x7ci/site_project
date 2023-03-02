@@ -53,7 +53,7 @@ const DataGridContainer = () => {
         <Box css={{ height: 8 }} />
         <StatusesContainer>
           <ColoredBox color="cyan14" size="max">
-            <Text size="4" color="cyanLight1" weight={2}>SOCKET CONNECTION: </Text>
+            <Text size="4" color="cyanLight1" weight={2}>SOCKET_CONN: </Text>
             <Text size="4" color="yellow1" weight={2}>OK</Text>
           </ColoredBox>
           <ColoredBox color="cyan14" size="max">
@@ -87,7 +87,10 @@ const DataGridContainer = () => {
         </SingleDataMetricsWrapper>
         <Box css={{ height: 20 }} />
 
-        <DataGrid data={data} highlightSeverity={highlightSeverity} />
+        <DataGrid
+          data={data}
+          highlightSeverity={highlightSeverity}
+        />
         <Box css={{ height: 17 }} />
 
         <ButtonContainer>
@@ -100,6 +103,7 @@ const DataGridContainer = () => {
             onClick={() => setHighlightSeverity(undefined)}
             weight={3}
             fontSize="6"
+            size={{ '@bp570': 's' }}
           >
             RESET
           </Button>
@@ -108,6 +112,7 @@ const DataGridContainer = () => {
             onClick={() => setHighlightSeverity(ItemSeverity.low)}
             weight={3}
             fontSize="6"
+            size={{ '@bp570': 's' }}
           >
             LOW_SEV
           </Button>
@@ -116,6 +121,7 @@ const DataGridContainer = () => {
             onClick={() => setHighlightSeverity(ItemSeverity.medium)}
             weight={3}
             fontSize="6"
+            size={{ '@bp570': 's' }}
           >
             MED_SEV
           </Button>
@@ -124,6 +130,7 @@ const DataGridContainer = () => {
             onClick={() => setHighlightSeverity(ItemSeverity.high)}
             weight={3}
             fontSize="6"
+            size={{ '@bp570': 's' }}
           >
             HIGH_SEV
           </Button>
@@ -175,20 +182,10 @@ const BlinkingOpacity = styled('div', {
   animation: `${blinkAnimation} 2000ms linear infinite 0s;`,
 });
 
-const WarningFoundWrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
-
 const SingleDataMetricsWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   gap: '15px',
-
-  // background: '$cyan14',
-
 });
 
 export default DataGridContainer;

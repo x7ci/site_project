@@ -17,7 +17,7 @@ interface Props {
 const DetailedTable = ({ data }: Props) => {
   return (
     <Wrapper>
-      <Table size="1" width="max" >
+      <Table size="1" width="max">
         <TableBody>
           {data.map((dataItem: TableData) => {
             const dataItemKey = `${dataItem.id ?? dataItem.label}-${dataItem.value}-${dataItem.unit}`;

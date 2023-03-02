@@ -42,17 +42,17 @@ const Home = () => {
               <DetailedMetricsContainer />
             </AnimateComponentMount>
           </Box>
-          <Box css={{ flex: 2, minWidth: 510, maxWidth: 540 }}>
+          <Box css={{ flex: 2, minWidth: 510, '@bp620': { minWidth: 410 }, maxWidth: 540 }}>
             <AnimateComponentMount>
               <DataGridContainer />
             </AnimateComponentMount>
           </Box>
-          <Box css={{ flex: 3, minWidth: 510, maxWidth: 540 }}>
+          <Box css={{ flex: 3, minWidth: 510, '@bp620': { minWidth: 410 }, maxWidth: 540 }}>
             <AnimateComponentMount>
               <DataGridDetailsContainer />
             </AnimateComponentMount>
           </Box>
-          <Box css={{ flex: 1, minWidth: 510, maxWidth: 750 }}>
+          <Box css={{ flex: 1, minWidth: 510, '@bp620': { minWidth: 410 }, maxWidth: 750 }}>
             <AnimateComponentMount>
               <AlarmViewContainer />
             </AnimateComponentMount>

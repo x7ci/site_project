@@ -34,6 +34,9 @@ const TableDataRow = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   gap: '30px',
+  '@bp570': {
+    gap: '10px',
+  },
   '& > *': {
     flex: 1,
     // minWidth: '200px'

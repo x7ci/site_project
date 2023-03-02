@@ -62,7 +62,7 @@ const About = () => {
 };
 
 const Wrapper = styled('div', {
-  minWidth: '450px',
+  // minWidth: '450px',
 });
 
 const Background = styled('div', {

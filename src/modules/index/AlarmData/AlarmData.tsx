@@ -24,7 +24,7 @@ const AlarmData = ({ alarm }: Props) => {
               <AlarmTitleWrapper>
                 <TextPetch color="yellow1" size="4" weight="4" >ID: {alarm.id}</TextPetch>
                 <Box css={{ height: 4 }} />
-                <TextPetch color="gray12" size="6" weight="4" >{alarm.label}</TextPetch>
+                <TextPetch color="gray12" size={{ '@initial': '6', '@bp570': '4' }} weight="4" >{alarm.label}</TextPetch>
               </AlarmTitleWrapper>
             </AlarmHeaderWrapper>
             <Box css={{ height: 6 }} />

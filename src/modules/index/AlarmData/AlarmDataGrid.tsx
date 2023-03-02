@@ -55,6 +55,9 @@ export const SingleUnit = styled('div', {
   flexDirection: 'row',
   justifyContent: 'center',
   width: 58,
+  '@bp570': {
+    width: 48,
+  },
   alignItems: 'center',
   flexWrap: 'wrap',
   height: 17,

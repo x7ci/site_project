@@ -93,7 +93,7 @@ const ChartAnalysis = () => {
       </TextWrapper>
       <ReactECharts
         option={option}
-        style={{ height: '100%', minWidth: '500px' }}
+        style={{ height: '100%', minWidth: '500px', '@bp570': { minWidth: '200px' } }}
       />
     </Wrapper>
   );
