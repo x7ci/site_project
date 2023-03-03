@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>x7ci - Full Stack Developer</title>
-        <meta name="description" content="x7ci - Full Stack Developer" />
+        <title>x7ci | Full Stack Developer</title>
+        <meta name="description" content="Private website built with React & TypeScript. For inquiries please go to the about section." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -76,38 +76,4 @@ const ComponentsContainer = styled('div', {
   gap: '30px',
   // rowGap: '28px',
   flexWrap: 'wrap',
-});
-
-const FlexItem = styled('div', {
-  // height: 'calc($sizes$tileSize * 10)',
-  // overflowX: 'hidden',
-  defaultVariants: {
-    flex: 1,
-  },
-  variants: {
-    flex: {
-      1: {
-        flex: 1
-      },
-      2: {
-        flex: 2
-      },
-    },
-    maxWidth: {
-      540: {
-        maxWidth: 540,
-      },
-      600: {
-        maxWidth: 600,
-      },
-      800: {
-        maxWidth: 800,
-      },
-    },
-    minWidth: {
-      510: {
-        minWidth: 540,
-      },
-    }
-  }
 });
