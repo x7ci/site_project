@@ -7,5 +7,7 @@
 <img alt="License" src="https://img.shields.io/github/license/x7ci/site_project">
 </div>This is a concept dashboard built with React, TypeScript and styled with Stitches. All data is locally generated and no external connections are made. [Live demo](https://x7ci.engineer/)
 
+<br/>
+<br/>
 
 ![Site demo](/demo.png?raw=true "x7ci.engineer")
