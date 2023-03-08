@@ -30,7 +30,6 @@ IconFrame.defaultProps = {
 const Wrapper = styled('div', {
   // width: '34px',
   // height: '30px',
-
 });
 
 const IconContainer = styled('div', {

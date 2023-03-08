@@ -22,7 +22,6 @@ const ReactIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
         cx="0"
         cy="0"
         r="2.05"
-        // css={{ fill: `$${color}`, scale }}
       />
       <Box
         as="g"

@@ -61,7 +61,6 @@ const Wrapper = styled('div', {
 const TopHeader = styled('div', {
   display: 'flex',
   height: '$sizes$tileSize',
-  // flex: 1,
   alignItems: 'center',
   background: '$cyan12'
 });

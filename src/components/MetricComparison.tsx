@@ -1,5 +1,5 @@
 import { styled } from 'stitches.config';
-import { Text, TextPetch } from '@/components/stitches';
+import { type Text, TextPetch } from '@/components/stitches';
 import { useState, type ComponentProps } from 'react';
 
 export enum MetricColor {

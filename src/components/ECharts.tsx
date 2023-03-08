@@ -48,7 +48,7 @@ const ReactECharts = ({ option, style, settings, loading, theme }: Props): JSX.E
     // Update chart
     if (chartRef.current !== null) {
       const chart = getInstanceByDom(chartRef.current);
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
       if (loading === true) {
         chart?.showLoading();
       } else {

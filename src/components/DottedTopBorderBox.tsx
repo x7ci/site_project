@@ -41,8 +41,6 @@ const Wrapper = styled('div', {
 });
 
 const DottedBorderBox = styled('div', {
-  // border: '2px solid #fff'
-  // height: '$sizes$tileSize',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',

@@ -52,7 +52,7 @@ const HexagonFigureIcon = ({ color = 'navigationBarIcon', initialColor = 'cyan9'
       <Box
         as={motion.path}
         d="m31.665 64.866 36.668-21.975 15 8.922v18.178l-15 8.917-15-8.917V59.655l-6.666 3.993v10.133l21.666 12.885L90 73.781V48.022L68.333 35.137 31.665 57.109z"
-          // css={{ fill: `$${color}`, scale }}
+        // css={{ fill: `$${color}`, scale }}
         css={{ strokeWidth: 2, fill: `$${fillColor}`, stroke: `$${color}`, scale, transition: 'all 600ms ease-out' }}
         variants={draw}
       />

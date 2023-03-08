@@ -14,13 +14,9 @@ const PnpmIcon = ({ color, secondColor, css, width, height, scale = 0.38 }: Prop
   return (
     <Box
       as="svg"
-      // preserveAspectRatio="xMidYMid meet"
       viewBox="66 33.5 184.5 184"
-      // width="180"
-      // height="180"
       fill="none"
       css={{
-        // fill: `$${color}`,
         width,
         height,
         ...css
@@ -31,7 +27,6 @@ const PnpmIcon = ({ color, secondColor, css, width, height, scale = 0.38 }: Prop
         as="path"
         d="M67.59 35L247.59 35L247.59 215L67.59 215L67.59 35Z"
         scale={scale}
-        // css={{ fill: `$${color}` }}
       />
       <Box
         as="path"

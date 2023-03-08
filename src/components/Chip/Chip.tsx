@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import { Box, ColoredBox, Text } from '../stitches';
+import { Box, Text } from '../stitches';
 
 interface Props {
   children: ReactNode
@@ -30,7 +30,6 @@ const Chip = ({ children, text, link, gap = 6 }: Props) => {
 };
 
 const Wrapper = styled('button', {
-  // all: 'unset',
   border: 'unset',
   background: 'unset',
   fontFamily: 'inherit',
@@ -50,7 +49,6 @@ const IconWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  // background: 'red',
   alignItems: 'center',
   textAlign: 'center',
   margin: '0px 3px 0px 3spx',

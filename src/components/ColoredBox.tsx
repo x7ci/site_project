@@ -32,8 +32,6 @@ const Wrapper = styled('div', {
   width: 130,
   display: 'flex',
   background: '$cyan1'
-  // justifyContent: 'center',
-  // alignItems: 'center',
 });
 
 export default ColoredBox;
