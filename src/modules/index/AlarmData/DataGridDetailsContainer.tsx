@@ -96,13 +96,6 @@ const DataGridDetailsContainer = () => {
   );
 };
 
-const Background = styled('div', {
-  background: '$cyan14',
-  padding: '12px',
-  display: 'flex',
-  flexDirection: 'column'
-});
-
 const MetricComparisonWrapper = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',

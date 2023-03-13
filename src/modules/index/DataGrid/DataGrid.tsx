@@ -67,8 +67,6 @@ const DataGrid = ({ data, highlightSeverity }: Props) => {
 };
 
 const Wrapper = styled('div', {
-  // background: '$cyan14',
-  // padding: 10,
   height: '120px',
 });
 
@@ -78,17 +76,6 @@ const DataBoxWrapper = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-});
-
-const flashAnimation = keyframes({
-  '0%': {
-    background: '$cyan9',
-    // transform: 'translateX(-5px)'
-  },
-  '100%': {
-    transform: 'none',
-    background: 'unset',
-  },
 });
 
 const scaleAnimation = keyframes({

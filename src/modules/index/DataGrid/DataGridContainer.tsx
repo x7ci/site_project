@@ -151,22 +151,7 @@ const StatusesContainer = styled('div', {
 const ButtonContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  // gap: '14px',
   alignItems: 'center',
-});
-
-const blinkAnimation = keyframes({
-  '0%': {
-    opacity: '100%',
-    // transform: 'translateX(-5px)'
-  },
-  '50%': {
-    opacity: '60%',
-    // transform: 'translateX(-5px)'
-  },
-  '100%': {
-    opacity: '100%'
-  },
 });
 
 const IconContainer = styled('div', {
@@ -176,10 +161,6 @@ const IconContainer = styled('div', {
   justifyContent: 'center',
   background: '$cyan12',
   alignItems: 'center'
-});
-
-const BlinkingOpacity = styled('div', {
-  animation: `${blinkAnimation} 2000ms linear infinite 0s;`,
 });
 
 const SingleDataMetricsWrapper = styled('div', {

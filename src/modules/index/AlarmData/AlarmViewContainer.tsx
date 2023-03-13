@@ -1,7 +1,7 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 import { Box, ColoredBox, DashboardComponentWrapper, Text } from '@/components/stitches';
 import { styled } from 'stitches.config';
-import { hydrPumpAeration, mainBearingTemp, mainBearingVibr } from './Alarm';
+import { hydrPumpAeration, mainBearingVibr } from './Alarm';
 import AlarmData from './AlarmData';
 
 const AlarmViewContainer = () => {
@@ -35,9 +35,7 @@ const AlarmList = styled('div', {
   height: 'calc($sizes$tileSize * 10)',
   overflow: 'auto',
   display: 'flex',
-  // scrollbarWidth: 'auto',
   flexDirection: 'column',
-  // padding: '0px 8px 0px 8px',
   gap: '30px',
 });
 

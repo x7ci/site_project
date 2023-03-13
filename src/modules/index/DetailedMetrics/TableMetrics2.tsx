@@ -74,9 +74,7 @@ const TableMetrics2 = () => {
   return (
     <Wrapper>
       <DottedTopBorderBox />
-      <TableBodyWrapper>
-        <DetailedTable data={tableData} />
-      </TableBodyWrapper>
+      <DetailedTable data={tableData} />
     </Wrapper>
   );
 };
@@ -85,13 +83,6 @@ const Wrapper = styled('div', {
   background: '$cyan14',
   display: 'flex',
   flexDirection: 'column',
-});
-
-const TableBodyWrapper = styled('div', {
-  // flex: 1,
-
-  // overflow: 'auto', // Enables scroll
-  // maxHeight: 210, // Enables scroll
 });
 
 export default TableMetrics2;
