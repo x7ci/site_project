@@ -25,9 +25,9 @@ const NavigationBar = ({ children }: Props) => {
               <Text size={11} weight={1} >DEVELOPER</Text>
             </Text>
             <Text color="gray12" size={5} weight={2}>
-              {'SITE PROJECT: '}
+              {'SITE_PROJECT / '}
               <Text color="gray11" size={5} weight={2}>
-                771-C/3309-M2
+                X7CI.ENGINEER
               </Text>
             </Text>
           </NavbarTitleContainer>
