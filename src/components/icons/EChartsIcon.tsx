@@ -20,7 +20,6 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
 
       <g
         transform="translate(0, 146) scale(0.1,-0.1)"
-        fill={`$${color}`}
         scale={scale}
       >
         <Box
