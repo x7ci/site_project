@@ -64,8 +64,8 @@ export const { styled, getCssText, theme } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: 'RobotoCondensed',
-      petch: 'Petch',
+      robotoCondensed: 'var(--robotoCondensed-font)',
+      petch: 'var(--petch-font)',
     },
     fontSizes: {
       1: '5px',
@@ -147,47 +147,6 @@ export const lightTheme = createTheme({
 });
 
 export const globalStyles = globalCss({
-  '@font-face': [
-    {
-      fontFamily: 'RobotoCondensed',
-      src: 'url("/fonts/RobotoCondensed-Light.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 300,
-    },
-    {
-      fontFamily: 'RobotoCondensed',
-      src: 'url("/fonts/RobotoCondensed-Regular.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 400,
-    },
-    {
-      fontFamily: 'RobotoCondensed',
-      src: 'url("/fonts/RobotoCondensed-Bold.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 700,
-    },
-    {
-      fontFamily: 'Petch',
-      src: 'url("/fonts/ChakraPetch-Light.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 300,
-    },
-    {
-      fontFamily: 'Petch',
-      src: 'url("/fonts/ChakraPetch-Regular.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 400,
-    },
-    {
-      fontFamily: 'Petch',
-      src: 'url("/fonts/ChakraPetch-Medium.ttf") format("truetype")',
-      fontStyle: 'normal',
-      fontWeight: 500,
-    }
-  ],
-  html: {
-    fontFamily: '$fonts$robotoCondensed',
-  },
   body: {
     margin: 0,
     padding: 0,

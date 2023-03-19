@@ -1,19 +1,21 @@
 import { SlicedButton } from '@/components/stitches/SlicedButton';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
-import useIsMounted from '@/helpers/hooks/useIsMounted';
+import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  const [currentTheme, setCurrentTheme] = useState<string>();
 
   const toggleTheme = () => {
     const targetTheme = resolvedTheme === 'light' ? 'dark' : 'light';
 
     setTheme(targetTheme);
   };
+
+  useEffect(() => {
+    setCurrentTheme(resolvedTheme);
+  }, [resolvedTheme]);
 
   return (
     <SlicedButton
@@ -23,7 +25,7 @@ const ThemeToggle = () => {
       weight={3}
       color="cyan8"
     >
-      SWITCH THEME ({resolvedTheme?.toUpperCase()})
+      SWITCH THEME ({currentTheme?.toUpperCase()})
     </SlicedButton>
   );
 };
