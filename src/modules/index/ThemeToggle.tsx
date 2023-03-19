@@ -25,7 +25,7 @@ const ThemeToggle = () => {
       weight={3}
       color="cyan8"
     >
-      SWITCH THEME ({currentTheme?.toUpperCase()})
+      SWITCH THEME ({currentTheme?.toUpperCase() ?? '-----'})
     </SlicedButton>
   );
 };
