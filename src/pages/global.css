@@ -33,21 +33,21 @@
   font-family: 'Petch';
   src: url("/fonts/ChakraPetch-Light.ttf") format("truetype");
   font-style: normal;
-  fontWeight: 300,
+  font-weight: 300;
 }
 
 @font-face {
   font-family: 'Petch';
-  src: url("/fonts/ChakraPetch-Regular") format("truetype");
+  src: url("/fonts/ChakraPetch-Regular.ttf") format("truetype");
   font-style: normal;
-  fontWeight: 400,
+  font-weight: 400;
 }
 
 @font-face {
   font-family: 'Petch';
   src: url("/fonts/ChakraPetch-Medium.ttf") format("truetype");
   font-style: normal;
-  fontWeight: 500,
+  font-weight: 500;
 }
 
 :root {
