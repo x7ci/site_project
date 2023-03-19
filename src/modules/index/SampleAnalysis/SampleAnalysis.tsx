@@ -71,10 +71,13 @@ const SampleAnalysis = () => {
           <DottedCircle
             as={motion.div}
             initial={{ scale: 1.2, opacity: 0 }}
-            animate={animationEnded ? { scale: hover ? [1, 1, 1] : [1, 1.05, 1], opacity: 1 } : { scale: 1, opacity: 1 }}
+            animate={animationEnded ? { scale: hover ? [1, 1, 1] : [1.02, 1.05, 1.02], opacity: 1 } : { scale: 1, opacity: 1 }}
             onAnimationComplete={() => setAnimationEnded(true)}
             transition={animationEnded
-              ? { repeat: Infinity, duration: 4 }
+              ? {
+                  repeat: Infinity,
+                  duration: 4
+                }
               : {
                   type: 'spring',
                   stiffness: 100,
@@ -91,37 +94,28 @@ const SampleAnalysis = () => {
           }}
           transition={{ repeat: Infinity, duration: 8 }}
         >
+          <AnimatePresence>
+            {isMounted && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 3, ease: 'easeOut' }}
+                exit={{ scale: 0 }}
+                key="quark_gif"
+              >
+                <Image
+                  loader={myLoader}
+                  src={srcPath}
+                  alt="Sample analysis"
+                  width={250}
+                  height={250}
+                  draggable={false}
+                  style={{ userSelect: 'none' }}
+                />
+              </motion.div>
 
-          <Box
-            as={motion.div}
-            animate={{
-              // scale: [0.8, 1, 0.8],
-            }}
-            transition={{ repeat: Infinity, duration: 4 }}
-          >
-            <AnimatePresence>
-              {isMounted && (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 3, ease: 'easeOut' }}
-                  exit={{ scale: 0 }}
-                  key="quark_gif"
-                >
-                  <Image
-                    loader={myLoader}
-                    src={srcPath}
-                    alt="Sample analysis"
-                    width={250}
-                    height={250}
-                    draggable={false}
-                    style={{ userSelect: 'none' }}
-                  />
-                </motion.div>
-
-              )}
-            </AnimatePresence>
-          </Box>
+            )}
+          </AnimatePresence>
         </Box>
       </ImageWrapper>
     </Wrapper>
