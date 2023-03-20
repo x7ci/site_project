@@ -7,16 +7,7 @@ import dayjs, { type Dayjs } from 'dayjs';
 import { useTheme } from '@/contexts/ThemeProvider/ThemeProvider';
 import useIsMounted from '@/helpers/hooks/useIsMounted';
 import useRandomRange from '@/helpers/hooks/useRandomRange';
-
-const myLoader: ImageLoader = ({ src, width, quality }) => {
-  /** Transforming a gif file is a premium feature in imgix. */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const withProps: string = `https://sws.imgix.net/${src}?w=${width}&q=${quality ?? 75}`;
-
-  const withoutProps: string = `https://sws.imgix.net/${src}`;
-
-  return withoutProps;
-};
+import imageLoader from '@/helpers/ImageLoader';
 
 const SampleAnalysis = () => {
   const { resolvedTheme } = useTheme();
@@ -104,7 +95,7 @@ const SampleAnalysis = () => {
                 key="quark_gif"
               >
                 <Image
-                  loader={myLoader}
+                  loader={imageLoader}
                   src={srcPath}
                   alt="Sample analysis"
                   width={250}
