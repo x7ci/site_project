@@ -9,6 +9,7 @@ export { ColoredBox } from './ColoredBox';
 export { Table, TableBody, TableCell, TableRow } from './Table';
 export { Button } from './Button';
 export { DashboardComponentWrapper } from './DashboardComponentWrapper';
+export { Underline } from './Underline';
 
 export type StitchesCss = ComponentProps<typeof StitchesBox>['css'];
 

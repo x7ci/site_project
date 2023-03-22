@@ -1,5 +1,5 @@
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
-import { Box, ColoredBox, Text } from '@/components/stitches';
+import { Box, ColoredBox, Text, Underline } from '@/components/stitches';
 import { styled } from 'stitches.config';
 
 const githubRepoLink: string = 'https://github.com/x7ci/site_project';
@@ -55,8 +55,6 @@ const About = () => {
             </Underline>
             for inquiries. asdasdsadsadsadmmmmmmmmmmmmmmmmmmmmmmmmm
           </Text>
-          {/* <Box css={{ height: 20 }} /> */}
-
         </Background>
       </DottedTopBorderBox>
     </Wrapper>
@@ -72,29 +70,6 @@ const Background = styled('div', {
   padding: '12px',
   display: 'flex',
   flexDirection: 'column'
-});
-
-const Underline = styled('div', {
-  display: 'inline-block',
-  position: 'relative',
-
-  '&:after': {
-    content: '',
-    position: 'absolute',
-    width: '100%',
-    transform: 'scaleX(0)',
-    height: '2px',
-    bottom: 0,
-    left: 0,
-    backgroundColor: '$yellow1',
-    transformOrigin: 'bottom right',
-    transition: 'transform 0.25s ease-out',
-  },
-
-  '&:hover:after': {
-    transform: 'scaleX(1)',
-    transformOrigin: 'bottom left'
-  }
 });
 
 export default About;
