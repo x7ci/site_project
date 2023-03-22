@@ -24,31 +24,36 @@ const About = () => {
             <br />
             Source code is available at
             {' '}
-            <Text size="5" color="gray12" weight="3" background="cyan10" >
-              <Box
-                as="a"
-                href={githubRepoLink}
-                target="_blank"
-                css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
-              >
-                x7ci@github
-              </Box>
-            </Text>
+            <Underline>
+              <Text size="5" color="gray12" weight="3" background="cyan10" >
+                <Box
+                  as="a"
+                  href={githubRepoLink}
+                  target="_blank"
+                  css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
+                >
+                  x7ci@github
+                </Box>
+              </Text>
+            </Underline>
             .
             You can write to me at
             {' '}
-            <Text size="5" color="gray12" weight="3" background="cyan10" >
-              <Box
-                as="a"
-                href="mailto:contact@x7ci.engineer"
-                target="_blank"
-                css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
-              >
-                contact@x7ci.engineer
-              </Box>
-            </Text>
-            {' '}
-            for inquiries. 
+
+            <Underline>
+              <Text size="5" color="gray12" weight="3" background="cyan10">
+                <Box
+                  as="a"
+                  href="mailto:contact@x7ci.engineer"
+                  target="_blank"
+                  css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
+                >
+                  contact@x7ci.engineer
+                </Box>
+              </Text>
+              {' '}
+            </Underline>
+            for inquiries. asdasdsadsadsadmmmmmmmmmmmmmmmmmmmmmmmmm
           </Text>
           {/* <Box css={{ height: 20 }} /> */}
 
@@ -67,6 +72,29 @@ const Background = styled('div', {
   padding: '12px',
   display: 'flex',
   flexDirection: 'column'
+});
+
+const Underline = styled('div', {
+  display: 'inline-block',
+  position: 'relative',
+
+  '&:after': {
+    content: '',
+    position: 'absolute',
+    width: '100%',
+    transform: 'scaleX(0)',
+    height: '2px',
+    bottom: 0,
+    left: 0,
+    backgroundColor: '$yellow1',
+    transformOrigin: 'bottom right',
+    transition: 'transform 0.25s ease-out',
+  },
+
+  '&:hover:after': {
+    transform: 'scaleX(1)',
+    transformOrigin: 'bottom left'
+  }
 });
 
 export default About;
