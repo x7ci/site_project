@@ -65,10 +65,10 @@ const ChartAnalysis = () => {
           <TextGroupWrapper align="right">
             <ButtonWrapper>
               <ChartTypeButton variant={currentChartType.current === ChartType.scatter ? 'active' : undefined} onClick={() => setChartType(ChartType.scatter)}>
-                <ScatterIcon color='cyan1' scale={.7} width={20} height={28} />
+                <ScatterIcon color='cyan1' width={24} height={18} />
               </ChartTypeButton>
               <ChartTypeButton variant={currentChartType.current === ChartType.line ? 'active' : undefined} onClick={() => setChartType(ChartType.line)}>
-                <ActivityIcon color='cyan1' scale={.22} size={22} />
+                <ActivityIcon color='cyan1' width={24} height={24} />
               </ChartTypeButton>
             </ButtonWrapper>
           </TextGroupWrapper>
@@ -109,6 +109,9 @@ const ChartTypeButton = styled('button', {
   whiteSpace: 'nowrap',
   color: '$cyan1',
   height: '24px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 
   '&:active': {
     opacity: .8,

@@ -18,7 +18,7 @@ const AlarmData = ({ alarm }: Props) => {
             <AlarmHeaderWrapper>
               <DottedTopBorderBox onlyLeft>
                 <IconContainer>
-                  <WarningIcon color='red1' scale={.9} size={21} />
+                  <WarningIcon color='red1' width={22} height={22} />
                 </IconContainer>
               </DottedTopBorderBox>
               <AlarmTitleWrapper>

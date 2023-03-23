@@ -2,13 +2,11 @@ import { Box, ColoredBox, Text, Button, DashboardComponentWrapper } from '@/comp
 import { styled } from 'stitches.config';
 import DataGrid, { ItemSeverity, type DataGridRow } from './DataGrid';
 import { useEffect, useState } from 'react';
-import { keyframes } from '@stitches/react';
 import WarningIcon from '@/components/icons/WarningIcon';
 import SquareBoxesIcon from '@/components/icons/SquareBoxesIcon';
 import SingleDataMetric, { type DataMetricPair } from '../../../components/SingleDataMetric/SingleDataMetric';
 import ActivityIcon from '@/components/icons/ActivityIcon';
 import SettingsIcon from '@/components/icons/SettingsIcon';
-import IconFrame from '@/components/IconFrame/IconFrame';
 import { generateDataGrid } from './DataGridHelper';
 import DottedTopBorderBox from '@/components/DottedTopBorderBox';
 
@@ -71,17 +69,17 @@ const DataGridContainer = () => {
         <SingleDataMetricsWrapper>
           <SingleDataMetric
             data={dataMetric1}
-            icon={<SquareBoxesIcon color='cyan1' scale={0.5} size={16} />}
+            icon={<SquareBoxesIcon color='cyan1' width={16} height={16} />}
             title="NODES"
           />
           <SingleDataMetric
             data={dataMetric2}
-            icon={<ActivityIcon color='cyan1' scale={.3} size={29} />}
+            icon={<ActivityIcon color='cyan1' width={26} height={26} />}
             title="ACTIVE"
           />
           <SingleDataMetric
             data={dataMetric3}
-            icon={<WarningIcon color='cyan1' scale={.9} size={21} />}
+            icon={<WarningIcon color='cyan1' width={21} height={21} />}
             title="ALARMS"
           />
         </SingleDataMetricsWrapper>
@@ -95,7 +93,7 @@ const DataGridContainer = () => {
 
         <ButtonContainer>
           <IconContainer>
-            <SettingsIcon color="cyanLight1" scale={.55} size={16} />
+            <SettingsIcon color="cyanLight1" width={16} height={16} />
           </IconContainer>
 
           <Button
