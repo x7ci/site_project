@@ -19,11 +19,11 @@ const About = () => {
         <Background>
           <Box css={{ height: 10 }} />
           <Text color="gray12" size="6">
-            This is my personal site built and designed by me. It features a concept dashboard with various components like tables, charts and metrics. The design system is inspired by FUI type designs. All data is locally generated and no external connections are made.
+            This is my personal site built and designed by me. It features a concept dashboard with various components like tables, charts and metrics. 
+            The design system is inspired by FUI type designs. All data is locally generated and no external connections are made.
             <br />
             <br />
-            Source code is available at
-            {' '}
+            Source code is available at&nbsp;
             <Underline>
               <Text size="5" color="gray12" weight="3" background="cyan10" >
                 <Box
@@ -36,10 +36,7 @@ const About = () => {
                 </Box>
               </Text>
             </Underline>
-            .
-            You can write to me at
-            {' '}
-
+            . You can write to me at&nbsp;
             <Underline>
               <Text size="5" color="gray12" weight="3" background="cyan10">
                 <Box
@@ -53,7 +50,7 @@ const About = () => {
               </Text>
               {' '}
             </Underline>
-            for inquiries. asdasdsadsadsadmmmmmmmmmmmmmmmmmmmmmmmmm
+            for inquiries.
           </Text>
         </Background>
       </DottedTopBorderBox>
