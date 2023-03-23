@@ -64,8 +64,6 @@ const NavigationBar = ({ children }: Props) => {
         </NavigationBarBox>
       </DottedTopBorderBox>
 
-      <Box css={{ height: 30 }} />
-
       <DottedTopBorderBox withHorizontalLine />
 
       <Box css={{ height: 20 }} />
@@ -143,7 +141,7 @@ const NavbarLinksContainer = styled('div', {
     position: 'absolute',
     // height: '50px',
     width: '100%',
-    top: '75px',
+    top: '42px',
     left: '0px',
   },
 });
