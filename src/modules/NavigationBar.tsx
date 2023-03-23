@@ -64,6 +64,8 @@ const NavigationBar = ({ children }: Props) => {
         </NavigationBarBox>
       </DottedTopBorderBox>
 
+      <Box css={{ height: 30, '@bp3': { height: 'unset' } }} />
+
       <DottedTopBorderBox withHorizontalLine />
 
       <Box css={{ height: 20 }} />
