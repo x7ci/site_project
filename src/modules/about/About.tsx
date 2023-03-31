@@ -32,7 +32,7 @@ const About = () => {
                   target="_blank"
                   css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
                 >
-                  x7ci@github
+                  x7ci/site_project
                 </Box>
               </Text>
             </Underline>
