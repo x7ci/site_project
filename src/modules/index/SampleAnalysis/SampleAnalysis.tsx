@@ -61,8 +61,8 @@ const SampleAnalysis = () => {
 
           <DottedCircle
             as={motion.div}
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={animationEnded ? { scale: hover ? [1, 1, 1] : [1.02, 1.05, 1.02], opacity: 1 } : { scale: 1, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={animationEnded ? { scale: hover ? [1, 1, 1] : [1.02, 1.05, 1.02], opacity: 1 } : { opacity: 1 }}
             onAnimationComplete={() => setAnimationEnded(true)}
             transition={animationEnded
               ? {
