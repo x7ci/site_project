@@ -26,7 +26,7 @@ const Home = () => {
           </ColoredBox>
         </AnimateComponentMount>
         <Box css={{ height: 20 }} />
-        <ComponentsContainer>
+        {/* <ComponentsContainer>
           <Box css={{ flex: 1, maxWidth: 600 }}>
             <AnimateComponentMount>
               <SampleAnalysisContainer />
@@ -57,7 +57,7 @@ const Home = () => {
               <AlarmViewContainer />
             </AnimateComponentMount>
           </Box>
-        </ComponentsContainer>
+        </ComponentsContainer> */}
       </Wrapper>
     </>
   );

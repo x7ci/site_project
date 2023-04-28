@@ -49,19 +49,3 @@
   font-style: normal;
   font-weight: 500;
 }
-
-:root {
-  /** Global variables */
-  --robotoCondensed-font: RobotoCondensed, "Adjusted Arial Fallback";
-  --petch-font: Petch, "Adjusted Arial Fallback";
-}
-
-html {
-  /** Default font */
-  font-family: var(--robotoCondensed-font);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}

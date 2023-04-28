@@ -1,0 +1,76 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: var(--size-tile);
+}
+
+.navigationBarBox {
+  height: var(--size-navigationBarHeight);
+  padding-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+
+  /** Height for the space reserved for navigation buttons. */
+  $buttonSpaceHeight: 30px;
+
+  /** How many width px the space for the navigation buttons should start. */
+  $buttonSpaceStart: 357px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background: var(--color-navigationBarBackground);
+    clip-path: polygon(0% 0%,
+        100% 0%,
+        100% $buttonSpaceHeight,
+        calc(21px + $buttonSpaceStart) $buttonSpaceHeight,
+        $buttonSpaceStart 100%,
+        0% 100%);
+
+    @media (max-width: 895px) {
+      clip-path: unset;
+    }
+  }
+
+  @media (max-width: 895px) {
+    margin-bottom: 60px;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  white-space: nowrap;
+}
+
+.linksContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: var(--size-navigationBarHeight);
+  padding-right: 20px;
+
+  @media (max-width: 895px) {
+    position: absolute;
+    width: 100%;
+    top: 42px;
+    left: 0px;
+  }
+}
+
+.linksRow {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

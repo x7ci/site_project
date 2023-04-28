@@ -1,0 +1,25 @@
+@use 'variables';
+@use 'fonts';
+
+html {
+  /** Default font */
+  font-family: var(--font-robotoCondensed);
+  color: var(--gray12);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  background-image: var(--asset-tile);
+  background-repeat: repeat;
+  transition: background 300ms ease-out;
+  background-size: var(--size-tile);
+  background-blend-mode: multiply;
+
+  ::selection {
+    color: var(--color-gray1);
+    background: var(--color-gray11);
+  }
+}
+

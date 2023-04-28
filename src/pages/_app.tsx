@@ -1,20 +1,15 @@
 import { ThemeProvider } from '@/contexts/ThemeProvider/ThemeProvider';
 import type { AppProps } from 'next/app';
-import { theme, lightTheme } from '../../stitches.config';
 import NavigationBar from '@/modules/NavigationBar';
 import { AnimatePresence } from 'framer-motion';
-import './global.css';
+import '@/styles/globals.scss';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider
-      attribute="class"
+      attribute="data-theme"
       defaultTheme="dark"
       storageKey="theme"
-      value={{
-        dark: theme.className,
-        light: lightTheme.className,
-      }}
     >
       <NavigationBar>
         <AnimatePresence mode="wait" initial={true}>
