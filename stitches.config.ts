@@ -148,8 +148,6 @@ export const lightTheme = createTheme({
 
 export const globalStyles = globalCss({
   body: {
-    margin: 0,
-    padding: 0,
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
     transition: 'background 300ms ease-out',

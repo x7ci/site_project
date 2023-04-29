@@ -19,7 +19,7 @@ const About = () => {
         <Background>
           <Box css={{ height: 10 }} />
           <Text color="gray12" size="6">
-            This is my personal site built and designed by me. It features a concept dashboard with various components like tables, charts and metrics. 
+            This is my personal site built and designed by me. It features a concept dashboard with various components like tables, charts and metrics.
             The design system is inspired by FUI type designs. All data is locally generated and no external connections are made.
             <br />
             <br />
@@ -36,7 +36,23 @@ const About = () => {
                 </Box>
               </Text>
             </Underline>
-            . You can write to me at&nbsp;
+            .
+            <br />
+            <br />
+            I am currently open to work (
+            <Underline>
+              <Text size="5" color="gray12" weight="3" background="cyan10">
+                <Box
+                  as="a"
+                  href="https://news.ycombinator.com/item?id=35424805#35585269"
+                  target="_blank"
+                  css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
+                >
+                  HN entry
+                </Box>
+              </Text>
+            </Underline>
+            ). You can write to me at&nbsp;
             <Underline>
               <Text size="5" color="gray12" weight="3" background="cyan10">
                 <Box
@@ -48,9 +64,8 @@ const About = () => {
                   contact@x7ci.engineer
                 </Box>
               </Text>
-              {' '}
             </Underline>
-            for inquiries.
+            {'.'}
           </Text>
         </Background>
       </DottedTopBorderBox>
