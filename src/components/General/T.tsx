@@ -1,4 +1,4 @@
-import { color, type FontWeight, letterSpacing, size } from '@/helpers/CssVariables';
+import { type Theme, color, letterSpacing, size } from '@/helpers/CssVariables';
 import type { ElementType, ComponentPropsWithoutRef, PropsWithChildren, CSSProperties } from 'react';
 
 interface PolymorphicAsProp<E extends ElementType> {
@@ -18,10 +18,10 @@ const properties = {
 };
 
 type CustomTextProps<E extends ElementType = TextType> = PolymorphicProps<E> & {
-  color?: keyof typeof properties.color
-  size?: keyof typeof properties.size
-  letterSpacing?: keyof typeof properties.letterSpacing
-  weight?: FontWeight
+  color?: Theme.Color
+  size?: Theme.Size
+  letterSpacing?: Theme.LetterSpacing
+  weight?: Theme.FontWeight
   uppercase?: boolean
 };
 

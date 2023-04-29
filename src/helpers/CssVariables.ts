@@ -1,3 +1,12 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+export namespace Theme {
+  export type Color = keyof typeof color;
+  export type Size = keyof typeof size;
+  export type LetterSpacing = keyof typeof letterSpacing;
+  export type MediaQuery = keyof typeof mediaQuery;
+  export type FontWeight = keyof typeof generalCssProperties | '300' | '400' | '500';
+}
+
 const generalCssProperties = {
   initial: 'initial',
   unset: 'unset',
@@ -6,6 +15,8 @@ const generalCssProperties = {
 
 export const color = {
   ...generalCssProperties,
+
+  navigationBarIcon: 'var(--color-navigationBarIcon)',
 
   gray1: 'var(--color-gray1)',
   gray2: 'var(--color-gray2)',
@@ -80,5 +91,3 @@ export const mediaQuery = {
 
   navigationBarCompact: '(max-width: 895px)',
 };
-
-export type FontWeight = keyof typeof generalCssProperties | '300' | '400' | '500';
