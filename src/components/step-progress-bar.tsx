@@ -8,9 +8,9 @@ export enum StepProgressBarColor {
 }
 
 export interface StepStateColor {
-  primary: ComponentProps<typeof Text>['color']
-  secondary: ComponentProps<typeof Text>['color']
-  disabled: ComponentProps<typeof Text>['color']
+  primary: ComponentProps<typeof T>['color']
+  secondary: ComponentProps<typeof T>['color']
+  disabled: ComponentProps<typeof T>['color']
 };
 
 export type StepState = keyof StepStateColor;
