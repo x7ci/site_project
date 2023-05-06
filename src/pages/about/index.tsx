@@ -1,7 +1,7 @@
-import AnimateComponentMount from '@/components/AnimateComponentMount';
-import { Box, ColoredBox, Text } from '@/components/stitches';
-import About from '@/modules/about/About';
-import ProjectStack from '@/modules/about/ProjectStack';
+import AnimateComponentMount from '@/components/animate-component-mount';
+import { Box, ColoredBox, T } from '@/components/stitches';
+import About from '@/modules/about/about';
+import ProjectStack from '@/modules/about/project-stack';
 import Head from 'next/head';
 import { styled } from 'stitches.config';
 
@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>x7ci - Full Stack Developer</title>
-        <meta name="description" content="x7ci - about" />
+        <title>x7ci | about</title>
+        <meta name="description" content="Private website built with React, TypeScript & Next.js." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -18,11 +18,11 @@ const Home = () => {
       <Wrapper>
         <AnimateComponentMount>
           <ColoredBox color="cyan1">
-            <Text color="gray1" weight="2" >ABOUT</Text>
+            <T color="gray1" weight="2" >ABOUT</T>
           </ColoredBox>
         </AnimateComponentMount>
 
-        <Box css={{ height: 20 }} />
+        <Box css={{ h: 20 }} />
 
         <ComponentsContainer>
           <Box css={{ flex: 1, minWidth: 300, maxWidth: 600 }}>
