@@ -1,4 +1,4 @@
-import { createStitches, createTheme, globalCss } from '@stitches/react';
+import { createStitches, createTheme, globalCss, type PropertyValue } from '@stitches/react';
 import { sand, sandDark } from '@radix-ui/colors';
 
 export const { styled, getCssText, theme, config } = createStitches({
@@ -97,14 +97,13 @@ export const { styled, getCssText, theme, config } = createStitches({
     bp570: '(max-width: 570px)',
   },
   utils: {
-    // Abbreviated margin properties
-    w: (value) => ({
+    w: (value: PropertyValue<'width'>) => ({
       width: value,
     }),
-    h: (value) => ({
+    h: (value: PropertyValue<'width'>) => ({
       height: value,
     }),
-    size: (value) => ({
+    size: (value: PropertyValue<'width'>) => ({
       width: value,
       height: value,
     }),
