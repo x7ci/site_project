@@ -1,7 +1,7 @@
-import { createStitches, createTheme, globalCss } from '@stitches/react';
+import { createStitches, createTheme, globalCss, type PropertyValue } from '@stitches/react';
 import { sand, sandDark } from '@radix-ui/colors';
 
-export const { styled, getCssText, theme } = createStitches({
+export const { styled, getCssText, theme, config } = createStitches({
   theme: {
     sizes: {
       tileSize: '30px',
@@ -96,6 +96,18 @@ export const { styled, getCssText, theme } = createStitches({
     bp620: '(max-width: 620px)',
     bp570: '(max-width: 570px)',
   },
+  utils: {
+    w: (value: PropertyValue<'width'>) => ({
+      width: value,
+    }),
+    h: (value: PropertyValue<'width'>) => ({
+      height: value,
+    }),
+    size: (value: PropertyValue<'width'>) => ({
+      width: value,
+      height: value,
+    }),
+  }
 });
 
 export const lightTheme = createTheme({
