@@ -1,7 +1,12 @@
-/** This static CSS file is for improving performance on page load, as Stitches currently does not support static extraction. */
+/* eslint-disable react-hooks/rules-of-hooks */
+import { type StitchesTheme } from 'stitches.config';
+import { useCssVar, defineCssVar } from './css-helpers';
+
+const getGlobalCss = (themes: StitchesTheme[], defaultTheme: StitchesTheme) => {
+  let css = `
 
 /** Fallback font adjusted to match default font. To avoid a jarring shift of layout. */
-/* @font-face {
+@font-face {
   font-family: 'Adjusted Arial Fallback';
   src: local(Arial);
   size-adjust: 86%;
@@ -50,20 +55,26 @@
   src: url("/fonts/ChakraPetch-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
-} */
-
-:root {
-  /** Global variables */
-  --robotoCondensed-font: RobotoCondensed, "Adjusted Arial Fallback";
-  --petch-font: Petch, "Adjusted Arial Fallback";
-}
-
-html {
-  /** Default font */
-  font-family: var(--robotoCondensed-font);
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  background-color: ${useCssVar(defaultTheme.colors.rootBackground)};
 }
+`;
+
+  for (let i = 0; i < themes.length; i++) {
+    const themeVars: string[] = Object.entries(themes[i].colors).map(([_, value]) => `${defineCssVar(value)};`);
+
+    const themeCss: string = `
+.${themes[i].className} {
+  ${themeVars.join('\n  ')}
+}
+`;
+
+    css += themeCss;
+  }
+
+  return css;
+};
+
+export default getGlobalCss;
