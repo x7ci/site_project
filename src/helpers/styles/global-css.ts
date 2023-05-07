@@ -1,9 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { type StitchesTheme } from 'stitches.config';
+import { type theme, type StitchesTheme } from 'stitches.config';
 import { useCssVar, defineCssVar } from './css-helpers';
-
-const getGlobalCss = (themes: StitchesTheme[], defaultTheme: StitchesTheme) => {
-  let css = `
+/**
+ * Generate CSS.
+ *
+ * @param defaultTheme The default Stitches theme.
+ *
+ * @param themes A list of additional Stitches themes.
+ * @returns The statically generated CSS as a string.
+ */
+const getGlobalCss = (defaultTheme: typeof theme, themes: StitchesTheme[]) => {
+  const css = `
 
 /** Fallback font adjusted to match default font. To avoid a jarring shift of layout. */
 @font-face {
@@ -57,13 +64,36 @@ const getGlobalCss = (themes: StitchesTheme[], defaultTheme: StitchesTheme) => {
   font-weight: 500;
 }
 
+:root {
+${getFontVariables(defaultTheme)}
+}
+
 body {
+  font-family: ${useCssVar(defaultTheme.fonts.robotoCondensed)};
+  margin: 0;
+  padding: 0;
   background-color: ${useCssVar(defaultTheme.colors.rootBackground)};
 }
+
+::selection {
+  color: ${useCssVar(defaultTheme.colors.gray1)};
+  background: ${useCssVar(defaultTheme.colors.gray11)};
+}
+
+${getThemeClasses(themes)}
+
 `;
 
+  console.log(css);
+
+  return css;
+};
+
+const getThemeClasses = (themes: StitchesTheme[]): string => {
+  let css = '';
+
   for (let i = 0; i < themes.length; i++) {
-    const themeVars: string[] = Object.entries(themes[i].colors).map(([_, value]) => `${defineCssVar(value)};`);
+    const themeVars: string[] = Object.values(themes[i].colors).map((value) => `${defineCssVar(value)};`);
 
     const themeCss: string = `
 .${themes[i].className} {
@@ -74,7 +104,11 @@ body {
     css += themeCss;
   }
 
-  return css;
+  return css.trim();
+};
+
+const getFontVariables = (defaultTheme: typeof theme): string => {
+  return Object.values(defaultTheme.fonts).map((font) => `  ${defineCssVar(font)};`).join('\n');
 };
 
 export default getGlobalCss;

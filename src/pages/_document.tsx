@@ -1,38 +1,19 @@
+import { initThemeScript } from '@/contexts/theme-provider/theme-provider-2';
 import getGlobalCss from '@/helpers/styles/global-css';
 import { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText, theme, lightTheme, config } from '../../stitches.config';
+import Script from 'next/script';
+import { getCssText, theme, lightTheme } from '../../stitches.config';
 
-// theme.className t-bhSCcY       lightTheme.className t-dHqfFl
-// export const initThemeScript = (themeClassMap: ThemeClassMap, defaultTheme: string) => {
-//   return (`
-// ;(function initTheme() {
-//   var theme = localStorage.getItem('theme') ?? 'dark';
-
-//   var themeClassName = '${defaultTheme}';
-
-//   if (theme === 'dark') {
-//     themeClassName = '${themeClassMap.dark}'
-//   }
-
-//   if (theme === 'light') {
-//     themeClassName = '${themeClassMap.light}'
-//   }
-
-//   document.querySelector('html').className = themeClassName;
-// })()
-// `);
-// };
-
-const globalCss = getGlobalCss([theme, lightTheme], theme);
+const globalCss = getGlobalCss(theme, [theme, lightTheme]);
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
-        <style id="stitches-hydrate" dangerouslySetInnerHTML={{ __html: globalCss }} />
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() + globalCss }} />
+        {/* <style id="stitches-hydrate" dangerouslySetInnerHTML={{ __html: globalCss }} /> */}
 
-        {/* <Script id="set-theme" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: initThemeScript(themeClassMap, themeClassMap.light) }} /> */}
+        {/* <Script id="theme" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: initThemeScript() }} /> */}
       </Head>
       <body>
         <Main />

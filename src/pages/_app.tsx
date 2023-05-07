@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import { theme, lightTheme } from '../../stitches.config';
 import NavigationBar from '@/modules/navigation-bar';
 import { AnimatePresence } from 'framer-motion';
-import './global.css';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (

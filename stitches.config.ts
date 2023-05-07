@@ -64,8 +64,8 @@ export const { styled, getCssText, theme, config } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: 'var(--robotoCondensed-font)',
-      petch: 'var(--petch-font)',
+      robotoCondensed: 'RobotoCondensed, "Adjusted Arial Fallback"',
+      petch: 'Petch, "Adjusted Arial Fallback"',
     },
     fontSizes: {
       1: '5px',
@@ -110,7 +110,7 @@ export const { styled, getCssText, theme, config } = createStitches({
   }
 });
 
-export const lightTheme = createTheme({
+export const lightTheme = createTheme('light-theme', {
   colors: {
     /** App */
     rootBackground: '#fff',
@@ -166,10 +166,6 @@ export const globalStyles = globalCss({
     backgroundRepeat: 'repeat',
     transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
-  },
-  '::selection': {
-    color: '$gray1',
-    background: '$gray11',
   },
 });
 
