@@ -10,7 +10,7 @@ export const { styled, getCssText, theme, config } = createStitches({
     colors: {
       /** App */
       rootBackground: '#181923',
-      tileUrl: 'url("tile_dark.png")',
+      tileUrl: 'url("/tile_dark.png")',
       navigationBarBackground: 'rgba(153, 250, 255, .04)',
       navigationBarIcon: '$yellow1',
 
@@ -110,11 +110,11 @@ export const { styled, getCssText, theme, config } = createStitches({
   }
 });
 
-export const lightTheme = createTheme({
+export const lightTheme = createTheme('light-theme', {
   colors: {
     /** App */
     rootBackground: '#fff',
-    tileUrl: 'url("tile_light.png")',
+    tileUrl: 'url("/tile_light.png")',
     navigationBarBackground: sand.sand4,
     navigationBarIcon: 'rgba(0, 0, 0, .6)',
 
@@ -158,13 +158,14 @@ export const lightTheme = createTheme({
   },
 });
 
+export type StitchesTheme = typeof theme | typeof lightTheme;
+
 export const globalStyles = globalCss({
   body: {
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
     transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
-    backgroundBlendMode: 'multiply'
   },
   '::selection': {
     color: '$gray1',
