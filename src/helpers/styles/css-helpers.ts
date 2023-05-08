@@ -4,7 +4,7 @@ import { type Token } from '@stitches/react/types/theme';
  *
  *  @returns The CSS variable as string in format `var(--prefix-varname)`.
 */
-export const cssVar = (varName: string, prefix?: string) => `var(--${prefix ? `${prefix}-` : ''}${varName})`;
+const cssVar = (varName: string, prefix?: string) => `var(--${prefix ? `${prefix}-` : ''}${varName})`;
 
 /** Returns CSS variable. If type is `token`, then the properties of `token` will be used.
  *

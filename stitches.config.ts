@@ -64,8 +64,8 @@ export const { styled, getCssText, theme, config } = createStitches({
       red1: 'rgba(216, 60, 60, 1)',
     },
     fonts: {
-      robotoCondensed: 'RobotoCondensed, "Adjusted Arial Fallback"',
-      petch: 'Petch, "Adjusted Arial Fallback"',
+      robotoCondensed: 'var(--robotoCondensed-font)',
+      petch: 'var(--petch-font)',
     },
     fontSizes: {
       1: '5px',
@@ -166,6 +166,10 @@ export const globalStyles = globalCss({
     backgroundRepeat: 'repeat',
     transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
+  },
+  '::selection': {
+    color: '$gray1',
+    background: '$gray11',
   },
 });
 
