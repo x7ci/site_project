@@ -19,10 +19,10 @@ const AlarmHeatMapContainer = () => {
     setData(generateAlarmHeatMapData());
   }, []);
 
-  const warningCount: number = data.reduce((count, current) => count + current.filter((dataGridItem) => dataGridItem.severity === ItemSeverity.high).length, 0);
+  const warningCount: number = data.reduce((count, current) => count + current.data.filter((dataGridItem) => dataGridItem.severity === ItemSeverity.high).length, 0);
 
   const dataMetric1: DataMetricPair[] = [
-    { label: 'SYS', value: data.reduce((count, current) => count + current.length, 0) },
+    { label: 'SYS', value: data.reduce((count, current) => count + current.data.length, 0) },
     { label: 'AVG', value: 99 },
   ];
 
@@ -49,7 +49,7 @@ const AlarmHeatMapContainer = () => {
         </ColoredBox>
 
         <Box css={{ h: 8 }} />
-
+        {/*
         <StatusesContainer>
           <ColoredBox color="cyan14" size="max">
             <T size="4" color="cyanLight1" weight={2}>SOCKET_CONN: </T>
@@ -65,7 +65,7 @@ const AlarmHeatMapContainer = () => {
           </ColoredBox>
         </StatusesContainer>
 
-        <Box css={{ h: 18 }} />
+        <Box css={{ h: 18 }} /> */}
 
         <SingleDataMetricsWrapper>
           <DataMetricGroup
@@ -85,12 +85,14 @@ const AlarmHeatMapContainer = () => {
           />
         </SingleDataMetricsWrapper>
 
-        <Box css={{ h: 20 }} />
-
-        <AlarmHeatMap
-          data={data}
-          highlightSeverity={highlightSeverity}
-        />
+        <Box css={{ h: 15 }} />
+        <Box css={{ overflowX: 'auto' }}>
+          <DottedTopBorderBox />
+            <AlarmHeatMap
+              data={data}
+              highlightSeverity={highlightSeverity}
+            />
+        </Box>
 
         <Box css={{ h: 17 }} />
 

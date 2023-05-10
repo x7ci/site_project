@@ -1,7 +1,8 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
 import { Table, TableBody, TableCell, TableRow } from '@/components/stitches';
 import { type ComponentProps, keyframes } from '@stitches/react';
 import { styled } from 'stitches.config';
+import TimeDescription from './time-description';
+import WeekDaysDescription from './week-days-description';
 
 export type DotColor = ComponentProps<typeof Dot>['background'];
 
@@ -21,12 +22,15 @@ const severityColor: SeverityColorTypes = {
   [ItemSeverity.high]: 'red1',
 };
 
-export interface HeatMapItem {
+export interface HeatMapCell {
   isActive: boolean
   severity?: ItemSeverity
 }
 
-export type HeatMapRow = HeatMapItem[];
+export interface HeatMapRow {
+  day: string
+  data: HeatMapCell[]
+}
 
 interface Props {
   data: HeatMapRow[]
@@ -35,38 +39,66 @@ interface Props {
 
 const AlarmHeatMap = ({ data, highlightSeverity }: Props) => {
   return (
-    <DottedTopBorderBox>
-      <Wrapper>
-        <Table borderColor="cyan1" backgroundColor="cyan11" >
-          <TableBody>
-            {data.map((dataGridRow: HeatMapRow, i) => (
-              <TableRow key={`${i}datagridrow`}>
-                {dataGridRow.map((dataGridItem: HeatMapItem, i) => (
-                  <TableCell key={`${i}heat-map-row-cell`} size="1" backgroundColor="rootBackground" align="center">
-                    <DataBoxWrapper>
-                      {(dataGridItem.isActive) && (
-                        <Dot background={dataGridItem.severity ? severityColor[dataGridItem.severity] : undefined} />
-                      )}
-                      {highlightSeverity && (
-                        <AnimatingBox
-                          animation={(dataGridItem.severity === highlightSeverity) ? 'scale' : undefined}
-                          css={{ animationDelay: `${(i * 5)}0ms` }} /** Delay animation relative to HeatMapItem postion */
-                        />
-                      )}
-                    </DataBoxWrapper>
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Wrapper>
-    </DottedTopBorderBox>
+    <Wrapper>
+      <TableContainer flex="column">
+        <TimeDescription />
+        <TableContainer flex="row">
+          <Table borderColor="cyan1" backgroundColor="cyan11" >
+            <TableBody>
+              {data.map((heatMapRow: HeatMapRow, heatMapRowIndex: number) => (
+                <TableRow
+                  key={`${heatMapRowIndex}heatmaprow`}
+                >
+                  {heatMapRow.data.map((dataGridItem: HeatMapCell, i) => (
+                    <TableCell
+                      key={`${i}heat-map-row-cell`}
+                      size="1"
+                      backgroundColor="rootBackground"
+                    >
+                      <DataBoxWrapper>
+                        {(dataGridItem.isActive) && (
+                          <Dot background={dataGridItem.severity ? severityColor[dataGridItem.severity] : undefined} />
+                        )}
+                        {highlightSeverity && (
+                          <AnimatingBox
+                            animation={(dataGridItem.severity === highlightSeverity) ? 'scale' : undefined}
+                            css={{ animationDelay: `${(i * 5)}0ms` }} /** Delay animation relative to HeatMapItem postion */
+                          />
+                        )}
+                      </DataBoxWrapper>
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <WeekDaysDescription days={data.map((dataGridRow) => dataGridRow.day)} />
+        </TableContainer>
+      </TableContainer>
+    </Wrapper>
   );
 };
 
 const Wrapper = styled('div', {
-  height: '120px',
+  minWidth: '540px',
+  overflowX: 'auto',
+});
+
+const TableContainer = styled('div', {
+  display: 'flex',
+  gap: '7px',
+  rowGap: '2px',
+
+  variants: {
+    flex: {
+      row: {
+        flexDirection: 'row'
+      },
+      column: {
+        flexDirection: 'column'
+      }
+    }
+  }
 });
 
 const DataBoxWrapper = styled('div', {
@@ -80,15 +112,12 @@ const scaleAnimation = keyframes({
   '0%': {
     // scale: 0,
     opacity: 1,
-    // transform: 'translateY(0px)'
   },
   '50%': {
     opacity: 1,
-    // transform: 'translateY(0px)'
   },
   '100%': {
     // scale: 1.5,
-    // transform: 'translateY(-5px)',
     opacity: 0,
   },
 });
