@@ -1,11 +1,11 @@
 /** Fallback font adjusted to match default font. To avoid a jarring shift of layout. */
 @font-face {
   font-family: 'Adjusted Arial Fallback';
-  src: local(Arial);
-  size-adjust: 86%;
+  src: local(Arial Narrow);
+  size-adjust: 98%;
   ascent-override: normal;
   descent-override: normal;
-  line-gap-override: 21%;
+  line-gap-override: 0%;
 }
 
 @font-face {
