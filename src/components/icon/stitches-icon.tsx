@@ -4,18 +4,17 @@ import { type theme } from 'stitches.config';
 export interface Props {
   color?: keyof typeof theme.colors
   css?: StitchesCss
-  scale?: number
   size?: number
 }
 
-const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
+const StitchesIcon = ({ color, css, size = 14 }: Props) => {
   return (
     <Box
       as="svg"
       width="35"
       height="35"
       viewBox="0 0 35 35"
-      css={{ fill: `$${color}`, width: size, height: size, ...css }}
+      css={{ fill: `$${color}`, size, ...css }}
     >
       <title>Stitches logo</title>
       <Box
@@ -25,19 +24,19 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
         r="14.5"
         stroke="currentColor"
         strokeWidth="2"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
         d="M12.8184 31.3218L31.8709 20.3218"
         stroke="currentColor"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
         d="M3.31836 14.8674L22.3709 3.86743"
         stroke="currentColor"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
@@ -45,14 +44,14 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
         d="M9.21582 16.0815L26.5363 6.08154"
         stroke="currentColor"
         strokeLinecap="round"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
@@ -60,7 +59,7 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
@@ -68,7 +67,7 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
       <Box
         as="path"
@@ -76,7 +75,7 @@ const StitchesIcon = ({ color, css, size = 14, scale = 0.38 }: Props) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        css={{ fill: `$${color}`, scale }}
+        css={{ fill: `$${color}` }}
       />
     </Box>
 

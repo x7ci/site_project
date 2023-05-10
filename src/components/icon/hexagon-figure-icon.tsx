@@ -25,7 +25,6 @@ export interface Props {
   color?: keyof typeof theme.colors
   initialColor?: keyof typeof theme.colors
   css?: StitchesCss
-  scale?: number
   width?: number
   height?: number
 }

@@ -4,12 +4,11 @@ import { type theme } from 'stitches.config';
 export interface Props {
   color?: keyof typeof theme.colors
   css?: StitchesCss
-  scale?: number
   width?: number
   height?: number
 }
 
-const ReactIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
+const ReactIcon = ({ color, css, width, height }: Props) => {
   return (
     <Box
       as="svg"
@@ -27,27 +26,24 @@ const ReactIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
         as="g"
         strokeWidth="1"
         fill="none"
-        css={{ stroke: `$${color}`, scale }}
+        css={{ stroke: `$${color}` }}
       >
         <Box
           as="ellipse"
           rx="11"
           ry="4.2"
-          scale={scale}
         />
         <Box
           as="ellipse"
           rx="11"
           ry="4.2"
           transform="rotate(60)"
-          scale={scale}
         />
         <Box
           as="ellipse"
           rx="11"
           ry="4.2"
           transform="rotate(120)"
-          scale={scale}
         />
       </Box>
     </Box>

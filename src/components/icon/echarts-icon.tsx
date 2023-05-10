@@ -4,12 +4,11 @@ import { type theme } from 'stitches.config';
 export interface Props {
   color?: keyof typeof theme.colors
   css?: StitchesCss
-  scale?: number
   width?: number
   height?: number
 }
 
-const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
+const EChartsIcon = ({ color, css, width, height }: Props) => {
   return (
     <Box
       as="svg"
@@ -20,17 +19,16 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
 
       <g
         transform="translate(0, 146) scale(0.1,-0.1)"
-        scale={scale}
       >
         <Box
           as="path"
           d="M620 1449 c-173 -23 -334 -112 -446 -247 -301 -365 -187 -918 231 -1122 103 -51 187 -70 306 -70 391 0 708 320 709 718 1 436 -378 778 -800 721z m203 -319 c195 -93 273 -323 178 -526 -20 -44 -29 -74 -25 -90 8 -31 50 -64 81 -64 33 0 73 42 73 78 0 33 -34 82 -56 82 -19 0 -18 16 2 24 64 24 135 -25 125 -86 0 -4 14 -14 33 -22 19 -8 39 -23 45 -34 18 -33 13 -87 -9 -107 -19 -18 -20 -17 -20 2 0 11 -9 32 -21 47 -32 40 -77 36 -134 -14 -100 -86 -215 -125 -348 -117 -78 4 -98 9 -172 46 -181 90 -284 263 -273 462 8 154 103 278 256 336 58 21 205 12 265 -17z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
           d="M1720 965 l0 -65 294 0 294 0 18 53 c9 28 19 58 22 65 3 9 -63 12 -312 12 l-316 0 0 -65z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
@@ -39,14 +37,14 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
               c10 28 19 53 19 57 0 4 -104 8 -231 10 -290 4 -269 -11 -269 192 0 107 4 147
               14 162 13 17 31 19 232 24 l217 5 18 50 c10 28 18 56 18 63 1 9 -52 12 -231
               12 -204 0 -238 -3 -273 -19z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
           d="M3080 715 l0 -315 65 0 65 0 0 125 0 125 177 2 178 3 20 55 20 55 3
               -182 2 -183 65 0 65 0 0 315 0 315 -65 0 -65 0 0 -125 0 -125 -200 0 -200 0 0
               125 0 125 -65 0 -65 0 0 -315z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
@@ -55,7 +53,7 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
               13 2 6 21 59 42 117 21 58 41 108 44 112 3 4 46 -106 95 -243 l89 -249 63 0
               c35 0 64 3 64 8 0 4 -50 144 -110 312 -61 167 -110 306 -110 307 0 2 -39 3
               -88 3 l-88 0 -108 -302z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
@@ -64,13 +62,13 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
               c0 90 9 130 34 146 6 4 43 8 81 8 l70 0 59 -125 59 -125 68 0 c38 0 69 2 69 5
               0 3 -27 59 -60 124 l-59 119 44 11 c172 43 193 279 30 352 -35 16 -69 19 -277
               19 l-238 0 0 -65z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
           d="M5140 965 l0 -65 125 0 125 0 0 -250 0 -250 60 0 60 0 0 250 0 250
               104 0 104 0 18 53 c9 28 19 58 22 65 3 9 -62 12 -307 12 l-311 0 0 -65z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
@@ -80,14 +78,14 @@ const EChartsIcon = ({ color, css, width, height, scale = 0.38 }: Props) => {
               -33 263 -46 33 -101 42 -250 42 -130 0 -145 2 -163 20 -24 24 -25 49 -6 76 13
               17 31 19 232 24 l217 5 18 50 c10 28 18 56 18 63 1 9 -52 12 -232 12 -228 0
               -234 -1 -283 -25z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
         <Box
           as="path"
           d="M1720 668 c0 -110 11 -156 47 -199 53 -62 83 -69 325 -69 l216 0 15
               43 c8 23 18 50 22 60 7 16 -8 17 -222 17 -266 0 -273 2 -273 76 l0 44 224 0
               c124 0 227 4 230 8 2 4 14 31 25 60 l21 52 -315 0 -315 0 0 -92z"
-          css={{ fill: `$${color}`, scale }}
+          css={{ fill: `$${color}` }}
         />
       </g>
     </Box>

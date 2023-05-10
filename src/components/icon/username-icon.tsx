@@ -25,12 +25,11 @@ export interface Props {
   color?: keyof typeof theme.colors
   initialColor?: keyof typeof theme.colors
   css?: StitchesCss
-  scale?: number
   width?: number
   height?: number
 }
 
-const UsernameIcon = ({ color = 'cyan1', initialColor = 'cyan12', css, width = 260, height = 185, scale = 1 }: Props) => {
+const UsernameIcon = ({ color = 'cyan1', initialColor = 'cyan12', css, width = 260, height = 185 }: Props) => {
   const [fillColor, setFillColor] = useState<keyof typeof theme.colors>(initialColor);
 
   useEffect(() => {
@@ -54,7 +53,6 @@ const UsernameIcon = ({ color = 'cyan1', initialColor = 'cyan12', css, width = 2
       />
       <Box
         as={motion.g}
-        css={{ scale }}
       >
         <Box
           as={motion.path}
@@ -63,7 +61,7 @@ const UsernameIcon = ({ color = 'cyan1', initialColor = 'cyan12', css, width = 2
 
           /** Second design */
           d="M0.42 14.88L1.99 14.88L4.55 11.03L7.13 14.88L8.69 14.88L5.32 9.88L8.55 5.08L6.99 5.08L4.55 8.72L2.13 5.08L0.56 5.08L3.78 9.88ZM12.94 14.88L17.02 5.92L17.02 5.08L9.95 5.08L9.95 7.60L11.35 7.60L11.35 6.34L15.36 6.34L15.36 6.37L11.45 14.88ZM24.51 12.43L24.51 13.69L20.38 13.69L20.38 6.27L24.51 6.27L24.51 7.53L25.91 7.53L25.91 5.95L24.29 5.01L20.61 5.01L18.98 5.95L18.98 14.01L20.61 14.95L24.29 14.95L25.91 14.01L25.91 12.43ZM28.29 14.88L29.69 14.88L29.69 5.08L28.29 5.08Z"
-          css={{ strokeWidth: .2, fill: `$${fillColor}`, stroke: `$${color}`, scale, transition: 'all 600ms ease-out' }}
+          css={{ strokeWidth: .2, fill: `$${fillColor}`, stroke: `$${color}`, transition: 'all 600ms ease-out' }}
           variants={draw}
         />
       </Box>
