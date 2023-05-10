@@ -93,6 +93,7 @@ export const { styled, getCssText, theme, config } = createStitches({
     bp1: '(min-width: 1024px)',
     bp2: '(min-width: 768px)',
     bp3: '(max-width: 895px)',
+    bp4: '(max-width: 510px)',
     bp620: '(max-width: 620px)',
     bp570: '(max-width: 570px)',
   },
