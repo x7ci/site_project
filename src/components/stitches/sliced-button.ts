@@ -49,6 +49,11 @@ export const SlicedButton = styled('button', {
         color: '$cyan8',
       },
     },
+    size: {
+      dense: {
+        padding: '4px 20px 4px 20px',
+      }
+    },
     variant: {
       standard: {
         '&:before': {

@@ -9,7 +9,7 @@ export const Button = styled('button', {
   fontSize: '$fontSizes$6',
   transition: '150ms',
   whiteSpace: 'nowrap',
-  color: '$cyan1',
+  color: '$gray12',
 
   height: '24px',
 
@@ -19,6 +19,11 @@ export const Button = styled('button', {
   },
 
   variants: {
+    background: {
+      none: {
+        background: 'initial'
+      }
+    },
     type: {
       primary: {
         color: '$cyan1',
