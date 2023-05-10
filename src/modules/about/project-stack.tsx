@@ -28,28 +28,28 @@ const ProjectStack = () => {
 
           <StackContainer>
             <Chip text="NEXT.JS" link='https://nextjs.org/'>
-              <NextjsIcon scale={1} color="gray12" width={55} />
+              <NextjsIcon color="gray12" width={55} />
             </Chip>
             <Chip text="REACT" link='https://reactjs.org/'>
-              <ReactIcon scale={1} color="gray12" width={24} height={18.5} />
+              <ReactIcon color="gray12" width={24} height={18.5} />
             </Chip>
             <Chip text="TYPESCRIPT" link='https://www.typescriptlang.org/'>
-              <TypeScriptIcon scale={1} color="gray12" width={22} height={17} />
+              <TypeScriptIcon color="gray12" width={22} height={17} />
             </Chip>
             <Chip text="STITCHES" link='https://stitches.dev/'>
-              <StitchesIcon scale={1} color="gray1" size={20} />
+              <StitchesIcon color="gray1" size={20} />
             </Chip>
             <Chip text="ECHARTS" link='https://echarts.apache.org/'>
-              <EChartsIcon scale={1} color="gray12" width={84} height={20} />
+              <EChartsIcon color="gray12" width={78} height={18} />
             </Chip>
             <Chip text="FRAMER MOTION" link='https://www.framer.com/motion/'>
-              <FramerIcon scale={1} color="gray12" width={25} height={18} />
+              <FramerIcon color="gray12" width={25} height={18} />
             </Chip>
             <Chip text="ESLINT" link='https://eslint.org/'>
-              <EslintIcon scale={3} color="gray12" width={65} height={18} />
+              <EslintIcon color="gray12" width={65} height={18} />
             </Chip>
             <Chip text="PNPM" link='https://pnpm.io/'>
-              <PnpmIcon scale={1} color="gray12" secondColor="gray10" width={20} height={20} />
+              <PnpmIcon color="gray12" secondColor="gray10" width={20} height={20} />
             </Chip>
           </StackContainer>
         </Background>
