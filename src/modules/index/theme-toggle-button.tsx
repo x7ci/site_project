@@ -21,6 +21,7 @@ const ThemeToggleButton = () => {
     <SlicedButton
       onClick={toggleTheme}
       variant={{ '@bp3': 'standard' }}
+      size={{ '@bp4': 'dense' }}
       fontSize={5}
       weight={3}
       color="cyan8"
