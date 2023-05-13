@@ -2,6 +2,7 @@ import { type EChartsOption } from 'echarts';
 import { theme } from 'stitches.config';
 
 export const initialChartOption: EChartsOption = {
+  animationDuration: 1700,
   textStyle: {
     fontFamily: theme.fonts.robotoCondensed.value
   },
