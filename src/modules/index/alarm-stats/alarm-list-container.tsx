@@ -1,5 +1,5 @@
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import { Box, ColoredBox, DashboardComponentWrapper, T } from '@/components/stitches';
+import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import { hydrPumpAeration, mainBearingVibr } from './alarms';
 import AlarmView from './alarm-view';
@@ -7,7 +7,7 @@ import AlarmView from './alarm-view';
 const AlarmListContainer = () => {
   return (
     <>
-      <DashboardComponentWrapper>
+      <WidgetWrapper>
         <ColoredBox color="cyan14" size="max" >
           <T color="cyan1" weight={2}>ALARM </T>
           <T color="cyan1" weight={1} >LIST</T>
@@ -20,7 +20,7 @@ const AlarmListContainer = () => {
           <AlarmView alarm={mainBearingVibr} />
         </AlarmList>
 
-      </DashboardComponentWrapper>
+      </WidgetWrapper>
       <DottedTopBorderBox />
     </>
   );

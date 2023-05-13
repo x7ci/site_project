@@ -1,11 +1,11 @@
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import { Box, ColoredBox, DashboardComponentWrapper, T } from '@/components/stitches';
+import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import ModelRender from './model-render';
 
 const ModelRenderContainer = () => {
   return (
     <>
-      <DashboardComponentWrapper>
+      <WidgetWrapper>
         <ColoredBox color="cyan14" size="max" height={20} >
           <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box>
@@ -20,7 +20,7 @@ const ModelRenderContainer = () => {
         <Box css={{ height: 10 }} />
         <DottedTopBorderBox />
         <ModelRender />
-      </DashboardComponentWrapper>
+      </WidgetWrapper>
       <DottedTopBorderBox />
     </>
   );

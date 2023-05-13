@@ -1,6 +1,6 @@
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
 import LiveDataCircle from '@/components/live-data-circle';
-import { Box, DashboardComponentWrapper, T } from '@/components/stitches';
+import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { ColoredBox } from '@/components/stitches/colored-box';
 import { styled } from 'stitches.config';
 import HealthMonitor from './health-monitor';
@@ -8,7 +8,7 @@ import HealthMonitor from './health-monitor';
 const HealthMonitorContainer = () => {
   return (
     <>
-      <DashboardComponentWrapper>
+      <WidgetWrapper>
         <ColoredBox color="cyan14" size="max" height={20} >
           <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box>
@@ -24,7 +24,7 @@ const HealthMonitorContainer = () => {
         <Box css={{ h: 10 }} />
         <DottedTopBorderBox />
         <HealthMonitor />
-      </DashboardComponentWrapper>
+      </WidgetWrapper>
       <DottedTopBorderBox />
     </>
   );

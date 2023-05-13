@@ -1,4 +1,4 @@
-import { Box, T } from '@/components/stitches';
+import { Box, T, WidgetInfoTextGroup, WidgetInfoTextRow, WidgetInfoTextWrapper } from '@/components/stitches';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { styled } from 'stitches.config';
@@ -32,28 +32,28 @@ const ModelRender = () => {
 
   return (
     <Wrapper>
-      <TextWrapper>
-        <TextRowWrapper>
-          <TextGroupWrapper>
+      <WidgetInfoTextWrapper>
+        <WidgetInfoTextRow>
+          <WidgetInfoTextGroup>
             <T size={3} color="gray8" padding="tiny">ID 255212</T>
             <T size={3} color="gray8" padding="tiny">DATA SET: POLARIS </T>
             <T size={3} color="gray8" padding="tiny">UNIT GROUP: M22 </T>
-          </TextGroupWrapper>
-          <TextGroupWrapper align="right">
+          </WidgetInfoTextGroup>
+          <WidgetInfoTextGroup align="right">
             <T size={3} color="gray8" padding="tiny">{date?.toISOString()}</T>
             <T size={3} color="gray8" padding="tiny">[UP TO DATE]</T>
-          </TextGroupWrapper>
-        </TextRowWrapper>
-        <TextRowWrapper>
-          <TextGroupWrapper>
+          </WidgetInfoTextGroup>
+        </WidgetInfoTextRow>
+        <WidgetInfoTextRow align="bottom">
+          <WidgetInfoTextGroup>
             <T background="cyan1" size={3} color="gray1" padding="tiny">FPS: {fps}</T>
-          </TextGroupWrapper>
-          <TextGroupWrapper align="right">
+          </WidgetInfoTextGroup>
+          <WidgetInfoTextGroup align="right">
             <T size={3} color="gray8" padding="tiny">FRAMER-MOTION</T>
             <T size={3} color="gray8" padding="tiny">8.5.3-ALPHA.1 </T>
-          </TextGroupWrapper>
-        </TextRowWrapper>
-      </TextWrapper>
+          </WidgetInfoTextGroup>
+        </WidgetInfoTextRow>
+      </WidgetInfoTextWrapper>
       <ImageWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
 
         <AnimatePresence>
@@ -65,15 +65,15 @@ const ModelRender = () => {
             onAnimationComplete={() => setAnimationEnded(true)}
             transition={animationEnded
               ? {
-                repeat: Infinity,
-                duration: 4
-              }
+                  repeat: Infinity,
+                  duration: 4
+                }
               : {
-                type: 'spring',
-                stiffness: 100,
-                damping: 10,
-                delay: 1.8,
-              }}
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 1.8,
+                }}
             color={hover ? 'cyan1' : undefined}
           />
         </AnimatePresence>
@@ -144,37 +144,6 @@ const DottedCircle = styled(motion.div, {
       cyan9: {
         border: '3px dotted $cyan9',
       },
-    }
-  }
-});
-
-const TextWrapper = styled('div', {
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 0,
-  left: 0,
-  padding: '8px',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between'
-});
-
-const TextRowWrapper = styled('div', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-});
-
-const TextGroupWrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '3px',
-  variants: {
-    align: {
-      right: {
-        alignItems: 'flex-end'
-      }
     }
   }
 });

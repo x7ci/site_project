@@ -7,7 +7,7 @@ export * from './text';
 export * from './colored-box';
 export * from './table';
 export * from './button';
-export * from './dashboard-component-wrapper';
+export * from './widget';
 export * from './underline';
 export * from './heat-map';
 

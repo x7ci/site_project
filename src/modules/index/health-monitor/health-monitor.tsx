@@ -1,4 +1,4 @@
-import { T } from '@/components/stitches/';
+import { T, WidgetInfoTextGroup, WidgetInfoTextRow, WidgetInfoTextWrapper } from '@/components/stitches/';
 import { useEffect, useRef, useState } from 'react';
 import { styled } from 'stitches.config';
 import { type EChartsOption } from 'echarts';
@@ -56,13 +56,13 @@ const HealthMonitor = () => {
 
   return (
     <Wrapper>
-      <TextWrapper>
-        <TextRowWrapper>
-          <TextGroupWrapper>
+      <WidgetInfoTextWrapper>
+        <WidgetInfoTextRow>
+          <WidgetInfoTextGroup>
             <T size={3} color="gray8" padding="tiny">ID 255212</T>
             <T size={3} color="gray8" padding="tiny">DATA SET: POLARIS </T>
-          </TextGroupWrapper>
-          <TextGroupWrapper align="right">
+          </WidgetInfoTextGroup>
+          <WidgetInfoTextGroup align="right">
             <ButtonWrapper>
               <ChartTypeButton variant={currentChartType.current === ChartType.scatter ? 'active' : undefined} onClick={() => setChartType(ChartType.scatter)}>
                 <ScatterIcon color='cyan1' width={24} height={18} />
@@ -71,10 +71,10 @@ const HealthMonitor = () => {
                 <ActivityIcon color='cyan1' width={24} height={24} />
               </ChartTypeButton>
             </ButtonWrapper>
-          </TextGroupWrapper>
-        </TextRowWrapper>
-        <TextRowWrapper>
-          <TextGroupWrapper>
+          </WidgetInfoTextGroup>
+        </WidgetInfoTextRow>
+        <WidgetInfoTextRow align="bottom">
+          <WidgetInfoTextGroup>
             <T
               background="cyan1"
               size={3}
@@ -83,13 +83,13 @@ const HealthMonitor = () => {
             >
               CURRENT STREAM: {chartData?.slice(-1)[0].value.join(': ')}
             </T>
-          </TextGroupWrapper>
-          <TextGroupWrapper align="right">
+          </WidgetInfoTextGroup>
+          <WidgetInfoTextGroup align="right">
             <T size={3} color="gray8" padding="tiny">APACHE ECHARTS</T>
             <T size={3} color="gray8" padding="tiny">5.4.1 </T>
-          </TextGroupWrapper>
-        </TextRowWrapper>
-      </TextWrapper>
+          </WidgetInfoTextGroup>
+        </WidgetInfoTextRow>
+      </WidgetInfoTextWrapper>
       <ECharts
         option={option}
         style={{ height: '100%', minWidth: '500px', '@bp570': { minWidth: '200px' } }}
@@ -135,38 +135,6 @@ const Wrapper = styled('div', {
   position: 'relative',
   background: '$cyan14',
   height: 300,
-});
-
-const TextWrapper = styled('div', {
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 0,
-  left: 0,
-  padding: '8px',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-});
-
-const TextRowWrapper = styled('div', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'end'
-});
-
-const TextGroupWrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '3px',
-  zIndex: 1,
-  variants: {
-    align: {
-      right: {
-        alignItems: 'flex-end'
-      }
-    }
-  }
 });
 
 export default HealthMonitor;

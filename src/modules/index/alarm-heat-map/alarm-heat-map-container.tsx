@@ -1,4 +1,4 @@
-import { Box, ColoredBox, T, Button, DashboardComponentWrapper } from '@/components/stitches';
+import { Box, ColoredBox, T, Button, WidgetWrapper } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmHeatMap, { ItemSeverity, type HeatMapRow } from './alarm-heat-map';
 import { useEffect, useState } from 'react';
@@ -38,7 +38,7 @@ const AlarmHeatMapContainer = () => {
 
   return (
     <>
-      <DashboardComponentWrapper>
+      <WidgetWrapper>
         <ColoredBox color="cyan14" size="max" height={20}>
           <Box css={{ display: 'flex', alignItems: 'center' }}>
             <Box>
@@ -140,7 +140,7 @@ const AlarmHeatMapContainer = () => {
 
         </ButtonContainer>
 
-      </DashboardComponentWrapper>
+      </WidgetWrapper>
       <DottedTopBorderBox />
     </>
   );
