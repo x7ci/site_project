@@ -75,7 +75,6 @@ const HealthMonitor = () => {
         </TextRowWrapper>
         <TextRowWrapper>
           <TextGroupWrapper>
-            <T size={3} color="gray8" padding="tiny">SAMPLE HEALTH: OK</T>
             <T
               background="cyan1"
               size={3}
@@ -152,7 +151,8 @@ const TextWrapper = styled('div', {
 
 const TextRowWrapper = styled('div', {
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  alignItems: 'end'
 });
 
 const TextGroupWrapper = styled('div', {

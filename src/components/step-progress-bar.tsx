@@ -1,6 +1,5 @@
-import { type ComponentProps } from 'react';
 import { styled } from 'stitches.config';
-import { type T } from '@/components/stitches';
+import { type StitchesColor, type T } from '@/components/stitches';
 
 export enum StepProgressBarColor {
   orange = 'orange',
@@ -8,9 +7,9 @@ export enum StepProgressBarColor {
 }
 
 export interface StepStateColor {
-  primary: ComponentProps<typeof T>['color']
-  secondary: ComponentProps<typeof T>['color']
-  disabled: ComponentProps<typeof T>['color']
+  primary: StitchesColor
+  secondary: StitchesColor
+  disabled: StitchesColor
 };
 
 export type StepState = keyof StepStateColor;

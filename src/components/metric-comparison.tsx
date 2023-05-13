@@ -1,5 +1,5 @@
 import { styled } from 'stitches.config';
-import { type T, TextPetch } from '@/components/stitches';
+import { T2 } from '@/components/stitches';
 import { useState, type ComponentProps } from 'react';
 
 export enum MetricColor {
@@ -9,9 +9,9 @@ export enum MetricColor {
 
 type MetricColorTypes = {
   [key in MetricColor]: {
-    normal: ComponentProps<typeof T>['color']
-    dark: ComponentProps<typeof T>['color']
-    label: ComponentProps<typeof T>['color']
+    normal: ComponentProps<typeof T2>['color']
+    dark: ComponentProps<typeof T2>['color']
+    label: ComponentProps<typeof T2>['color']
   };
 };
 
@@ -46,19 +46,19 @@ const MetricComparison = ({ firstMetric, secondMetric, color }: Props) => {
     <Wrapper>
       <InlineElement>
         <NumberColumn>
-          <TextPetch size="13" color={secondMetricHover ? metricColor[color].dark : metricColor[color].normal}>{firstMetric.value}</TextPetch>
-          <TextPetch size="8" color={metricColor[color].label}>{firstMetric.label}</TextPetch>
+          <T2 size="13" color={secondMetricHover ? metricColor[color].dark : metricColor[color].normal}>{firstMetric.value}</T2>
+          <T2 size="8" color={metricColor[color].label}>{firstMetric.label}</T2>
         </NumberColumn>
       </InlineElement>
 
       <InlineElement css={{ width: 5 }} />
-      <TextPetch size="13" color={metricColor[color].normal}>/</TextPetch>
+      <T2 size="13" color={metricColor[color].normal}>/</T2>
       <InlineElement css={{ width: 5 }} />
       <InlineElement>
 
         <NumberColumn onMouseEnter={() => setSecondMetricHover(true)} onMouseLeave={() => setSecondMetricHover(false)} >
-          <TextPetch size="13" color={secondMetricHover ? metricColor[color].normal : metricColor[color].dark}>{secondMetric.value}</TextPetch>
-          <TextPetch size="8" color={metricColor[color].label}>{secondMetric.label}</TextPetch>
+          <T2 size="13" color={secondMetricHover ? metricColor[color].normal : metricColor[color].dark}>{secondMetric.value}</T2>
+          <T2 size="8" color={metricColor[color].label}>{secondMetric.label}</T2>
         </NumberColumn>
       </InlineElement>
     </Wrapper>

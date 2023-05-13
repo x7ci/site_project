@@ -209,7 +209,7 @@ export const T = styled('span', {
   },
 });
 
-export const TextPetch = styled(T, {
+export const T2 = styled(T, {
   lineHeight: 1,
   fontFamily: '$fonts$petch',
   variants: {

@@ -1,6 +1,6 @@
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
 import WarningIcon from '@/components/icon/warning-icon';
-import { Box, T, TextPetch } from '@/components/stitches';
+import { Box, T, T2 } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmViewCodeGrid from './alarm-view-code-grid';
 import { type Alarm } from './alarm-view.types';
@@ -22,11 +22,11 @@ const AlarmView = ({ alarm }: Props) => {
                 </IconContainer>
               </DottedTopBorderBox>
               <AlarmTitleWrapper>
-                <TextPetch color="yellow1" size="4" weight="4" >ID: {alarm.id}</TextPetch>
+                <T2 color="yellow1" size="4" weight="4" >ID: {alarm.id}</T2>
 
                 <Box css={{ h: 4 }} />
 
-                <TextPetch color="gray12" size={{ '@initial': '6', '@bp570': '4' }} weight="4" >{alarm.label}</TextPetch>
+                <T2 color="gray12" size={{ '@initial': '6', '@bp570': '4' }} weight="4" >{alarm.label}</T2>
               </AlarmTitleWrapper>
             </AlarmHeaderWrapper>
 

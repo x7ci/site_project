@@ -22,8 +22,8 @@ const NavigationBar = ({ children }: Props) => {
           <HexagonFigureIcon />
           <NavbarTitleContainer>
             <Box>
-              <T color="yellow1" size={{ '@initial': 11, '@bp4': 8 }} weight={2}>FULL STACK </T>
-              <T size={{ '@initial': 11, '@bp4': 8 }} weight={1} >DEVELOPER</T>
+              <T color="yellow1" size={{ '@initial': 11, '@bp4': 9 }} weight={2}>FULL STACK </T>
+              <T size={{ '@initial': 11, '@bp4': 9 }} weight={1} >DEVELOPER</T>
             </Box>
             <Box>
               <T color="gray12" size={5} weight={2}>SITE_PROJECT / </T>

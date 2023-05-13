@@ -68,7 +68,7 @@ const AlarmStatsContainer = () => {
             />
 
             <MetricComparison
-              firstMetric={{ value: 99.4, label: 'UPTIME' }}
+              firstMetric={{ value: 99.7, label: 'UPTIME' }}
               secondMetric={{ value: 100, label: '- -' }}
               color={MetricColor.orange}
             />

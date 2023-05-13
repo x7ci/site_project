@@ -46,7 +46,6 @@ const ModelRender = () => {
         </TextRowWrapper>
         <TextRowWrapper>
           <TextGroupWrapper>
-            <T size={3} color="gray8" padding="tiny">UNIT TESTS: OK</T>
             <T background="cyan1" size={3} color="gray1" padding="tiny">FPS: {fps}</T>
           </TextGroupWrapper>
           <TextGroupWrapper align="right">
@@ -164,6 +163,7 @@ const TextWrapper = styled('div', {
 const TextRowWrapper = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'center',
 });
 
 const TextGroupWrapper = styled('div', {
