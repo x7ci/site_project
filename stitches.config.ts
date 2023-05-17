@@ -165,7 +165,6 @@ export const globalStyles = globalCss({
   body: {
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
-    transition: 'background 300ms ease-out',
     backgroundSize: '$sizes$tileSize',
   },
   '::selection': {
