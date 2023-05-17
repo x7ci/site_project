@@ -51,9 +51,9 @@ const MetricComparison = ({ firstMetric, secondMetric, color }: Props) => {
         </NumberColumn>
       </InlineElement>
 
-      <InlineElement css={{ width: 5 }} />
+      <InlineElement css={{ w: 5 }} />
       <T2 size="13" color={metricColor[color].normal}>/</T2>
-      <InlineElement css={{ width: 5 }} />
+      <InlineElement css={{ w: 5 }} />
       <InlineElement>
 
         <NumberColumn onMouseEnter={() => setSecondMetricHover(true)} onMouseLeave={() => setSecondMetricHover(false)} >
