@@ -10,6 +10,11 @@ export const T = styled('span', {
     size: 6,
   },
   variants: {
+    uppercase: {
+      true: {
+        textTransform: 'uppercase'
+      }
+    },
     background: {
       cyan1: {
         background: '$cyan1'
