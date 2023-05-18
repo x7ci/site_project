@@ -4,9 +4,10 @@ import { Box } from './stitches';
 
 interface Props {
   children: ReactNode
+  delay?: number
 }
 
-const AnimateComponentMount = ({ children }: Props) => {
+const AnimateComponentMount = ({ children, delay }: Props) => {
   return (
     <Box
       as={motion.div}
@@ -15,6 +16,7 @@ const AnimateComponentMount = ({ children }: Props) => {
       exit={{ opacity: 0, scale: 1.02 }}
       transition={{
         type: 'spring',
+        delay,
         // stiffness: 260,
         // damping: 20,
         duration: .4,
