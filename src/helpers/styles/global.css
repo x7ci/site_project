@@ -9,24 +9,27 @@
 }
 
 @font-face {
-  font-family: 'RobotoCondensed';
+  font-family: 'Roboto Condensed';
   src: url("/fonts/RobotoCondensed-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
+  font-display: fallback;
 }
 
 @font-face {
-  font-family: 'RobotoCondensed';
+  font-family: 'Roboto Condensed';
   src: url("/fonts/RobotoCondensed-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: fallback;
 }
 
 @font-face {
-  font-family: 'RobotoCondensed';
+  font-family: 'Roboto Condensed';
   src: url("/fonts/RobotoCondensed-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
+  font-display: fallback;
 }
 
 @font-face {
@@ -34,6 +37,7 @@
   src: url("/fonts/ChakraPetch-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
+  font-display: fallback;
 }
 
 @font-face {
@@ -41,6 +45,7 @@
   src: url("/fonts/ChakraPetch-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: fallback;
 }
 
 @font-face {
@@ -48,17 +53,19 @@
   src: url("/fonts/ChakraPetch-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
+  font-display: fallback;
 }
 
 :root {
   /** Global variables */
-  --robotoCondensed-font: RobotoCondensed, "Adjusted Arial Fallback";
+  --robotoCondensed-font: "Roboto Condensed", "Adjusted Arial Fallback";
   --petch-font: Petch, "Adjusted Arial Fallback";
 }
 
 html {
   /** Default font */
   font-family: var(--robotoCondensed-font);
+  font-size: 15px;
 }
 
 body {

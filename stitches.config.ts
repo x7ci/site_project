@@ -117,7 +117,7 @@ export const lightTheme = createTheme('light-theme', {
     rootBackground: '#fff',
     tileUrl: 'url("/tile_light.png")',
     navigationBarBackground: sand.sand4,
-    navigationBarIcon: 'rgba(0, 0, 0, .6)',
+    navigationBarIcon: '$yellow1',
 
     /** Gray */
     gray1: sand.sand1,
@@ -155,13 +155,16 @@ export const lightTheme = createTheme('light-theme', {
     cyanLight1: sand.sand11,
 
     /** Yellow */
-    yellow1: sand.sand11,
+    yellow1: sand.sand12,
   },
 });
 
 export type StitchesTheme = typeof theme | typeof lightTheme;
 
 export const globalStyles = globalCss({
+  html: {
+    color: '$gray12'
+  },
   body: {
     backgroundImage: '$tileUrl',
     backgroundRepeat: 'repeat',
