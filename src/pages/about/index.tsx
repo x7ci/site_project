@@ -5,7 +5,7 @@ import ProjectStack from '@/modules/about/project-stack';
 import Head from 'next/head';
 import { styled } from 'stitches.config';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Head>
@@ -53,5 +53,3 @@ const ComponentsContainer = styled('div', {
   gap: '30px',
   flexWrap: 'wrap',
 });
-
-export default Home;

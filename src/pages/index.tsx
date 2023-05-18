@@ -9,7 +9,7 @@ import AnimateComponentMount from '@/components/animate-component-mount';
 import AlarmStatsContainer from '@/modules/index/alarm-stats/alarm-stats-container';
 import AlarmListContainer from '@/modules/index/alarm-stats/alarm-list-container';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Head>
@@ -64,8 +64,6 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
 
 const Wrapper = styled('div', {
   display: 'flex',

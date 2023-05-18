@@ -1,20 +1,17 @@
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
 import HexagonFigureIcon from '@/components/icon/hexagon-figure-icon';
 import StarIcon from '@/components/icon/star-icon';
-import { Box, Button, SlicedButton, T } from '@/components/stitches';
-import Link from 'next/link';
-import { type NextRouter, useRouter } from 'next/router';
+import { Box, T } from '@/components/stitches';
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
 import ThemeToggleButton from './index/theme-toggle-button';
+import NavigationBarLink from './navigation-bar-link';
 
 interface Props {
   children?: ReactNode
 }
 
 const NavigationBar = ({ children }: Props) => {
-  const router: NextRouter = useRouter();
-
   return (
     <Wrapper>
       <DottedTopBorderBox>
@@ -32,29 +29,9 @@ const NavigationBar = ({ children }: Props) => {
           </NavbarTitleContainer>
           <NavbarLinksContainer>
             <NavbarLinksRow>
-              <Link href="/">
-                <SlicedButton
-                  type={router.asPath === '/' ? 'primary' : 'secondary'}
-                  variant={{ '@bp3': 'standard' }}
-                  size={{ '@bp4': 'dense' }}
-                  fontSize={5}
-                  weight={3}
-                >
-                  ANALYSIS
-                </SlicedButton>
-              </Link>
-
-              <Link href="/about">
-                <SlicedButton
-                  type={router.asPath === '/about' ? 'primary' : 'secondary'}
-                  variant={{ '@bp3': 'standard' }}
-                  size={{ '@bp4': 'dense' }}
-                  fontSize={5}
-                  weight={3}
-                >
-                  ABOUT
-                </SlicedButton>
-              </Link>
+              <NavigationBarLink href="/" label="ANALYSIS" exactPath />
+              <NavigationBarLink href="/posts" label="BLOG" />
+              <NavigationBarLink href="/about" label="ABOUT" />
               <ThemeToggleButton />
             </NavbarLinksRow>
           </NavbarLinksContainer>
@@ -81,7 +58,9 @@ const NavigationBar = ({ children }: Props) => {
 
       <Box css={{ h: 20 }} />
 
-      {children}
+      <main>
+        {children}
+      </main>
     </Wrapper>
   );
 };
@@ -174,7 +153,7 @@ const NavbarLinksRow = styled('div', {
   },
 });
 
-export const NavbarRightButton = styled('button', {
+const NavbarRightButton = styled('button', {
   cursor: 'pointer',
   border: 0,
   padding: '6px 24px 6px 24px',
