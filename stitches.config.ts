@@ -92,7 +92,7 @@ export const { styled, getCssText, theme, config } = createStitches({
     dark: '(prefers-color-scheme: dark)',
     bp1: '(min-width: 1024px)',
     bp2: '(min-width: 768px)',
-    bp3: '(max-width: 895px)',
+    navBarCollapse: '(max-width: 1000px)',
     bp4: '(max-width: 510px)',
     bp620: '(max-width: 620px)',
     bp570: '(max-width: 570px)',
@@ -159,7 +159,7 @@ export const lightTheme = createTheme('light-theme', {
   },
 });
 
-export type StitchesTheme = typeof theme | typeof lightTheme;
+export type StitchesTheme = typeof lightTheme;
 
 export const globalStyles = globalCss({
   html: {
