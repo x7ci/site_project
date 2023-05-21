@@ -18,6 +18,15 @@ const nextConfig = {
   assetPrefix,
   reactStrictMode: true,
   transpilePackages: ['echarts', 'zrender'],
+  async redirects() {
+    return [
+      {
+        source: '/posts/:slug',
+        destination: '/posts',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     loader: 'imgix',
     path: 'https://sws.imgix.net/',
