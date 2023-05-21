@@ -17,8 +17,8 @@ const NavigationBarLink = ({ href, exactPath, label }: Props) => {
     <Link href={href}>
       <SlicedButton
         type={isPrimary ? 'primary' : 'secondary'}
-        variant={{ '@bp3': 'standard' }}
-        size={{ '@bp4': 'dense' }}
+        variant={{ '@navBarCollapse': 'standard' }}
+        size={{ '@bp620': 'dense' }}
         fontSize={5}
         weight={3}
       >

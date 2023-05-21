@@ -52,6 +52,13 @@ export const SlicedButton = styled('button', {
     size: {
       dense: {
         padding: '4px 20px 4px 20px',
+      },
+      breadcrumb: {
+        padding: '3px 20px 3px 20px',
+
+        '&:before': {
+          transform: 'unset'
+        },
       }
     },
     variant: {

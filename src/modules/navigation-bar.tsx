@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/breadcrumb/breadcrumb';
 import DottedTopBorderBox from '@/components/dotted-top-border-box';
 import HexagonFigureIcon from '@/components/icon/hexagon-figure-icon';
 import StarIcon from '@/components/icon/star-icon';
@@ -52,11 +53,13 @@ const NavigationBar = ({ children }: Props) => {
         </NavigationBarBox>
       </DottedTopBorderBox>
 
-      <Box css={{ h: 30, '@bp3': { h: 'unset' } }} />
+      <Box css={{ h: 10, '@navBarCollapse': { } }} />
 
-      <DottedTopBorderBox withHorizontalLine />
+      <Breadcrumbs rootLabel="/" labelsToUppercase />
 
-      <Box css={{ h: 20 }} />
+      <DottedTopBorderBox onlyRight />
+
+      <Box css={{ h: 30 }} />
 
       <main>
         {children}
@@ -106,11 +109,11 @@ const NavigationBarBox = styled('div', {
         0% 100%
       )`,
     // zIndex: -1,
-    '@bp3': {
+    '@navBarCollapse': {
       clipPath: 'unset'
     },
   },
-  '@bp3': {
+  '@navBarCollapse': {
     marginBottom: 60
   },
 });
@@ -128,7 +131,7 @@ const NavbarLinksContainer = styled('div', {
   flexDirection: 'column',
   justifyContent: 'end',
   height: '$sizes$navigationBarHeight',
-  '@bp3': {
+  '@navBarCollapse': {
     position: 'absolute',
     width: '100%',
     top: '42px',
@@ -147,7 +150,7 @@ const NavbarLinksRow = styled('div', {
   flexDirection: 'row',
   gap: 10,
 
-  '@bp3': {
+  '@navBarCollapse': {
     overflowX: 'auto',
     scrollbarWidth: 'thin',
   },
