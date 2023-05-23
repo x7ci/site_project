@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { SlicedButton, T } from '../stitches';
 import { convertBreadcrumb } from './breadcrumb-helper';
 import { type Breadcrumb, type CharacterMap } from './breadcrumb.types';
 import { styled } from 'stitches.config';
 import { CustomNextLink } from '../stitches/custom-next-link';
+import { PointedButton } from '../stitches/pointed-button';
 
 interface BreadcrumbsProps {
   /** The title for the very first breadcrumb pointing to the root directory. Example: '/' Default: 'HOME' */
@@ -51,11 +51,12 @@ const Breadcrumbs = ({
     <BreadcrumbContainer aria-label="breadcrumbs">
       <BreadcrumbList>
         <CustomNextLink href="/">
-          <SlicedButton
+          <PointedButton
             fontSize={5}
             weight={3}
             type={router.pathname === '/' ? 'primary' : 'secondary'}
             size="breadcrumb"
+            pointed="onlyRight"
           >
             {convertBreadcrumb(
               rootLabel,
@@ -63,7 +64,7 @@ const Breadcrumbs = ({
               transformLabel,
               labelsToUppercase
             )}
-          </SlicedButton>
+          </PointedButton>
         </CustomNextLink>
 
         {breadcrumbs && breadcrumbs.length >= 1 && breadcrumbs.map((breadcrumb: Breadcrumb, i: number) => {
@@ -79,11 +80,12 @@ const Breadcrumbs = ({
 
           return (
             <CustomNextLink href={breadcrumb.href} key={breadcrumb.href}>
-              <SlicedButton
+              <PointedButton
                 fontSize={5}
                 weight={3}
                 type={isActive ? 'primary' : 'secondary'}
                 size="breadcrumb"
+                pointed="full"
               >
                 {convertBreadcrumb(
                   breadcrumb.breadcrumb,
@@ -91,7 +93,7 @@ const Breadcrumbs = ({
                   transformLabel,
                   labelsToUppercase
                 )}
-              </SlicedButton>
+              </PointedButton>
             </CustomNextLink>
           );
         })}
@@ -117,7 +119,6 @@ const BreadcrumbContainer = styled('nav', {
 const BreadcrumbList = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  gap: 8,
 });
 
 export default Breadcrumbs;
