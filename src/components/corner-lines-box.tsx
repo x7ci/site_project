@@ -10,10 +10,23 @@ interface Props {
   topRight?: boolean
   bottomLeft?: boolean
   bottomRight?: boolean
+  bottom?: boolean
+  lineLength?: string
+  top?: boolean
   css?: StitchesCss
 }
 
-const CornerLinesBox = ({ children, topHorizontalLine, bottomHorizontalLine, topLeft, topRight, bottomLeft, bottomRight, css }: Props) => {
+const CornerLinesBox = ({ children, topHorizontalLine, bottomHorizontalLine, topLeft, topRight, bottomLeft, bottomRight, bottom, top, lineLength, css }: Props) => {
+  if (bottom) {
+    bottomLeft = true;
+    bottomRight = true;
+  }
+
+  if (top) {
+    topLeft = true;
+    topRight = true;
+  }
+
   return (
     <Wrapper css={{ ...css }}>
       <CornerLinesBoxWrapper verticalAlign="top">
@@ -26,16 +39,16 @@ const CornerLinesBox = ({ children, topHorizontalLine, bottomHorizontalLine, top
           <LineWrapper align="topLeft">
             {topLeft && (
               <>
-                <Line variant="vertical" />
-                <Line variant="horizontal" />
+                <Line variant="vertical" css={{ '$$lineLength': lineLength }} />
+                <Line variant="horizontal" css={{ '$$lineLength': lineLength }} />
               </>
             )}
           </LineWrapper>
           <LineWrapper align="topRight">
             {topRight && (
               <>
-                <Line variant="horizontal" />
-                <Line variant="vertical" />
+                <Line variant="horizontal" css={{ '$$lineLength': lineLength }} />
+                <Line variant="vertical" css={{ '$$lineLength': lineLength }} />
               </>
             )}
           </LineWrapper>
@@ -51,16 +64,16 @@ const CornerLinesBox = ({ children, topHorizontalLine, bottomHorizontalLine, top
           <LineWrapper align="bottomLeft">
             {bottomLeft && (
               <>
-                <Line variant="vertical" />
-                <Line variant="horizontal" />
+                <Line variant="vertical" css={{ '$$lineLength': lineLength }} />
+                <Line variant="horizontal" css={{ '$$lineLength': lineLength }} />
               </>
             )}
           </LineWrapper>
           <LineWrapper align="bottomRight">
             {bottomRight && (
               <>
-                <Line variant="horizontal" />
-                <Line variant="vertical" />
+                <Line variant="horizontal" css={{ '$$lineLength': lineLength }} />
+                <Line variant="vertical" css={{ '$$lineLength': lineLength }} />
               </>
             )}
           </LineWrapper>
@@ -73,6 +86,7 @@ const CornerLinesBox = ({ children, topHorizontalLine, bottomHorizontalLine, top
 
 CornerLinesBox.defaultProps = {
   withHorizontalLine: false,
+  lineLength: '7px',
 } as Partial<Props>;
 
 const Wrapper = styled('div', {
@@ -129,7 +143,6 @@ const LineWrapper = styled('div', {
 });
 
 const Line = styled('div', {
-  '$$lineLength': '7px',
   backgroundColor: '$cyan1',
   variants: {
     variant: {
