@@ -1,3 +1,5 @@
+@use './prism.scss';
+
 /** Fallback font adjusted to match default font. To avoid a jarring shift of layout. */
 @font-face {
   font-family: 'Adjusted Arial Fallback';
@@ -71,4 +73,11 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 90%;
+
+  background-color: var(--colors-cyan10);
 }

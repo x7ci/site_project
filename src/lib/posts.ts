@@ -1,14 +1,19 @@
 import fs from 'fs';
 import path, { resolve } from 'path';
+import { readdir, stat } from 'fs/promises';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
-import { readdir, stat } from 'fs/promises';
+import remarkRehype from 'remark-rehype';
+import remarkParse from 'remark-parse';
+import rehypePrism from 'rehype-prism-plus';
+import rehypeFormat from 'rehype-format';
+import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 
 export type PostDataSummary = Omit<PostData, 'contentHtml'>;
 
 export interface PostData extends PostMetaData {
-  id: string
+  markdownPath: string
   contentHtml: string
 }
 
@@ -40,7 +45,7 @@ export const getSortedPostsData = async(): Promise<PostDataSummary[]> => {
 
   const allPostsData = fileNames.map(fileName => {
     // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+    const markdownPath = fileName.replace(/\.md$/, '');
 
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName);
@@ -51,7 +56,7 @@ export const getSortedPostsData = async(): Promise<PostDataSummary[]> => {
 
     // Combine the data with the id
     return {
-      id,
+      markdownPath,
       ...matterResult.data as PostMetaData
     };
   });
@@ -77,7 +82,7 @@ export async function getAllPostIds() {
 
   return files.map((file) => ({
     params: {
-      id: getPathSegments(file),
+      markdownPath: getPathSegments(file),
     },
   }));
 }
@@ -92,12 +97,22 @@ export const getPostData = async(id: string[]): Promise<PostData> => {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
+    .use(remarkParse)
+    // .use(remarkPrism)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypePrism)
+    .use(rehypeRaw)
+    .use(rehypeFormat)
+    .use(rehypeStringify)
+    // .use(html)
     // .use(rehypeReact, {
     //   createElement: React.createElement,
     //   components: {
     //     p: T
     //   }
+    // })
+    // .use(rehypeReact, {
+    //   createElement: React.createElement,
     // })
     .process(matterResult.content);
 
@@ -105,8 +120,7 @@ export const getPostData = async(id: string[]): Promise<PostData> => {
 
   // Combine the data with the id and contentHtml
   return {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    id: id[id.length - 1],
+    markdownPath: id[id.length - 1],
     contentHtml,
     ...matterResult.data as PostMetaData,
   };

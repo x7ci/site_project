@@ -1,0 +1,176 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--colors-gray12);
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  // max-height: 600px;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  // background: var(--colors-cyan14);
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--colors-gray9);
+}
+
+.token.punctuation {
+  color: #81A1C1;
+  color: var(--colors-cyan2);
+
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--colors-cyan2);
+}
+
+.token.number {
+  color: #B48EAD;
+}
+
+.token.boolean {
+  color: #81A1C1;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--colors-yellow1);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #81A1C1;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: var(--colors-gray12);
+}
+
+.token.keyword {
+  color: #81A1C1;
+}
+
+.token.regex,
+.token.important {
+  color: #EBCB8B;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+.code-highlight {
+  float: left;
+  /* 1 */
+  min-width: 100%;
+  /* 2 */
+}
+
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: background 150ms ease-out;
+
+  &:hover {
+    background-color: var(--colors-cyan11);
+  };
+  /* 
+    margin-left: -16px;
+    margin-right: -16px; */
+  border-left: 3px solid transparent;
+  /* Set placeholder for highlight accent border color to transparent */
+}
+
+.code-line.inserted {
+  background-color: rgba(16, 185, 129, 0.2);
+  /* Set inserted line (+) color */
+}
+
+.code-line.deleted {
+  background-color: rgba(239, 68, 68, 0.2);
+  /* Set deleted line (-) color */
+}
+
+.highlight-line {
+  display: block;
+  /* padding: 12px; */
+  background-color: var(--colors-cyan11);
+  /* Set highlight bg color */
+  border-left: 3px solid var(--colors-cyan1);
+  /* Set highlight accent border color */
+}
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  margin-left: -8px;
+  color: var(--colors-gray10);
+  /* Line number color */
+  content: attr(line);
+}
