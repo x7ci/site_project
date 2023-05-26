@@ -98,22 +98,11 @@ export const getPostData = async(id: string[]): Promise<PostData> => {
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(remarkParse)
-    // .use(remarkPrism)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrism)
     .use(rehypeRaw)
     .use(rehypeFormat)
     .use(rehypeStringify)
-    // .use(html)
-    // .use(rehypeReact, {
-    //   createElement: React.createElement,
-    //   components: {
-    //     p: T
-    //   }
-    // })
-    // .use(rehypeReact, {
-    //   createElement: React.createElement,
-    // })
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
