@@ -2,6 +2,7 @@ import { T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import { sample } from 'lodash';
 import { type UnitCodeData, type UnitCodeRow, UnitCode, unitCodeColors } from './alarm-view.types';
+import { useState } from 'react';
 
 export const generateUnitCodes = (): UnitCodeData => {
   const data: UnitCodeData = [];
@@ -26,13 +27,21 @@ interface Props {
 }
 
 const AlarmViewCodeGrid = ({ data }: Props) => {
+  const [currentlyHovering, setCurrentlyHovering] = useState<UnitCode>();
+
   return (
     <Wrapper>
       <UnitRowContainer>
         {data?.map((unitCodeRow: UnitCodeRow, i: number) => (
           <UnitRow key={`${unitCodeRow.toString()}-${i}`}>
             {unitCodeRow.map((unitCode, j) => (
-              <SingleUnit key={`${unitCode}-MC${j}`} variant={unitCodeColors[unitCode].variant}>
+              <SingleUnit
+                key={`${unitCode}-MC${j}`}
+                hightlight={currentlyHovering === unitCode}
+                variant={unitCodeColors[unitCode].variant}
+                onMouseEnter={() => setCurrentlyHovering(unitCode)}
+                onMouseLeave={() => setCurrentlyHovering(undefined)}
+              >
                 <T size="4" weight={3}>
                   {unitCode} - MC1
                 </T>
@@ -54,6 +63,9 @@ export const SingleUnit = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
+
+  border: '1px solid transparent',
+
   width: 58,
   '@bp570': {
     width: 48,
@@ -67,6 +79,8 @@ export const SingleUnit = styled('div', {
     fontSize: 9,
     // letterSpacing: .2,
   },
+
+  transition: 'border 200ms',
 
   variants: {
     variant: {
@@ -97,6 +111,11 @@ export const SingleUnit = styled('div', {
         [`& ${T}`]: {
           color: '$yellow1'
         }
+      },
+    },
+    hightlight: {
+      true: {
+        border: '1px solid $gray10'
       }
     }
   }
