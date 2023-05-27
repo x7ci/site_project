@@ -11,59 +11,57 @@ interface Props {
 
 const AlarmView = ({ alarm }: Props) => {
   return (
-    <Box>
-      <Wrapper>
-        <CornerLinesBox topLeft bottomRight>
-          <MainDetailsWrapper>
-            <AlarmInfoWrapper>
-              <AlarmHeaderWrapper>
-                <IconContainer>
-                  <WarningIcon color='red1' width={22} height={22} />
-                </IconContainer>
-                <AlarmTitleWrapper>
-                  <T2 color="yellow1" size="4" weight="4" >ID: {alarm.id}</T2>
+    <Wrapper>
+      <ContentWrapper>
 
-                  <Box css={{ h: 4 }} />
+        <MainDetailsWrapper>
+          <AlarmInfoWrapper>
+            <CornerLinesBox topLeft />
+            <AlarmHeaderWrapper>
+              <IconContainer>
+                <WarningIcon color='red1' width={22} height={22} />
+              </IconContainer>
+              <AlarmTitleWrapper>
+                <T2 color="yellow1" size="4" weight="4" >ID: {alarm.id}</T2>
 
-                  <T2 color="gray12" size={{ '@initial': '6', '@bp570': '4' }} weight="4" >{alarm.label}</T2>
-                </AlarmTitleWrapper>
-              </AlarmHeaderWrapper>
+                <Box css={{ h: 4 }} />
 
-              <Box css={{ h: 6 }} />
+                <T2 color="gray12" size={{ '@initial': '6', '@bp570': '4' }} weight="4" >{alarm.label}</T2>
+              </AlarmTitleWrapper>
+            </AlarmHeaderWrapper>
 
-              <Box>
-                <T size="5" color="gray9">
-                  DUE DATE:{' '}
-                  <T size="5" color="gray11" >{alarm.dueDate}</T>
-                </T>
-              </Box>
+            <Box css={{ h: 12 }} />
 
-              {/* <Box css={{ h: 8 }} /> */}
-            </AlarmInfoWrapper>
+            <Box>
+              <T size="5" color="gray9">
+                DUE DATE:{' '}
+                <T size="5" color="gray11" >{alarm.dueDate}</T>
+              </T>
+            </Box>
 
-            <AlarmViewCodeGridWrapper>
-              <AlarmViewCodeGrid data={alarm.unitCodeData} />
-            </AlarmViewCodeGridWrapper>
-          </MainDetailsWrapper>
+          </AlarmInfoWrapper>
 
+          <AlarmViewCodeGridWrapper>
+            <AlarmViewCodeGrid data={alarm.unitCodeData} />
+          </AlarmViewCodeGridWrapper>
+        </MainDetailsWrapper>
+
+        <Box>
           <DescriptionWrapper title={alarm.description}>
             <T size="5" color="gray9">DESC: {' '}</T>
             <T size="5" color="gray10" >{alarm.description}</T>
           </DescriptionWrapper>
-        </CornerLinesBox>
-      </Wrapper>
-    </Box>
+          <CornerLinesBox bottomRight />
+        </Box>
+
+      </ContentWrapper>
+    </Wrapper>
   );
 };
 
 const Wrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '8px',
-  background: '$cyan14',
-  justifyContent: 'center',
-  padding: '0px 12px 0px 12px',
   height: '160px',
+  background: '$cyan14',
 
   transition: 'background 200ms ease-out',
   '&:hover': {
@@ -71,17 +69,30 @@ const Wrapper = styled('div', {
   }
 });
 
+const ContentWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '12px',
+  gap: '10px',
+  justifyContent: 'space-between',
+});
+
 const MainDetailsWrapper = styled('div', {
   display: 'flex',
-  justifyContent: 'space-between',
-  padding: '0px 0 0 0'
+  flex: 1,
+});
+
+const DescriptionWrapper = styled('div', {
+  flex: 1,
+  maxHeight: '58px',
+  overflow: 'hidden',
+  marginRight: '26px',
 });
 
 const AlarmHeaderWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  // gap: 8,
-  // padding: '5px 0px 0px 0px',
+  padding: '4px 0px 0px 0px',
 });
 
 const AlarmTitleWrapper = styled('div', {
@@ -103,14 +114,7 @@ const IconContainer = styled('div', {
   height: '30px',
 });
 
-const DescriptionWrapper = styled('div', {
-  height: '58px',
-  overflow: 'hidden',
-  // whiteSpace: '',
-});
-
 const AlarmViewCodeGridWrapper = styled('div', {
-  padding: '0px 2px 0px 0px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
