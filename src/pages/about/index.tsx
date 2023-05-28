@@ -1,4 +1,4 @@
-import AnimateComponentMount from '@/components/animate-component-mount';
+import AnimateComponentMount from '@/components/animate-component-mount/animate-component-mount';
 import { Box, ColoredBox, T } from '@/components/stitches';
 import About from '@/modules/about/about';
 import ProjectStack from '@/modules/about/project-stack';

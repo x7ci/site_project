@@ -1,6 +1,6 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import MetricComparison, { MetricColor } from '@/components/metric-comparison';
-import StepProgressBar, { StepProgressBarColor, type StepProgressBarData } from '@/components/step-progress-bar';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
+import MetricComparison, { MetricColor } from '@/components/metric-comparison/metric-comparison';
+import StepProgressBar, { StepProgressBarColor, type StepProgressBarData } from '@/components/step-progress-bar/step-progress-bar';
 import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmView from './alarm-view';
@@ -42,7 +42,7 @@ const AlarmStatsContainer = () => {
 
         <Box css={{ height: 10 }} />
 
-        <DottedTopBorderBox onlyLeft>
+        <CornerDotsBox onlyLeft>
 
           <TitleContainer>
             <T color="gray12" size="5" weight={3}>ONLINE </T>
@@ -50,7 +50,7 @@ const AlarmStatsContainer = () => {
             <T color="gray12" size="5" weight={3}>SLA </T>
           </TitleContainer>
 
-          <DottedTopBorderBox onlyLeft />
+          <CornerDotsBox onlyLeft />
 
           <Box css={{ height: 18 }} />
 
@@ -84,14 +84,14 @@ const AlarmStatsContainer = () => {
             <StepProgressBar data={stepProgressBarData3} />
           </StepProgressBarWrapper>
 
-        </DottedTopBorderBox>
+        </CornerDotsBox>
 
         <Box css={{ height: 26 }} />
 
         <AlarmView alarm={mainBearingTemp} />
 
       </WidgetWrapper>
-      <DottedTopBorderBox />
+      <CornerDotsBox />
     </>
   );
 };

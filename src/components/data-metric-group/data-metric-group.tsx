@@ -1,6 +1,6 @@
 import { styled } from 'stitches.config';
 import { ColoredBox, T } from '@/components/stitches';
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import { type ReactNode } from 'react';
 import IconFrame from '../icon-frame/icon-frame';
 
@@ -23,12 +23,12 @@ const DataMetricGroup = ({ icon, title, data }: Props) => {
           {icon}
         </IconFrame>
 
-        <DottedTopBorderBox css={{ flex: 1 }} onlyRight>
+        <CornerDotsBox css={{ flex: 1 }} onlyRight>
           <TitleContainer>
             <T color="gray12" size="5" weight={3}>{title}</T>
           </TitleContainer>
-          <DottedTopBorderBox onlyRight />
-        </DottedTopBorderBox>
+          <CornerDotsBox onlyRight />
+        </CornerDotsBox>
       </TopHeader>
 
       {data.map((dataSet, i) => (

@@ -1,5 +1,5 @@
 import Chip from '@/components/chip/chip';
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import EChartsIcon from '@/components/icon/echarts-icon';
 import EslintIcon from '@/components/icon/eslint-icon';
 import FramerIcon from '@/components/icon/framer-icon';
@@ -23,7 +23,7 @@ const ProjectStack = () => {
         </Box>
       </ColoredBox>
       <Box css={{ height: 15 }} />
-      <DottedTopBorderBox>
+      <CornerDotsBox>
         <Background>
 
           <StackContainer>
@@ -54,7 +54,7 @@ const ProjectStack = () => {
           </StackContainer>
         </Background>
         <Box css={{ height: 20 }} />
-      </DottedTopBorderBox>
+      </CornerDotsBox>
     </Wrapper>
   );
 };

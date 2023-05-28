@@ -1,4 +1,4 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import { Box, ColoredBox, T, Underline } from '@/components/stitches';
 import { styled } from 'stitches.config';
 
@@ -15,7 +15,7 @@ const About = () => {
         </Box>
       </ColoredBox>
       <Box css={{ height: 15 }} />
-      <DottedTopBorderBox>
+      <CornerDotsBox>
         <Background>
           <Box css={{ height: 10 }} />
           <T color="gray12" size="6">
@@ -68,7 +68,7 @@ const About = () => {
             {'.'}
           </T>
         </Background>
-      </DottedTopBorderBox>
+      </CornerDotsBox>
     </Wrapper>
   );
 };

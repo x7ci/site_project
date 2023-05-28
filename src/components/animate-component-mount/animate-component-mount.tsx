@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
-import { Box } from './stitches';
+import { Box } from '../stitches';
 
 interface Props {
   children: ReactNode

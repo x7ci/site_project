@@ -3,6 +3,7 @@ import { type CSS } from '@stitches/react';
 
 export * from './box';
 export * from './sliced-button';
+export * from './pointed-button';
 export * from './text';
 export * from './colored-box';
 export * from './table';

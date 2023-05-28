@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import DottedTopBorderBox from '../dotted-top-border-box';
+import CornerDotsBox from '../ui/corner-dots-box';
 import { type StitchesColor, type StitchesCss } from '../stitches';
 
 interface Props {
@@ -13,12 +13,12 @@ interface Props {
 const IconFrame = ({ children, css, backgroundColor = 'cyan12', disableBackground = false }: Props) => {
   return (
     <Wrapper>
-      <DottedTopBorderBox>
+      <CornerDotsBox>
         <IconContainer css={{ ...css, backgroundColor: disableBackground ? undefined : `$${backgroundColor}` }}>
           {children}
         </IconContainer>
-        <DottedTopBorderBox />
-      </DottedTopBorderBox>
+        <CornerDotsBox />
+      </CornerDotsBox>
     </Wrapper>
   );
 };

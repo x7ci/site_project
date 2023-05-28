@@ -1,7 +1,7 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import DetailedTable, { type TableData } from '@/components/detailed-table/detailed-table';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import useRandomRange from '@/helpers/hooks/use-random-range';
 import { styled } from 'stitches.config';
-import DetailedTable, { type TableData } from '../../../components/detailed-table';
 
 const TableMetrics2 = () => {
   const outputRange = useRandomRange({ minValue: 1100, maxValue: 1400, updateInterval: 7000, multiplyAdd: 6 });
@@ -73,7 +73,7 @@ const TableMetrics2 = () => {
 
   return (
     <Wrapper>
-      <DottedTopBorderBox />
+      <CornerDotsBox />
       <DetailedTable data={tableData} />
     </Wrapper>
   );

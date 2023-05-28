@@ -1,4 +1,4 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import ModelRender from './model-render';
 
@@ -18,10 +18,10 @@ const ModelRenderContainer = () => {
           </Box>
         </ColoredBox>
         <Box css={{ height: 10 }} />
-        <DottedTopBorderBox />
+        <CornerDotsBox />
         <ModelRender />
       </WidgetWrapper>
-      <DottedTopBorderBox />
+      <CornerDotsBox />
     </>
   );
 };

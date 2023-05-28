@@ -5,7 +5,7 @@ import { type EChartsOption } from 'echarts';
 import { useTheme } from '@/contexts/theme-provider/theme-provider';
 import { ChartType, getChartOptions, initialChartOption } from './health-monitor-helper';
 import useChartData from './use-chart-data';
-import ECharts from '@/components/echarts';
+import ECharts from '@/components/echarts/echarts';
 import ActivityIcon from '@/components/icon/activity-icon';
 import ScatterIcon from '@/components/icon/scatter-icon';
 

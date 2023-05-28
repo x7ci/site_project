@@ -1,6 +1,6 @@
 import { styled } from '@stitches/react';
 import type { ComponentProps, ReactNode } from 'react';
-import { Table, TableBody, TableCell, TableRow, T } from './stitches';
+import { Table, TableBody, TableCell, TableRow, T } from '../stitches';
 
 export interface TableData {
   id?: string

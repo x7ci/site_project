@@ -1,11 +1,11 @@
 import { getAllPostIds, getPostData, type PostData } from '@/lib/posts';
 import Head from 'next/head';
 import Date from '@/modules/posts/date';
-import { Box, T, T2 } from '@/components/stitches';
-import AnimateComponentMount from '@/components/animate-component-mount';
+import { Box, T2 } from '@/components/stitches';
+import AnimateComponentMount from '@/components/animate-component-mount/animate-component-mount';
 import { styled } from 'stitches.config';
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import CornerLinesBox from '@/components/corner-lines-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
+import CornerLinesBox from '@/components/ui/corner-lines-box';
 
 interface Props {
   postData: PostData
@@ -39,7 +39,7 @@ export default function Post({ postData }: Props) {
 
           <Box css={{ h: 20 }} />
 
-          <DottedTopBorderBox />
+          <CornerDotsBox />
         </PageWrapper>
       </AnimateComponentMount>
     </>

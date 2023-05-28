@@ -5,7 +5,7 @@ import ModelRenderContainer from '@/modules/index/model-render/model-render-cont
 import HealthMonitorContainer from '@/modules/index/health-monitor/health-monitor-container';
 import RuntimeMetricsContainer from '@/modules/index/runtime-metrics/runtime-metrics-container';
 import DataGridContainer from '@/modules/index/alarm-heat-map/alarm-heat-map-container';
-import AnimateComponentMount from '@/components/animate-component-mount';
+import AnimateComponentMount from '@/components/animate-component-mount/animate-component-mount';
 import AlarmStatsContainer from '@/modules/index/alarm-stats/alarm-stats-container';
 import AlarmListContainer from '@/modules/index/alarm-stats/alarm-list-container';
 

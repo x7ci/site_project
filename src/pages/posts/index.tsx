@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Date from '@/modules/posts/date';
 import { getSortedPostsData, type PostDataSummary } from '@/lib/posts';
-import { ColoredBox, T, T2 } from '@/components/stitches';
-import AnimateComponentMount from '@/components/animate-component-mount';
+import { ColoredBox, T } from '@/components/stitches';
+import AnimateComponentMount from '@/components/animate-component-mount/animate-component-mount';
 import { styled } from 'stitches.config';
 
 interface Props {

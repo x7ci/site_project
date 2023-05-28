@@ -1,5 +1,5 @@
 import Breadcrumbs from '@/components/breadcrumb/breadcrumb';
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 import HexagonFigureIcon from '@/components/icon/hexagon-figure-icon';
 import StarIcon from '@/components/icon/star-icon';
 import { Box, T } from '@/components/stitches';
@@ -15,7 +15,7 @@ interface Props {
 const NavigationBar = ({ children }: Props) => {
   return (
     <Wrapper>
-      <DottedTopBorderBox>
+      <CornerDotsBox>
         <NavigationBarBox>
           <HexagonFigureIcon />
           <NavbarTitleContainer>
@@ -51,13 +51,13 @@ const NavigationBar = ({ children }: Props) => {
             </Box>
           </NavbarLinksRight>
         </NavigationBarBox>
-      </DottedTopBorderBox>
+      </CornerDotsBox>
 
       <Box css={{ h: 10, '@navBarCollapse': { } }} />
 
       <Breadcrumbs rootLabel="/" labelsToUppercase />
 
-      <DottedTopBorderBox onlyRight />
+      <CornerDotsBox onlyRight />
 
       <Box css={{ h: 30 }} />
 
@@ -99,16 +99,7 @@ const NavigationBarBox = styled('div', {
     zIndex: -1,
 
     background: '$navigationBarBackground',
-    clipPath: `
-      polygon(
-        0% 0%,
-        100% 0%,
-        100% $$buttonSpaceHeight,
-        calc(21px + $$buttonSpaceStart) $$buttonSpaceHeight,
-        $$buttonSpaceStart 100%,
-        0% 100%
-      )`,
-    // zIndex: -1,
+    clipPath: 'polygon(0% 0%, 100% 0%, 100% $$buttonSpaceHeight, calc(21px + $$buttonSpaceStart) $$buttonSpaceHeight, $$buttonSpaceStart 100%, 0% 100%)',
     '@navBarCollapse': {
       clipPath: 'unset'
     },

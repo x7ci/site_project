@@ -8,7 +8,6 @@ export const PointedButton = styled('button', {
   fontFamily: 'inherit',
   fontSize: '$fontSizes$6',
   transition: 'all 150ms ease-out',
-  zIndex: 1,
   whiteSpace: 'nowrap',
   color: '$cyan1',
 

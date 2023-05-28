@@ -8,7 +8,7 @@ import DataMetricGroup, { type DataMetricPair } from '../../../components/data-m
 import ActivityIcon from '@/components/icon/activity-icon';
 import SettingsIcon from '@/components/icon/settings-icon';
 import { generateAlarmHeatMapData } from './alarm-heat-map-helper';
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
 
 const AlarmHeatMapContainer = () => {
   const [data, setData] = useState<HeatMapRow[]>([]);
@@ -87,11 +87,11 @@ const AlarmHeatMapContainer = () => {
 
         <Box css={{ h: 15 }} />
         <Box css={{ overflowX: 'auto' }}>
-          <DottedTopBorderBox />
-            <AlarmHeatMap
-              data={data}
-              highlightSeverity={highlightSeverity}
-            />
+          <CornerDotsBox />
+          <AlarmHeatMap
+            data={data}
+            highlightSeverity={highlightSeverity}
+          />
         </Box>
 
         <Box css={{ h: 17 }} />
@@ -141,7 +141,7 @@ const AlarmHeatMapContainer = () => {
         </ButtonContainer>
 
       </WidgetWrapper>
-      <DottedTopBorderBox />
+      <CornerDotsBox />
     </>
   );
 };

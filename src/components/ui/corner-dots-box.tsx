@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import { type StitchesCss } from './stitches';
+import { type StitchesCss } from '../stitches';
 
 interface Props {
   children: ReactNode
@@ -10,7 +10,7 @@ interface Props {
   css: StitchesCss
 }
 
-const DottedTopBorderBox = ({ children, withHorizontalLine, onlyLeft, onlyRight, css }: Props) => {
+const CornerDotsBox = ({ children, withHorizontalLine, onlyLeft, onlyRight, css }: Props) => {
   return (
     <Wrapper css={{ ...css }}>
       <DottedBorderBox>
@@ -31,7 +31,7 @@ const DottedTopBorderBox = ({ children, withHorizontalLine, onlyLeft, onlyRight,
   );
 };
 
-DottedTopBorderBox.defaultProps = {
+CornerDotsBox.defaultProps = {
   withHorizontalLine: false
 } as Partial<Props>;
 
@@ -91,4 +91,4 @@ const HorizontalLine = styled('div', {
   backgroundColor: '$cyan1',
 });
 
-export default DottedTopBorderBox;
+export default CornerDotsBox;

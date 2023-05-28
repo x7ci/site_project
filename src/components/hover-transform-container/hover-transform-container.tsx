@@ -25,9 +25,7 @@ const HoverTransformContainer = ({ children }: Props) => {
 
     const distance: number = Math.sqrt(center.x ** 2 + center.y ** 2);
 
-    animatedBoxRef.current.style.transform = `
-      rotate3d(${center.y / 100}, ${-center.x / 100}, 0, ${Math.log(distance) * 2}deg)
-    `;
+    animatedBoxRef.current.style.transform = `rotate3d(${center.y / 100}, ${-center.x / 100}, 0, ${Math.log(distance) * 2}deg)`;
   };
 
   const onMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

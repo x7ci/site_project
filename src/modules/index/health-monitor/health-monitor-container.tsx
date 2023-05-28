@@ -1,5 +1,5 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import LiveDataCircle from '@/components/live-data-circle';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
+import LiveDataCircle from '@/components/live-data-circle/live-data-circle';
 import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { ColoredBox } from '@/components/stitches/colored-box';
 import { styled } from 'stitches.config';
@@ -22,10 +22,10 @@ const HealthMonitorContainer = () => {
           </Box>
         </ColoredBox>
         <Box css={{ h: 10 }} />
-        <DottedTopBorderBox />
+        <CornerDotsBox />
         <HealthMonitor />
       </WidgetWrapper>
-      <DottedTopBorderBox />
+      <CornerDotsBox />
     </>
   );
 };

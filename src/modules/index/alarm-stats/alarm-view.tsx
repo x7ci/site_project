@@ -1,4 +1,4 @@
-import CornerLinesBox from '@/components/corner-lines-box';
+import CornerLinesBox from '@/components/ui/corner-lines-box';
 import WarningIcon from '@/components/icon/warning-icon';
 import { Box, T, T2 } from '@/components/stitches';
 import { styled } from 'stitches.config';

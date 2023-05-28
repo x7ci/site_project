@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { init, getInstanceByDom } from 'echarts';
 import type { EChartsOption, ECharts as EChartsType, SetOptionOpts } from 'echarts';
-import { Box, type StitchesCss } from './stitches';
+import { Box, type StitchesCss } from '../stitches';
 
 export interface Props {
   option: EChartsOption

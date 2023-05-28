@@ -1,5 +1,5 @@
 import { type ComponentProps } from 'react';
-import { type Box } from './stitches';
+import { type Box } from '../stitches';
 import { styled } from 'stitches.config';
 
 interface Props {

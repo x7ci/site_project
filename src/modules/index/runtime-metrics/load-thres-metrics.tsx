@@ -1,5 +1,5 @@
-import DottedTopBorderBox from '@/components/dotted-top-border-box';
-import ProgressBar from '@/components/progress-bar';
+import CornerDotsBox from '@/components/ui/corner-dots-box';
+import ProgressBar from '@/components/progress-bar/progress-bar';
 import { Box, T } from '@/components/stitches';
 import useRandomRange from '@/helpers/hooks/use-random-range';
 import { styled } from 'stitches.config';
@@ -11,7 +11,7 @@ const LoadThresMetrics = () => {
 
   return (
     <Wrapper>
-      <DottedTopBorderBox>
+      <CornerDotsBox>
         <MetricGroupWrapper>
           <Box css={{ height: 10 }} />
 
@@ -31,8 +31,8 @@ const LoadThresMetrics = () => {
 
           <Box css={{ height: 5 }} />
         </MetricGroupWrapper>
-        <DottedTopBorderBox />
-      </DottedTopBorderBox>
+        <CornerDotsBox />
+      </CornerDotsBox>
     </Wrapper>
   );
 };
