@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { styled } from 'stitches.config';
-import { type StitchesCss } from './stitches';
+import { type StitchesCss } from '../stitches';
 
 interface Props {
   children: ReactNode
