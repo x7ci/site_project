@@ -1,15 +1,15 @@
 import { T, WidgetInfoTextGroup, WidgetInfoTextRow, WidgetInfoTextWrapper } from '@/components/stitches/';
-import { useEffect, useRef, useState } from 'react';
+import { type Ref, useEffect, useRef, useState, type ForwardRefRenderFunction, forwardRef } from 'react';
 import { styled } from 'stitches.config';
 import { type EChartsOption } from 'echarts';
 import { useTheme } from '@/contexts/theme-provider/theme-provider';
 import { ChartType, getChartOptions, initialChartOption } from './health-monitor-helper';
 import useChartData from './use-chart-data';
-import ECharts from '@/components/echarts/echarts';
+import ECharts, { type EChartsRef } from '@/components/echarts/echarts';
 import ActivityIcon from '@/components/icon/activity-icon';
 import ScatterIcon from '@/components/icon/scatter-icon';
 
-const HealthMonitor = () => {
+const HealthMonitor: ForwardRefRenderFunction<EChartsRef> = (_, ref) => {
   const { chartData } = useChartData({ dataLength: 100 });
 
   const currentChartType = useRef<ChartType>();
@@ -93,6 +93,7 @@ const HealthMonitor = () => {
       <ECharts
         option={option}
         style={{ height: '100%', minWidth: '500px', '@bp570': { minWidth: '200px' } }}
+        ref={ref}
       />
     </Wrapper>
   );
@@ -137,4 +138,5 @@ const Wrapper = styled('div', {
   height: 300,
 });
 
-export default HealthMonitor;
+// export default forwardRef(HealthMonitor);
+export default forwardRef(HealthMonitor);

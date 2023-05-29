@@ -4,8 +4,10 @@ import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { ColoredBox } from '@/components/stitches/colored-box';
 import { styled } from 'stitches.config';
 import HealthMonitor from './health-monitor';
+import { type EChartsRef } from '@/components/echarts/echarts';
+import { type ForwardRefRenderFunction, forwardRef } from 'react';
 
-const HealthMonitorContainer = () => {
+const HealthMonitorContainer: ForwardRefRenderFunction<EChartsRef> = (_, ref) => {
   return (
     <>
       <WidgetWrapper>
@@ -23,7 +25,9 @@ const HealthMonitorContainer = () => {
         </ColoredBox>
         <Box css={{ h: 10 }} />
         <CornerDotsBox />
-        <HealthMonitor />
+        <HealthMonitor
+          ref={ref}
+        />
       </WidgetWrapper>
       <CornerDotsBox />
     </>
@@ -37,4 +41,4 @@ const TitleTextRow = styled('div', {
   alignItems: 'center',
 });
 
-export default HealthMonitorContainer;
+export default forwardRef(HealthMonitorContainer);

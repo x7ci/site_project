@@ -1,4 +1,5 @@
 @use './prism.scss';
+@use './grid-layout.scss';
 
 /** Fallback font adjusted to match default font. To avoid a jarring shift of layout. */
 @font-face {
