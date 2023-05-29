@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, type ForwardRefRenderFunction, forwardRef, useImperativeHandle } from 'react';
 import { init, getInstanceByDom } from 'echarts';
 import type { EChartsOption, ECharts as EChartsType, SetOptionOpts } from 'echarts';
 import { Box, type StitchesCss } from '../stitches';
+
+export type EChartsRef = EChartsType | undefined;
 
 export interface Props {
   option: EChartsOption
@@ -11,8 +13,18 @@ export interface Props {
   theme?: 'light' | 'dark'
 }
 
-const ECharts = ({ option, style, settings, loading, theme }: Props): JSX.Element => {
+const ECharts: ForwardRefRenderFunction<EChartsRef, Props> = ({ option, style, settings, loading, theme }: Props, ref): JSX.Element => {
   const chartRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => {
+    let chart: EChartsRef;
+
+    if (chartRef.current !== null) {
+      chart = getInstanceByDom(chartRef.current);
+    }
+
+    return chart;
+  });
 
   useEffect(() => {
     // Initialize chart
@@ -62,4 +74,4 @@ const ECharts = ({ option, style, settings, loading, theme }: Props): JSX.Elemen
   );
 };
 
-export default ECharts;
+export default forwardRef(ECharts);
