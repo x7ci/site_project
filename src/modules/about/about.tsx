@@ -14,16 +14,19 @@ const About = () => {
           </Box>
         </Box>
       </ColoredBox>
-      <Box css={{ height: 15 }} />
+      <Box css={{ h: 15 }} />
       <CornerDotsBox>
         <Background>
-          <Box css={{ height: 10 }} />
+          <Box css={{ h: 10 }} />
           <T color="gray12" size="6">
-            This is my personal site built and designed by me. It features a concept dashboard with various components like tables, charts and metrics.
-            The design system is inspired by FUI type designs. All data is locally generated and no external connections are made.
+            I'm a developer and Computer Science graduate with a strong background in frontend development, using primarily <b>React</b>, <b>TypeScript</b> and <b>Next.js</b>, and I have experience building large scale apps.
+            I work across the stack and also have backend experience with <b>Postgres</b>, <b>GraphQL</b>, <b>Docker</b> and <b>C#</b> APIs.
+            I have ~3 years of experience working in the wind engineering industry as a Full Stack Developer, where I built <b>dashboards</b>, <b>charts</b> and <b>performant interfaces</b> coupled with unique designs and animations.
             <br />
             <br />
-            Source code is available at&nbsp;
+            What you are looking at right now is my personal website - an over-engineered Next.js/React/TypeScript app with an FUI-inspired design system.
+            It features a dashboard reflecting the design system, using various components like tables, charts and metrics.
+            All the data visualized by the components is locally generated without any external connections. Source code is available at&nbsp;
             <Underline>
               <T size="5" color="gray12" weight="3" background="cyan10" >
                 <Box
@@ -39,20 +42,7 @@ const About = () => {
             .
             <br />
             <br />
-            I am currently open to work (
-            <Underline>
-              <T size="5" color="gray12" weight="3" background="cyan10">
-                <Box
-                  as="a"
-                  href="https://news.ycombinator.com/item?id=35424805#35585269"
-                  target="_blank"
-                  css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
-                >
-                  HN entry
-                </Box>
-              </T>
-            </Underline>
-            ). You can write to me at&nbsp;
+            I'm always open to collaborate - whether you're a recruiter or an independent hacker, please reach out to me at {' '}
             <Underline>
               <T size="5" color="gray12" weight="3" background="cyan10">
                 <Box
@@ -65,7 +55,7 @@ const About = () => {
                 </Box>
               </T>
             </Underline>
-            {'.'}
+            . Let's not miss a mutual opportunity.
           </T>
         </Background>
       </CornerDotsBox>
