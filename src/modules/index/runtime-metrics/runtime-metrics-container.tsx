@@ -4,18 +4,23 @@ import { styled } from 'stitches.config';
 import LoadThresMetrics from './load-thres-metrics';
 import TableMetrics from './table-metrics';
 import TableMetrics2 from './table-metrics-2';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const RuntimeMetricsContainer = () => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" >
+        <WidgetHeader>
           <T color="cyan1" weight={2}>RUNTIME  </T>
           <T color="cyan1" weight={1}>METRICS</T>
-        </ColoredBox>
+        </WidgetHeader>
+
         <Box css={{ h: 10 }} />
+
         <LoadThresMetrics />
+
         <Box css={{ h: 30 }} />
+
         <TableDataRow>
           <TableMetrics />
           <TableMetrics2 />

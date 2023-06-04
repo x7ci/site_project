@@ -6,13 +6,14 @@ import { styled } from 'stitches.config';
 import HealthMonitor from './health-monitor';
 import { type EChartsRef } from '@/components/echarts/echarts';
 import { type ForwardRefRenderFunction, forwardRef } from 'react';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const HealthMonitorContainer: ForwardRefRenderFunction<EChartsRef> = (_, ref) => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" height={20} >
-          <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+        <WidgetHeader>
+          <WidgetHeader.SpaceBetween>
             <Box>
               <T color="cyan1" weight={2}>HEALTH </T>
               <T color="cyan1" weight={1}>MONITOR</T>
@@ -21,8 +22,8 @@ const HealthMonitorContainer: ForwardRefRenderFunction<EChartsRef> = (_, ref) =>
               <T size="5" color="gray8" weight={3}>LIVE FEED</T>
               <LiveDataCircle />
             </TitleTextRow>
-          </Box>
-        </ColoredBox>
+          </WidgetHeader.SpaceBetween>
+        </WidgetHeader>
         <Box css={{ h: 10 }} />
         <CornerDotsBox />
         <HealthMonitor

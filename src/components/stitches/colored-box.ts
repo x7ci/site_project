@@ -15,6 +15,11 @@ export const ColoredBox = styled('div', {
         height: '20px'
       }
     },
+    cursor: {
+      move: {
+        cursor: 'move',
+      }
+    },
     flex: {
       1: {
         flex: 1,

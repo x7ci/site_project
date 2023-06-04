@@ -9,6 +9,7 @@ import ActivityIcon from '@/components/icon/activity-icon';
 import SettingsIcon from '@/components/icon/settings-icon';
 import { generateAlarmHeatMapData } from './alarm-heat-map-helper';
 import CornerDotsBox from '@/components/ui/corner-dots-box';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const AlarmHeatMapContainer = () => {
   const [data, setData] = useState<HeatMapRow[]>([]);
@@ -39,14 +40,10 @@ const AlarmHeatMapContainer = () => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" height={20}>
-          <Box css={{ display: 'flex', alignItems: 'center' }}>
-            <Box>
-              <T color="cyan1" weight={2}>ALARM </T>
-              <T color="cyan1" weight={1} >HEAT MAP</T>
-            </Box>
-          </Box>
-        </ColoredBox>
+        <WidgetHeader>
+          <T color="cyan1" weight={2}>ALARM </T>
+          <T color="cyan1" weight={1} >HEAT MAP</T>
+        </WidgetHeader>
 
         <Box css={{ h: 8 }} />
         {/*
@@ -86,6 +83,7 @@ const AlarmHeatMapContainer = () => {
         </SingleDataMetricsWrapper>
 
         <Box css={{ h: 15 }} />
+
         <Box css={{ overflowX: 'auto' }}>
           <CornerDotsBox />
           <AlarmHeatMap

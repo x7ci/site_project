@@ -1,13 +1,15 @@
 import CornerDotsBox from '@/components/ui/corner-dots-box';
 import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import ModelRender from './model-render';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const ModelRenderContainer = () => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" height={20} >
-          <Box css={{ display: 'flex', justifyContent: 'space-between' }}>
+
+        <WidgetHeader>
+          <WidgetHeader.SpaceBetween>
             <Box>
               <T color="cyan1" weight={2}>MODEL </T>
               <T color="cyan1" weight={1} >RENDER</T>
@@ -15,11 +17,15 @@ const ModelRenderContainer = () => {
             <Box>
               <T color="cyan1" weight={2}>ID: 34-842 </T>
             </Box>
-          </Box>
-        </ColoredBox>
-        <Box css={{ height: 10 }} />
+          </WidgetHeader.SpaceBetween>
+        </WidgetHeader>
+
+        <Box css={{ h: 10 }} />
+
         <CornerDotsBox />
+
         <ModelRender />
+
       </WidgetWrapper>
       <CornerDotsBox />
     </>

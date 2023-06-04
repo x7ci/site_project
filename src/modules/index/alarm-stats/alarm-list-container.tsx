@@ -3,15 +3,16 @@ import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import { hydrPumpAeration, mainBearingVibr } from './alarms';
 import AlarmView from './alarm-view';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const AlarmListContainer = () => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" >
+        <WidgetHeader>
           <T color="cyan1" weight={2}>ALARM </T>
           <T color="cyan1" weight={1} >LIST</T>
-        </ColoredBox>
+        </WidgetHeader>
 
         <Box css={{ h: 10 }} />
 

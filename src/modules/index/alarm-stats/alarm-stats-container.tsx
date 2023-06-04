@@ -1,10 +1,11 @@
 import CornerDotsBox from '@/components/ui/corner-dots-box';
 import MetricComparison, { MetricColor } from '@/components/metric-comparison/metric-comparison';
 import StepProgressBar, { StepProgressBarColor, type StepProgressBarData } from '@/components/step-progress-bar/step-progress-bar';
-import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
+import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmView from './alarm-view';
 import { mainBearingTemp } from './alarms';
+import WidgetHeader from '@/components/widget/widget-header';
 
 const AlarmStatsContainer = () => {
   const stepProgressBarData1: StepProgressBarData[] = [
@@ -31,16 +32,12 @@ const AlarmStatsContainer = () => {
   return (
     <>
       <WidgetWrapper>
-        <ColoredBox color="cyan14" size="max" >
-          <Box css={{ display: 'flex', alignItems: 'center' }}>
-            <Box>
-              <T color="cyan1" weight={2}>ALARM </T>
-              <T color="cyan1" weight={1} >STATS</T>
-            </Box>
-          </Box>
-        </ColoredBox>
+        <WidgetHeader>
+          <T color="cyan1" weight={2}>ALARM </T>
+          <T color="cyan1" weight={1} >STATS</T>
+        </WidgetHeader>
 
-        <Box css={{ height: 10 }} />
+        <Box css={{ h: 10 }} />
 
         <CornerDotsBox onlyLeft>
 
@@ -52,7 +49,7 @@ const AlarmStatsContainer = () => {
 
           <CornerDotsBox onlyLeft />
 
-          <Box css={{ height: 18 }} />
+          <Box css={{ h: 18 }} />
 
           <MetricComparisonWrapper>
             <MetricComparison
@@ -74,7 +71,7 @@ const AlarmStatsContainer = () => {
             />
           </MetricComparisonWrapper>
 
-          <Box css={{ height: 18 }} />
+          <Box css={{ h: 18 }} />
 
           <StepProgressBarWrapper>
             <StepProgressBar data={stepProgressBarData1} />
@@ -86,7 +83,7 @@ const AlarmStatsContainer = () => {
 
         </CornerDotsBox>
 
-        <Box css={{ height: 26 }} />
+        <Box css={{ h: 26 }} />
 
         <AlarmView alarm={mainBearingTemp} />
 

@@ -102,6 +102,7 @@ export default function Home() {
           margin={[30, 30]}
           containerPadding={[0, 0]}
           layouts={layoutsObject}
+          draggableHandle=".widget-draggable-handle"
         >
           <Box key="1">
             <AnimateComponentMount delay={.2}>

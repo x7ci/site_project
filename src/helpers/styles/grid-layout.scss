@@ -125,3 +125,7 @@
   bottom: 0;
   transform: rotate(45deg);
 }
+
+.react-draggable-transparent-selection {
+  user-select: none;
+}
