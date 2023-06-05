@@ -129,3 +129,12 @@
 .react-draggable-transparent-selection {
   user-select: none;
 }
+
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 1px solid var(--colors-cyan2);
+  border-bottom: 1px solid var(--colors-cyan2);
+  width: 6px;
+  height: 6px;
+  right: 5px;
+  bottom: 3px;
+}
