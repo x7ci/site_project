@@ -1,4 +1,4 @@
-import { Box, ColoredBox, T, Button, WidgetWrapper } from '@/components/stitches';
+import { Box, T, Button, WidgetWrapper } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import AlarmHeatMap, { ItemSeverity, type HeatMapRow } from './alarm-heat-map';
 import { useEffect, useState } from 'react';
@@ -41,8 +41,10 @@ const AlarmHeatMapContainer = () => {
     <>
       <WidgetWrapper>
         <WidgetHeader>
-          <T color="cyan1" weight={2}>ALARM </T>
-          <T color="cyan1" weight={1} >HEAT MAP</T>
+          <WidgetHeader.Left>
+            <T color="cyan1" weight={2}>ALARM </T>
+            <T color="cyan1" weight={1} >HEAT MAP</T>
+          </WidgetHeader.Left>
         </WidgetHeader>
 
         <Box css={{ h: 8 }} />

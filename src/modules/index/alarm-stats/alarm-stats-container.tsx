@@ -33,8 +33,10 @@ const AlarmStatsContainer = () => {
     <>
       <WidgetWrapper>
         <WidgetHeader>
-          <T color="cyan1" weight={2}>ALARM </T>
-          <T color="cyan1" weight={1} >STATS</T>
+          <WidgetHeader.Left>
+            <T color="cyan1" weight={2}>ALARM </T>
+            <T color="cyan1" weight={1} >STATS</T>
+          </WidgetHeader.Left>
         </WidgetHeader>
 
         <Box css={{ h: 10 }} />

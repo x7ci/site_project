@@ -1,5 +1,5 @@
 import CornerDotsBox from '@/components/ui/corner-dots-box';
-import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
+import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import LoadThresMetrics from './load-thres-metrics';
 import TableMetrics from './table-metrics';
@@ -11,8 +11,10 @@ const RuntimeMetricsContainer = () => {
     <>
       <WidgetWrapper>
         <WidgetHeader>
-          <T color="cyan1" weight={2}>RUNTIME  </T>
-          <T color="cyan1" weight={1}>METRICS</T>
+          <WidgetHeader.Left>
+            <T color="cyan1" weight={2}>RUNTIME  </T>
+            <T color="cyan1" weight={1}>METRICS</T>
+          </WidgetHeader.Left>
         </WidgetHeader>
 
         <Box css={{ h: 10 }} />

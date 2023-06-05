@@ -16,7 +16,7 @@ const AlarmView = ({ alarm }: Props) => {
 
         <MainDetailsWrapper>
           <AlarmInfoWrapper>
-            <CornerLinesBox topLeft />
+            <CornerLinesBox topLeft lineLength="10px" />
             <AlarmHeaderWrapper>
               <IconContainer>
                 <WarningIcon color='red1' width={22} height={22} />
@@ -51,7 +51,6 @@ const AlarmView = ({ alarm }: Props) => {
             <T size="5" color="gray9">DESC: {' '}</T>
             <T size="5" color="gray10" >{alarm.description}</T>
           </DescriptionWrapper>
-          <CornerLinesBox bottomRight />
         </Box>
 
       </ContentWrapper>
@@ -86,7 +85,7 @@ const DescriptionWrapper = styled('div', {
   flex: 1,
   maxHeight: '58px',
   overflow: 'hidden',
-  marginRight: '26px',
+  // marginRight: '26px',
 });
 
 const AlarmHeaderWrapper = styled('div', {

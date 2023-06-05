@@ -1,5 +1,5 @@
 import CornerDotsBox from '@/components/ui/corner-dots-box';
-import { Box, ColoredBox, WidgetWrapper, T } from '@/components/stitches';
+import { Box, WidgetWrapper, T } from '@/components/stitches';
 import { styled } from 'stitches.config';
 import { hydrPumpAeration, mainBearingVibr } from './alarms';
 import AlarmView from './alarm-view';
@@ -10,8 +10,10 @@ const AlarmListContainer = () => {
     <>
       <WidgetWrapper>
         <WidgetHeader>
-          <T color="cyan1" weight={2}>ALARM </T>
-          <T color="cyan1" weight={1} >LIST</T>
+          <WidgetHeader.Left>
+            <T color="cyan1" weight={2}>ALARM </T>
+            <T color="cyan1" weight={1} >LIST</T>
+          </WidgetHeader.Left>
         </WidgetHeader>
 
         <Box css={{ h: 10 }} />
