@@ -7,8 +7,10 @@
 <img alt="License" src="https://img.shields.io/github/license/x7ci/site_project">
 </div>
 
-This is a concept dashboard built with React, TypeScript and styled with Stitches. All data is locally generated and no external connections are made. [Live demo](https://x7ci.engineer/)
+My personal website built with Next.js/TypeScript/Stitches, with FUI-inspired design system. [Live demo](https://x7ci.engineer/)
 
-<br/>
-
+### preview
 ![Site demo](/demo.png?raw=true "x7ci.engineer")
+
+### posts
+- [Next.js/Stitches: Handling Flash of Default Theme](https://x7ci.engineer/posts/2023/handling-flash-of-default-theme)
