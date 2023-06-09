@@ -9,7 +9,6 @@
 
 My personal website built with Next.js/TypeScript/Stitches, with FUI-inspired design system. [Live demo](https://x7ci.engineer/)
 
-### preview
 ![Site demo](/demo.png?raw=true "x7ci.engineer")
 
 ### posts
