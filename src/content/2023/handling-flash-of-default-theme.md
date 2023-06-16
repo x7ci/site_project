@@ -3,7 +3,7 @@ title: 'Next.js/Stitches: Handling Flash of Default Theme'
 date: '2023-05-26'
 ---
 
-If you have chosen Stitches as the styling library for your Next.js app, you have probably noticed the additional configuration required to ensure they work together seamlessly. As per the Stitches docs, we have to include the following code in the `<Head />` element of the Next document:
+If you have chosen Stitches as the styling library for your Next.js app, you have probably noticed the additional configuration required to ensure they work together seamlessly. As per the Stitches docs, we have to include the following code in the `<Head>` element of the Next document:
 
 ```tsx {2} showLineNumbers
 <Head>
@@ -13,9 +13,9 @@ If you have chosen Stitches as the styling library for your Next.js app, you hav
 
 There is one caveat with the `getCssText()` function above. If you have created additional themes using Stitches and are applying those themes from `localStorage` (e.g. using next-themes), you may notice a momentary flash of your default theme before the correct theme is applied.
 
-The reason for this behavior is that the `getCssText()` function of Stitches, which is injected into the `<Head />` element, does not include styles for non-default themes. Consequently, these styles are **not** included in the initial HTML document delivered by Next.js, but are instead loaded client-side. You can confirm this by inspecting the HTML delivered by Next.js on the first load using the Network tab in your browser. You will observe that it does not contain styles for non-default themes.
+The reason for this behavior is that the `getCssText()` function of Stitches, which is injected into the `<Head>` element, does not include styles for non-default themes. Consequently, these styles are **not** included in the initial HTML document delivered by Next.js, but are instead loaded client-side. You can confirm this by inspecting the HTML delivered by Next.js on the first load using the Network tab in your browser. You will observe that it does not contain styles for non-default themes.
 
-To resolve this issue, we can generate the CSS for the non-default Stitches themes and append it to the `<style />` element in `_document.tsx`.
+To resolve this issue, we can generate the CSS for the non-default Stitches themes and append it to the `<style>` element in `_document.tsx`.
 
 First, add the following code snippet to `_document.tsx` in your app:
 
@@ -51,7 +51,7 @@ const themeCss = getThemeCss([stitchesTheme]);
 
 The `getThemeCss()` function here parses all the colors of the theme(s) and generates CSS out of them. 
 
-Now, you can take the generated CSS and append it to the `dangerouslySetInnerHTML` prop on the `<style />` element used by Stitches:
+Now, you can take the generated CSS and append it to the `dangerouslySetInnerHTML` prop on the `<style>` element used by Stitches:
 
 ``` tsx {5} showLineNumbers
 export default function Document() {
