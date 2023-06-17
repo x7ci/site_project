@@ -77,7 +77,6 @@ export const SingleUnit = styled('div', {
   [`& ${T}`]: {
     fontFamily: '$fonts$petch',
     fontSize: 9,
-    // letterSpacing: .2,
   },
 
   transition: 'border 200ms',

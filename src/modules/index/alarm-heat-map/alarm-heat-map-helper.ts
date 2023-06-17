@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 export const generateAlarmHeatMapData = (): HeatMapRow[] => {
   const data: HeatMapRow[] = [];
 
-  // for (let i = 6; i >= 0; i--) {
   for (let i = 0; i < 7; i++) {
     const dataGridRow: HeatMapRow = {
       day: dayjs().subtract(i, 'days').toISOString(),
@@ -14,8 +13,6 @@ export const generateAlarmHeatMapData = (): HeatMapRow[] => {
 
     for (let j = 0; j < 24; j++) {
       const isActive: boolean = Math.random() > 0.75;
-
-      // const isHighSeverity: boolean = Math.random() > 0.7;
 
       dataGridRow.data.push({
         isActive,
