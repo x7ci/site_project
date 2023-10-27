@@ -14,64 +14,75 @@ interface Props {
 
 const NavigationBar = ({ children }: Props) => {
   return (
-    <Wrapper>
-      <CornerDotsBox>
-        <NavigationBarBox>
-          <HexagonFigureIcon />
-          <NavbarTitleContainer>
-            <Box>
-              <T color="yellow1" size={{ '@initial': 11, '@bp4': 9 }} weight={2}>FULL STACK </T>
-              <T size={{ '@initial': 11, '@bp4': 9 }} weight={1} >DEVELOPER</T>
-            </Box>
-            <Box>
-              <T color="gray12" size={5} weight={2}>SITE_PROJECT / </T>
-              <T color="gray11" size={5} weight={2}>X7CI.ENGINEER</T>
-            </Box>
-          </NavbarTitleContainer>
-          <NavbarLinksContainer>
-            <NavbarLinksRow>
-              <NavigationBarLink href="/" label="ANALYSIS" exactPath />
-              <NavigationBarLink href="/posts" label="BLOG" />
-              <NavigationBarLink href="/about" label="ABOUT" />
-              <ThemeToggleButton />
-            </NavbarLinksRow>
-          </NavbarLinksContainer>
-          <NavbarLinksRight>
-            <Box
-              as="a"
-              href="https://github.com/x7ci/site_project"
-              target="_blank">
+    <AppWrapper>
+      <Wrapper>
 
-              <NavbarRightButton>
-                <Box css={{ display: 'flex', justifyContent: 'center', textAlign: 'center', gap: '3px' }}>
-                  <StarIcon color='gray12' width={12} height={12} />
-                  GITHUB
-                </Box>
-              </NavbarRightButton>
-            </Box>
-          </NavbarLinksRight>
-        </NavigationBarBox>
-      </CornerDotsBox>
+        <CornerDotsBox>
+          <NavigationBarBox>
+            <HexagonFigureIcon />
+            <NavbarTitleContainer>
+              <Box>
+                <T color="yellow1" size={{ '@initial': 11, '@bp4': 9 }} weight={2}>FULL STACK </T>
+                <T size={{ '@initial': 11, '@bp4': 9 }} weight={1} >DEVELOPER</T>
+              </Box>
+              <Box>
+                <T color="gray12" size={5} weight={2}>SITE_PROJECT / </T>
+                <T color="gray11" size={5} weight={2}>X7CI.ENGINEER</T>
+              </Box>
+            </NavbarTitleContainer>
+            <NavbarLinksContainer>
+              <NavbarLinksRow>
+                <NavigationBarLink href="/" label="ANALYSIS" exactPath />
+                <NavigationBarLink href="/posts" label="BLOG" />
+                <NavigationBarLink href="/about" label="ABOUT" />
+                <ThemeToggleButton />
+              </NavbarLinksRow>
+            </NavbarLinksContainer>
+            <NavbarLinksRight>
+              <Box
+                as="a"
+                href="https://github.com/x7ci/site_project"
+                target="_blank">
 
-      <Box css={{ h: 10, '@navBarCollapse': { } }} />
+                <NavbarRightButton>
+                  <Box css={{ display: 'flex', justifyContent: 'center', textAlign: 'center', gap: '3px' }}>
+                    <StarIcon color='gray12' width={12} height={12} />
+                    GITHUB
+                  </Box>
+                </NavbarRightButton>
+              </Box>
+            </NavbarLinksRight>
+          </NavigationBarBox>
+        </CornerDotsBox>
 
-      <Breadcrumbs rootLabel="/" labelsToUppercase />
+        <Box css={{ h: 10, '@navBarCollapse': {} }} />
 
-      <CornerDotsBox onlyRight />
+        <Breadcrumbs rootLabel="/" labelsToUppercase />
 
-      <Box css={{ h: 30 }} />
+        <CornerDotsBox onlyRight />
 
-      <main>
-        {children}
-      </main>
-    </Wrapper>
+        <Box css={{ h: 30 }} />
+
+        <main>
+          {children}
+        </main>
+      </Wrapper>
+    </AppWrapper>
   );
 };
+
+const AppWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+});
 
 const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   margin: '$sizes$tileSize',
+  flex: 1,
+  maxWidth: '1900px',
 });
 
 const NavigationBarBox = styled('div', {
