@@ -55,20 +55,7 @@ const About = () => {
                 </Box>
               </T>
             </Underline>
-            . I'm currently open to work (
-            <Underline>
-              <T size="5" color="gray12" weight="3" background="cyan10">
-                <Box
-                  as="a"
-                  href="https://news.ycombinator.com/item?id=35424805#35585269"
-                  target="_blank"
-                  css={{ all: 'unset', cursor: 'pointer', padding: '0 4px 0 4px' }}
-                >
-                  HN entry
-                </Box>
-              </T>
-            </Underline>
-            ).
+            .
           </T>
         </Background>
       </CornerDotsBox>
