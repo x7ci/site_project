@@ -27,7 +27,7 @@ const NavigationBar = ({ children }: Props) => {
               </Box>
               <Box>
                 <T color="gray12" size={5} weight={2}>SITE_PROJECT / </T>
-                <T color="gray11" size={5} weight={2}>X7CI.ENGINEER</T>
+                <T color="gray11" size={5} weight={2}>LEET1.COM</T>
               </Box>
             </NavbarTitleContainer>
             <NavbarLinksContainer>

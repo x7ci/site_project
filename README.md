@@ -7,9 +7,9 @@
 <img alt="License" src="https://img.shields.io/github/license/x7ci/site_project">
 </div>
 
-My personal website built with Next.js/TypeScript/Stitches, with FUI-inspired design system. [Live demo](https://x7ci.engineer/)
+My personal website built with Next.js/TypeScript/Stitches, with FUI-inspired design system. [Live demo](https://leet1.com/)
 
-![Site demo](/demo.png?raw=true "x7ci.engineer")
+![Site demo](/demo.png?raw=true "leet1.com")
 
 ### posts
-- [Next.js/Stitches: Handling Flash of Default Theme](https://x7ci.engineer/posts/2023/handling-flash-of-default-theme)
+- [Next.js/Stitches: Handling Flash of Default Theme](https://leet1.com/posts/2023/handling-flash-of-default-theme)
